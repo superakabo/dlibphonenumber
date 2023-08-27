@@ -1,0 +1,8 @@
+# exclude the tools used to generate the metadata
+tool/**/*.*
+
+# exclude the resources folder that contains the xml and proto files
+resources/**/*.*
+
+# exclude the test folder
+test/**/*.*
