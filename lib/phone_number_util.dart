@@ -1,3 +1,20 @@
+/// Based on the original JavaScript code: .../phonenumbers/PhoneNumberUtil.js
+///
+/// [license]
+/// Copyright (C) 2010 The Libphonenumber Authors.
+///
+/// Licensed under the Apache License, Version 2.0 (the "License");
+/// you may not use this file except in compliance with the License.
+/// You may obtain a copy of the License at
+///
+/// http://www.apache.org/licenses/LICENSE-2.0
+///
+/// Unless required by applicable law or agreed to in writing, software
+/// distributed under the License is distributed on an "AS IS" BASIS,
+/// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+/// See the License for the specific language governing permissions and
+/// limitations under the License.
+
 import 'package:fixnum/fixnum.dart';
 import 'package:meta/meta.dart';
 import 'package:protobuf/protobuf.dart';
@@ -16,7 +33,8 @@ import 'generated/phone_number/phonenumber.pb.dart';
 import 'generated/phone_number_metdata.dart';
 import 'generated/phone_number_metdata_test.dart';
 
-/// @fileoverview  Utility for international phone numbers.
+/// [fileoverview]
+/// Utility for international phone numbers.
 /// Functionality includes formatting, parsing and validation.
 /// (based on the java implementation).
 ///
@@ -24,6 +42,7 @@ import 'generated/phone_number_metdata_test.dart';
 /// be provided using CLDR two-letter region-code format. These should be in
 /// upper-case. The list of the codes can be found here:
 /// http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
+
 class PhoneNumberUtil {
   static final _instance = PhoneNumberUtil._();
   static PhoneNumberUtil get instance => _instance;
@@ -73,7 +92,7 @@ class PhoneNumberUtil {
   ];
 
   /// The PLUS_SIGN signifies the international prefix.
-  static const String _plusSign = '+';
+  static const String plusSign = '+';
 
   static const String _starSign = '*';
 
@@ -89,7 +108,7 @@ class PhoneNumberUtil {
   /// These mappings map a character (key) to a specific digit that should replace
   /// it for normalization purposes. Non-European digits that may be used in phone
   /// numbers are mapped to a European equivalent.
-  static const Map<String, String> _digitMappings = {
+  static const Map<String, String> digitMappings = {
     '0': '0',
     '1': '1',
     '2': '2',
@@ -146,7 +165,7 @@ class PhoneNumberUtil {
     '7': '7',
     '8': '8',
     '9': '9',
-    '+': _plusSign,
+    '+': plusSign,
     '*': _starSign,
     '#': '#'
   };
@@ -321,7 +340,7 @@ class PhoneNumberUtil {
   /// slashes, square brackets, parentheses and tildes. It also includes the letter
   /// 'x' as that is found as a placeholder for carrier information in some phone
   /// numbers. Full-width variants are also present.
-  static const String _validPunctuation = '-x\u2010-\u2015\u2212\u30FC\uFF0D-\uFF0F '
+  static const String validPunctuation = '-x\u2010-\u2015\u2212\u30FC\uFF0D-\uFF0F '
       '\u00A0\u00AD\u200B\u2060\u3000()\uFF08\uFF09\uFF3B\uFF3D.\\[\\]/~\u2053\u223C\uFF5E';
 
   /// Digits accepted in phone numbers (ascii, fullwidth, arabic-indic, and eastern arabic digits).
@@ -332,11 +351,13 @@ class PhoneNumberUtil {
 
   static const String _plusChars = '+\uFF0B';
 
+  static final RegExp plusCharsPattern = RegExp('[$_plusChars]+');
+
   static final RegExp _leadingPlusCharsPattern = RegExp('^[$_plusChars]+');
 
-  static const String _separatorPattern = '[$_validPunctuation]+';
+  static const String _separatorPattern = '[$validPunctuation]+';
 
-  static final RegExp _capturingDigitPattern = RegExp('([$_validDigits])');
+  static final RegExp capturingDigitPattern = RegExp('([$_validDigits])');
 
   ///  Regular expression of acceptable characters that may start a phone number for
   /// the purposes of parsing. This allows us to strip away meaningless prefixes to
@@ -388,14 +409,14 @@ class PhoneNumberUtil {
   /// creating the reg-ex VALID_PHONE_NUMBER_PATTERN_ itself so we can prefix it
   /// with ^ and append $ to each branch.
   ///
-  /// Note [_validPunctuation] starts with a -, so must be the first in the range.
+  /// Note [validPunctuation] starts with a -, so must be the first in the range.
   static const String _minLengthPhoneNumberPattern = '[$_validDigits]{$_minLengthForNsn}';
 
   /// See [_minLengthPhoneNumberPattern] for a full description of this reg-exp.
   static const String _validPhoneNumber = '[$_plusChars]'
-      '*(?:[$_validPunctuation$_starSign]'
+      '*(?:[$validPunctuation$_starSign]'
       '*[$_validDigits]){3,}'
-      '[$_validPunctuation$_starSign'
+      '[$validPunctuation$_starSign'
       '$_validAlpha$_validDigits]*';
 
   /// Default extension prefix to use when formatting. This will be put in front of
@@ -410,7 +431,7 @@ class PhoneNumberUtil {
   static const String _rfc3966PhoneDigit = '([$_validDigits]|$_rfc3966VisualSeparator)';
 
   static const String _rfc3966GlobalNumberDigits =
-      '^\\$_plusSign$_rfc3966PhoneDigit*[$_validDigits]$_rfc3966PhoneDigit*\$';
+      '^\\$plusSign$_rfc3966PhoneDigit*[$_validDigits]$_rfc3966PhoneDigit*\$';
 
   /// Regular expression of valid global-number-digits for the phone-context
   /// parameter, following the syntax defined in RFC3966.
@@ -533,7 +554,7 @@ class PhoneNumberUtil {
   /// first group is not used in the national pattern (e.g. Argentina) so the $1
   /// group does not match correctly.  Therefore, we use \d, so that the first
   /// group actually used in the pattern will be matched.
-  static final RegExp _firstGroupPattern = RegExp(r'\$(\d)');
+  static final RegExp firstGroupPattern = RegExp(r'\$(\d)');
 
   static final String _npString = '\$NP';
 
@@ -634,7 +655,7 @@ class PhoneNumberUtil {
   /// [number] a string of characters representing a phone number.
   /// [normalizeDigitsOnly] returns the normalized string version of the phone number.
   String normalizeDigitsOnly(String number) {
-    return _normalizeHelper(number, _digitMappings, true);
+    return _normalizeHelper(number, digitMappings, true);
   }
 
   /// normalizes a string of characters representing a phone number. this strips
@@ -1676,13 +1697,13 @@ class PhoneNumberUtil {
   ) {
     switch (numberFormat) {
       case PhoneNumberFormat.e164:
-        return '$_plusSign$countryCallingCode$formattedNationalNumber$formattedExtension';
+        return '$plusSign$countryCallingCode$formattedNationalNumber$formattedExtension';
 
       case PhoneNumberFormat.international:
-        return '$_plusSign$countryCallingCode $formattedNationalNumber$formattedExtension';
+        return '$plusSign$countryCallingCode $formattedNationalNumber$formattedExtension';
 
       case PhoneNumberFormat.rfc3966:
-        return '$_rfc3966Prefix$_plusSign$countryCallingCode-$formattedNationalNumber$formattedExtension';
+        return '$_rfc3966Prefix$plusSign$countryCallingCode-$formattedNationalNumber$formattedExtension';
 
       default:
         return formattedNationalNumber + formattedExtension;
@@ -1721,7 +1742,9 @@ class PhoneNumberUtil {
       if (size == 0 ||
           // We always use the last leading_digits_pattern, as it is the most detailed.
           RegExp(numFormat.leadingDigitsPattern[size - 1]).firstMatch(nationalNumber)?.start == 0) {
-        if (matchesEntirely(RegExp(numFormat.pattern), nationalNumber)) return numFormat;
+        if (matchesEntirely(RegExp(numFormat.pattern), nationalNumber)) {
+          return numFormat;
+        }
       }
     }
     return null;
@@ -1750,13 +1773,13 @@ class PhoneNumberUtil {
       // Now replace the $FG in the formatting rule with the first group and the
       // carrier code
       // combined in the appropriate way.
-      numberFormatRule = numberFormatRule.replaceFirst(_firstGroupPattern, carrierCodeFormattingRule);
+      numberFormatRule = numberFormatRule.replaceFirst(firstGroupPattern, carrierCodeFormattingRule);
       formattedNationalNumber = _replaceAllAndFormat(nationalNumber, patternToMatch, numberFormatRule);
     } else {
       // Use the national prefix formatting rule instead.
       String nationalPrefixFormattingRule = formattingPattern.nationalPrefixFormattingRule;
       if (numberFormat == PhoneNumberFormat.national && nationalPrefixFormattingRule.isNotEmpty) {
-        String format = numberFormatRule.replaceFirst(_firstGroupPattern, nationalPrefixFormattingRule);
+        String format = numberFormatRule.replaceFirst(firstGroupPattern, nationalPrefixFormattingRule);
         formattedNationalNumber = _replaceAllAndFormat(nationalNumber, patternToMatch, format);
       } else {
         formattedNationalNumber = _replaceAllAndFormat(nationalNumber, patternToMatch, numberFormatRule);
@@ -1776,7 +1799,7 @@ class PhoneNumberUtil {
 
   String _replaceAllAndFormat(String text, RegExp pattern, String format) {
     return text.replaceAllMapped(pattern, (match) {
-      return format.replaceAllMapped(_firstGroupPattern, (placeholderMatch) {
+      return format.replaceAllMapped(firstGroupPattern, (placeholderMatch) {
         final groupNumber = int.parse(placeholderMatch.group(1)!);
         return match.group(groupNumber) ?? '';
       });
@@ -1785,7 +1808,7 @@ class PhoneNumberUtil {
 
   String _replaceFirstAndFormat(String text, RegExp pattern, String format) {
     return text.replaceFirstMapped(pattern, (match) {
-      return format.replaceFirstMapped(_firstGroupPattern, (placeholderMatch) {
+      return format.replaceFirstMapped(firstGroupPattern, (placeholderMatch) {
         final groupNumber = int.parse(placeholderMatch.group(1)!);
         return match.group(groupNumber) ?? '';
       });
@@ -2011,7 +2034,9 @@ class PhoneNumberUtil {
   }
 
   PhoneMetadata? getMetadataForNonGeographicalRegion(int countryCallingCode) {
-    if (!supportedGlobalNetworkCallingCodes.contains(countryCallingCode)) return null;
+    if (!supportedGlobalNetworkCallingCodes.contains(countryCallingCode)) {
+      return null;
+    }
     return getMetadataForRegion(countryCode: countryCallingCode);
   }
 
@@ -2156,7 +2181,9 @@ class PhoneNumberUtil {
   /// throws [IllegalArgumentException] if the region is invalid
   int _getCountryCodeForValidRegion(String? regionCode) {
     PhoneMetadata? metadata = getMetadataForRegion(regionCode: regionCode);
-    if (metadata == null) throw IllegalArgumentException('Invalid region code: $regionCode');
+    if (metadata == null) {
+      throw IllegalArgumentException('Invalid region code: $regionCode');
+    }
     return metadata.countryCode;
   }
 
@@ -2607,7 +2634,7 @@ class PhoneNumberUtil {
       // Only strip this if the first digit after the match is not a 0, since country
       // calling codes
       // cannot begin with 0.
-      RegExpMatch? digitMatcher = _capturingDigitPattern.firstMatch(number.toString().substring(matchEnd));
+      RegExpMatch? digitMatcher = capturingDigitPattern.firstMatch(number.toString().substring(matchEnd));
       if (digitMatcher != null) {
         String normalizedGroup = normalizeDigitsOnly(digitMatcher.group(1)!);
         if (normalizedGroup == '0') return false;
@@ -2979,7 +3006,7 @@ class PhoneNumberUtil {
   ///     viable phone number or if no default region was supplied.
   PhoneNumber parseAndKeepRawInput(String numberToParse, String? defaultRegion) {
     if (!_isValidRegionCode(defaultRegion)) {
-      if (numberToParse.isNotEmpty && numberToParse[0] != _plusSign) {
+      if (numberToParse.isNotEmpty && numberToParse[0] != plusSign) {
         throw NumberParseException(ErrorType.invalidCountryCode);
       }
     }
@@ -3058,7 +3085,7 @@ class PhoneNumberUtil {
     if (phoneContext != null) {
       // If the phone context contains a phone number prefix, we need to capture
       // it, whereas domains will be ignored.
-      if (phoneContext[0] == _plusSign) {
+      if (phoneContext[0] == plusSign) {
         nationalNumber.write(phoneContext);
       }
 
