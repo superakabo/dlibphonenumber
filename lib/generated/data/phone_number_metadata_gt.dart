@@ -1,4 +1,5 @@
 /// This is auto generated from PhoneNumberMetadata.xml. Do not modify.
+library;
 
 Map<String, List<Object>> get phoneNumberMetadataGT {
   return {
@@ -17,7 +18,7 @@ Map<String, List<Object>> get phoneNumberMetadataGT {
         "leading_digits": null,
         "mobile_number_portable_region": false,
         "general_desc": {
-          "national_number_pattern": "(?:1\\d{3}|[2-7])\\d{7}",
+          "national_number_pattern": "80\\d{6}|(?:1\\d{3}|[2-7])\\d{7}",
           "possible_length": [8, 11],
           "possible_length_local_only": [],
           "example_number": null
@@ -29,7 +30,7 @@ Map<String, List<Object>> get phoneNumberMetadataGT {
           "example_number": "22456789"
         },
         "mobile": {
-          "national_number_pattern": "[3-5]\\d{7}",
+          "national_number_pattern": "(?:[3-5]\\d\\d|80[0-4])\\d{5}",
           "possible_length": [8],
           "possible_length_local_only": [-1],
           "example_number": "51234567"
@@ -122,7 +123,7 @@ Map<String, List<Object>> get phoneNumberMetadataGT {
           {
             "pattern": "(\\d{4})(\\d{4})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["[2-7]"],
+            "leading_digits_pattern": ["[2-8]"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": null,
             "domestic_carrier_code_formatting_rule": null
@@ -140,7 +141,7 @@ Map<String, List<Object>> get phoneNumberMetadataGT {
           {
             "pattern": "(\\d{4})(\\d{4})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["[2-7]"],
+            "leading_digits_pattern": ["[2-8]"],
             "national_prefix_formatting_rule": null,
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false

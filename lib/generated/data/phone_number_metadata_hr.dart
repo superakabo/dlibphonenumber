@@ -1,4 +1,5 @@
 /// This is auto generated from PhoneNumberMetadata.xml. Do not modify.
+library;
 
 Map<String, List<Object>> get phoneNumberMetadataHR {
   return {
@@ -38,7 +39,7 @@ Map<String, List<Object>> get phoneNumberMetadataHR {
           "example_number": "921234567"
         },
         "toll_free": {
-          "national_number_pattern": "80[01]\\d{4,6}",
+          "national_number_pattern": "80\\d{5,7}",
           "possible_length": [7, 8, 9],
           "possible_length_local_only": [-1],
           "example_number": "800123456"

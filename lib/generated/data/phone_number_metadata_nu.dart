@@ -1,4 +1,5 @@
 /// This is auto generated from PhoneNumberMetadata.xml. Do not modify.
+library;
 
 Map<String, List<Object>> get phoneNumberMetadataNU {
   return {
@@ -29,7 +30,7 @@ Map<String, List<Object>> get phoneNumberMetadataNU {
           "example_number": "7012"
         },
         "mobile": {
-          "national_number_pattern": "888[4-9]\\d{3}",
+          "national_number_pattern": "888[1-9]\\d{3}",
           "possible_length": [7],
           "possible_length_local_only": [-1],
           "example_number": "8884012"

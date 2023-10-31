@@ -1,4 +1,5 @@
 /// This is auto generated from PhoneNumberMetadata.xml. Do not modify.
+library;
 
 Map<String, List<Object>> get phoneNumberMetadataRU {
   return {
@@ -15,7 +16,7 @@ Map<String, List<Object>> get phoneNumberMetadataRU {
         "same_mobile_and_fixed_line_pattern": false,
         "main_country_for_code": true,
         "leading_digits": "3[04-689]|[489]",
-        "mobile_number_portable_region": false,
+        "mobile_number_portable_region": true,
         "general_desc": {
           "national_number_pattern": "8\\d{13}|[347-9]\\d{9}",
           "possible_length": [10, 14],
