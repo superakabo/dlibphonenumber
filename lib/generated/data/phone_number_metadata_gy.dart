@@ -18,15 +18,14 @@ Map<String, List<Object>> get phoneNumberMetadataGY {
         "leading_digits": null,
         "mobile_number_portable_region": false,
         "general_desc": {
-          "national_number_pattern":
-              "9008\\d{3}|(?:[2-467]\\d\\d|510|862)\\d{4}",
+          "national_number_pattern": "(?:[2-8]\\d{3}|9008)\\d{3}",
           "possible_length": [7],
           "possible_length_local_only": [],
           "example_number": null
         },
         "fixed_line": {
           "national_number_pattern":
-              "(?:2(?:1[6-9]|2[0-35-9]|3[1-4]|5[3-9]|6\\d|7[0-24-79])|3(?:2[25-9]|3\\d)|4(?:4[0-24]|5[56])|77[1-57])\\d{4}",
+              "(?:2(?:1[6-9]|2[0-35-9]|3[1-4]|5[3-9]|6\\d|7[0-79])|3(?:2[25-9]|3\\d)|4(?:4[0-24]|5[56])|50[0-6]|77[1-57])\\d{4}",
           "possible_length": [7],
           "possible_length_local_only": [-1],
           "example_number": "2201234"
@@ -39,7 +38,7 @@ Map<String, List<Object>> get phoneNumberMetadataGY {
           "example_number": "6091234"
         },
         "toll_free": {
-          "national_number_pattern": "(?:289|862)\\d{4}",
+          "national_number_pattern": "(?:289|8(?:00|6[28]|88|99))\\d{4}",
           "possible_length": [7],
           "possible_length_local_only": [-1],
           "example_number": "2891234"
@@ -63,10 +62,10 @@ Map<String, List<Object>> get phoneNumberMetadataGY {
           "example_number": null
         },
         "voip": {
-          "national_number_pattern": null,
-          "possible_length": [-1],
+          "national_number_pattern": "515\\d{4}",
+          "possible_length": [7],
           "possible_length_local_only": [-1],
-          "example_number": null
+          "example_number": "5151234"
         },
         "pager": {
           "national_number_pattern": null,

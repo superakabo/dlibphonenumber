@@ -25,7 +25,7 @@ Map<String, List<Object>> get phoneNumberMetadataBH {
         },
         "fixed_line": {
           "national_number_pattern":
-              "(?:1(?:3[1356]|6[0156]|7\\d)\\d|6(?:1[16]\\d|500|6(?:0\\d|3[12]|44|7[7-9]|88)|9[69][69])|7(?:[07]\\d\\d|1(?:11|78)))\\d{4}",
+              "(?:1(?:3[1356]|6[0156]|7\\d)\\d|6(?:1[16]\\d|500|6(?:0\\d|3[12]|44|55|7[7-9]|88)|9[69][69])|7(?:[07]\\d\\d|1(?:11|78)))\\d{4}",
           "possible_length": [8],
           "possible_length_local_only": [-1],
           "example_number": "17001234"

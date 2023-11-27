@@ -18,7 +18,7 @@ Map<String, List<Object>> get phoneNumberMetadataNU {
         "leading_digits": null,
         "mobile_number_portable_region": false,
         "general_desc": {
-          "national_number_pattern": "(?:[47]|888\\d)\\d{3}",
+          "national_number_pattern": "(?:[4-7]|888\\d)\\d{3}",
           "possible_length": [4, 7],
           "possible_length_local_only": [],
           "example_number": null
@@ -30,8 +30,8 @@ Map<String, List<Object>> get phoneNumberMetadataNU {
           "example_number": "7012"
         },
         "mobile": {
-          "national_number_pattern": "888[1-9]\\d{3}",
-          "possible_length": [7],
+          "national_number_pattern": "(?:[56]|888[1-9])\\d{3}",
+          "possible_length": [4, 7],
           "possible_length_local_only": [-1],
           "example_number": "8884012"
         },

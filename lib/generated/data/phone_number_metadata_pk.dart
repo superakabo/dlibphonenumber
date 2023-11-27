@@ -32,7 +32,7 @@ Map<String, List<Object>> get phoneNumberMetadataPK {
           "example_number": "2123456789"
         },
         "mobile": {
-          "national_number_pattern": "3(?:[0-24]\\d|3[0-79]|55|64)\\d{7}",
+          "national_number_pattern": "3(?:[0-247]\\d|3[0-79]|55|64)\\d{7}",
           "possible_length": [10],
           "possible_length_local_only": [-1],
           "example_number": "3012345678"

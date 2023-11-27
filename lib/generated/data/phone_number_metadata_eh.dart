@@ -31,13 +31,13 @@ Map<String, List<Object>> get phoneNumberMetadataEH {
         },
         "mobile": {
           "national_number_pattern":
-              "(?:6(?:[0-79]\\d|8[0-247-9])|7(?:[017]\\d|2[0-2]|6[0-8]|8[0-3]))\\d{6}",
+              "(?:6(?:[0-79]\\d|8[0-247-9])|7(?:[0167]\\d|2[0-2]|5[01]|8[0-3]))\\d{6}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "650123456"
         },
         "toll_free": {
-          "national_number_pattern": "80\\d{7}",
+          "national_number_pattern": "80[0-7]\\d{6}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "801234567"
@@ -61,7 +61,7 @@ Map<String, List<Object>> get phoneNumberMetadataEH {
           "example_number": null
         },
         "voip": {
-          "national_number_pattern": "592(?:4[0-2]|93)\\d{4}",
+          "national_number_pattern": "(?:592(?:4[0-2]|93)|80[89]\\d\\d)\\d{4}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "592401234"

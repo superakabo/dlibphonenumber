@@ -25,14 +25,14 @@ Map<String, List<Object>> get phoneNumberMetadataTJ {
         },
         "fixed_line": {
           "national_number_pattern":
-              "(?:3(?:1[3-5]|2[245]|3[12]|4[24-7]|5[25]|72)|4(?:4[046]|74|87))\\d{6}",
+              "(?:3(?:1[3-5]|2[245]|3[12]|4[24-7]|5[25]|72)|4(?:46|74|87))\\d{6}",
           "possible_length": [9],
           "possible_length_local_only": [3, 5, 6, 7],
           "example_number": "372123456"
         },
         "mobile": {
           "national_number_pattern":
-              "(?:41[18]|81[1-9])\\d{6}|(?:0[0-57-9]|1[017]|2[02]|[34]0|5[05]|7[0178]|8[078]|9\\d)\\d{7}",
+              "(?:4(?:1[18]|4[02-479])|81[1-9])\\d{6}|(?:0[0-57-9]|1[017]|2[02]|[34]0|5[05]|7[0178]|8[078]|9\\d)\\d{7}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "917123456"
@@ -133,7 +133,7 @@ Map<String, List<Object>> get phoneNumberMetadataTJ {
           {
             "pattern": "(\\d{3})(\\d{2})(\\d{4})",
             "format": "\$1 \$2 \$3",
-            "leading_digits_pattern": ["44[04]|[34]7"],
+            "leading_digits_pattern": ["44[02-479]|[34]7"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": null,
             "domestic_carrier_code_formatting_rule": null
@@ -167,7 +167,7 @@ Map<String, List<Object>> get phoneNumberMetadataTJ {
           {
             "pattern": "(\\d{3})(\\d{2})(\\d{4})",
             "format": "\$1 \$2 \$3",
-            "leading_digits_pattern": ["44[04]|[34]7"],
+            "leading_digits_pattern": ["44[02-479]|[34]7"],
             "national_prefix_formatting_rule": null,
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false
