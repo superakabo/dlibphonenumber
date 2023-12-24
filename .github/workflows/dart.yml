@@ -22,6 +22,9 @@ jobs:
     - name: Install Node Types
       run: npm install --save-dev @types/node
 
+    - name: Install Node Types
+      run: npm install --save-dev @types/jsdom
+
     - name: Compile TypeScript code
       run: tsc -p ./tool/tsconfig.json
 
