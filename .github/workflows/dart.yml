@@ -23,39 +23,51 @@ jobs:
       
     - name: Install Node Types
       run: npm install --save-dev @types/node
+      if: success()
 
     - name: Install JSDOM
       run: npm install --save-dev @types/jsdom
+      if: success()
 
     - name: Compile TypeScript code
       run: tsc -p ./tool/tsconfig.json
+      if: success()
 
     - name: Generate Dart files from the resources folder
       run: node ./tool/phone_number_metadata.js
+      if: success()
 
     - name: Generate test Dart files from the resources folder
       run: node ./tool/phone_number_metadata.js true
+      if: success()
 
     - name: Set up Dart
       uses: dart-lang/setup-dart@v1
+      if: success()
 
     - name: Install dependencies
       run: dart pub get
+      if: success()
 
     - name: Format all Dart codes
       run: dart format ./lib
+      if: success()
       
     - name: Analyze Dart code for issues
       run: dart fix --dry-run
+      if: success()
 
     - name: Fix Dart code issues
       run: dart fix --apply
+      if: success()
 
     - name: Run tests
       run: dart test
+      if: success()
       
     - name: Publish to pub.dev
       run: dart pub publish --force
+      if: success()
 
     - name: Commit changes
       run: |
@@ -64,4 +76,5 @@ jobs:
         git add lib test
         git diff-index --cached HEAD || git commit -m "chore: updated and formatted dart code"
         git push https://$GITHUB_ACTOR:${{ secrets.PAT }}@github.com/superakabo/dlibphonenumber.git HEAD:main
+      if: success()
 
