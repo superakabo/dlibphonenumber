@@ -6,6 +6,34 @@ on:
       - main
 
 jobs:
+  typescript:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+
+    - name: Install JSDOM
+      run: npm i jsdom
+
+    - name: Install TypeScript
+      run: npm install typescript
+
+    - name: Initiate TypeScript
+      run: tsc --init
+
+    - name: Compile TypeScript code
+      run: tsc -p ./tool/tsconfig.json
+
+    - name: Generate Dart files from the resources folder
+      run: node ./tool/phone_number_metadata.js
+
+    - name: Generate test Dart files from the resources folder
+      run: node ./tool/phone_number_metadata.js true
+
   dart:
     runs-on: ubuntu-latest
 
