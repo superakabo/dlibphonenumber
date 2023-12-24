@@ -62,4 +62,4 @@ jobs:
     - name: Commit changes
       run: |
         git diff-index --cached --quiet HEAD || git commit -m "chore: test changes published"
-        git push
+        git push https://$GITHUB_ACTOR:${{ secrets.PAT }}@github.com/superakabo/dlibphonenumber.git HEAD:main
