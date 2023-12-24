@@ -1,0 +1,69 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  copy_files:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Copy files to target repository
+      run: |
+        mkdir -p temp_clone
+        git clone https://github.com/superakabo/dlibphonenumber.git temp_clone
+        cd temp_clone
+        mkdir -p resources
+        wget https://raw.githubusercontent.com/google/libphonenumber/master/resources/phonenumber.proto -O resources/phonenumber.proto
+        wget https://raw.githubusercontent.com/google/libphonenumber/master/resources/phonemetadata.proto -O resources/phonemetadata.proto
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Copy files from Google libphonenumber"
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.TARGET_REPO_TOKEN }}
+
+
+  # dart:
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v2
+
+  #   - name: Set up Dart
+  #     uses: dart-lang/setup-dart@v2
+
+  #   - name: Install dependencies
+  #     run: dart pub get
+
+  #   - name: Analyze code
+  #     run: dart analyze
+
+  #   - name: Run tests
+  #     run: dart test
+
+  # typescript:
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v2
+
+  #   - name: Set up Node.js
+  #     uses: actions/setup-node@v4  # Use the default version
+
+  #   - name: Install dependencies
+  #     run: npm install
+
+  #   - name: Build TypeScript
+  #     run: npm run build
+
+  #   - name: Run tests
+  #     run: npm test
