@@ -1,19 +1,19 @@
 name: CI/CD
 
 on:
-  push:
-    branches:
-      - main
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+*' # tag pattern on pub.dev:
+  workflow_dispatch: # This event allows manual triggering
+  # push:
+  #   branches:
+  #     - main
+  #   tags:
+  #     - 'v[0-9]+.[0-9]+.[0-9]+*' # tag pattern on pub.dev:
 
 jobs:
   build-repo:
+    runs-on: ubuntu-latest
     permissions:
       id-token: write # Required for authentication using OIDC
     
-    runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
