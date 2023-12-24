@@ -16,14 +16,17 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v4
 
-    - name: Install JSDOM
-      run: npm i jsdom
+    # - name: Install JSDOM
+    #   run: npm i jsdom
 
     # - name: Install TypeScript
     #   run: npm install typescript
 
     # - name: Initiate TypeScript
     #   run: tsc --init
+
+    - name: Install Node Types
+      run: npm install --save-dev @types/node
 
     - name: Compile TypeScript code
       run: tsc -p ./tool/tsconfig.json
