@@ -1,0 +1,14 @@
+{
+  "name": "tool",
+  "version": "1.0.0",
+  "description": "A tool to generate dart files",
+  "main": "phone_number_metadata.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Akabo",
+  "license": "MIT",
+  "dependencies": {
+    "jsdom": "^16.7.0"
+  }
+}
