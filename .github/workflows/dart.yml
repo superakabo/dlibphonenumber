@@ -4,60 +4,76 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*' # tag pattern on pub.dev:
 
 jobs:
-  typescript:
+  build-repo:
     runs-on: ubuntu-latest
-
+    permissions:
+      id-token: write # Required for authentication using OIDC
+    
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
     - name: Set up Node.js
       uses: actions/setup-node@v4
-
-    - name: Install dependencies
-      run: npm install
-
-    # - name: Install JSDOM
-    #   run: npm install --save-dev @types/jsdom
       
-    # - name: Install Node Types
-    #   run: npm install --save-dev @types/node
+    - name: Install Node Types
+      run: npm install --save-dev @types/node
+      if: success()
+
+    - name: Install JSDOM
+      run: npm install --save-dev @types/jsdom
+      if: success()
 
     - name: Compile TypeScript code
       run: tsc -p ./tool/tsconfig.json
+      if: success()
 
     - name: Generate Dart files from the resources folder
       run: node ./tool/phone_number_metadata.js
+      if: success()
 
     - name: Generate test Dart files from the resources folder
       run: node ./tool/phone_number_metadata.js true
-
-  dart:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      if: success()
 
     - name: Set up Dart
       uses: dart-lang/setup-dart@v1
+      if: success()
 
     - name: Install dependencies
       run: dart pub get
+      if: success()
 
     - name: Format all Dart codes
       run: dart format ./lib
+      if: success()
       
     - name: Analyze Dart code for issues
       run: dart fix --dry-run
+      if: success()
 
     - name: Fix Dart code issues
       run: dart fix --apply
+      if: success()
 
     - name: Run tests
       run: dart test
+      if: success()
       
-    - name: Mock publishing to pub.dev
-      run: dart pub publish --dry-run
+    - name: Publish to pub.dev
+      run: dart pub publish --force
+      if: success()
+
+    - name: Commit changes
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@users.noreply.github.com"
+        git add lib test
+        git diff-index --cached HEAD || git commit -m "chore: updated and formatted dart code"
+        git push https://$GITHUB_ACTOR:${{ secrets.PAT }}@github.com/superakabo/dlibphonenumber.git HEAD:main
+      if: success()
+
