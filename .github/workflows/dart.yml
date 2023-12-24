@@ -31,13 +31,6 @@ jobs:
     - name: Generate test Dart files from the resources folder
       run: node ./tool/phone_number_metadata.js true
 
-  dart:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
     - name: Set up Dart
       uses: dart-lang/setup-dart@v1
 
@@ -55,6 +48,10 @@ jobs:
 
     - name: Run tests
       run: dart test
+      
+    - name: Mock publishing to pub.dev
+      run: dart pub publish --dry-run
+
       
     - name: Mock publishing to pub.dev
       run: dart pub publish --dry-run
