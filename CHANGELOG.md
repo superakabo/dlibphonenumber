@@ -1,3 +1,6 @@
+## 1.1.5
+- Updated phone metadata for region code(s): AR, BH, DE, EE, FI, GE, HK, PY, RO, SG, US
+
 ## 1.1.4
 
 - Updated phone metadata for region code(s): 883, BH, BJ, EH, GU, GY, HK, MA, NU, SG, US, VN, EH, HK, HR, MA, MK, PK, RO, TJ

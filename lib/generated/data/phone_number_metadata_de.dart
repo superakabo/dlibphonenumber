@@ -1,5 +1,4 @@
 /// This is auto generated from PhoneNumberMetadata.xml. Do not modify.
-library;
 
 Map<String, List<Object>> get phoneNumberMetadataDE {
   return {
@@ -33,7 +32,7 @@ Map<String, List<Object>> get phoneNumberMetadataDE {
         },
         "mobile": {
           "national_number_pattern":
-              "15[0-25-9]\\d{8}|1(?:6[023]|7\\d)\\d{7,8}",
+              "15(?:[0-25-9]\\d\\d|310)\\d{6}|1(?:6[023]|7\\d)\\d{7,8}",
           "possible_length": [10, 11],
           "possible_length_local_only": [-1],
           "example_number": "15123456789"
@@ -227,17 +226,17 @@ Map<String, List<Object>> get phoneNumberMetadataDE {
             "domestic_carrier_code_formatting_rule": null
           },
           {
-            "pattern": "(\\d{5})(\\d{6})",
+            "pattern": "(\\d{4})(\\d{7})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["15[0568]"],
+            "leading_digits_pattern": ["15[1279]"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null
           },
           {
-            "pattern": "(\\d{4})(\\d{7})",
+            "pattern": "(\\d{5})(\\d{6})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["15[1279]"],
+            "leading_digits_pattern": ["15[03568]", "15(?:[0568]|31)"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null
@@ -379,17 +378,17 @@ Map<String, List<Object>> get phoneNumberMetadataDE {
             "national_prefix_optional_when_formatting": false
           },
           {
-            "pattern": "(\\d{5})(\\d{6})",
+            "pattern": "(\\d{4})(\\d{7})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["15[0568]"],
+            "leading_digits_pattern": ["15[1279]"],
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false
           },
           {
-            "pattern": "(\\d{4})(\\d{7})",
+            "pattern": "(\\d{5})(\\d{6})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["15[1279]"],
+            "leading_digits_pattern": ["15[03568]", "15(?:[0568]|31)"],
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false

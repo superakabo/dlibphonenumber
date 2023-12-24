@@ -43,7 +43,7 @@ function getMetadataFileName(): string {
 }
 
 async function readXml(): Promise<string> {
-    const filePath = `../resources/${getMetadataFileName()}`;
+    const filePath = `./resources/${getMetadataFileName()}`;
     const readFile = promisify(fs.readFile);
     return await readFile(filePath, 'utf-8');
 }

@@ -1,5 +1,4 @@
 /// This is auto generated from PhoneNumberMetadata.xml. Do not modify.
-library;
 
 Map<String, List<Object>> get phoneNumberMetadataBQ {
   return {

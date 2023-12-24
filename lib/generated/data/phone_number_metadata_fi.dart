@@ -1,5 +1,4 @@
 /// This is auto generated from PhoneNumberMetadata.xml. Do not modify.
-library;
 
 Map<String, List<Object>> get phoneNumberMetadataFI {
   return {
@@ -27,7 +26,7 @@ Map<String, List<Object>> get phoneNumberMetadataFI {
         },
         "fixed_line": {
           "national_number_pattern":
-              "(?:1[3-79][1-8]|[235689][1-8]\\d)\\d{2,6}",
+              "(?:1[3-79][1-8]|[23568][1-8]\\d|9(?:00|[1-8]\\d))\\d{2,6}",
           "possible_length": [5, 6, 7, 8, 9],
           "possible_length_local_only": [-1],
           "example_number": "131234567"
@@ -134,9 +133,9 @@ Map<String, List<Object>> get phoneNumberMetadataFI {
             "domestic_carrier_code_formatting_rule": null
           },
           {
-            "pattern": "(\\d)(\\d{4,9})",
-            "format": "\$1 \$2",
-            "leading_digits_pattern": ["[2568][1-8]|3(?:0[1-9]|[1-9])|9"],
+            "pattern": "(\\d{5})",
+            "format": "\$1",
+            "leading_digits_pattern": ["20[2-59]"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null
@@ -152,7 +151,7 @@ Map<String, List<Object>> get phoneNumberMetadataFI {
           {
             "pattern": "(\\d{3})(\\d{3,7})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["[12]00|[368]|70[07-9]"],
+            "leading_digits_pattern": ["(?:[1-3]0|[68])0|70[07-9]"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null
@@ -160,7 +159,7 @@ Map<String, List<Object>> get phoneNumberMetadataFI {
           {
             "pattern": "(\\d{2})(\\d{4,8})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["[1245]|7[135]"],
+            "leading_digits_pattern": ["[14]|2[09]|50|7[135]"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null
@@ -169,6 +168,16 @@ Map<String, List<Object>> get phoneNumberMetadataFI {
             "pattern": "(\\d{2})(\\d{6,10})",
             "format": "\$1 \$2",
             "leading_digits_pattern": ["7"],
+            "national_prefix_optional_when_formatting": false,
+            "national_prefix_formatting_rule": "0\$1",
+            "domestic_carrier_code_formatting_rule": null
+          },
+          {
+            "pattern": "(\\d)(\\d{4,9})",
+            "format": "\$1 \$2",
+            "leading_digits_pattern": [
+              "(?:1[3-79]|[2568])[1-8]|3(?:0[1-9]|[1-9])|9"
+            ],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null
@@ -176,9 +185,9 @@ Map<String, List<Object>> get phoneNumberMetadataFI {
         ],
         "intl_number_format": [
           {
-            "pattern": "(\\d)(\\d{4,9})",
-            "format": "\$1 \$2",
-            "leading_digits_pattern": ["[2568][1-8]|3(?:0[1-9]|[1-9])|9"],
+            "pattern": "(\\d{5})",
+            "format": "\$1",
+            "leading_digits_pattern": ["20[2-59]"],
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false
@@ -186,7 +195,7 @@ Map<String, List<Object>> get phoneNumberMetadataFI {
           {
             "pattern": "(\\d{3})(\\d{3,7})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["[12]00|[368]|70[07-9]"],
+            "leading_digits_pattern": ["(?:[1-3]0|[68])0|70[07-9]"],
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false
@@ -194,7 +203,7 @@ Map<String, List<Object>> get phoneNumberMetadataFI {
           {
             "pattern": "(\\d{2})(\\d{4,8})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["[1245]|7[135]"],
+            "leading_digits_pattern": ["[14]|2[09]|50|7[135]"],
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false
@@ -203,6 +212,16 @@ Map<String, List<Object>> get phoneNumberMetadataFI {
             "pattern": "(\\d{2})(\\d{6,10})",
             "format": "\$1 \$2",
             "leading_digits_pattern": ["7"],
+            "national_prefix_formatting_rule": "0\$1",
+            "domestic_carrier_code_formatting_rule": null,
+            "national_prefix_optional_when_formatting": false
+          },
+          {
+            "pattern": "(\\d)(\\d{4,9})",
+            "format": "\$1 \$2",
+            "leading_digits_pattern": [
+              "(?:1[3-79]|[2568])[1-8]|3(?:0[1-9]|[1-9])|9"
+            ],
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false

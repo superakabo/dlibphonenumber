@@ -1,5 +1,4 @@
 /// This is auto generated from PhoneNumberMetadataForTesting.xml. Do not modify.
-library;
 
 Map<String, List<Object>> get phoneNumberMetadataSE {
   return {

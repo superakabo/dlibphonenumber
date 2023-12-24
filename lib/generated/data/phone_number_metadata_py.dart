@@ -1,5 +1,4 @@
 /// This is auto generated from PhoneNumberMetadata.xml. Do not modify.
-library;
 
 Map<String, List<Object>> get phoneNumberMetadataPY {
   return {
@@ -32,7 +31,8 @@ Map<String, List<Object>> get phoneNumberMetadataPY {
           "example_number": "212345678"
         },
         "mobile": {
-          "national_number_pattern": "9(?:51|6[129]|[78][1-6]|9[1-5])\\d{6}",
+          "national_number_pattern":
+              "9(?:51|6[129]|7[1-6]|8[1-7]|9[1-5])\\d{6}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "961456789"
@@ -169,7 +169,7 @@ Map<String, List<Object>> get phoneNumberMetadataPY {
           {
             "pattern": "(\\d{3})(\\d{6})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["9(?:[5-79]|8[1-6])"],
+            "leading_digits_pattern": ["9(?:[5-79]|8[1-7])"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null
@@ -239,7 +239,7 @@ Map<String, List<Object>> get phoneNumberMetadataPY {
           {
             "pattern": "(\\d{3})(\\d{6})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["9(?:[5-79]|8[1-6])"],
+            "leading_digits_pattern": ["9(?:[5-79]|8[1-7])"],
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false
