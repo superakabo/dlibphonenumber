@@ -1,12 +1,15 @@
 name: CI/CD
 
 on:
-  workflow_dispatch: # This event allows manual triggering
+  workflow_dispatch:
+    inputs:
+      target-branch:
+        required: true
   # push:
-    branches:
-      - main
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+*' # tag pattern on pub.dev:
+  #   branches:
+  #     - main
+  #   tags:
+  #     - 'v[0-9]+.[0-9]+.[0-9]+*' # tag pattern on pub.dev:
 
 jobs:
   build-repo:
