@@ -3,10 +3,10 @@ name: CI/CD
 on:
   push:
     branches:
-      - main
+      - test
 
 jobs:
-  typescript:
+  build-repo:
     runs-on: ubuntu-latest
 
     steps:
@@ -51,7 +51,11 @@ jobs:
       
     - name: Mock publishing to pub.dev
       run: dart pub publish --dry-run
-
       
-    - name: Mock publishing to pub.dev
-      run: dart pub publish --dry-run
+    - name: Commit changes
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@users.noreply.github.com"
+        git add .
+        git diff-index --quiet HEAD || git commit -m "chore: test changes published"
+        git push
