@@ -4,9 +4,14 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*' # tag pattern on pub.dev:
 
 jobs:
   build-repo:
+    permissions:
+      id-token: write # Required for authentication using OIDC
+    
     runs-on: ubuntu-latest
 
     steps:
@@ -59,3 +64,4 @@ jobs:
         git add lib test
         git diff-index --cached HEAD || git commit -m "chore: updated and formatted dart code"
         git push https://$GITHUB_ACTOR:${{ secrets.PAT }}@github.com/superakabo/dlibphonenumber.git HEAD:main
+
