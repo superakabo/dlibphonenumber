@@ -1,5 +1,5 @@
 ## 1.1.5
-- Updated phone metadata for region code(s): AR, BH, DE, EE, FI, GE, HK, PY, RO, SG, US
+- Updated phone metadata for region code(s): AR, BH, DE, EE, FI, GE, HK, PY, RO, SG, UX
 
 ## 1.1.4
 
