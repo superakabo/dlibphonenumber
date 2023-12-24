@@ -15,14 +15,11 @@ jobs:
 
     - name: Set up Node.js
       uses: actions/setup-node@v4
-
-    - name: Install dependencies
-      run: npm install
-
+      
     - name: Install Node Types
       run: npm install --save-dev @types/node
 
-    - name: Install Node Types
+    - name: Install JSDOM
       run: npm install --save-dev @types/jsdom
 
     - name: Compile TypeScript code
