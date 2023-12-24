@@ -19,11 +19,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    # - name: Install JSDOM
-    #   run: npm install --save-dev @types/jsdom
-      
-    # - name: Install Node Types
-    #   run: npm install --save-dev @types/node
+    - name: Install Node Types
+      run: npm install --save-dev @types/node
 
     - name: Compile TypeScript code
       run: tsc -p ./tool/tsconfig.json
