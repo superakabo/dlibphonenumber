@@ -1,0 +1,35 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dart:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Dart
+      uses: dart-lang/setup-dart@v1
+
+    - name: Install dependencies
+      run: dart pub get
+
+    - name: Format all Dart codes
+      run: dart format ./lib
+      
+    - name: Analyze Dart code for issues
+      run: dart fix --dry-run
+
+    - name: Fix Dart code issues
+      run: dart fix --apply
+
+    - name: Run tests
+      run: dart test
+      
+    - name: Mock publishing to pub.dev
+      run: dart pub publish --dry-run
