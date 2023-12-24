@@ -19,11 +19,11 @@ jobs:
     - name: Install JSDOM
       run: npm i jsdom
 
-    - name: Install TypeScript
-      run: npm install typescript
+    # - name: Install TypeScript
+    #   run: npm install typescript
 
-    - name: Initiate TypeScript
-      run: tsc --init
+    # - name: Initiate TypeScript
+    #   run: tsc --init
 
     - name: Compile TypeScript code
       run: tsc -p ./tool/tsconfig.json
