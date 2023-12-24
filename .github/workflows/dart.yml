@@ -49,17 +49,13 @@ jobs:
     - name: Run tests
       run: dart test
       
-    - name: Mock publishing to pub.dev
-      run: dart pub publish --dry-run
+    - name: Publish to pub.dev
+      run: dart pub publish --force
 
-    - name: Display changes
+    - name: Commit changes
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@users.noreply.github.com"
         git add lib test
-        git status
-      
-    - name: Commit changes
-      run: |
-        git diff-index --cached --quiet HEAD || git commit -m "chore: updated and formatted dart code"
+        git diff-index --cached HEAD || git commit -m "chore: updated and formatted dart code"
         git push https://$GITHUB_ACTOR:${{ secrets.PAT }}@github.com/superakabo/dlibphonenumber.git HEAD:main
