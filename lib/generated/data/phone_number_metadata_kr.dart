@@ -78,7 +78,7 @@ Map<String, List<Object>> get phoneNumberMetadataKR {
         },
         "uan": {
           "national_number_pattern":
-              "1(?:5(?:22|33|44|66|77|88|99)|6(?:[07]0|44|6[168]|88)|8(?:00|33|55|77|99))\\d{4}",
+              "1(?:5(?:22|33|44|66|77|88|99)|6(?:[07]0|44|6[0168]|88)|8(?:00|33|55|77|99))\\d{4}",
           "possible_length": [8],
           "possible_length_local_only": [-1],
           "example_number": "15441234"

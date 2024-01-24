@@ -25,7 +25,7 @@ Map<String, List<Object>> get phoneNumberMetadataFR {
         },
         "fixed_line": {
           "national_number_pattern":
-              "59[1-9]\\d{6}|(?:[1-3]\\d|4[1-9]|5[0-8])\\d{7}",
+              "(?:26[013-9]|59[1-35-9])\\d{6}|(?:[13]\\d|2[0-57-9]|4[1-9]|5[0-8])\\d{7}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "123456789"

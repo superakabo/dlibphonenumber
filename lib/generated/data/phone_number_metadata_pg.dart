@@ -32,7 +32,7 @@ Map<String, List<Object>> get phoneNumberMetadataPG {
           "example_number": "3123456"
         },
         "mobile": {
-          "national_number_pattern": "(?:7\\d|8[128])\\d{6}",
+          "national_number_pattern": "(?:7\\d|8[1-38])\\d{6}",
           "possible_length": [8],
           "possible_length_local_only": [-1],
           "example_number": "70123456"

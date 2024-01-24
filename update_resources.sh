@@ -22,14 +22,30 @@ curl --create-dirs -o resources/PhoneNumberMetadataForTesting.xml https://raw.gi
 # Download PhoneNumberAlternateFormats.xml
 curl --create-dirs -o resources/PhoneNumberAlternateFormats.xml https://raw.githubusercontent.com/google/libphonenumber/master/resources/PhoneNumberAlternateFormats.xml
 
+# Generate class from the .proto files found in the resources
+# folder using protocol buffers (protobuf, protoc_plugin)
+# -----------------------------------------------------------
+# Install the latest version of protoc plugin for dart
+dart pub global activate protoc_plugin
+
+# Create directories for the classes to be generated if they are missing
+mkdir -pv ./lib/generated/phone_metadata
+mkdir -pv ./lib/generated/phone_number
+
+# Generate the Phone Number class from resources/phonenumber.proto
+protoc --dart_out=./lib/generated/phone_number -I ./resources ./resources/phonenumber.proto
+
+# Generate the Phone Metadata class from resources/phonemetadata.proto
+protoc --dart_out=./lib/generated/phone_metadata -I ./resources ./resources/phonemetadata.proto
 
 # Build TypeScript code generator tool used to generate
 # the respective Dart files (phone_number_metadata.dart, countryCodeToRegionCodeMap.dart)
-
+# ---------------------------------------------------------------------------------------
 # Compile the TypeScript project to translate the code to JavaScript
 tsc -p ./tool/tsconfig.json
 
 # Generate phone_number_metadata object files
+# -------------------------------------------
 # (Map<String, Map<String, List<Object>>>)
 node ./tool/phone_number_metadata.js
 
@@ -37,13 +53,12 @@ node ./tool/phone_number_metadata.js
 # (Map<String, Map<String, List<Object>>>) 
 node ./tool/phone_number_metadata.js true
 
-
 # Fix Dart code issues (if any)
 dart format ./lib
 dart fix --apply
 
 # Run tests
-dart test -r expanded ./test/phone_number_util_test.dart 
+dart test -r expanded ./test/phone_number_util_test.dart
 
 # Attempt to publish Dart code to see possible issues.
 dart pub publish --dry-run

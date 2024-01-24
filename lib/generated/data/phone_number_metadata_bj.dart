@@ -30,7 +30,7 @@ Map<String, List<Object>> get phoneNumberMetadataBJ {
           "example_number": "20211234"
         },
         "mobile": {
-          "national_number_pattern": "(?:4[0-6]|[56]\\d|9[013-9])\\d{6}",
+          "national_number_pattern": "(?:4[0-7]|[56]\\d|9[013-9])\\d{6}",
           "possible_length": [8],
           "possible_length_local_only": [-1],
           "example_number": "90011234"

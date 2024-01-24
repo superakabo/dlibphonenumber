@@ -19,7 +19,7 @@ Map<String, List<Object>> get phoneNumberMetadataIT {
         "mobile_number_portable_region": true,
         "general_desc": {
           "national_number_pattern":
-              "0\\d{5,10}|1\\d{8,10}|3(?:[0-8]\\d{7,10}|9\\d{7,8})|(?:55|70)\\d{8}|8\\d{5}(?:\\d{2,4})?",
+              "0\\d{5,10}|1\\d{8,10}|3(?:[0-8]\\d{7,10}|9\\d{7,8})|(?:43|55|70)\\d{8}|8\\d{5}(?:\\d{2,4})?",
           "possible_length": [6, 7, 8, 9, 10, 11, 12],
           "possible_length_local_only": [],
           "example_number": null
@@ -32,7 +32,7 @@ Map<String, List<Object>> get phoneNumberMetadataIT {
           "example_number": "0212345678"
         },
         "mobile": {
-          "national_number_pattern": "3[1-9]\\d{8}|3[2-9]\\d{7}",
+          "national_number_pattern": "3[2-9]\\d{7,8}|(?:31|43)\\d{8}",
           "possible_length": [9, 10],
           "possible_length_local_only": [-1],
           "example_number": "3123456789"
@@ -188,7 +188,7 @@ Map<String, List<Object>> get phoneNumberMetadataIT {
           {
             "pattern": "(\\d{3})(\\d{3})(\\d{3,4})",
             "format": "\$1 \$2 \$3",
-            "leading_digits_pattern": ["1(?:44|[679])|[378]"],
+            "leading_digits_pattern": ["1(?:44|[679])|[378]|43"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": null,
             "domestic_carrier_code_formatting_rule": null
@@ -273,7 +273,7 @@ Map<String, List<Object>> get phoneNumberMetadataIT {
           {
             "pattern": "(\\d{3})(\\d{3})(\\d{3,4})",
             "format": "\$1 \$2 \$3",
-            "leading_digits_pattern": ["1(?:44|[679])|[378]"],
+            "leading_digits_pattern": ["1(?:44|[679])|[378]|43"],
             "national_prefix_formatting_rule": null,
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false

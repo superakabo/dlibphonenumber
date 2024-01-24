@@ -39,7 +39,7 @@ Map<String, List<Object>> get phoneNumberMetadataKE {
           "example_number": "712123456"
         },
         "toll_free": {
-          "national_number_pattern": "800[2-8]\\d{5,6}",
+          "national_number_pattern": "800[02-8]\\d{5,6}",
           "possible_length": [9, 10],
           "possible_length_local_only": [-1],
           "example_number": "800223456"

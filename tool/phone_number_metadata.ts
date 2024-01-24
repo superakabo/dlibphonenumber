@@ -76,7 +76,7 @@ async function generateJsonForRegions(elements: Element[]) {
         const functionName = `phoneNumberMetadata${regionName}`;
         const output = `${comment}\n\nMap<String, List<Object>> get ${functionName} { return ${jsonString}; }`;
 
-        const filePath = `../lib/generated/${subDir}/${functionFileName}`;
+        const filePath = `./lib/generated/${subDir}/${functionFileName}`;
         await writeJsonToFile(filePath, output);
 
         metadataImports.push(`import "${subDir}/${functionFileName}";`);
@@ -86,7 +86,7 @@ async function generateJsonForRegions(elements: Element[]) {
     const functionName = (testMode) ? 'phoneNumberMetdataTest' : 'phoneNumberMetdata';
     const output = `${comment}\n\nMap<String, Map<String, List<Object>>> get ${functionName} { return { ${metadataMap} }; }`;
     const fileName = (testMode) ? 'phone_number_metdata_test' : 'phone_number_metdata';
-    const filePath = `../lib/generated/${fileName}.dart`;
+    const filePath = `./lib/generated/${fileName}.dart`;
     await writeJsonToFile(filePath, `${metadataImports.join('\n')}\n\n${output}`);
 }
 
@@ -153,7 +153,7 @@ async function generateCountryCodeToRegionCodeMap(elements: Element[]) {
         ? 'country_code_to_region_code_map_test.dart'
         : 'country_code_to_region_code_map.dart';
 
-    const filePath = `../lib/generated/${fileName}`;
+    const filePath = `./lib/generated/${fileName}`;
     await writeJsonToFile(filePath, CountryCodeToRegionCodeMap);
 }
 

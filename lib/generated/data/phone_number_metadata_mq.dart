@@ -62,7 +62,7 @@ Map<String, List<Object>> get phoneNumberMetadataMQ {
         },
         "voip": {
           "national_number_pattern":
-              "9(?:397[0-2]|477[0-5]|76(?:6\\d|7[0-367]))\\d{4}",
+              "9(?:397[0-3]|477[0-5]|76(?:6\\d|7[0-367]))\\d{4}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "976612345"
