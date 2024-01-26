@@ -24,7 +24,8 @@ Map<String, List<Object>> get phoneNumberMetadataYT {
           "example_number": null
         },
         "fixed_line": {
-          "national_number_pattern": "269(?:0[0-467]|5[0-4]|6\\d|[78]0)\\d{4}",
+          "national_number_pattern":
+              "269(?:0[0-467]|15|5[0-4]|6\\d|[78]0)\\d{4}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "269601234"

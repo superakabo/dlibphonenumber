@@ -9,3 +9,4 @@ test/**/*.*
 
 # exclude Github Action workflow.
 .github/workflows/build.yml
+.github/workflows/build.txt

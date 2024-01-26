@@ -34,7 +34,7 @@ Map<String, List<Object>> get phoneNumberMetadataCC {
         },
         "mobile": {
           "national_number_pattern":
-              "4(?:(?:79|94)[01]|83[0-389])\\d{5}|4(?:[0-3]\\d|4[047-9]|5[0-25-9]|6[0-26-9]|7[02-8]|8[0-24-9]|9[0-37-9])\\d{6}",
+              "4(?:(?:79|94)[01]|83[0-389])\\d{5}|4(?:[0-3]\\d|4[047-9]|5[0-25-9]|6[0-36-9]|7[02-8]|8[0-24-9]|9[0-37-9])\\d{6}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "412345678"

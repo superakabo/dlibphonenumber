@@ -24,13 +24,13 @@ Map<String, List<Object>> get phoneNumberMetadataMH {
           "example_number": null
         },
         "fixed_line": {
-          "national_number_pattern": "(?:247|45[78]|528|625)\\d{4}",
+          "national_number_pattern": "(?:247|528|625)\\d{4}",
           "possible_length": [7],
           "possible_length_local_only": [-1],
           "example_number": "2471234"
         },
         "mobile": {
-          "national_number_pattern": "(?:(?:23|54)5|329|45[356])\\d{4}",
+          "national_number_pattern": "(?:(?:23|54)5|329|45[35-8])\\d{4}",
           "possible_length": [7],
           "possible_length_local_only": [-1],
           "example_number": "2351234"

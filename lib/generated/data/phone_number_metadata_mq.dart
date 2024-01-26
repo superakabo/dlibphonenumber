@@ -25,7 +25,7 @@ Map<String, List<Object>> get phoneNumberMetadataMQ {
         },
         "fixed_line": {
           "national_number_pattern":
-              "596(?:[03-7]\\d|10|2[7-9]|8[0-39]|9[04-9])\\d{4}",
+              "596(?:[03-7]\\d|1[05]|2[7-9]|8[0-39]|9[04-9])\\d{4}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "596301234"

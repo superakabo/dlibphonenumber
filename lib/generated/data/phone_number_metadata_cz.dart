@@ -30,7 +30,8 @@ Map<String, List<Object>> get phoneNumberMetadataCZ {
           "example_number": "212345678"
         },
         "mobile": {
-          "national_number_pattern": "(?:60[1-8]|7(?:0[2-5]|[2379]\\d))\\d{6}",
+          "national_number_pattern":
+              "7060\\d{5}|(?:60[1-8]|7(?:0[2-5]|[2379]\\d))\\d{6}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "601123456"
