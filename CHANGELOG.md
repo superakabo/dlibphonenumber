@@ -1,3 +1,6 @@
+## 1.1.8
+- Updated phone metadata for region code(s): BL, BS, GP, HK, HR, KW, LI, MF, MX, OM, PL, PT, SV, UG, US
+
 ## 1.1.7
 - Updated phone metadata for region code(s): AU, CC, CX, CZ, GF, MH, MQ, TH, YT
 

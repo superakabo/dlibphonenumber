@@ -150,7 +150,7 @@ Map<String, List<Object>> get phoneNumberMetadataHR {
           {
             "pattern": "(\\d{2})(\\d{3})(\\d{3,4})",
             "format": "\$1 \$2 \$3",
-            "leading_digits_pattern": ["[67]"],
+            "leading_digits_pattern": ["6|7[245]"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null
@@ -166,7 +166,7 @@ Map<String, List<Object>> get phoneNumberMetadataHR {
           {
             "pattern": "(\\d{2})(\\d{3})(\\d{3,4})",
             "format": "\$1 \$2 \$3",
-            "leading_digits_pattern": ["[2-5]"],
+            "leading_digits_pattern": ["[2-57]"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null
@@ -208,7 +208,7 @@ Map<String, List<Object>> get phoneNumberMetadataHR {
           {
             "pattern": "(\\d{2})(\\d{3})(\\d{3,4})",
             "format": "\$1 \$2 \$3",
-            "leading_digits_pattern": ["[67]"],
+            "leading_digits_pattern": ["6|7[245]"],
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false
@@ -224,7 +224,7 @@ Map<String, List<Object>> get phoneNumberMetadataHR {
           {
             "pattern": "(\\d{2})(\\d{3})(\\d{3,4})",
             "format": "\$1 \$2 \$3",
-            "leading_digits_pattern": ["[2-5]"],
+            "leading_digits_pattern": ["[2-57]"],
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false

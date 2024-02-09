@@ -31,7 +31,8 @@ Map<String, List<Object>> get phoneNumberMetadataGP {
           "example_number": "590201234"
         },
         "mobile": {
-          "national_number_pattern": "69(?:0\\d\\d|1(?:2[2-9]|3[0-5]))\\d{4}",
+          "national_number_pattern":
+              "69(?:0\\d\\d|1(?:2[2-9]|3[0-5])|4(?:0[89]|1[2-6]|9\\d)|6(?:1[016-9]|5[0-4]|[67]\\d))\\d{4}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "690001234"
@@ -61,7 +62,8 @@ Map<String, List<Object>> get phoneNumberMetadataGP {
           "example_number": null
         },
         "voip": {
-          "national_number_pattern": "9(?:(?:395|76[018])\\d|475[0-5])\\d{4}",
+          "national_number_pattern":
+              "9(?:(?:39[5-7]|76[018])\\d|475[0-5])\\d{4}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "976012345"

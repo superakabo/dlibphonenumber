@@ -18,7 +18,8 @@ Map<String, List<Object>> get phoneNumberMetadataSV {
         "leading_digits": null,
         "mobile_number_portable_region": false,
         "general_desc": {
-          "national_number_pattern": "[267]\\d{7}|[89]00\\d{4}(?:\\d{4})?",
+          "national_number_pattern":
+              "[267]\\d{7}|(?:80\\d|900)\\d{4}(?:\\d{4})?",
           "possible_length": [8, 7, 11],
           "possible_length_local_only": [],
           "example_number": null
@@ -37,7 +38,7 @@ Map<String, List<Object>> get phoneNumberMetadataSV {
           "example_number": "70123456"
         },
         "toll_free": {
-          "national_number_pattern": "800\\d{4}(?:\\d{4})?",
+          "national_number_pattern": "800\\d{8}|80[01]\\d{4}",
           "possible_length": [7, 11],
           "possible_length_local_only": [-1],
           "example_number": "8001234"

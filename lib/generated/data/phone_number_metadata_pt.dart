@@ -32,7 +32,7 @@ Map<String, List<Object>> get phoneNumberMetadataPT {
         },
         "mobile": {
           "national_number_pattern":
-              "6(?:[06]92(?:30|9\\d)|[35]92(?:3[03]|9\\d))\\d{3}|(?:(?:16|6[0356])93|9(?:[1-36]\\d\\d|480))\\d{5}",
+              "6(?:[06]92(?:30|9\\d)|[35]92(?:3[034]|9\\d))\\d{3}|(?:(?:16|6[0356])93|9(?:[1-36]\\d\\d|480))\\d{5}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "912345678"
@@ -69,7 +69,7 @@ Map<String, List<Object>> get phoneNumberMetadataPT {
           "example_number": "301234567"
         },
         "pager": {
-          "national_number_pattern": "6222\\d{5}",
+          "national_number_pattern": "6(?:222\\d|8988)\\d{4}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "622212345"
@@ -87,7 +87,7 @@ Map<String, List<Object>> get phoneNumberMetadataPT {
           "example_number": null
         },
         "voicemail": {
-          "national_number_pattern": "600\\d{6}|6[06]9233\\d{3}",
+          "national_number_pattern": "600\\d{6}|6[06]923[34]\\d{3}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "600110000"
