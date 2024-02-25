@@ -36,7 +36,7 @@ Map<String, List<Object>> get phoneNumberMetadataLS {
           "example_number": "50123456"
         },
         "toll_free": {
-          "national_number_pattern": "800[256]\\d{4}",
+          "national_number_pattern": "800[1256]\\d{4}",
           "possible_length": [8],
           "possible_length_local_only": [-1],
           "example_number": "80021234"

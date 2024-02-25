@@ -30,8 +30,7 @@ Map<String, List<Object>> get phoneNumberMetadataBM {
           "example_number": "4414123456"
         },
         "mobile": {
-          "national_number_pattern":
-              "441909\\d{4}|441(?:[2378]\\d|5[0-39]|92)\\d{5}",
+          "national_number_pattern": "441(?:[2378]\\d|5[0-39]|9[02])\\d{5}",
           "possible_length": [10],
           "possible_length_local_only": [7],
           "example_number": "4413701234"

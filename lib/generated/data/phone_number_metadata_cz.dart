@@ -31,7 +31,7 @@ Map<String, List<Object>> get phoneNumberMetadataCZ {
         },
         "mobile": {
           "national_number_pattern":
-              "7060\\d{5}|(?:60[1-8]|7(?:0[2-5]|[2379]\\d))\\d{6}",
+              "(?:60[1-8]\\d|7(?:0(?:[2-5]\\d|60)|190|[2379]\\d\\d))\\d{5}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "601123456"

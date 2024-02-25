@@ -31,7 +31,7 @@ Map<String, List<Object>> get phoneNumberMetadataNP {
           "example_number": "14567890"
         },
         "mobile": {
-          "national_number_pattern": "9(?:6[0-3]|7[024-6]|8[0-24-68])\\d{7}",
+          "national_number_pattern": "9(?:00|6[0-3]|7[024-6]|8[0-24-68])\\d{7}",
           "possible_length": [10],
           "possible_length_local_only": [-1],
           "example_number": "9841234567"

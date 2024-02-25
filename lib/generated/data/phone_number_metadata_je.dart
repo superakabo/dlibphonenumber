@@ -31,7 +31,7 @@ Map<String, List<Object>> get phoneNumberMetadataJE {
         },
         "mobile": {
           "national_number_pattern":
-              "7(?:(?:(?:50|82)9|937)\\d|7(?:00[378]|97[7-9]))\\d{5}",
+              "7(?:(?:(?:50|82)9|937)\\d|7(?:00[378]|97\\d))\\d{5}",
           "possible_length": [10],
           "possible_length_local_only": [-1],
           "example_number": "7797712345"

@@ -33,7 +33,7 @@ Map<String, List<Object>> get phoneNumberMetadataTO {
         },
         "mobile": {
           "national_number_pattern":
-              "(?:55[4-6]|6(?:[09]\\d|3[02]|8[15-9])|(?:7\\d|8[46-9])\\d|999)\\d{4}",
+              "(?:5(?:4[0-5]|5[4-6])|6(?:[09]\\d|3[02]|8[15-9])|(?:7\\d|8[46-9])\\d|999)\\d{4}",
           "possible_length": [7],
           "possible_length_local_only": [-1],
           "example_number": "7715123"

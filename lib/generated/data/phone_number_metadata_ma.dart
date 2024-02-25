@@ -32,7 +32,7 @@ Map<String, List<Object>> get phoneNumberMetadataMA {
         },
         "mobile": {
           "national_number_pattern":
-              "(?:6(?:[0-79]\\d|8[0-247-9])|7(?:[0167]\\d|2[0-2]|5[01]|8[0-3]))\\d{6}",
+              "(?:6(?:[0-79]\\d|8[0-247-9])|7(?:[0167]\\d|2[0-4]|5[01]|8[0-3]))\\d{6}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "650123456"
@@ -133,10 +133,7 @@ Map<String, List<Object>> get phoneNumberMetadataMA {
           {
             "pattern": "(\\d{4})(\\d{5})",
             "format": "\$1-\$2",
-            "leading_digits_pattern": [
-              "5(?:2[2-489]|3[5-9]|9)|8(?:0[89]|92)",
-              "5(?:2(?:[2-49]|8[235-9])|3[5-9]|9)|8(?:0[89]|92)"
-            ],
+            "leading_digits_pattern": ["5(?:2[2-46-9]|3[3-9]|9)|8(?:0[89]|92)"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null
@@ -170,10 +167,7 @@ Map<String, List<Object>> get phoneNumberMetadataMA {
           {
             "pattern": "(\\d{4})(\\d{5})",
             "format": "\$1-\$2",
-            "leading_digits_pattern": [
-              "5(?:2[2-489]|3[5-9]|9)|8(?:0[89]|92)",
-              "5(?:2(?:[2-49]|8[235-9])|3[5-9]|9)|8(?:0[89]|92)"
-            ],
+            "leading_digits_pattern": ["5(?:2[2-46-9]|3[3-9]|9)|8(?:0[89]|92)"],
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false

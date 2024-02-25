@@ -33,7 +33,7 @@ Map<String, List<Object>> get phoneNumberMetadataSG {
         },
         "mobile": {
           "national_number_pattern":
-              "895[0-2]\\d{4}|(?:8(?:0[1-8]|[1-8]\\d|9[0-4])|9[0-8]\\d)\\d{5}",
+              "8(?:09|95)[0-2]\\d{4}|(?:8(?:0[1-8]|[1-8]\\d|9[0-4])|9[0-8]\\d)\\d{5}",
           "possible_length": [8],
           "possible_length_local_only": [-1],
           "example_number": "81234567"
@@ -137,7 +137,7 @@ Map<String, List<Object>> get phoneNumberMetadataSG {
           {
             "pattern": "(\\d{4})(\\d{4})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["[369]|8(?:0[1-8]|[1-9])"],
+            "leading_digits_pattern": ["[369]|8(?:0[1-9]|[1-9])"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": null,
             "domestic_carrier_code_formatting_rule": null
@@ -171,7 +171,7 @@ Map<String, List<Object>> get phoneNumberMetadataSG {
           {
             "pattern": "(\\d{4})(\\d{4})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["[369]|8(?:0[1-8]|[1-9])"],
+            "leading_digits_pattern": ["[369]|8(?:0[1-9]|[1-9])"],
             "national_prefix_formatting_rule": null,
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false
