@@ -8,7 +8,9 @@
   },
   "author": "Samuel Akabo",
   "license": "MIT",
-  "dependencies": {
-    "jsdom": "^16.7.0"
+  "devDependencies": {
+    "@types/node": "^20.11.26",
+    "@types/jsdom": "^21.1.6",
+    "jsdom": "^24.0.0"
   }
 }

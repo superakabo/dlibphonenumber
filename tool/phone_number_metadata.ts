@@ -248,12 +248,12 @@ function getSameMobileAndFixedLinePattern(e: Element): boolean {
     const value = e.getAttribute('sameMobileAndFixedLinePattern')
         ?.replaceAll('\n', '')
         .replaceAll(' ', '');
-    return (value === 'true');
+    return (value == 'true');
 }
 
 function getMainCountryForCode(e: Element): boolean {
     const value = e.getAttribute('mainCountryForCode');
-    return (value === 'true');
+    return (value == 'true');
 }
 
 function getLeadingDigits(e: Element): string | null {
@@ -262,7 +262,7 @@ function getLeadingDigits(e: Element): string | null {
 
 function getMobileNumberPortableRegion(e: Element): boolean {
     const value = e.getAttribute('mobileNumberPortableRegion');
-    return (value === 'true');
+    return (value == 'true');
 }
 
 function getGeneralDesc(e: Element): { [key: string]: any } {
@@ -507,6 +507,6 @@ function _getPrefixFormattingRule(e: Element, f: Element, attribute: string): st
 
 function _getNationalPrefixOptionalWhenFormatting(e: Element): boolean {
     const value = e.getAttribute('nationalPrefixOptionalWhenFormatting');
-    return (value === 'true');
+    return (value == 'true');
 }
 

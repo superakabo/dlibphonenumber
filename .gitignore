@@ -21,3 +21,7 @@ lib/as_you_type_formatter.dart
 
 # exclude the generated javascript files
 tool/phone_number_metadata.js
+
+# exclude npm dependencies
+node_modules/
+package-lock.json
