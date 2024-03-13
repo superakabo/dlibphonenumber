@@ -20,10 +20,9 @@ Google's library for parsing, formatting, and validating international phone num
     validation.
 *   `isValidNumber` - full validation of a phone number for a region using
     length and prefix information.
-
-<!-- *   `AsYouTypeFormatter` - formats phone numbers on-the-fly when users enter
+ *   `AsYouTypeFormatter` - formats phone numbers on-the-fly when users enter
     each digit.
-*   `findNumbers` - finds numbers in text.
+<!-- *   `findNumbers` - finds numbers in text.
 *   `PhoneNumberOfflineGeocoder` - provides geographical information related to
     a phone number.
 *   `PhoneNumberToCarrierMapper` - provides carrier information related to a
@@ -81,15 +80,15 @@ country:
 print(phoneUtil.formatOutOfCountryCallingNumber(swissNumberProto, "US"));
 ```
 
-<!-- ## Formatting Phone Numbers 'as you type'
+## Formatting Phone Numbers 'as you type'
 
-```java
-PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
+```dart
+PhoneNumberUtil phoneUtil = PhoneNumberUtil.instance;
 AsYouTypeFormatter formatter = phoneUtil.getAsYouTypeFormatter("US");
-System.out.println(formatter.inputDigit('6'));  // Outputs "6"
+print(formatter.inputDigit('6'));  // Outputs "6"
 ...  // Input more digits
-System.out.println(formatter.inputDigit('3'));  // Now outputs "650 253"
-``` -->
+print(formatter.inputDigit('3'));  // Now outputs "650 253"
+```
 
 <!-- ## Geocoding Phone Numbers
 

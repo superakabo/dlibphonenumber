@@ -1,4 +1,5 @@
 ## 1.1.10
+- Added AsYouTypeFormatter
 - Updated phone metadata for region code(s): CN, GB, MC, US, XK
 
 ## 1.1.9
@@ -29,4 +30,4 @@
 - Updated phone metadata for region code(s): AU, CC, CX, MX, UY
 
 ## 1.1.0
-- Added PhoneNumberUtil.
+- Added PhoneNumberUtil

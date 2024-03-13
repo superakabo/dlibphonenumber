@@ -24,7 +24,7 @@ import 'package:test/test.dart';
 /// Note that these tests use the metadata contained in metadatafortesting.js,
 /// not the normal metadata files, so should not be used for regression test
 /// purposes - these tests are illustrative only and test functionality.
-final phoneUtil = PhoneNumberUtil.testInstance();
+final phoneUtil = PhoneNumberUtil(testMode: true);
 
 /// Set up some test numbers to re-use.
 /// TODO: Rewrite this as static functions that return new numbers each time to

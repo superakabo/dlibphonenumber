@@ -11,3 +11,4 @@ export 'generated/phone_number/phonenumber.pbenum.dart';
 export 'generated/phone_metadata/phonemetadata.pb.dart';
 export 'package:fixnum/fixnum.dart';
 export 'package:protobuf/protobuf.dart';
+export 'as_you_type_formatter.dart';
