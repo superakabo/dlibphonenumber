@@ -18,14 +18,16 @@ Map<String, List<Object>> get phoneNumberMetadataXK {
         "leading_digits": null,
         "mobile_number_portable_region": false,
         "general_desc": {
-          "national_number_pattern": "[23]\\d{7,8}|(?:4\\d\\d|[89]00)\\d{5}",
-          "possible_length": [8, 9],
+          "national_number_pattern":
+              "2\\d{7,8}|3\\d{7,11}|(?:4\\d\\d|[89]00)\\d{5}",
+          "possible_length": [8, 9, 10, 11, 12],
           "possible_length_local_only": [],
           "example_number": null
         },
         "fixed_line": {
-          "national_number_pattern": "(?:2[89]|39)0\\d{6}|[23][89]\\d{6}",
-          "possible_length": [8, 9],
+          "national_number_pattern":
+              "38\\d{6,10}|(?:2[89]|39)(?:0\\d{5,6}|[1-9]\\d{5})",
+          "possible_length": [8, 9, 10, 11, 12],
           "possible_length_local_only": [-1],
           "example_number": "28012345"
         },
@@ -139,7 +141,15 @@ Map<String, List<Object>> get phoneNumberMetadataXK {
           {
             "pattern": "(\\d{3})(\\d{3})(\\d{3})",
             "format": "\$1 \$2 \$3",
-            "leading_digits_pattern": ["[23]"],
+            "leading_digits_pattern": ["2|39"],
+            "national_prefix_optional_when_formatting": false,
+            "national_prefix_formatting_rule": "0\$1",
+            "domestic_carrier_code_formatting_rule": null
+          },
+          {
+            "pattern": "(\\d{2})(\\d{7,10})",
+            "format": "\$1 \$2",
+            "leading_digits_pattern": ["3"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null
@@ -165,7 +175,15 @@ Map<String, List<Object>> get phoneNumberMetadataXK {
           {
             "pattern": "(\\d{3})(\\d{3})(\\d{3})",
             "format": "\$1 \$2 \$3",
-            "leading_digits_pattern": ["[23]"],
+            "leading_digits_pattern": ["2|39"],
+            "national_prefix_formatting_rule": "0\$1",
+            "domestic_carrier_code_formatting_rule": null,
+            "national_prefix_optional_when_formatting": false
+          },
+          {
+            "pattern": "(\\d{2})(\\d{7,10})",
+            "format": "\$1 \$2",
+            "leading_digits_pattern": ["3"],
             "national_prefix_formatting_rule": "0\$1",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false

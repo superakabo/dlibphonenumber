@@ -127,6 +127,18 @@ Map<String, List<Object>> get phoneNumberMetadataCN {
           {
             "pattern": "(\\d{5,6})",
             "format": "\$1",
+            "leading_digits_pattern": [
+              "1(?:00|2[13])|95",
+              "1(?:00|2(?:11|39))|95",
+              "1(?:00|2(?:110|395))|95"
+            ],
+            "national_prefix_optional_when_formatting": false,
+            "national_prefix_formatting_rule": null,
+            "domestic_carrier_code_formatting_rule": null
+          },
+          {
+            "pattern": "(\\d{5,6})",
+            "format": "\$1",
             "leading_digits_pattern": ["10|96"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": null,
