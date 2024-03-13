@@ -59,6 +59,7 @@ dart fix --apply
 
 # Run tests
 dart test -r expanded ./test/phone_number_util_test.dart
+dart test -r expanded ./test/as_you_type_formatter_test.dart
 
 # Attempt to publish Dart code to see possible issues.
 dart pub publish --dry-run

@@ -17,8 +17,8 @@ void main() {
   print('validPhoneNumber: $validPhoneNumber'); // true
   print('phoneNumber: $phoneNumber'); // countryCode: 233, nationalNumber: 241234567
 
-  final inputPhoneNumber = '+233241234567';
-  for (var i = 0; i < inputPhoneNumber.length; i++) {
+  final String inputPhoneNumber = '+233241234567';
+  for (int i = 0; i < inputPhoneNumber.length; i++) {
     final String char = inputPhoneNumber[i];
     print(asYouTypeFormatter.inputDigit(char));
     // prints the following:
