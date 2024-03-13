@@ -383,7 +383,7 @@ function getNumberFormat(e: Element): { [key: string]: any }[] {
             pattern: _getPattern(f),
             format: _getFormat(f),
             leading_digits_pattern: _getLeadingDigitsPattern(f),
-            national_prefix_optional_when_formatting: _getNationalPrefixOptionalWhenFormatting(f),
+            national_prefix_optional_when_formatting: _getNationalPrefixOptionalWhenFormatting(e, f),
             national_prefix_formatting_rule: _getPrefixFormattingRule(e, f, 'nationalPrefixFormattingRule'),
             domestic_carrier_code_formatting_rule: _getPrefixFormattingRule(e, f, 'carrierCodeFormattingRule'),
         }
@@ -397,13 +397,14 @@ function getIntlNumberFormat(e: Element): any[] {
     return elements.map((f) => {
         const intFormat = _getIntlFormat(f);
         const format = (intFormat) ? intFormat : _getFormat(f);
+
         return {
             pattern: _getPattern(f),
             format: format,
             leading_digits_pattern: _getLeadingDigitsPattern(f),
             national_prefix_formatting_rule: _getPrefixFormattingRule(e, f, 'nationalPrefixFormattingRule'),
             domestic_carrier_code_formatting_rule: _getPrefixFormattingRule(e, f, 'carrierCodeFormattingRule'),
-            national_prefix_optional_when_formatting: _getNationalPrefixOptionalWhenFormatting(f),
+            national_prefix_optional_when_formatting: _getNationalPrefixOptionalWhenFormatting(e, f),
         }
     });
 }
@@ -505,8 +506,10 @@ function _getPrefixFormattingRule(e: Element, f: Element, attribute: string): st
     return null;
 }
 
-function _getNationalPrefixOptionalWhenFormatting(e: Element): boolean {
-    const value = e.getAttribute('nationalPrefixOptionalWhenFormatting');
+function _getNationalPrefixOptionalWhenFormatting(e: Element, f: Element): boolean {
+    const rootNationalPrefix = e.getAttribute('nationalPrefixOptionalWhenFormatting');
+    const numberFormatNationalPrefix = f.getAttribute('nationalPrefixOptionalWhenFormatting');
+    const value = rootNationalPrefix ?? numberFormatNationalPrefix;
     return (value == 'true');
 }
 
