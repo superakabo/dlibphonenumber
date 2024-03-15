@@ -16,9 +16,6 @@ pubspec.lock
 # exclude vscode config file
 .vscode/
 
-# exclude this until the implementation is complete.
-lib/as_you_type_formatter.dart
-
 # exclude the generated javascript files
 tool/phone_number_metadata.js
 

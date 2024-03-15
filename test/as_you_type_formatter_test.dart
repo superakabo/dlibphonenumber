@@ -14,7 +14,7 @@
 /// limitations under the License.
 library;
 
-import 'package:dlibphonenumber/as_you_type_formatter.dart';
+import 'package:dlibphonenumber/dlibphonenumber.dart';
 import 'package:test/test.dart';
 
 /// Unit tests for the AsYouTypeFormatter.
@@ -26,7 +26,7 @@ import 'package:test/test.dart';
 void main() {
   group('AsYouTypeFormatterTest', () {
     test('testInvalidRegion', () {
-      final formatter = AsYouTypeFormatter('ZZ', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('ZZ');
       expect(formatter.inputDigit('+'), '+');
       expect(formatter.inputDigit('4'), '+4');
       expect(formatter.inputDigit('8'), '+48 ');
@@ -48,7 +48,7 @@ void main() {
     });
 
     test('testInvalidPlusSign', () {
-      final formatter = AsYouTypeFormatter('ZZ', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('ZZ');
       expect(formatter.inputDigit('+'), '+');
       expect(formatter.inputDigit('4'), '+4');
       expect(formatter.inputDigit('8'), '+48 ');
@@ -65,7 +65,7 @@ void main() {
     });
 
     test('testTooLongNumberMatchingMultipleLeadingDigits', () {
-      final formatter = AsYouTypeFormatter('ZZ', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('ZZ');
       // See https://github.com/google/libphonenumber/issues/36
       // The bug occurred last time for countries which have two formatting rules with
       // exactly the
@@ -90,7 +90,7 @@ void main() {
     });
 
     test('testCountryWithSpaceInNationalPrefixFormattingRule', () {
-      final formatter = AsYouTypeFormatter('BY', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('BY');
       expect(formatter.inputDigit('8'), '8');
       expect(formatter.inputDigit('8'), '88');
       expect(formatter.inputDigit('1'), '881');
@@ -106,7 +106,7 @@ void main() {
     });
 
     test('testCountryWithSpaceInNationalPrefixFormattingRuleAndLongNdd', () {
-      final formatter = AsYouTypeFormatter('BY', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('BY');
       expect(formatter.inputDigit('9'), '9');
       expect(formatter.inputDigit('9'), '99');
       expect(formatter.inputDigit('9'), '999');
@@ -120,7 +120,7 @@ void main() {
     });
 
     test('testAYTFUS', () {
-      final formatter = AsYouTypeFormatter('US', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('US');
       expect(formatter.inputDigit('6'), '6');
       expect(formatter.inputDigit('5'), '65');
       expect(formatter.inputDigit('0'), '650');
@@ -214,7 +214,7 @@ void main() {
     });
 
     test('testAYTFUSFullWidthCharacters', () {
-      final formatter = AsYouTypeFormatter('US', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('US');
       expect(formatter.inputDigit('\uFF16'), '\uFF16');
       expect(formatter.inputDigit('\uFF15'), '\uFF16\uFF15');
       expect(formatter.inputDigit('\uFF10'), '650');
@@ -228,7 +228,7 @@ void main() {
     });
 
     test('testAYTFUSMobileShortCode', () {
-      final formatter = AsYouTypeFormatter('US', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('US');
       expect(formatter.inputDigit('*'), '*');
       expect(formatter.inputDigit('1'), '*1');
       expect(formatter.inputDigit('2'), '*12');
@@ -237,7 +237,7 @@ void main() {
     });
 
     test('testAYTFUSVanityNumber', () {
-      final formatter = AsYouTypeFormatter('US', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('US');
       expect(formatter.inputDigit('8'), '8');
       expect(formatter.inputDigit('0'), '80');
       expect(formatter.inputDigit('0'), '800');
@@ -253,7 +253,7 @@ void main() {
     });
 
     test('testAYTFAndRememberPositionUS', () {
-      final formatter = AsYouTypeFormatter('US', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('US');
       expect(formatter.inputDigitAndRememberPosition('1'), '1');
       expect(formatter.getRememberedPosition(), 1);
       expect(formatter.inputDigit('6'), '16');
@@ -387,7 +387,7 @@ void main() {
     });
 
     test('testAYTFGBFixedLine', () {
-      final formatter = AsYouTypeFormatter('GB', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('GB');
       expect(formatter.inputDigit('0'), '0');
       expect(formatter.inputDigit('2'), '02');
       expect(formatter.inputDigit('0'), '020');
@@ -404,7 +404,7 @@ void main() {
     });
 
     test('testAYTFGBTollFree', () {
-      final formatter = AsYouTypeFormatter('GB', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('GB');
       expect(formatter.inputDigit('0'), '0');
       expect(formatter.inputDigit('8'), '08');
       expect(formatter.inputDigit('0'), '080');
@@ -419,7 +419,7 @@ void main() {
     });
 
     test('testAYTFGBPremiumRate', () {
-      final formatter = AsYouTypeFormatter('GB', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('GB');
       expect(formatter.inputDigit('0'), '0');
       expect(formatter.inputDigit('9'), '09');
       expect(formatter.inputDigit('0'), '090');
@@ -434,7 +434,7 @@ void main() {
     });
 
     test('testAYTFNZMobile', () {
-      final formatter = AsYouTypeFormatter('NZ', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('NZ');
       expect(formatter.inputDigit('0'), '0');
       expect(formatter.inputDigit('2'), '02');
       expect(formatter.inputDigit('1'), '021');
@@ -449,7 +449,7 @@ void main() {
     });
 
     test('testAYTFDE', () {
-      final formatter = AsYouTypeFormatter('DE', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('DE');
       expect(formatter.inputDigit('0'), '0');
       expect(formatter.inputDigit('3'), '03');
       expect(formatter.inputDigit('0'), '030');
@@ -500,7 +500,7 @@ void main() {
     });
 
     test('testAYTFAR', () {
-      final formatter = AsYouTypeFormatter('AR', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('AR');
       expect(formatter.inputDigit('0'), '0');
       expect(formatter.inputDigit('1'), '01');
       expect(formatter.inputDigit('1'), '011');
@@ -515,7 +515,7 @@ void main() {
     });
 
     test('testAYTFARMobile', () {
-      final formatter = AsYouTypeFormatter('AR', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('AR');
       expect(formatter.inputDigit('+'), '+');
       expect(formatter.inputDigit('5'), '+5');
       expect(formatter.inputDigit('4'), '+54 ');
@@ -533,7 +533,7 @@ void main() {
     });
 
     test('testAYTFKR', () {
-      final formatter = AsYouTypeFormatter('KR', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('KR');
       // +82 51 234 5678
       expect(formatter.inputDigit('+'), '+');
       expect(formatter.inputDigit('8'), '+8');
@@ -623,7 +623,7 @@ void main() {
     });
 
     test('testAYTF_MX', () {
-      final formatter = AsYouTypeFormatter('MX', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('MX');
       // +52 800 123 4567
       expect(formatter.inputDigit('+'), '+');
       expect(formatter.inputDigit('5'), '+5');
@@ -722,7 +722,7 @@ void main() {
     });
 
     test('testAYTF_International_Toll_Free', () {
-      final formatter = AsYouTypeFormatter('US', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('US');
       // +800 1234 5678
       expect(formatter.inputDigit('+'), '+');
       expect(formatter.inputDigit('8'), '+8');
@@ -740,7 +740,7 @@ void main() {
     });
 
     test('testAYTFMultipleLeadingDigitPatterns', () {
-      final formatter = AsYouTypeFormatter('JP', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('JP');
       // +81 50 2345 6789
       expect(formatter.inputDigit('+'), '+');
       expect(formatter.inputDigit('8'), '+8');
@@ -797,7 +797,7 @@ void main() {
     });
 
     test('testAYTFLongIDD_AU', () {
-      final formatter = AsYouTypeFormatter('AU', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('AU');
       // 0011 1 650 253 2250
       expect(formatter.inputDigit('0'), '0');
       expect(formatter.inputDigit('0'), '00');
@@ -854,7 +854,7 @@ void main() {
     });
 
     test('testAYTFLongIDD_KR', () {
-      final formatter = AsYouTypeFormatter('KR', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('KR');
       // 00300 1 650 253 2222
       expect(formatter.inputDigit('0'), '0');
       expect(formatter.inputDigit('0'), '00');
@@ -875,7 +875,7 @@ void main() {
     });
 
     test('testAYTFLongNDD_KR', () {
-      final formatter = AsYouTypeFormatter('KR', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('KR');
       // 08811-9876-7890
       expect(formatter.inputDigit('0'), '0');
       expect(formatter.inputDigit('8'), '08');
@@ -911,7 +911,7 @@ void main() {
     });
 
     test('testAYTFLongNDD_SG', () {
-      final formatter = AsYouTypeFormatter('SG', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('SG');
       // 777777 9876 7890
       expect(formatter.inputDigit('7'), '7');
       expect(formatter.inputDigit('7'), '77');
@@ -931,7 +931,7 @@ void main() {
 
     test('testAYTFShortNumberFormattingFix_AU', () {
       // For Australia, the national prefix is not optional when formatting.
-      final formatter = AsYouTypeFormatter('AU', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('AU');
 
       // 1234567890 - For leading digit 1,
       // the national prefix formatting rule has first group only.
@@ -1009,7 +1009,7 @@ void main() {
       // For Korea, the national prefix is not optional when formatting, and the
       // national prefix
       // formatting rule doesn't consist of only the first group.
-      final formatter = AsYouTypeFormatter('KR', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('KR');
 
       // 111
       expect(formatter.inputDigit('1'), '1');
@@ -1052,7 +1052,7 @@ void main() {
 
     test('testAYTFShortNumberFormattingFix_MX', () {
       // For Mexico, the national prefix is optional when formatting.
-      final formatter = AsYouTypeFormatter('MX', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('MX');
 
       // 911
       expect(formatter.inputDigit('9'), '9');
@@ -1092,7 +1092,7 @@ void main() {
     });
 
     test('testAYTFNoNationalPrefix', () {
-      final formatter = AsYouTypeFormatter('IT', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('IT');
       expect(formatter.inputDigit('3'), '3');
       expect(formatter.inputDigit('3'), '33');
       expect(formatter.inputDigit('3'), '333');
@@ -1102,7 +1102,7 @@ void main() {
     });
 
     test('testAYTFNoNationalPrefixFormattingRule', () {
-      final formatter = AsYouTypeFormatter('AO', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('AO');
       expect(formatter.inputDigit('3'), '3');
       expect(formatter.inputDigit('3'), '33');
       expect(formatter.inputDigit('3'), '333');
@@ -1113,7 +1113,7 @@ void main() {
 
     test('testAYTFShortNumberFormattingFix_US', () {
       // For the US, an initial 1 is treated specially.
-      final formatter = AsYouTypeFormatter('US', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('US');
 
       // 101 - Test that the initial 1 is not treated as a national prefix.
       expect(formatter.inputDigit('1'), '1');
@@ -1134,7 +1134,7 @@ void main() {
     });
 
     test('testAYTFClearNDDAfterIDDExtraction', () {
-      final formatter = AsYouTypeFormatter('KR', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('KR');
       // Check that when we have successfully extracted an IDD, the previously
       // extracted NDD is
       // cleared since it is no longer valid.
@@ -1170,7 +1170,7 @@ void main() {
     });
 
     test('testAYTFNumberPatternsBecomingInvalidShouldNotResultInDigitLoss', () {
-      final formatter = AsYouTypeFormatter('CN', testMode: true);
+      final formatter = PhoneNumberUtil.testInstance.getAsYouTypeFormatter('CN');
       expect(formatter.inputDigit('+'), '+');
       expect(formatter.inputDigit('8'), '+8');
       expect(formatter.inputDigit('6'), '+86 ');
