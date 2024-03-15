@@ -61,7 +61,7 @@ class PhoneNumberUtil {
   /// returns an [AsYouTypeFormatter] object, which can be used
   /// to format phone numbers in the specific region "as you type"
   AsYouTypeFormatter getAsYouTypeFormatter(String regionCode) {
-    return AsYouTypeFormatter(regionCode, (_testMode) ? _testInstance : _instance);
+    return AsYouTypeFormatter(regionCode, this);
   }
 
   final bool _testMode;
