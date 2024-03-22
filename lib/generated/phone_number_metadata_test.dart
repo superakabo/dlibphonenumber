@@ -1,0 +1,79 @@
+import "test_data/phone_number_metadata_ad.dart";
+import "test_data/phone_number_metadata_ae.dart";
+import "test_data/phone_number_metadata_am.dart";
+import "test_data/phone_number_metadata_ao.dart";
+import "test_data/phone_number_metadata_ar.dart";
+import "test_data/phone_number_metadata_au.dart";
+import "test_data/phone_number_metadata_bb.dart";
+import "test_data/phone_number_metadata_br.dart";
+import "test_data/phone_number_metadata_bs.dart";
+import "test_data/phone_number_metadata_by.dart";
+import "test_data/phone_number_metadata_ca.dart";
+import "test_data/phone_number_metadata_cc.dart";
+import "test_data/phone_number_metadata_cn.dart";
+import "test_data/phone_number_metadata_co.dart";
+import "test_data/phone_number_metadata_cx.dart";
+import "test_data/phone_number_metadata_de.dart";
+import "test_data/phone_number_metadata_fr.dart";
+import "test_data/phone_number_metadata_gb.dart";
+import "test_data/phone_number_metadata_gg.dart";
+import "test_data/phone_number_metadata_it.dart";
+import "test_data/phone_number_metadata_jp.dart";
+import "test_data/phone_number_metadata_kr.dart";
+import "test_data/phone_number_metadata_mx.dart";
+import "test_data/phone_number_metadata_nz.dart";
+import "test_data/phone_number_metadata_pl.dart";
+import "test_data/phone_number_metadata_re.dart";
+import "test_data/phone_number_metadata_ru.dart";
+import "test_data/phone_number_metadata_se.dart";
+import "test_data/phone_number_metadata_sg.dart";
+import "test_data/phone_number_metadata_ta.dart";
+import "test_data/phone_number_metadata_us.dart";
+import "test_data/phone_number_metadata_uz.dart";
+import "test_data/phone_number_metadata_yt.dart";
+import "test_data/phone_number_metadata_800.dart";
+import "test_data/phone_number_metadata_882.dart";
+import "test_data/phone_number_metadata_979.dart";
+
+/// This is auto generated from PhoneNumberMetadataForTesting.xml. Do not modify.
+
+Map<String, Map<String, List<Object>>> get phoneNumberMetadataTest {
+  return {
+    "AD": phoneNumberMetadataAD,
+    "AE": phoneNumberMetadataAE,
+    "AM": phoneNumberMetadataAM,
+    "AO": phoneNumberMetadataAO,
+    "AR": phoneNumberMetadataAR,
+    "AU": phoneNumberMetadataAU,
+    "BB": phoneNumberMetadataBB,
+    "BR": phoneNumberMetadataBR,
+    "BS": phoneNumberMetadataBS,
+    "BY": phoneNumberMetadataBY,
+    "CA": phoneNumberMetadataCA,
+    "CC": phoneNumberMetadataCC,
+    "CN": phoneNumberMetadataCN,
+    "CO": phoneNumberMetadataCO,
+    "CX": phoneNumberMetadataCX,
+    "DE": phoneNumberMetadataDE,
+    "FR": phoneNumberMetadataFR,
+    "GB": phoneNumberMetadataGB,
+    "GG": phoneNumberMetadataGG,
+    "IT": phoneNumberMetadataIT,
+    "JP": phoneNumberMetadataJP,
+    "KR": phoneNumberMetadataKR,
+    "MX": phoneNumberMetadataMX,
+    "NZ": phoneNumberMetadataNZ,
+    "PL": phoneNumberMetadataPL,
+    "RE": phoneNumberMetadataRE,
+    "RU": phoneNumberMetadataRU,
+    "SE": phoneNumberMetadataSE,
+    "SG": phoneNumberMetadataSG,
+    "TA": phoneNumberMetadataTA,
+    "US": phoneNumberMetadataUS,
+    "UZ": phoneNumberMetadataUZ,
+    "YT": phoneNumberMetadataYT,
+    "800": phoneNumberMetadata800,
+    "882": phoneNumberMetadata882,
+    "979": phoneNumberMetadata979,
+  };
+}

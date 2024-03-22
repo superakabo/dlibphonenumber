@@ -1,0 +1,515 @@
+import "data/phone_number_metadata_ac.dart";
+import "data/phone_number_metadata_ad.dart";
+import "data/phone_number_metadata_ae.dart";
+import "data/phone_number_metadata_af.dart";
+import "data/phone_number_metadata_ag.dart";
+import "data/phone_number_metadata_ai.dart";
+import "data/phone_number_metadata_al.dart";
+import "data/phone_number_metadata_am.dart";
+import "data/phone_number_metadata_ao.dart";
+import "data/phone_number_metadata_ar.dart";
+import "data/phone_number_metadata_as.dart";
+import "data/phone_number_metadata_at.dart";
+import "data/phone_number_metadata_au.dart";
+import "data/phone_number_metadata_aw.dart";
+import "data/phone_number_metadata_ax.dart";
+import "data/phone_number_metadata_az.dart";
+import "data/phone_number_metadata_ba.dart";
+import "data/phone_number_metadata_bb.dart";
+import "data/phone_number_metadata_bd.dart";
+import "data/phone_number_metadata_be.dart";
+import "data/phone_number_metadata_bf.dart";
+import "data/phone_number_metadata_bg.dart";
+import "data/phone_number_metadata_bh.dart";
+import "data/phone_number_metadata_bi.dart";
+import "data/phone_number_metadata_bj.dart";
+import "data/phone_number_metadata_bl.dart";
+import "data/phone_number_metadata_bm.dart";
+import "data/phone_number_metadata_bn.dart";
+import "data/phone_number_metadata_bo.dart";
+import "data/phone_number_metadata_bq.dart";
+import "data/phone_number_metadata_br.dart";
+import "data/phone_number_metadata_bs.dart";
+import "data/phone_number_metadata_bt.dart";
+import "data/phone_number_metadata_bw.dart";
+import "data/phone_number_metadata_by.dart";
+import "data/phone_number_metadata_bz.dart";
+import "data/phone_number_metadata_ca.dart";
+import "data/phone_number_metadata_cc.dart";
+import "data/phone_number_metadata_cd.dart";
+import "data/phone_number_metadata_cf.dart";
+import "data/phone_number_metadata_cg.dart";
+import "data/phone_number_metadata_ch.dart";
+import "data/phone_number_metadata_ci.dart";
+import "data/phone_number_metadata_ck.dart";
+import "data/phone_number_metadata_cl.dart";
+import "data/phone_number_metadata_cm.dart";
+import "data/phone_number_metadata_cn.dart";
+import "data/phone_number_metadata_co.dart";
+import "data/phone_number_metadata_cr.dart";
+import "data/phone_number_metadata_cu.dart";
+import "data/phone_number_metadata_cv.dart";
+import "data/phone_number_metadata_cw.dart";
+import "data/phone_number_metadata_cx.dart";
+import "data/phone_number_metadata_cy.dart";
+import "data/phone_number_metadata_cz.dart";
+import "data/phone_number_metadata_de.dart";
+import "data/phone_number_metadata_dj.dart";
+import "data/phone_number_metadata_dk.dart";
+import "data/phone_number_metadata_dm.dart";
+import "data/phone_number_metadata_do.dart";
+import "data/phone_number_metadata_dz.dart";
+import "data/phone_number_metadata_ec.dart";
+import "data/phone_number_metadata_ee.dart";
+import "data/phone_number_metadata_eg.dart";
+import "data/phone_number_metadata_eh.dart";
+import "data/phone_number_metadata_er.dart";
+import "data/phone_number_metadata_es.dart";
+import "data/phone_number_metadata_et.dart";
+import "data/phone_number_metadata_fi.dart";
+import "data/phone_number_metadata_fj.dart";
+import "data/phone_number_metadata_fk.dart";
+import "data/phone_number_metadata_fm.dart";
+import "data/phone_number_metadata_fo.dart";
+import "data/phone_number_metadata_fr.dart";
+import "data/phone_number_metadata_ga.dart";
+import "data/phone_number_metadata_gb.dart";
+import "data/phone_number_metadata_gd.dart";
+import "data/phone_number_metadata_ge.dart";
+import "data/phone_number_metadata_gf.dart";
+import "data/phone_number_metadata_gg.dart";
+import "data/phone_number_metadata_gh.dart";
+import "data/phone_number_metadata_gi.dart";
+import "data/phone_number_metadata_gl.dart";
+import "data/phone_number_metadata_gm.dart";
+import "data/phone_number_metadata_gn.dart";
+import "data/phone_number_metadata_gp.dart";
+import "data/phone_number_metadata_gq.dart";
+import "data/phone_number_metadata_gr.dart";
+import "data/phone_number_metadata_gt.dart";
+import "data/phone_number_metadata_gu.dart";
+import "data/phone_number_metadata_gw.dart";
+import "data/phone_number_metadata_gy.dart";
+import "data/phone_number_metadata_hk.dart";
+import "data/phone_number_metadata_hn.dart";
+import "data/phone_number_metadata_hr.dart";
+import "data/phone_number_metadata_ht.dart";
+import "data/phone_number_metadata_hu.dart";
+import "data/phone_number_metadata_id.dart";
+import "data/phone_number_metadata_ie.dart";
+import "data/phone_number_metadata_il.dart";
+import "data/phone_number_metadata_im.dart";
+import "data/phone_number_metadata_in.dart";
+import "data/phone_number_metadata_io.dart";
+import "data/phone_number_metadata_iq.dart";
+import "data/phone_number_metadata_ir.dart";
+import "data/phone_number_metadata_is.dart";
+import "data/phone_number_metadata_it.dart";
+import "data/phone_number_metadata_je.dart";
+import "data/phone_number_metadata_jm.dart";
+import "data/phone_number_metadata_jo.dart";
+import "data/phone_number_metadata_jp.dart";
+import "data/phone_number_metadata_ke.dart";
+import "data/phone_number_metadata_kg.dart";
+import "data/phone_number_metadata_kh.dart";
+import "data/phone_number_metadata_ki.dart";
+import "data/phone_number_metadata_km.dart";
+import "data/phone_number_metadata_kn.dart";
+import "data/phone_number_metadata_kp.dart";
+import "data/phone_number_metadata_kr.dart";
+import "data/phone_number_metadata_kw.dart";
+import "data/phone_number_metadata_ky.dart";
+import "data/phone_number_metadata_kz.dart";
+import "data/phone_number_metadata_la.dart";
+import "data/phone_number_metadata_lb.dart";
+import "data/phone_number_metadata_lc.dart";
+import "data/phone_number_metadata_li.dart";
+import "data/phone_number_metadata_lk.dart";
+import "data/phone_number_metadata_lr.dart";
+import "data/phone_number_metadata_ls.dart";
+import "data/phone_number_metadata_lt.dart";
+import "data/phone_number_metadata_lu.dart";
+import "data/phone_number_metadata_lv.dart";
+import "data/phone_number_metadata_ly.dart";
+import "data/phone_number_metadata_ma.dart";
+import "data/phone_number_metadata_mc.dart";
+import "data/phone_number_metadata_md.dart";
+import "data/phone_number_metadata_me.dart";
+import "data/phone_number_metadata_mf.dart";
+import "data/phone_number_metadata_mg.dart";
+import "data/phone_number_metadata_mh.dart";
+import "data/phone_number_metadata_mk.dart";
+import "data/phone_number_metadata_ml.dart";
+import "data/phone_number_metadata_mm.dart";
+import "data/phone_number_metadata_mn.dart";
+import "data/phone_number_metadata_mo.dart";
+import "data/phone_number_metadata_mp.dart";
+import "data/phone_number_metadata_mq.dart";
+import "data/phone_number_metadata_mr.dart";
+import "data/phone_number_metadata_ms.dart";
+import "data/phone_number_metadata_mt.dart";
+import "data/phone_number_metadata_mu.dart";
+import "data/phone_number_metadata_mv.dart";
+import "data/phone_number_metadata_mw.dart";
+import "data/phone_number_metadata_mx.dart";
+import "data/phone_number_metadata_my.dart";
+import "data/phone_number_metadata_mz.dart";
+import "data/phone_number_metadata_na.dart";
+import "data/phone_number_metadata_nc.dart";
+import "data/phone_number_metadata_ne.dart";
+import "data/phone_number_metadata_nf.dart";
+import "data/phone_number_metadata_ng.dart";
+import "data/phone_number_metadata_ni.dart";
+import "data/phone_number_metadata_nl.dart";
+import "data/phone_number_metadata_no.dart";
+import "data/phone_number_metadata_np.dart";
+import "data/phone_number_metadata_nr.dart";
+import "data/phone_number_metadata_nu.dart";
+import "data/phone_number_metadata_nz.dart";
+import "data/phone_number_metadata_om.dart";
+import "data/phone_number_metadata_pa.dart";
+import "data/phone_number_metadata_pe.dart";
+import "data/phone_number_metadata_pf.dart";
+import "data/phone_number_metadata_pg.dart";
+import "data/phone_number_metadata_ph.dart";
+import "data/phone_number_metadata_pk.dart";
+import "data/phone_number_metadata_pl.dart";
+import "data/phone_number_metadata_pm.dart";
+import "data/phone_number_metadata_pr.dart";
+import "data/phone_number_metadata_ps.dart";
+import "data/phone_number_metadata_pt.dart";
+import "data/phone_number_metadata_pw.dart";
+import "data/phone_number_metadata_py.dart";
+import "data/phone_number_metadata_qa.dart";
+import "data/phone_number_metadata_re.dart";
+import "data/phone_number_metadata_ro.dart";
+import "data/phone_number_metadata_rs.dart";
+import "data/phone_number_metadata_ru.dart";
+import "data/phone_number_metadata_rw.dart";
+import "data/phone_number_metadata_sa.dart";
+import "data/phone_number_metadata_sb.dart";
+import "data/phone_number_metadata_sc.dart";
+import "data/phone_number_metadata_sd.dart";
+import "data/phone_number_metadata_se.dart";
+import "data/phone_number_metadata_sg.dart";
+import "data/phone_number_metadata_sh.dart";
+import "data/phone_number_metadata_si.dart";
+import "data/phone_number_metadata_sj.dart";
+import "data/phone_number_metadata_sk.dart";
+import "data/phone_number_metadata_sl.dart";
+import "data/phone_number_metadata_sm.dart";
+import "data/phone_number_metadata_sn.dart";
+import "data/phone_number_metadata_so.dart";
+import "data/phone_number_metadata_sr.dart";
+import "data/phone_number_metadata_ss.dart";
+import "data/phone_number_metadata_st.dart";
+import "data/phone_number_metadata_sv.dart";
+import "data/phone_number_metadata_sx.dart";
+import "data/phone_number_metadata_sy.dart";
+import "data/phone_number_metadata_sz.dart";
+import "data/phone_number_metadata_ta.dart";
+import "data/phone_number_metadata_tc.dart";
+import "data/phone_number_metadata_td.dart";
+import "data/phone_number_metadata_tg.dart";
+import "data/phone_number_metadata_th.dart";
+import "data/phone_number_metadata_tj.dart";
+import "data/phone_number_metadata_tk.dart";
+import "data/phone_number_metadata_tl.dart";
+import "data/phone_number_metadata_tm.dart";
+import "data/phone_number_metadata_tn.dart";
+import "data/phone_number_metadata_to.dart";
+import "data/phone_number_metadata_tr.dart";
+import "data/phone_number_metadata_tt.dart";
+import "data/phone_number_metadata_tv.dart";
+import "data/phone_number_metadata_tw.dart";
+import "data/phone_number_metadata_tz.dart";
+import "data/phone_number_metadata_ua.dart";
+import "data/phone_number_metadata_ug.dart";
+import "data/phone_number_metadata_us.dart";
+import "data/phone_number_metadata_uy.dart";
+import "data/phone_number_metadata_uz.dart";
+import "data/phone_number_metadata_va.dart";
+import "data/phone_number_metadata_vc.dart";
+import "data/phone_number_metadata_ve.dart";
+import "data/phone_number_metadata_vg.dart";
+import "data/phone_number_metadata_vi.dart";
+import "data/phone_number_metadata_vn.dart";
+import "data/phone_number_metadata_vu.dart";
+import "data/phone_number_metadata_wf.dart";
+import "data/phone_number_metadata_ws.dart";
+import "data/phone_number_metadata_xk.dart";
+import "data/phone_number_metadata_ye.dart";
+import "data/phone_number_metadata_yt.dart";
+import "data/phone_number_metadata_za.dart";
+import "data/phone_number_metadata_zm.dart";
+import "data/phone_number_metadata_zw.dart";
+import "data/phone_number_metadata_800.dart";
+import "data/phone_number_metadata_808.dart";
+import "data/phone_number_metadata_870.dart";
+import "data/phone_number_metadata_878.dart";
+import "data/phone_number_metadata_881.dart";
+import "data/phone_number_metadata_882.dart";
+import "data/phone_number_metadata_883.dart";
+import "data/phone_number_metadata_888.dart";
+import "data/phone_number_metadata_979.dart";
+
+/// This is auto generated from PhoneNumberMetadata.xml. Do not modify.
+
+Map<String, Map<String, List<Object>>> get phoneNumberMetadata {
+  return {
+    "AC": phoneNumberMetadataAC,
+    "AD": phoneNumberMetadataAD,
+    "AE": phoneNumberMetadataAE,
+    "AF": phoneNumberMetadataAF,
+    "AG": phoneNumberMetadataAG,
+    "AI": phoneNumberMetadataAI,
+    "AL": phoneNumberMetadataAL,
+    "AM": phoneNumberMetadataAM,
+    "AO": phoneNumberMetadataAO,
+    "AR": phoneNumberMetadataAR,
+    "AS": phoneNumberMetadataAS,
+    "AT": phoneNumberMetadataAT,
+    "AU": phoneNumberMetadataAU,
+    "AW": phoneNumberMetadataAW,
+    "AX": phoneNumberMetadataAX,
+    "AZ": phoneNumberMetadataAZ,
+    "BA": phoneNumberMetadataBA,
+    "BB": phoneNumberMetadataBB,
+    "BD": phoneNumberMetadataBD,
+    "BE": phoneNumberMetadataBE,
+    "BF": phoneNumberMetadataBF,
+    "BG": phoneNumberMetadataBG,
+    "BH": phoneNumberMetadataBH,
+    "BI": phoneNumberMetadataBI,
+    "BJ": phoneNumberMetadataBJ,
+    "BL": phoneNumberMetadataBL,
+    "BM": phoneNumberMetadataBM,
+    "BN": phoneNumberMetadataBN,
+    "BO": phoneNumberMetadataBO,
+    "BQ": phoneNumberMetadataBQ,
+    "BR": phoneNumberMetadataBR,
+    "BS": phoneNumberMetadataBS,
+    "BT": phoneNumberMetadataBT,
+    "BW": phoneNumberMetadataBW,
+    "BY": phoneNumberMetadataBY,
+    "BZ": phoneNumberMetadataBZ,
+    "CA": phoneNumberMetadataCA,
+    "CC": phoneNumberMetadataCC,
+    "CD": phoneNumberMetadataCD,
+    "CF": phoneNumberMetadataCF,
+    "CG": phoneNumberMetadataCG,
+    "CH": phoneNumberMetadataCH,
+    "CI": phoneNumberMetadataCI,
+    "CK": phoneNumberMetadataCK,
+    "CL": phoneNumberMetadataCL,
+    "CM": phoneNumberMetadataCM,
+    "CN": phoneNumberMetadataCN,
+    "CO": phoneNumberMetadataCO,
+    "CR": phoneNumberMetadataCR,
+    "CU": phoneNumberMetadataCU,
+    "CV": phoneNumberMetadataCV,
+    "CW": phoneNumberMetadataCW,
+    "CX": phoneNumberMetadataCX,
+    "CY": phoneNumberMetadataCY,
+    "CZ": phoneNumberMetadataCZ,
+    "DE": phoneNumberMetadataDE,
+    "DJ": phoneNumberMetadataDJ,
+    "DK": phoneNumberMetadataDK,
+    "DM": phoneNumberMetadataDM,
+    "DO": phoneNumberMetadataDO,
+    "DZ": phoneNumberMetadataDZ,
+    "EC": phoneNumberMetadataEC,
+    "EE": phoneNumberMetadataEE,
+    "EG": phoneNumberMetadataEG,
+    "EH": phoneNumberMetadataEH,
+    "ER": phoneNumberMetadataER,
+    "ES": phoneNumberMetadataES,
+    "ET": phoneNumberMetadataET,
+    "FI": phoneNumberMetadataFI,
+    "FJ": phoneNumberMetadataFJ,
+    "FK": phoneNumberMetadataFK,
+    "FM": phoneNumberMetadataFM,
+    "FO": phoneNumberMetadataFO,
+    "FR": phoneNumberMetadataFR,
+    "GA": phoneNumberMetadataGA,
+    "GB": phoneNumberMetadataGB,
+    "GD": phoneNumberMetadataGD,
+    "GE": phoneNumberMetadataGE,
+    "GF": phoneNumberMetadataGF,
+    "GG": phoneNumberMetadataGG,
+    "GH": phoneNumberMetadataGH,
+    "GI": phoneNumberMetadataGI,
+    "GL": phoneNumberMetadataGL,
+    "GM": phoneNumberMetadataGM,
+    "GN": phoneNumberMetadataGN,
+    "GP": phoneNumberMetadataGP,
+    "GQ": phoneNumberMetadataGQ,
+    "GR": phoneNumberMetadataGR,
+    "GT": phoneNumberMetadataGT,
+    "GU": phoneNumberMetadataGU,
+    "GW": phoneNumberMetadataGW,
+    "GY": phoneNumberMetadataGY,
+    "HK": phoneNumberMetadataHK,
+    "HN": phoneNumberMetadataHN,
+    "HR": phoneNumberMetadataHR,
+    "HT": phoneNumberMetadataHT,
+    "HU": phoneNumberMetadataHU,
+    "ID": phoneNumberMetadataID,
+    "IE": phoneNumberMetadataIE,
+    "IL": phoneNumberMetadataIL,
+    "IM": phoneNumberMetadataIM,
+    "IN": phoneNumberMetadataIN,
+    "IO": phoneNumberMetadataIO,
+    "IQ": phoneNumberMetadataIQ,
+    "IR": phoneNumberMetadataIR,
+    "IS": phoneNumberMetadataIS,
+    "IT": phoneNumberMetadataIT,
+    "JE": phoneNumberMetadataJE,
+    "JM": phoneNumberMetadataJM,
+    "JO": phoneNumberMetadataJO,
+    "JP": phoneNumberMetadataJP,
+    "KE": phoneNumberMetadataKE,
+    "KG": phoneNumberMetadataKG,
+    "KH": phoneNumberMetadataKH,
+    "KI": phoneNumberMetadataKI,
+    "KM": phoneNumberMetadataKM,
+    "KN": phoneNumberMetadataKN,
+    "KP": phoneNumberMetadataKP,
+    "KR": phoneNumberMetadataKR,
+    "KW": phoneNumberMetadataKW,
+    "KY": phoneNumberMetadataKY,
+    "KZ": phoneNumberMetadataKZ,
+    "LA": phoneNumberMetadataLA,
+    "LB": phoneNumberMetadataLB,
+    "LC": phoneNumberMetadataLC,
+    "LI": phoneNumberMetadataLI,
+    "LK": phoneNumberMetadataLK,
+    "LR": phoneNumberMetadataLR,
+    "LS": phoneNumberMetadataLS,
+    "LT": phoneNumberMetadataLT,
+    "LU": phoneNumberMetadataLU,
+    "LV": phoneNumberMetadataLV,
+    "LY": phoneNumberMetadataLY,
+    "MA": phoneNumberMetadataMA,
+    "MC": phoneNumberMetadataMC,
+    "MD": phoneNumberMetadataMD,
+    "ME": phoneNumberMetadataME,
+    "MF": phoneNumberMetadataMF,
+    "MG": phoneNumberMetadataMG,
+    "MH": phoneNumberMetadataMH,
+    "MK": phoneNumberMetadataMK,
+    "ML": phoneNumberMetadataML,
+    "MM": phoneNumberMetadataMM,
+    "MN": phoneNumberMetadataMN,
+    "MO": phoneNumberMetadataMO,
+    "MP": phoneNumberMetadataMP,
+    "MQ": phoneNumberMetadataMQ,
+    "MR": phoneNumberMetadataMR,
+    "MS": phoneNumberMetadataMS,
+    "MT": phoneNumberMetadataMT,
+    "MU": phoneNumberMetadataMU,
+    "MV": phoneNumberMetadataMV,
+    "MW": phoneNumberMetadataMW,
+    "MX": phoneNumberMetadataMX,
+    "MY": phoneNumberMetadataMY,
+    "MZ": phoneNumberMetadataMZ,
+    "NA": phoneNumberMetadataNA,
+    "NC": phoneNumberMetadataNC,
+    "NE": phoneNumberMetadataNE,
+    "NF": phoneNumberMetadataNF,
+    "NG": phoneNumberMetadataNG,
+    "NI": phoneNumberMetadataNI,
+    "NL": phoneNumberMetadataNL,
+    "NO": phoneNumberMetadataNO,
+    "NP": phoneNumberMetadataNP,
+    "NR": phoneNumberMetadataNR,
+    "NU": phoneNumberMetadataNU,
+    "NZ": phoneNumberMetadataNZ,
+    "OM": phoneNumberMetadataOM,
+    "PA": phoneNumberMetadataPA,
+    "PE": phoneNumberMetadataPE,
+    "PF": phoneNumberMetadataPF,
+    "PG": phoneNumberMetadataPG,
+    "PH": phoneNumberMetadataPH,
+    "PK": phoneNumberMetadataPK,
+    "PL": phoneNumberMetadataPL,
+    "PM": phoneNumberMetadataPM,
+    "PR": phoneNumberMetadataPR,
+    "PS": phoneNumberMetadataPS,
+    "PT": phoneNumberMetadataPT,
+    "PW": phoneNumberMetadataPW,
+    "PY": phoneNumberMetadataPY,
+    "QA": phoneNumberMetadataQA,
+    "RE": phoneNumberMetadataRE,
+    "RO": phoneNumberMetadataRO,
+    "RS": phoneNumberMetadataRS,
+    "RU": phoneNumberMetadataRU,
+    "RW": phoneNumberMetadataRW,
+    "SA": phoneNumberMetadataSA,
+    "SB": phoneNumberMetadataSB,
+    "SC": phoneNumberMetadataSC,
+    "SD": phoneNumberMetadataSD,
+    "SE": phoneNumberMetadataSE,
+    "SG": phoneNumberMetadataSG,
+    "SH": phoneNumberMetadataSH,
+    "SI": phoneNumberMetadataSI,
+    "SJ": phoneNumberMetadataSJ,
+    "SK": phoneNumberMetadataSK,
+    "SL": phoneNumberMetadataSL,
+    "SM": phoneNumberMetadataSM,
+    "SN": phoneNumberMetadataSN,
+    "SO": phoneNumberMetadataSO,
+    "SR": phoneNumberMetadataSR,
+    "SS": phoneNumberMetadataSS,
+    "ST": phoneNumberMetadataST,
+    "SV": phoneNumberMetadataSV,
+    "SX": phoneNumberMetadataSX,
+    "SY": phoneNumberMetadataSY,
+    "SZ": phoneNumberMetadataSZ,
+    "TA": phoneNumberMetadataTA,
+    "TC": phoneNumberMetadataTC,
+    "TD": phoneNumberMetadataTD,
+    "TG": phoneNumberMetadataTG,
+    "TH": phoneNumberMetadataTH,
+    "TJ": phoneNumberMetadataTJ,
+    "TK": phoneNumberMetadataTK,
+    "TL": phoneNumberMetadataTL,
+    "TM": phoneNumberMetadataTM,
+    "TN": phoneNumberMetadataTN,
+    "TO": phoneNumberMetadataTO,
+    "TR": phoneNumberMetadataTR,
+    "TT": phoneNumberMetadataTT,
+    "TV": phoneNumberMetadataTV,
+    "TW": phoneNumberMetadataTW,
+    "TZ": phoneNumberMetadataTZ,
+    "UA": phoneNumberMetadataUA,
+    "UG": phoneNumberMetadataUG,
+    "US": phoneNumberMetadataUS,
+    "UY": phoneNumberMetadataUY,
+    "UZ": phoneNumberMetadataUZ,
+    "VA": phoneNumberMetadataVA,
+    "VC": phoneNumberMetadataVC,
+    "VE": phoneNumberMetadataVE,
+    "VG": phoneNumberMetadataVG,
+    "VI": phoneNumberMetadataVI,
+    "VN": phoneNumberMetadataVN,
+    "VU": phoneNumberMetadataVU,
+    "WF": phoneNumberMetadataWF,
+    "WS": phoneNumberMetadataWS,
+    "XK": phoneNumberMetadataXK,
+    "YE": phoneNumberMetadataYE,
+    "YT": phoneNumberMetadataYT,
+    "ZA": phoneNumberMetadataZA,
+    "ZM": phoneNumberMetadataZM,
+    "ZW": phoneNumberMetadataZW,
+    "800": phoneNumberMetadata800,
+    "808": phoneNumberMetadata808,
+    "870": phoneNumberMetadata870,
+    "878": phoneNumberMetadata878,
+    "881": phoneNumberMetadata881,
+    "882": phoneNumberMetadata882,
+    "883": phoneNumberMetadata883,
+    "888": phoneNumberMetadata888,
+    "979": phoneNumberMetadata979,
+  };
+}

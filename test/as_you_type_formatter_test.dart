@@ -1,4 +1,6 @@
 /// Based on the original Java code: .../phonenumbers/AsYouTypeFormatterTest.java
+///
+/// [license]
 /// Copyright (C) 2009 The Libphonenumber Authors.
 ///
 /// Licensed under the Apache License, Version 2.0 (the "License");

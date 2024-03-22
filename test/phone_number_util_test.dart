@@ -495,7 +495,7 @@ void main() {
       final inputNumber = '034-56&+a#234';
       final expectedOutput = '03456234';
       expect(
-        phoneUtil.normalizeDigitsOnly(inputNumber),
+        PhoneNumberUtil.normalizeDigitsOnly(inputNumber),
         expectedOutput,
         reason: 'Conversion did not correctly remove alpha character',
       );

@@ -16,8 +16,11 @@
  */
 
 /**
- * @fileoverview  Utility for parsing PhoneNumbersMetadata.xml and 
- * PhoneNumbersMetadataForTesting.xml into JSON based on phonemetadata.proto
+ * @fileoverview  Utility for parsing 
+ * 1. PhoneNumbersMetadata.xml, 
+ * 2. PhoneNumbersMetadataForTesting.xml, 
+ * 3. PhoneNumberAlternateFormats.xml 
+ *  into JSON based on phonemetadata.proto
  */
 
 
@@ -29,68 +32,126 @@ import { promisify } from 'util';
 import jsdom from 'jsdom';
 const { JSDOM } = jsdom;
 
+interface Params {
+    fileName: string,
+    testMode: boolean,
+}
+
 start();
 
-function isTestMode(): boolean {
+function getParameters(): Params {
     const args = process.argv.slice(2);
-    return (args[0] == 'true');
+    return {
+        fileName: args[0],
+        testMode: args[1] == 'true'
+    }
 }
 
-function getMetadataFileName(): string {
-    return (isTestMode())
-        ? 'PhoneNumberMetadataForTesting.xml'
-        : 'PhoneNumberMetadata.xml';
-}
-
-async function readXml(): Promise<string> {
-    const filePath = `./resources/${getMetadataFileName()}`;
+async function readXml(params: Params): Promise<string> {
+    const filePath = `./resources/${params.fileName}`;
     const readFile = promisify(fs.readFile);
     return await readFile(filePath, 'utf-8');
 }
 
-async function getDom() {
-    const xml = await readXml();
+async function getDom(params: Params) {
+    const xml = await readXml(params);
     return new JSDOM(xml);
 }
 
 async function start() {
-    const dom = await getDom();
+    const params = getParameters();
+    const dom = await getDom(params);
     const nodes = dom.window.document.querySelectorAll('territory');
     const elements = Array.from(nodes);
-    await generateJsonForRegions(elements);
-    await generateCountryCodeToRegionCodeMap(elements);
+
+    switch (params.fileName) {
+        case 'PhoneNumberMetadata.xml':
+        case 'PhoneNumberMetadataForTesting.xml':
+            await generatePhoneNumberMetadata(elements, params);
+            await generateCountryCodeToRegionCodeMap(elements, params);
+            break;
+
+        case 'PhoneNumberAlternateFormats.xml':
+            await generateAlternateFormatsMetadata(elements, params);
+            break;
+
+        default:
+            break;
+    }
 }
 
-async function generateJsonForRegions(elements: Element[]) {
-    const testMode = isTestMode();
+async function generatePhoneNumberMetadata(elements: Element[], params: Params) {
+    const testMode = params.testMode;
     const subDir = (testMode) ? 'test_data' : 'data';
-    const comment = `/// This is auto generated from ${getMetadataFileName()}. Do not modify.`
+    const generatedDataFileName = 'phone_number_metadata';
+    const regionPropertyName = 'phoneNumberMetadata';
+    const comment = `/// This is auto generated from ${params.fileName}. Do not modify.`
     const metadataImports: string[] = [];
     let metadataMap: string = '';
 
+    // Create individual Dart files for each region.
     for (const e of elements) {
         const id = getId(e);
         const regionName = isNaN(parseInt(id)) ? id : `${getCountryCode(e)}`;
-        const jsonString = JSON.stringify(parseTerritory(e)).replaceAll('$', '\\$');
-        const functionFileName = `phone_number_metadata_${regionName.toLowerCase()}.dart`;
-        const functionName = `phoneNumberMetadata${regionName}`;
-        const output = `${comment}\n\nMap<String, List<Object>> get ${functionName} { return ${jsonString}; }`;
 
-        const filePath = `./lib/generated/${subDir}/${functionFileName}`;
+        const fileName = `${generatedDataFileName}_${regionName.toLowerCase()}.dart`;
+        const propertyName = `${regionPropertyName}${regionName}`;
+
+        const jsonString = JSON.stringify(parseTerritory(e)).replaceAll('$', '\\$');
+        const output = `${comment}\n\nMap<String, List<Object>> get ${propertyName} { return ${jsonString}; }`;
+
+        const filePath = `./lib/generated/${subDir}/${fileName}`;
         await writeJsonToFile(filePath, output);
 
-        metadataImports.push(`import "${subDir}/${functionFileName}";`);
-        metadataMap += `"${regionName}": ${functionName},\n`;
+        metadataImports.push(`import "${subDir}/${fileName}";`);
+        metadataMap += `"${regionName}": ${propertyName},\n`;
     }
 
-    const functionName = (testMode) ? 'phoneNumberMetdataTest' : 'phoneNumberMetdata';
-    const output = `${comment}\n\nMap<String, Map<String, List<Object>>> get ${functionName} { return { ${metadataMap} }; }`;
-    const fileName = (testMode) ? 'phone_number_metdata_test' : 'phone_number_metdata';
+    // Reference all the individual Dart files for each region under one file.
+    // in order to mimick a JSON file structure.
+    const propertyName = (testMode) ? `${regionPropertyName}Test` : regionPropertyName;
+    const output = `${comment}\n\nMap<String, Map<String, List<Object>>> get ${propertyName} { return { ${metadataMap} }; }`;
+    const fileName = (testMode) ? `${generatedDataFileName}_test` : generatedDataFileName;
     const filePath = `./lib/generated/${fileName}.dart`;
     await writeJsonToFile(filePath, `${metadataImports.join('\n')}\n\n${output}`);
 }
 
-async function generateCountryCodeToRegionCodeMap(elements: Element[]) {
+async function generateAlternateFormatsMetadata(elements: Element[], params: Params) {
+    const subDir = 'data';
+    const generatedDataFileName = 'alternate_number_format_metadata';
+    const regionPropertyName = 'alternateNumberFormatMetadata';
+    const comment = `/// This is auto generated from ${params.fileName}. Do not modify.`
+    const metadataImports: string[] = [];
+    let metadataMap: string = '';
+
+    // Create individual Dart files for each region.
+    for (const e of elements) {
+        const regionName = `${getCountryCode(e)}`;
+
+        const fileName = `${generatedDataFileName}_${regionName.toLowerCase()}.dart`;
+        const propertyName = `${regionPropertyName}${regionName}`;
+
+        const metadata = parseTerritory(e)['metadata'][0];
+        const jsonString = JSON.stringify(metadata).replaceAll('$', '\\$');
+        const output = `${comment}\n\nMap<String, Object?> get ${propertyName} { return ${jsonString}; }`;
+
+        const filePath = `./lib/generated/${subDir}/${fileName}`;
+        await writeJsonToFile(filePath, output);
+
+        metadataImports.push(`import "${subDir}/${fileName}";`);
+        metadataMap += `"${regionName}": ${propertyName},\n`;
+    }
+
+    // Reference all the individual Dart files for each region under one file.
+    // in order to mimick a JSON file structure.
+    const propertyName = regionPropertyName;
+    const output = `${comment}\n\nMap<String, Map<String, Object?>> get ${propertyName} { return { ${metadataMap} }; }`;
+    const fileName = generatedDataFileName;
+    const filePath = `./lib/generated/${fileName}.dart`;
+    await writeJsonToFile(filePath, `${metadataImports.join('\n')}\n\n${output}`);
+}
+
+async function generateCountryCodeToRegionCodeMap(elements: Element[], params: Params) {
     const results: { [key: number]: string[] } = {};
 
     for (const e of elements) {
@@ -114,13 +175,14 @@ async function generateCountryCodeToRegionCodeMap(elements: Element[]) {
         jsonText += `${key}: ${JSON.stringify(value)},\n`;
     }
 
-    const functionName = (isTestMode())
+    const functionName = (params.testMode)
         ? 'countryCodeToRegionCodeMapTest'
         : 'countryCodeToRegionCodeMap';
 
     const CountryCodeToRegionCodeMap = `
     /// Based on the original Java code: .../phonenumbers/CountryCodeToRegionCodeMap.java
     ///
+    /// [license]
     /// Copyright (C) 2009 The Libphonenumber Authors
     ///
     /// Licensed under the Apache License, Version 2.0 (the "License");
@@ -136,9 +198,11 @@ async function generateCountryCodeToRegionCodeMap(elements: Element[]) {
     /// limitations under the License.
     ///
     
-    /// This file is automatically generated by [BuildMetadataProtoFromXml].
+    /// This file is automatically generated from 
+    /// [resources/PhoneNumberMetadata.xml]
+    /// or 
+    /// [resources/PhoneNumberMetadataForTesting.xml].
     /// Please don't modify it directly.
-    ///
     
     // A mapping from a country code to the region codes which denote the
     // country/region represented by that country code. In the case of multiple
@@ -149,7 +213,7 @@ async function generateCountryCodeToRegionCodeMap(elements: Element[]) {
         return { ${jsonText} };
     }`;
 
-    const fileName = (isTestMode())
+    const fileName = (params.testMode)
         ? 'country_code_to_region_code_map_test.dart'
         : 'country_code_to_region_code_map.dart';
 
@@ -370,8 +434,8 @@ function getGeneralDesc(e: Element): { [key: string]: any } {
     const node = e.querySelector('generalDesc');
     return {
         national_number_pattern: _getNationalNumberPattern(node),
-        possible_length: Array.from(possibleLengthSet),
-        possible_length_local_only: Array.from(possibleLengthLocalSet),
+        possible_length: Array.from(possibleLengthSet).sort((a, b) => a - b),
+        possible_length_local_only: Array.from(possibleLengthLocalSet).sort((a, b) => a - b),
         example_number: _getExampleNumber(node),
     };
 }
@@ -512,4 +576,3 @@ function _getNationalPrefixOptionalWhenFormatting(e: Element, f: Element): boole
     const value = rootNationalPrefix ?? numberFormatNationalPrefix;
     return (value == 'true');
 }
-

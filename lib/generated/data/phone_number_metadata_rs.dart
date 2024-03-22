@@ -20,7 +20,7 @@ Map<String, List<Object>> get phoneNumberMetadataRS {
         "general_desc": {
           "national_number_pattern":
               "38[02-9]\\d{6,9}|6\\d{7,9}|90\\d{4,8}|38\\d{5,6}|(?:7\\d\\d|800)\\d{3,9}|(?:[12]\\d|3[0-79])\\d{5,10}",
-          "possible_length": [7, 8, 9, 10, 11, 12, 6],
+          "possible_length": [6, 7, 8, 9, 10, 11, 12],
           "possible_length_local_only": [4, 5, 6],
           "example_number": null
         },

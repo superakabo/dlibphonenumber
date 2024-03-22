@@ -20,7 +20,7 @@ Map<String, List<Object>> get phoneNumberMetadataPY {
         "general_desc": {
           "national_number_pattern":
               "59\\d{4,6}|9\\d{5,10}|(?:[2-46-8]\\d|5[0-8])\\d{4,7}",
-          "possible_length": [7, 8, 9, 10, 11, 6],
+          "possible_length": [6, 7, 8, 9, 10, 11],
           "possible_length_local_only": [5, 6],
           "example_number": null
         },

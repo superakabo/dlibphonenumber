@@ -20,7 +20,7 @@ Map<String, List<Object>> get phoneNumberMetadataGA {
         "mobile_number_portable_region": false,
         "general_desc": {
           "national_number_pattern": "(?:[067]\\d|11)\\d{6}|[2-7]\\d{6}",
-          "possible_length": [8, 7],
+          "possible_length": [7, 8],
           "possible_length_local_only": [],
           "example_number": null
         },

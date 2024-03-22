@@ -20,7 +20,7 @@ Map<String, List<Object>> get phoneNumberMetadataAE {
         "general_desc": {
           "national_number_pattern":
               "(?:[4-7]\\d|9[0-689])\\d{7}|800\\d{2,9}|[2-4679]\\d{7}",
-          "possible_length": [8, 9, 5, 6, 7, 10, 11, 12],
+          "possible_length": [5, 6, 7, 8, 9, 10, 11, 12],
           "possible_length_local_only": [7],
           "example_number": null
         },

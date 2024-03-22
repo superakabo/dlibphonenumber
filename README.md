@@ -20,10 +20,10 @@ Google's library for parsing, formatting, and validating international phone num
     validation.
 *   `isValidNumber` - full validation of a phone number for a region using
     length and prefix information.
- *   `AsYouTypeFormatter` - formats phone numbers on-the-fly when users enter
+*   `AsYouTypeFormatter` - formats phone numbers on-the-fly when users enter
     each digit.
-<!-- *   `findNumbers` - finds numbers in text.
-*   `PhoneNumberOfflineGeocoder` - provides geographical information related to
+*   `findNumbers` - finds numbers in text.
+<!-- *   `PhoneNumberOfflineGeocoder` - provides geographical information related to
     a phone number.
 *   `PhoneNumberToCarrierMapper` - provides carrier information related to a
     phone number.
@@ -88,6 +88,16 @@ AsYouTypeFormatter formatter = phoneUtil.getAsYouTypeFormatter("US");
 print(formatter.inputDigit('6'));  // Outputs "6"
 ...  // Input more digits
 print(formatter.inputDigit('3'));  // Now outputs "650 253"
+```
+
+## Extract Telephone Numbers From Text
+
+```dart
+PhoneNumberUtil phoneUtil = PhoneNumberUtil.instance;
+Iterable<PhoneNumberMatch> foundNumbers = phoneUtil.findNumbers('Call me on 0241234567/0201234568', 'GH');
+print(foundNumbers.elementAt(0)); // Outputs "countryCode: 233, nationalNumber: 241234567"
+print(foundNumbers.elementAt(1)); // Outputs "countryCode: 233, nationalNumber: 201234568"
+phoneUtil.
 ```
 
 <!-- ## Geocoding Phone Numbers

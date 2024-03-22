@@ -39,7 +39,11 @@ protoc --dart_out=./lib/generated/phone_number -I ./resources ./resources/phonen
 protoc --dart_out=./lib/generated/phone_metadata -I ./resources ./resources/phonemetadata.proto
 
 # Build TypeScript code generator tool used to generate
-# the respective Dart files (phone_number_metadata.dart, countryCodeToRegionCodeMap.dart)
+# the respective Dart files [
+#   phone_number_metadata.dart, 
+#   country_code_to_region_code_map.dart, 
+#   phone_number_alternate_formats
+# ]
 # ---------------------------------------------------------------------------------------
 # Compile the TypeScript project to translate the code to JavaScript
 tsc -p ./tool/tsconfig.json
@@ -47,11 +51,16 @@ tsc -p ./tool/tsconfig.json
 # Generate phone_number_metadata object files
 # -------------------------------------------
 # (Map<String, Map<String, List<Object>>>)
-node ./tool/phone_number_metadata.js
+node ./tool/generate_metadata.js PhoneNumberMetadata.xml false
 
 # Generate test phone_number_metadata object files
 # (Map<String, Map<String, List<Object>>>) 
-node ./tool/phone_number_metadata.js true
+node ./tool/generate_metadata.js PhoneNumberMetadataForTesting.xml true
+
+# Generate alternate_format_phone_number_metadata object files
+# -------------------------------------------
+# (Map<String, Map<String, Object>>)
+node ./tool/generate_metadata.js PhoneNumberAlternateFormats.xml false
 
 # Fix Dart code issues (if any)
 dart format ./lib
@@ -60,6 +69,8 @@ dart fix --apply
 # Run tests
 dart test -r expanded ./test/phone_number_util_test.dart
 dart test -r expanded ./test/as_you_type_formatter_test.dart
+dart test -r expanded ./test/phone_number_match_test.dart
+dart test -r expanded ./test/phone_number_matcher_test.dart
 
 # Attempt to publish Dart code to see possible issues.
 dart pub publish --dry-run

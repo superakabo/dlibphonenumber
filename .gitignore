@@ -17,7 +17,7 @@ pubspec.lock
 .vscode/
 
 # exclude the generated javascript files
-tool/phone_number_metadata.js
+tool/generate_metadata.js
 
 # exclude npm dependencies
 node_modules/

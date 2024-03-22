@@ -21,7 +21,7 @@ Map<String, List<Object>> get phoneNumberMetadataAU {
         "general_desc": {
           "national_number_pattern":
               "1(?:[0-79]\\d{7}(?:\\d(?:\\d{2})?)?|8[0-24-9]\\d{7})|[2-478]\\d{8}|1\\d{4,7}",
-          "possible_length": [9, 7, 10, 6, 8, 12, 5],
+          "possible_length": [5, 6, 7, 8, 9, 10, 12],
           "possible_length_local_only": [8],
           "example_number": null
         },

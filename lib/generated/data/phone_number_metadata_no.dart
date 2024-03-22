@@ -19,7 +19,7 @@ Map<String, List<Object>> get phoneNumberMetadataNO {
         "mobile_number_portable_region": true,
         "general_desc": {
           "national_number_pattern": "(?:0|[2-9]\\d{3})\\d{4}",
-          "possible_length": [8, 5],
+          "possible_length": [5, 8],
           "possible_length_local_only": [],
           "example_number": null
         },

@@ -20,7 +20,7 @@ Map<String, List<Object>> get phoneNumberMetadataNZ {
         "general_desc": {
           "national_number_pattern":
               "[1289]\\d{9}|50\\d{5}(?:\\d{2,3})?|[27-9]\\d{7,8}|(?:[34]\\d|6[0-35-9])\\d{6}|8\\d{4,6}",
-          "possible_length": [8, 9, 10, 7, 5, 6],
+          "possible_length": [5, 6, 7, 8, 9, 10],
           "possible_length_local_only": [7],
           "example_number": null
         },

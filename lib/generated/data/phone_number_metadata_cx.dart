@@ -21,7 +21,7 @@ Map<String, List<Object>> get phoneNumberMetadataCX {
         "general_desc": {
           "national_number_pattern":
               "1(?:[0-79]\\d{8}(?:\\d{2})?|8[0-24-9]\\d{7})|[148]\\d{8}|1\\d{5,7}",
-          "possible_length": [9, 7, 10, 6, 8, 12],
+          "possible_length": [6, 7, 8, 9, 10, 12],
           "possible_length_local_only": [8],
           "example_number": null
         },

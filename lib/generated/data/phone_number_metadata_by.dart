@@ -20,7 +20,7 @@ Map<String, List<Object>> get phoneNumberMetadataBY {
         "general_desc": {
           "national_number_pattern":
               "(?:[12]\\d|33|44|902)\\d{7}|8(?:0[0-79]\\d{5,7}|[1-7]\\d{9})|8(?:1[0-489]|[5-79]\\d)\\d{7}|8[1-79]\\d{6,7}|8[0-79]\\d{5}|8\\d{5}",
-          "possible_length": [9, 6, 7, 8, 10, 11],
+          "possible_length": [6, 7, 8, 9, 10, 11],
           "possible_length_local_only": [5, 6, 7],
           "example_number": null
         },

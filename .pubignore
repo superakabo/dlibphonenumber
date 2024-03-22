@@ -1,5 +1,6 @@
 # exclude the tools used to generate the metadata
 tool/**/*.*
+node_modules/
 package.json
 package-lock.json
 update_resources.sh
@@ -13,9 +14,6 @@ test/**/*.*
 # exclude Github Action workflow.
 .github/workflows/build.yml
 .github/workflows/build.txt
-
-# exclude npm dependencies
-node_modules/
 
 # exclude unnecessary project files
 analysis_options.yaml
