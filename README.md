@@ -90,14 +90,13 @@ print(formatter.inputDigit('6'));  // Outputs "6"
 print(formatter.inputDigit('3'));  // Now outputs "650 253"
 ```
 
-## Extract Telephone Numbers From Text
+## Extract Phone Numbers From Text
 
 ```dart
 PhoneNumberUtil phoneUtil = PhoneNumberUtil.instance;
 Iterable<PhoneNumberMatch> foundNumbers = phoneUtil.findNumbers('Call me on 0241234567/0201234568', 'GH');
 print(foundNumbers.elementAt(0)); // Outputs "countryCode: 233, nationalNumber: 241234567"
 print(foundNumbers.elementAt(1)); // Outputs "countryCode: 233, nationalNumber: 201234568"
-phoneUtil.
 ```
 
 <!-- ## Geocoding Phone Numbers
