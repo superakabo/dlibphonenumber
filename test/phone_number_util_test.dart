@@ -180,6 +180,73 @@ final _unknownCountryCodeNoRawInput = PhoneNumber()
 
 void main() {
   group('PhoneNumberUtilTest', () {
+    test('testGetSupportedRegions', () {
+      expect(phoneUtil.supportedRegions.isNotEmpty, true);
+      expect(phoneUtil.supportedRegions.contains('US'), true);
+      expect(phoneUtil.supportedRegions.contains('001'), false);
+      expect(phoneUtil.supportedRegions.contains('800'), false);
+    });
+
+    test('testGetSupportedGlobalNetworkCallingCodes', () {
+      expect(phoneUtil.supportedGlobalNetworkCallingCodes.isNotEmpty, true);
+      expect(phoneUtil.supportedGlobalNetworkCallingCodes.contains(1), false);
+      expect(phoneUtil.supportedGlobalNetworkCallingCodes.contains(800), true);
+      for (final countryCallingCode in phoneUtil.supportedGlobalNetworkCallingCodes) {
+        expect(phoneUtil.getRegionCodeForCountryCode(countryCallingCode), '001');
+      }
+    });
+
+    test('testGetSupportedCallingCodes', () {
+      expect(phoneUtil.getSupportedCallingCodes().isNotEmpty, true);
+      phoneUtil.getSupportedCallingCodes().forEach((callingCode) {
+        expect(callingCode > 0, true);
+        expect(phoneUtil.getRegionCodeForCountryCode(callingCode) != 'ZZ', true);
+      });
+      // There should be more than just the global network calling codes in this
+      // set.
+      expect(phoneUtil.getSupportedCallingCodes().length > phoneUtil.supportedGlobalNetworkCallingCodes.length, true);
+      // But they should be included. Testing one of them.
+      expect(phoneUtil.supportedGlobalNetworkCallingCodes.contains(979), true);
+    });
+
+    test('testGetInstanceLoadBadMetadata', () {
+      expect(phoneUtil.getMetadataForRegion(regionCode: "No Such Region"), isNull);
+      expect(phoneUtil.getMetadataForNonGeographicalRegion(-1), isNull);
+    });
+
+    test('testGetSupportedTypesForRegion', () {
+      List<PhoneNumberType> types = phoneUtil.getSupportedTypesForRegion('BR');
+      expect(types.contains(PhoneNumberType.fixedLine), true);
+      // Our test data has no mobile numbers for Brazil.
+      expect(types.contains(PhoneNumberType.mobile), false);
+      // UNKNOWN should never be returned.
+      expect(types.contains(PhoneNumberType.unknown), false);
+
+      // In the US, many numbers are classified as FIXED_LINE_OR_MOBILE; but we
+      // don't want to expose this as a supported type, instead we say FIXED_LINE
+      // and MOBILE are both present.
+      types = phoneUtil.getSupportedTypesForRegion('US');
+      expect(types.contains(PhoneNumberType.fixedLine), true);
+      expect(types.contains(PhoneNumberType.mobile), true);
+      expect(types.contains(PhoneNumberType.fixedLineOrMobile), false);
+
+      types = phoneUtil.getSupportedTypesForRegion('ZZ');
+      expect(types.isEmpty, true);
+    });
+
+    test('testGetSupportedTypesForNonGeoEntity', () {
+      List<PhoneNumberType> types = phoneUtil.getSupportedTypesForNonGeoEntity(999);
+      // No data exists for 999 at all, no types should be returned.
+      expect(types.isEmpty, true);
+
+      types = phoneUtil.getSupportedTypesForNonGeoEntity(979);
+      expect(types.contains(PhoneNumberType.premiumRate), true);
+      // Our test data has no mobile numbers for Brazil.
+      expect(types.contains(PhoneNumberType.mobile), false);
+      // UNKNOWN should never be returned.
+      expect(types.contains(PhoneNumberType.unknown), false);
+    });
+
     test('testGetInstanceLoadUSMetadata', () {
       PhoneMetadata metadata = phoneUtil.getMetadataForRegion(regionCode: 'US')!;
       expect(metadata.id, 'US');
@@ -331,68 +398,6 @@ void main() {
       expect(phoneUtil.getCountryMobileToken(phoneUtil.getCountryCodeForRegion('SE')), '');
     });
 
-    test('testGetSupportedRegions', () {
-      expect(phoneUtil.supportedRegions.isNotEmpty, true);
-      expect(phoneUtil.supportedRegions.contains('US'), true);
-      expect(phoneUtil.supportedRegions.contains('001'), false);
-      expect(phoneUtil.supportedRegions.contains('800'), false);
-    });
-
-    test('testGetSupportedGlobalNetworkCallingCodes', () {
-      expect(phoneUtil.supportedGlobalNetworkCallingCodes.isNotEmpty, true);
-      expect(phoneUtil.supportedGlobalNetworkCallingCodes.contains(1), false);
-      expect(phoneUtil.supportedGlobalNetworkCallingCodes.contains(800), true);
-      for (final countryCallingCode in phoneUtil.supportedGlobalNetworkCallingCodes) {
-        expect(phoneUtil.getRegionCodeForCountryCode(countryCallingCode), '001');
-      }
-    });
-
-    test('testGetSupportedCallingCodes', () {
-      expect(phoneUtil.getSupportedCallingCodes().isNotEmpty, true);
-      phoneUtil.getSupportedCallingCodes().forEach((callingCode) {
-        expect(callingCode > 0, true);
-        expect(phoneUtil.getRegionCodeForCountryCode(callingCode) != 'ZZ', true);
-      });
-      // There should be more than just the global network calling codes in this
-      // set.
-      expect(phoneUtil.getSupportedCallingCodes().length > phoneUtil.supportedGlobalNetworkCallingCodes.length, true);
-      // But they should be included. Testing one of them.
-      expect(phoneUtil.supportedGlobalNetworkCallingCodes.contains(979), true);
-    });
-
-    test('testGetSupportedTypesForRegion', () {
-      List<PhoneNumberType> types = phoneUtil.getSupportedTypesForRegion('BR');
-      expect(types.contains(PhoneNumberType.fixedLine), true);
-      // Our test data has no mobile numbers for Brazil.
-      expect(types.contains(PhoneNumberType.mobile), false);
-      // UNKNOWN should never be returned.
-      expect(types.contains(PhoneNumberType.unknown), false);
-
-      // In the US, many numbers are classified as FIXED_LINE_OR_MOBILE; but we
-      // don't want to expose this as a supported type, instead we say FIXED_LINE
-      // and MOBILE are both present.
-      types = phoneUtil.getSupportedTypesForRegion('US');
-      expect(types.contains(PhoneNumberType.fixedLine), true);
-      expect(types.contains(PhoneNumberType.mobile), true);
-      expect(types.contains(PhoneNumberType.fixedLineOrMobile), false);
-
-      types = phoneUtil.getSupportedTypesForRegion('ZZ');
-      expect(types.isEmpty, true);
-    });
-
-    test('testGetSupportedTypesForNonGeoEntity', () {
-      List<PhoneNumberType> types = phoneUtil.getSupportedTypesForNonGeoEntity(999);
-      // No data exists for 999 at all, no types should be returned.
-      expect(types.isEmpty, true);
-
-      types = phoneUtil.getSupportedTypesForNonGeoEntity(979);
-      expect(types.contains(PhoneNumberType.premiumRate), true);
-      // Our test data has no mobile numbers for Brazil.
-      expect(types.contains(PhoneNumberType.mobile), false);
-      // UNKNOWN should never be returned.
-      expect(types.contains(PhoneNumberType.unknown), false);
-    });
-
     test('testGetNationalSignificantNumber', () {
       expect(phoneUtil.getNationalSignificantNumber(_usNumber), '6502530000');
 
@@ -425,25 +430,43 @@ void main() {
 
     test('testGetExampleNumber', () {
       expect(phoneUtil.getExampleNumber('DE'), _deNumber);
-      expect(phoneUtil.getExampleNumberForType('DE', PhoneNumberType.fixedLine), _deNumber);
+      expect(phoneUtil.getExampleNumberForType(regionCode: 'DE', type: PhoneNumberType.fixedLine), _deNumber);
 
       // Should return the same response if asked for FIXED_LINE_OR_MOBILE too.
-      expect(phoneUtil.getExampleNumberForType('DE', PhoneNumberType.fixedLineOrMobile), _deNumber);
+      expect(phoneUtil.getExampleNumberForType(regionCode: 'DE', type: PhoneNumberType.fixedLineOrMobile), _deNumber);
       // We have data for the US, but no data for VOICEMAIL.
-      expect(phoneUtil.getExampleNumberForType('US', PhoneNumberType.voicemail), null);
+      expect(phoneUtil.getExampleNumberForType(regionCode: 'US', type: PhoneNumberType.voicemail), isNull);
 
-      expect(phoneUtil.getExampleNumberForType('US', PhoneNumberType.fixedLine), isNotNull);
-      expect(phoneUtil.getExampleNumberForType('US', PhoneNumberType.mobile), isNotNull);
+      expect(phoneUtil.getExampleNumberForType(regionCode: 'US', type: PhoneNumberType.fixedLine), isNotNull);
+      expect(phoneUtil.getExampleNumberForType(regionCode: 'US', type: PhoneNumberType.mobile), isNotNull);
       // CS is an invalid region, so we have no data for it.
-      expect(phoneUtil.getExampleNumberForType('CS', PhoneNumberType.mobile), null);
+      expect(phoneUtil.getExampleNumberForType(regionCode: 'CS', type: PhoneNumberType.mobile), isNull);
       // RegionCode 001 is reserved for supporting non-geographical country calling
       // code. We don't support getting an example number for it with this method.
-      expect(phoneUtil.getExampleNumber('001'), null);
+      expect(phoneUtil.getExampleNumber('001'), isNull);
+    });
+
+    test('testGetInvalidExampleNumber', () {
+      // RegionCode 001 is reserved for supporting non-geographical country calling
+      // codes. We don't support getting an invalid example number for it with
+      // getInvalidExampleNumber.
+      expect(phoneUtil.getInvalidExampleNumber('UN001'), isNull);
+      expect(phoneUtil.getInvalidExampleNumber('CS'), isNull);
+      PhoneNumber? usInvalidNumber = phoneUtil.getInvalidExampleNumber('US');
+      expect(usInvalidNumber?.countryCode, 1);
+      expect(usInvalidNumber?.nationalNumber == 0, false);
     });
 
     test('testGetExampleNumberForNonGeoEntity', () {
       expect(phoneUtil.getExampleNumberForNonGeoEntity(800), _internationalTollFree);
       expect(phoneUtil.getExampleNumberForNonGeoEntity(979), _universalPremiumRate);
+    });
+
+    test('testGetExampleNumberWithoutRegion', () {
+      // In our test metadata we don't cover all types: in our real metadata, we do.
+      expect(phoneUtil.getExampleNumberForType(type: PhoneNumberType.fixedLine), isNotNull);
+      expect(phoneUtil.getExampleNumberForType(type: PhoneNumberType.mobile), isNotNull);
+      expect(phoneUtil.getExampleNumberForType(type: PhoneNumberType.premiumRate), isNotNull);
     });
 
     test('testConvertAlphaCharactersInNumber', () {
@@ -2229,10 +2252,9 @@ void main() {
           '\uFF0B\uFF11\u3000\uFF08\uFF16\uFF15\uFF10\uFF09\u3000\uFF12\uFF15\uFF13\u30FC\uFF10\uFF10\uFF10\uFF10';
       expect(phoneUtil.parse(usPhoneNumber, 'SG'), _usNumber);
 
-      // // Using a very strange decimal digit range (Mongolian digits).
-      // // TODO(user): Support Mongolian digits
-      // usPhoneNumber = '\u1811 \u1816\u1815\u1810 \u1812\u1815\u1813 \u1810\u1810\u1810\u1810';
-      // expect(phoneUtil.parse(usPhoneNumber, 'US'), _usNumber);
+      // Using a very strange decimal digit range (Mongolian digits).
+      usPhoneNumber = '\u1811 \u1816\u1815\u1810 \u1812\u1815\u1813 \u1810\u1810\u1810\u1810';
+      expect(phoneUtil.parse(usPhoneNumber, 'US'), _usNumber);
     });
 
     test('testParseWithLeadingZero', () {
@@ -2881,14 +2903,6 @@ void main() {
       expect(phoneUtil.parse('0000', 'AU'), threeZeros);
     });
 
-    void assertThrowsForInvalidPhoneContext(String numberToParse) {
-      try {
-        phoneUtil.parse(numberToParse, 'ZZ');
-      } on NumberParseException catch (e) {
-        expect(e.errorType, ErrorType.notANumber);
-      }
-    }
-
     test('testParseWithPhoneContext', () {
       // context    = ";phone-context=" descriptor
       // descriptor = domainname / global-number-digits
@@ -2921,15 +2935,15 @@ void main() {
       expect(phoneUtil.parse("tel:033316005;phone-context=a--z", 'NZ'), _nzNumber);
 
       // Invalid descriptor
-      assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=");
-      assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=+");
-      assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=64");
-      assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=++64");
-      assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=+abc");
-      assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=.");
-      assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=3phone");
-      assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=a-.nz");
-      assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=a{b}c");
+      _assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=");
+      _assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=+");
+      _assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=64");
+      _assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=++64");
+      _assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=+abc");
+      _assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=.");
+      _assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=3phone");
+      _assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=a-.nz");
+      _assertThrowsForInvalidPhoneContext("tel:033316005;phone-context=a{b}c");
     });
 
     test('testCountryWithNoNumberDesc', () {
@@ -3186,5 +3200,32 @@ void main() {
       expect(phoneUtil.isAlphaNumber('1800 123-1234 extension: 1234'), false);
       expect(phoneUtil.isAlphaNumber('+800 1234-1234'), false);
     });
+
+    test('testIsMobileNumberPortableRegion', () {
+      expect(phoneUtil.isMobileNumberPortableRegion('US'), true);
+      expect(phoneUtil.isMobileNumberPortableRegion('GB'), true);
+      expect(phoneUtil.isMobileNumberPortableRegion('AE'), false);
+      expect(phoneUtil.isMobileNumberPortableRegion('BS'), false);
+    });
+
+    test('testGetMetadataForRegionForNonGeoEntity_shouldBeNull', () {
+      expect(phoneUtil.getMetadataForRegion(regionCode: 'UN001'), isNull);
+    });
+
+    test('testGetMetadataForRegionForUnknownRegion_shouldBeNull', () {
+      expect(phoneUtil.getMetadataForRegion(regionCode: 'ZZ'), isNull);
+    });
+
+    test('testGetMetadataForNonGeographicalRegionForGeoRegion_shouldBeNull', () {
+      expect(phoneUtil.getMetadataForNonGeographicalRegion(/* countryCallingCode = */ 1), isNull);
+    });
   });
+}
+
+void _assertThrowsForInvalidPhoneContext(String numberToParse) {
+  try {
+    phoneUtil.parse(numberToParse, 'ZZ');
+  } on NumberParseException catch (e) {
+    expect(e.errorType, ErrorType.notANumber);
+  }
 }

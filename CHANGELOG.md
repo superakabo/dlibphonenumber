@@ -1,3 +1,7 @@
+## 1.1.11
+- Added findNumbers
+-  
+
 ## 1.1.10
 - Added AsYouTypeFormatter
 - Updated phone metadata for region code(s): CN, GB, MC, US, XK
