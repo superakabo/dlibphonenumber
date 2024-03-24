@@ -1,6 +1,6 @@
 ## 1.1.11
 - Added findNumbers
--  
+- Added ShortNumberInfo 
 
 ## 1.1.10
 - Added AsYouTypeFormatter

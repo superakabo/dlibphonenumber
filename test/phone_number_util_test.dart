@@ -1749,26 +1749,26 @@ void main() {
     });
 
     test('testExtractPossibleNumber', () {
-      // Removes preceding funky punctuation and letters but leaves the rest
+     // Removes preceding funky punctuation and letters but leaves the rest
       // untouched.
-      expect(phoneUtil.extractPossibleNumber('Tel:0800-345-600'), '0800-345-600');
-      expect(phoneUtil.extractPossibleNumber('Tel:0800 FOR PIZZA'), '0800 FOR PIZZA');
+      expect(PhoneNumberUtil.extractPossibleNumber('Tel:0800-345-600'), '0800-345-600');
+      expect(PhoneNumberUtil.extractPossibleNumber('Tel:0800 FOR PIZZA'), '0800 FOR PIZZA');
       // Should not remove plus sign
-      expect(phoneUtil.extractPossibleNumber('Tel:+800-345-600'), '+800-345-600');
+      expect(PhoneNumberUtil.extractPossibleNumber('Tel:+800-345-600'), '+800-345-600');
       // Should recognise wide digits as possible start values.
-      expect(phoneUtil.extractPossibleNumber('\uFF10\uFF12\uFF13'), '\uFF10\uFF12\uFF13');
+      expect(PhoneNumberUtil.extractPossibleNumber('\uFF10\uFF12\uFF13'), '\uFF10\uFF12\uFF13');
       // Dashes are not possible start values and should be removed.
-      expect(phoneUtil.extractPossibleNumber('Num-\uFF11\uFF12\uFF13'), '\uFF11\uFF12\uFF13');
+      expect(PhoneNumberUtil.extractPossibleNumber('Num-\uFF11\uFF12\uFF13'), '\uFF11\uFF12\uFF13');
       // If not possible number present, return empty string.
-      expect(phoneUtil.extractPossibleNumber('Num-....'), '');
+      expect(PhoneNumberUtil.extractPossibleNumber('Num-....'), '');
       // Leading brackets are stripped - these are not used when parsing.
-      expect(phoneUtil.extractPossibleNumber('(650) 253-0000'), '650) 253-0000');
+      expect(PhoneNumberUtil.extractPossibleNumber('(650) 253-0000'), '650) 253-0000');
 
       // Trailing non-alpha-numeric characters should be removed.
-      expect(phoneUtil.extractPossibleNumber('(650) 253-0000..- ..'), '650) 253-0000');
-      expect(phoneUtil.extractPossibleNumber('(650) 253-0000.'), '650) 253-0000');
+      expect(PhoneNumberUtil.extractPossibleNumber('(650) 253-0000..- ..'), '650) 253-0000');
+      expect(PhoneNumberUtil.extractPossibleNumber('(650) 253-0000.'), '650) 253-0000');
       // This case has a trailing RTL char.
-      expect(phoneUtil.extractPossibleNumber('(650) 253-0000\u200F'), '650) 253-0000');
+      expect(PhoneNumberUtil.extractPossibleNumber('(650) 253-0000\u200F'), '650) 253-0000');
     });
 
     test('testMaybeStripNationalPrefix', () {
