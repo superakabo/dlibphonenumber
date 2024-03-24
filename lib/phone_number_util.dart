@@ -428,7 +428,6 @@ class PhoneNumberUtil {
     return ('([$_validDigits]{1,$maxLength})');
   }
 
-//////////****/////////////
   /// Helper initialiser method to create the regular-expression pattern to match
   /// extensions.
   /// Note that there are currently six capturing groups for the extension itself.
@@ -961,21 +960,21 @@ class PhoneNumberUtil {
 
   static int? characterToDigit(String input) {
     final regex = RegExp(r'\p{N}', unicode: true);
-    int counter = -1;
+    int position = -1;
     // Since the unicode scalar could be [0-9],
     // we count from [0-9] to determine its proximity to 9.
     for (var i = 0; i < 10; i++) {
       final codeUnit = input.codeUnitAt(0) + i;
       final character = String.fromCharCode(codeUnit);
       if (regex.hasMatch(character)) {
-        counter++;
+        position++;
       } else {
         break;
       }
     }
     // we substract from 9 to get the index of the character,
     // which corresponds to an arabic number of [0-9].
-    int number = (9 - counter);
+    int number = (9 - position);
     return (number > 9) ? null : number;
   }
 

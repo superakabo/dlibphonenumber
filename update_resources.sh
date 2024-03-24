@@ -44,7 +44,7 @@ protoc --dart_out=./lib/generated/phone_metadata -I ./resources ./resources/phon
 #   country_code_to_region_code_map.dart, 
 #   phone_number_alternate_formats
 # ]
-# ---------------------------------------------------------------------------------------
+# ------------------------------------------------------------------
 # Compile the TypeScript project to translate the code to JavaScript
 tsc -p ./tool/tsconfig.json
 
@@ -58,9 +58,14 @@ node ./tool/generate_metadata.js PhoneNumberMetadata.xml false
 node ./tool/generate_metadata.js PhoneNumberMetadataForTesting.xml true
 
 # Generate alternate_format_phone_number_metadata object files
-# -------------------------------------------
+# ------------------------------------------------------------
 # (Map<String, Map<String, Object>>)
 node ./tool/generate_metadata.js PhoneNumberAlternateFormats.xml false
+
+# Generate short_number_metadata object files
+# -------------------------------------------
+# (Map<String, Map<String, Object>>)
+node ./tool/generate_metadata.js ShortNumberMetadata.xml false
 
 # Fix Dart code issues (if any)
 dart format ./lib

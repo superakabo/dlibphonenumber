@@ -75,6 +75,10 @@ async function start() {
             await generateAlternateFormatsMetadata(elements, params);
             break;
 
+        case 'ShortNumberMetadata.xml':
+            await generateShortNumberMetadata(elements, params);
+            break;
+
         default:
             break;
     }
@@ -140,6 +144,41 @@ async function generateAlternateFormatsMetadata(elements: Element[], params: Par
 
         metadataImports.push(`import "${subDir}/${fileName}";`);
         metadataMap += `"${regionName}": ${propertyName},\n`;
+    }
+
+    // Reference all the individual Dart files for each region under one file.
+    // in order to mimick a JSON file structure.
+    const propertyName = regionPropertyName;
+    const output = `${comment}\n\nMap<String, Map<String, Object?>> get ${propertyName} { return { ${metadataMap} }; }`;
+    const fileName = generatedDataFileName;
+    const filePath = `./lib/generated/${fileName}.dart`;
+    await writeJsonToFile(filePath, `${metadataImports.join('\n')}\n\n${output}`);
+}
+
+async function generateShortNumberMetadata(elements: Element[], params: Params) {
+    const subDir = 'data';
+    const generatedDataFileName = 'short_number_metadata';
+    const regionPropertyName = 'shortNumberMetadata';
+    const comment = `/// This is auto generated from ${params.fileName}. Do not modify.`
+    const metadataImports: string[] = [];
+    let metadataMap: string = '';
+
+    // Create individual Dart files for each region.
+    for (const e of elements) {
+        const id = getId(e);
+
+        const fileName = `${generatedDataFileName}_${id.toLowerCase()}.dart`;
+        const propertyName = `${regionPropertyName}${id}`;
+
+        const metadata = parseTerritory(e)['metadata'][0];
+        const jsonString = JSON.stringify(metadata).replaceAll('$', '\\$');
+        const output = `${comment}\n\nMap<String, Object?> get ${propertyName} { return ${jsonString}; }`;
+
+        const filePath = `./lib/generated/${subDir}/${fileName}`;
+        await writeJsonToFile(filePath, output);
+
+        metadataImports.push(`import "${subDir}/${fileName}";`);
+        metadataMap += `"${id}": ${propertyName},\n`;
     }
 
     // Reference all the individual Dart files for each region under one file.
