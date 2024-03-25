@@ -64,7 +64,7 @@ Map<String, List<Object>> get phoneNumberMetadataIL {
         },
         "voip": {
           "national_number_pattern":
-              "7(?:38(?:0\\d|5[09]|88)|8(?:33|55|77|81)\\d)\\d{4}|7(?:18|2[23]|3[237]|47|6[258]|7\\d|82|9[2-9])\\d{6}",
+              "7(?:38(?:0\\d|5[019]|88)|8(?:33|55|77|81)\\d)\\d{4}|7(?:18|2[23]|3[237]|47|6[258]|7\\d|82|9[2-9])\\d{6}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "771234567"

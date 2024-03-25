@@ -9,7 +9,7 @@ Map<String, List<Object>> get phoneNumberMetadataLT {
         "country_code": 370,
         "international_prefix": "00",
         "preferred_international_prefix": null,
-        "national_prefix": "8",
+        "national_prefix": "0",
         "preferred_extn_prefix": null,
         "national_prefix_for_parsing": "[08]",
         "national_prefix_transform_rule": null,
@@ -125,7 +125,7 @@ Map<String, List<Object>> get phoneNumberMetadataLT {
             "format": "\$1 \$2 \$3",
             "leading_digits_pattern": ["52[0-7]"],
             "national_prefix_optional_when_formatting": true,
-            "national_prefix_formatting_rule": "(8-\$1)",
+            "national_prefix_formatting_rule": "(0-\$1)",
             "domestic_carrier_code_formatting_rule": null
           },
           {
@@ -133,7 +133,7 @@ Map<String, List<Object>> get phoneNumberMetadataLT {
             "format": "\$1 \$2 \$3",
             "leading_digits_pattern": ["[7-9]"],
             "national_prefix_optional_when_formatting": true,
-            "national_prefix_formatting_rule": "8 \$1",
+            "national_prefix_formatting_rule": "0 \$1",
             "domestic_carrier_code_formatting_rule": null
           },
           {
@@ -141,7 +141,7 @@ Map<String, List<Object>> get phoneNumberMetadataLT {
             "format": "\$1 \$2",
             "leading_digits_pattern": ["37|4(?:[15]|6[1-8])"],
             "national_prefix_optional_when_formatting": true,
-            "national_prefix_formatting_rule": "(8-\$1)",
+            "national_prefix_formatting_rule": "(0-\$1)",
             "domestic_carrier_code_formatting_rule": null
           },
           {
@@ -149,7 +149,7 @@ Map<String, List<Object>> get phoneNumberMetadataLT {
             "format": "\$1 \$2",
             "leading_digits_pattern": ["[3-6]"],
             "national_prefix_optional_when_formatting": true,
-            "national_prefix_formatting_rule": "(8-\$1)",
+            "national_prefix_formatting_rule": "(0-\$1)",
             "domestic_carrier_code_formatting_rule": null
           }
         ],
@@ -158,7 +158,7 @@ Map<String, List<Object>> get phoneNumberMetadataLT {
             "pattern": "(\\d)(\\d{3})(\\d{4})",
             "format": "\$1 \$2 \$3",
             "leading_digits_pattern": ["52[0-7]"],
-            "national_prefix_formatting_rule": "(8-\$1)",
+            "national_prefix_formatting_rule": "(0-\$1)",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": true
           },
@@ -166,7 +166,7 @@ Map<String, List<Object>> get phoneNumberMetadataLT {
             "pattern": "(\\d{3})(\\d{2})(\\d{3})",
             "format": "\$1 \$2 \$3",
             "leading_digits_pattern": ["[7-9]"],
-            "national_prefix_formatting_rule": "8 \$1",
+            "national_prefix_formatting_rule": "0 \$1",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": true
           },
@@ -174,7 +174,7 @@ Map<String, List<Object>> get phoneNumberMetadataLT {
             "pattern": "(\\d{2})(\\d{6})",
             "format": "\$1 \$2",
             "leading_digits_pattern": ["37|4(?:[15]|6[1-8])"],
-            "national_prefix_formatting_rule": "(8-\$1)",
+            "national_prefix_formatting_rule": "(0-\$1)",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": true
           },
@@ -182,7 +182,7 @@ Map<String, List<Object>> get phoneNumberMetadataLT {
             "pattern": "(\\d{3})(\\d{5})",
             "format": "\$1 \$2",
             "leading_digits_pattern": ["[3-6]"],
-            "national_prefix_formatting_rule": "(8-\$1)",
+            "national_prefix_formatting_rule": "(0-\$1)",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": true
           }

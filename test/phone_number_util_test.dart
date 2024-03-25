@@ -1,4 +1,4 @@
-/// Based on the original JavaScript code: .../phonenumbers/phonenumberutil_test.js
+/// Based on the original Java code: .../phonenumbers/PhoneNumberUtilTest.java
 ///
 /// [license]
 /// Copyright (C) 2010 The Libphonenumber Authors.
@@ -1749,7 +1749,7 @@ void main() {
     });
 
     test('testExtractPossibleNumber', () {
-     // Removes preceding funky punctuation and letters but leaves the rest
+      // Removes preceding funky punctuation and letters but leaves the rest
       // untouched.
       expect(PhoneNumberUtil.extractPossibleNumber('Tel:0800-345-600'), '0800-345-600');
       expect(PhoneNumberUtil.extractPossibleNumber('Tel:0800 FOR PIZZA'), '0800 FOR PIZZA');

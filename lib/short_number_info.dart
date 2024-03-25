@@ -1,6 +1,7 @@
-///
+/// Based on the original Java code: .../phonenumbers/ShortNumberInfo.java
 /// Copyright (C) 2013 The Libphonenumber Authors
 ///
+/// [license]
 /// Licensed under the Apache License, Version 2.0 (the "License");
 /// you may not use this file except in compliance with the License.
 /// You may obtain a copy of the License at
@@ -31,15 +32,21 @@ import 'phone_number_util.dart';
 class ShortNumberInfo {
   /// Returns the singleton instance of the ShortNumberInfo.
   static ShortNumberInfo get instance => _instance;
-  static final ShortNumberInfo _instance = ShortNumberInfo._(countryCodeToRegionCodeMap);
+  static final ShortNumberInfo _instance =
+      ShortNumberInfo._(countryCodeToRegionCodeMap);
 
   @visibleForTesting
   static ShortNumberInfo get testInstance => _testInstance;
-  static final ShortNumberInfo _testInstance = ShortNumberInfo._(countryCodeToRegionCodeMapTest);
+  static final ShortNumberInfo _testInstance =
+      ShortNumberInfo._(countryCodeToRegionCodeMapTest);
 
   // In these countries, if extra digits are added to an emergency number, it no longer connects
   // to the emergency service.
-  static final Set<String> _regionsWhereEmergencyNumbersMustBeExact = {'BR', 'CL', 'NI'};
+  static final Set<String> _regionsWhereEmergencyNumbersMustBeExact = {
+    'BR',
+    'CL',
+    'NI'
+  };
 
   // A mapping from a country calling code to the region codes which denote the region represented
   // by that country calling code. In the case of multiple regions sharing a calling code, such as
@@ -55,14 +62,17 @@ class ShortNumberInfo {
   /// non-geographical country calling codes, the region code 001 is returned. Also, in the case
   /// of no region code being found, an empty list is returned.
   List<String> _getRegionCodesForCountryCode(int countryCallingCode) {
-    List<String>? regionCodes = _countryCallingCodeToRegionCodeMap[countryCallingCode];
+    List<String>? regionCodes =
+        _countryCallingCodeToRegionCodeMap[countryCallingCode];
     return (regionCodes == null) ? [] : regionCodes;
   }
 
   /// Helper method to check that the country calling code of the number matches the region it's
   /// being dialed from.
-  bool _regionDialingFromMatchesNumber(PhoneNumber number, String? regionDialingFrom) {
-    List<String> regionCodes = _getRegionCodesForCountryCode(number.countryCode);
+  bool _regionDialingFromMatchesNumber(
+      PhoneNumber number, String? regionDialingFrom) {
+    List<String> regionCodes =
+        _getRegionCodesForCountryCode(number.countryCode);
     return regionCodes.contains(regionDialingFrom);
   }
 
@@ -89,11 +99,13 @@ class ShortNumberInfo {
   /// [number] the short number to check
   /// [regionDialingFrom] the region from which the number is dialed
   /// returns whether the number is a possible short number
-  bool isPossibleShortNumberForRegion(PhoneNumber number, String regionDialingFrom) {
+  bool isPossibleShortNumberForRegion(
+      PhoneNumber number, String regionDialingFrom) {
     if (!_regionDialingFromMatchesNumber(number, regionDialingFrom)) {
       return false;
     }
-    PhoneMetadata? phoneMetadata = _getShortNumberMetadataForRegion(regionDialingFrom);
+    PhoneMetadata? phoneMetadata =
+        _getShortNumberMetadataForRegion(regionDialingFrom);
     if (phoneMetadata == null) {
       return false;
     }
@@ -109,14 +121,16 @@ class ShortNumberInfo {
   /// [number] the short number to check
   /// returns whether the number is a possible short number
   bool isPossibleShortNumber(PhoneNumber number) {
-    List<String> regionCodes = _getRegionCodesForCountryCode(number.countryCode);
+    List<String> regionCodes =
+        _getRegionCodesForCountryCode(number.countryCode);
     int shortNumberLength = _getNationalSignificantNumber(number).length;
     for (String region in regionCodes) {
       PhoneMetadata? phoneMetadata = _getShortNumberMetadataForRegion(region);
       if (phoneMetadata == null) {
         continue;
       }
-      if (phoneMetadata.generalDesc.possibleLength.contains(shortNumberLength)) {
+      if (phoneMetadata.generalDesc.possibleLength
+          .contains(shortNumberLength)) {
         return true;
       }
     }
@@ -130,11 +144,13 @@ class ShortNumberInfo {
   /// [number] the short number for which we want to test the validity
   /// [regionDialingFrom] the region from which the number is dialed
   /// returns whether the short number matches a valid pattern
-  bool isValidShortNumberForRegion(PhoneNumber number, String? regionDialingFrom) {
+  bool isValidShortNumberForRegion(
+      PhoneNumber number, String? regionDialingFrom) {
     if (!_regionDialingFromMatchesNumber(number, regionDialingFrom)) {
       return false;
     }
-    PhoneMetadata? phoneMetadata = _getShortNumberMetadataForRegion(regionDialingFrom);
+    PhoneMetadata? phoneMetadata =
+        _getShortNumberMetadataForRegion(regionDialingFrom);
     if (phoneMetadata == null) {
       return false;
     }
@@ -144,7 +160,8 @@ class ShortNumberInfo {
       return false;
     }
     PhoneNumberDesc shortNumberDesc = phoneMetadata.shortCode;
-    return _matchesPossibleNumberAndNationalNumber(shortNumber, shortNumberDesc);
+    return _matchesPossibleNumberAndNationalNumber(
+        shortNumber, shortNumberDesc);
   }
 
   /// Tests whether a short number matches a valid pattern. If a country calling code is shared by
@@ -155,8 +172,10 @@ class ShortNumberInfo {
   /// [number] the short number for which we want to test the validity
   /// returns whether the short number matches a valid pattern
   bool isValidShortNumber(PhoneNumber number) {
-    List<String> regionCodes = _getRegionCodesForCountryCode(number.countryCode);
-    String? regionCode = _getRegionCodeForShortNumberFromRegionList(number, regionCodes);
+    List<String> regionCodes =
+        _getRegionCodesForCountryCode(number.countryCode);
+    String? regionCode =
+        _getRegionCodeForShortNumberFromRegionList(number, regionCodes);
     if (regionCodes.length > 1 && regionCode != null) {
       // If a matching region had been found for the phone number from among two or more regions,
       // then we have already implicitly verified its validity for that region.
@@ -186,12 +205,14 @@ class ShortNumberInfo {
   /// returns the expected cost category for that region of the short number.
   /// Returns [ShortNumberCost.unknownCost] if the number does not match a cost category.
   /// Note that an invalid number may match any cost category.
-  ShortNumberCost getExpectedCostForRegion(PhoneNumber number, String regionDialingFrom) {
+  ShortNumberCost getExpectedCostForRegion(
+      PhoneNumber number, String regionDialingFrom) {
     if (!_regionDialingFromMatchesNumber(number, regionDialingFrom)) {
       return ShortNumberCost.unknownCost;
     }
     // Note that regionDialingFrom may be null, in which case phoneMetadata will also be null.
-    PhoneMetadata? phoneMetadata = _getShortNumberMetadataForRegion(regionDialingFrom);
+    PhoneMetadata? phoneMetadata =
+        _getShortNumberMetadataForRegion(regionDialingFrom);
     if (phoneMetadata == null) {
       return ShortNumberCost.unknownCost;
     }
@@ -201,19 +222,23 @@ class ShortNumberInfo {
     // The possible lengths are not present for a particular sub-type if they match the general
     // description; for this reason, we check the possible lengths against the general description
     // first to allow an early exit if possible.
-    if (!phoneMetadata.generalDesc.possibleLength.contains(shortNumber.length)) {
+    if (!phoneMetadata.generalDesc.possibleLength
+        .contains(shortNumber.length)) {
       return ShortNumberCost.unknownCost;
     }
 
     // The cost categories are tested in order of decreasing expense, since if for some reason the
     // patterns overlap the most expensive matching cost category should be returned.
-    if (_matchesPossibleNumberAndNationalNumber(shortNumber, phoneMetadata.premiumRate)) {
+    if (_matchesPossibleNumberAndNationalNumber(
+        shortNumber, phoneMetadata.premiumRate)) {
       return ShortNumberCost.premiumRate;
     }
-    if (_matchesPossibleNumberAndNationalNumber(shortNumber, phoneMetadata.standardRate)) {
+    if (_matchesPossibleNumberAndNationalNumber(
+        shortNumber, phoneMetadata.standardRate)) {
       return ShortNumberCost.standardRate;
     }
-    if (_matchesPossibleNumberAndNationalNumber(shortNumber, phoneMetadata.tollFree)) {
+    if (_matchesPossibleNumberAndNationalNumber(
+        shortNumber, phoneMetadata.tollFree)) {
       return ShortNumberCost.tollFree;
     }
     if (isEmergencyNumber(shortNumber, regionDialingFrom)) {
@@ -243,7 +268,8 @@ class ShortNumberInfo {
   /// returns the highest expected cost category of the short number in the region(s)
   /// with the given country calling code.
   ShortNumberCost getExpectedCost(PhoneNumber number) {
-    List<String> regionCodes = _getRegionCodesForCountryCode(number.countryCode);
+    List<String> regionCodes =
+        _getRegionCodesForCountryCode(number.countryCode);
     if (regionCodes.isEmpty) {
       return ShortNumberCost.unknownCost;
     }
@@ -252,7 +278,8 @@ class ShortNumberInfo {
     }
     ShortNumberCost cost = ShortNumberCost.tollFree;
     for (String regionCode in regionCodes) {
-      ShortNumberCost costForRegion = getExpectedCostForRegion(number, regionCode);
+      ShortNumberCost costForRegion =
+          getExpectedCostForRegion(number, regionCode);
       switch (costForRegion) {
         case ShortNumberCost.premiumRate:
           return ShortNumberCost.premiumRate;
@@ -277,7 +304,8 @@ class ShortNumberInfo {
   // Helper method to get the region code for a given phone number, from a list of possible region
   // codes. If the list contains more than one region, the first region for which the number is
   // valid is returned.
-  String? _getRegionCodeForShortNumberFromRegionList(PhoneNumber number, List<String> regionCodes) {
+  String? _getRegionCodeForShortNumberFromRegionList(
+      PhoneNumber number, List<String> regionCodes) {
     if (regionCodes.isEmpty) {
       return null;
     } else if (regionCodes.length == 1) {
@@ -285,8 +313,11 @@ class ShortNumberInfo {
     }
     String nationalNumber = _getNationalSignificantNumber(number);
     for (String regionCode in regionCodes) {
-      PhoneMetadata? phoneMetadata = _getShortNumberMetadataForRegion(regionCode);
-      if (phoneMetadata != null && _matchesPossibleNumberAndNationalNumber(nationalNumber, phoneMetadata.shortCode)) {
+      PhoneMetadata? phoneMetadata =
+          _getShortNumberMetadataForRegion(regionCode);
+      if (phoneMetadata != null &&
+          _matchesPossibleNumberAndNationalNumber(
+              nationalNumber, phoneMetadata.shortCode)) {
         // The number is valid for this region.
         return regionCode;
       }
@@ -359,7 +390,8 @@ class ShortNumberInfo {
   /// [regionCode] the region where the phone number is being dialed
   /// returns whether the number might be used to connect to an emergency service in the given region
   bool connectsToEmergencyNumber(String number, String regionCode) {
-    return _matchesEmergencyNumberHelper(number, regionCode, true /* allows prefix match */);
+    return _matchesEmergencyNumberHelper(
+        number, regionCode, true /* allows prefix match */);
   }
 
   /// Returns true if the given number exactly matches an emergency service number in the given
@@ -373,10 +405,12 @@ class ShortNumberInfo {
   /// [regionCode] the region where the phone number is being dialed
   /// returns whether the number exactly matches an emergency services number in the given region
   bool isEmergencyNumber(String number, String regionCode) {
-    return _matchesEmergencyNumberHelper(number, regionCode, false /* doesn't allow prefix match */);
+    return _matchesEmergencyNumberHelper(
+        number, regionCode, false /* doesn't allow prefix match */);
   }
 
-  bool _matchesEmergencyNumberHelper(String number, String regionCode, bool allowPrefixMatch) {
+  bool _matchesEmergencyNumberHelper(
+      String number, String regionCode, bool allowPrefixMatch) {
     String possibleNumber = PhoneNumberUtil.extractPossibleNumber(number);
     if (PhoneNumberUtil.plusCharsPattern.hasMatch(possibleNumber)) {
       // Returns false if the number starts with a plus sign. We don't believe dialing the country
@@ -389,8 +423,10 @@ class ShortNumberInfo {
       return false;
     }
 
-    String normalizedNumber = PhoneNumberUtil.normalizeDigitsOnly(possibleNumber);
-    bool allowPrefixMatchForRegion = allowPrefixMatch && !_regionsWhereEmergencyNumbersMustBeExact.contains(regionCode);
+    String normalizedNumber =
+        PhoneNumberUtil.normalizeDigitsOnly(possibleNumber);
+    bool allowPrefixMatchForRegion = allowPrefixMatch &&
+        !_regionsWhereEmergencyNumbersMustBeExact.contains(regionCode);
 
     return PhoneNumberUtil.matchNationalNumber(
       normalizedNumber,
@@ -409,12 +445,15 @@ class ShortNumberInfo {
   /// returns whether the short number is carrier-specific,
   /// assuming the input was a valid short number
   bool isCarrierSpecific(PhoneNumber number) {
-    List<String> regionCodes = _getRegionCodesForCountryCode(number.countryCode);
-    String? regionCode = _getRegionCodeForShortNumberFromRegionList(number, regionCodes);
+    List<String> regionCodes =
+        _getRegionCodesForCountryCode(number.countryCode);
+    String? regionCode =
+        _getRegionCodeForShortNumberFromRegionList(number, regionCodes);
     String nationalNumber = _getNationalSignificantNumber(number);
     PhoneMetadata? phoneMetadata = _getShortNumberMetadataForRegion(regionCode);
     return (phoneMetadata != null) &&
-        (_matchesPossibleNumberAndNationalNumber(nationalNumber, phoneMetadata.carrierSpecific));
+        (_matchesPossibleNumberAndNationalNumber(
+            nationalNumber, phoneMetadata.carrierSpecific));
   }
 
   /// Given a valid short number, determines whether it is carrier-specific when dialed from the
@@ -428,14 +467,17 @@ class ShortNumberInfo {
   /// [regionDialingFrom]  the region from which the number is dialed
   /// returns whether the short number is carrier-specific in the provided region,
   /// assuming the input was a valid short number
-  bool isCarrierSpecificForRegion(PhoneNumber number, String regionDialingFrom) {
+  bool isCarrierSpecificForRegion(
+      PhoneNumber number, String regionDialingFrom) {
     if (!_regionDialingFromMatchesNumber(number, regionDialingFrom)) {
       return false;
     }
     String nationalNumber = _getNationalSignificantNumber(number);
-    PhoneMetadata? phoneMetadata = _getShortNumberMetadataForRegion(regionDialingFrom);
+    PhoneMetadata? phoneMetadata =
+        _getShortNumberMetadataForRegion(regionDialingFrom);
     return (phoneMetadata != null) &&
-        (_matchesPossibleNumberAndNationalNumber(nationalNumber, phoneMetadata.carrierSpecific));
+        (_matchesPossibleNumberAndNationalNumber(
+            nationalNumber, phoneMetadata.carrierSpecific));
   }
 
   /// Given a valid short number, determines whether it is an SMS service (however, nothing is
@@ -453,9 +495,11 @@ class ShortNumberInfo {
     if (!_regionDialingFromMatchesNumber(number, regionDialingFrom)) {
       return false;
     }
-    PhoneMetadata? phoneMetadata = _getShortNumberMetadataForRegion(regionDialingFrom);
+    PhoneMetadata? phoneMetadata =
+        _getShortNumberMetadataForRegion(regionDialingFrom);
     return phoneMetadata != null &&
-        _matchesPossibleNumberAndNationalNumber(_getNationalSignificantNumber(number), phoneMetadata.smsServices);
+        _matchesPossibleNumberAndNationalNumber(
+            _getNationalSignificantNumber(number), phoneMetadata.smsServices);
   }
 
   /// Gets the national significant number of the a phone number. Note a national significant number
@@ -480,8 +524,10 @@ class ShortNumberInfo {
 
   // TODO: Once we have benchmarked ShortNumberInfo, consider if it is worth keeping
   // this performance optimization.
-  bool _matchesPossibleNumberAndNationalNumber(String number, PhoneNumberDesc numberDesc) {
-    if (numberDesc.possibleLength.isNotEmpty && !numberDesc.possibleLength.contains(number.length)) {
+  bool _matchesPossibleNumberAndNationalNumber(
+      String number, PhoneNumberDesc numberDesc) {
+    if (numberDesc.possibleLength.isNotEmpty &&
+        !numberDesc.possibleLength.contains(number.length)) {
       return false;
     }
     return PhoneNumberUtil.matchNationalNumber(number, numberDesc, false);

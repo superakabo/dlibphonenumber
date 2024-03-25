@@ -1,6 +1,7 @@
 ## 1.1.11
 - Added findNumbers
-- Added ShortNumberInfo 
+- Added ShortNumberInfo
+- Updated phone metadata for region code(s): CA, GE, IL, LT, TM, TZ, UA, UG, US 
 
 ## 1.1.10
 - Added AsYouTypeFormatter

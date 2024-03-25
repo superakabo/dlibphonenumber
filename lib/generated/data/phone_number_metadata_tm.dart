@@ -18,7 +18,7 @@ Map<String, List<Object>> get phoneNumberMetadataTM {
         "leading_digits": null,
         "mobile_number_portable_region": false,
         "general_desc": {
-          "national_number_pattern": "[1-6]\\d{7}",
+          "national_number_pattern": "(?:[1-6]\\d|71)\\d{6}",
           "possible_length": [8],
           "possible_length_local_only": [],
           "example_number": null
@@ -31,7 +31,7 @@ Map<String, List<Object>> get phoneNumberMetadataTM {
           "example_number": "12345678"
         },
         "mobile": {
-          "national_number_pattern": "6\\d{7}",
+          "national_number_pattern": "(?:6\\d|71)\\d{6}",
           "possible_length": [8],
           "possible_length_local_only": [-1],
           "example_number": "66123456"
@@ -140,7 +140,7 @@ Map<String, List<Object>> get phoneNumberMetadataTM {
           {
             "pattern": "(\\d{2})(\\d{6})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["6"],
+            "leading_digits_pattern": ["[67]"],
             "national_prefix_optional_when_formatting": false,
             "national_prefix_formatting_rule": "8 \$1",
             "domestic_carrier_code_formatting_rule": null
@@ -166,7 +166,7 @@ Map<String, List<Object>> get phoneNumberMetadataTM {
           {
             "pattern": "(\\d{2})(\\d{6})",
             "format": "\$1 \$2",
-            "leading_digits_pattern": ["6"],
+            "leading_digits_pattern": ["[67]"],
             "national_prefix_formatting_rule": "8 \$1",
             "domestic_carrier_code_formatting_rule": null,
             "national_prefix_optional_when_formatting": false

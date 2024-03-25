@@ -30,7 +30,7 @@ Map<String, List<Object>> get phoneNumberMetadataUA {
           "example_number": "311234567"
         },
         "mobile": {
-          "national_number_pattern": "(?:39|50|6[36-8]|7[1-3]|9[1-9])\\d{7}",
+          "national_number_pattern": "(?:39|50|6[36-8]|7[1-357]|9[1-9])\\d{7}",
           "possible_length": [9],
           "possible_length_local_only": [-1],
           "example_number": "501234567"
