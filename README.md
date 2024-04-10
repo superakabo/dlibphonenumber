@@ -23,12 +23,12 @@ Google's library for parsing, formatting, and validating international phone num
 *   `AsYouTypeFormatter` - formats phone numbers on-the-fly when users enter
     each digit.
 *   `findNumbers` - finds numbers in text.
-<!-- *   `PhoneNumberOfflineGeocoder` - provides geographical information related to
+*   `PhoneNumberOfflineGeocoder` - provides geographical information related to
     a phone number.
-*   `PhoneNumberToCarrierMapper` - provides carrier information related to a
-    phone number.
-*   `PhoneNumberToTimeZonesMapper` - provides timezone information related to a
+<!-- *   `PhoneNumberToCarrierMapper` - provides carrier information related to a
     phone number. -->
+*   `PhoneNumberToTimeZonesMapper` - provides timezone information related to a
+    phone number.
 
 # Quick Examples
 
@@ -99,17 +99,17 @@ print(foundNumbers.elementAt(0)); // Outputs "countryCode: 233, nationalNumber: 
 print(foundNumbers.elementAt(1)); // Outputs "countryCode: 233, nationalNumber: 201234568"
 ```
 
-<!-- ## Geocoding Phone Numbers
+## Geocoding Phone Numbers
 
-```java
-PhoneNumberOfflineGeocoder geocoder = PhoneNumberOfflineGeocoder.getInstance();
+```dart
+PhoneNumberOfflineGeocoder geocoder = PhoneNumberOfflineGeocoder.instance;
 // Outputs "Zurich"
-System.out.println(geocoder.getDescriptionForNumber(swissNumberProto, Locale.ENGLISH));
+print(geocoder.getDescriptionForNumber(swissNumberProto, Locale.english));
 // Outputs "Zürich"
-System.out.println(geocoder.getDescriptionForNumber(swissNumberProto, Locale.GERMAN));
+print(geocoder.getDescriptionForNumber(swissNumberProto, Locale.german));
 // Outputs "Zurigo"
-System.out.println(geocoder.getDescriptionForNumber(swissNumberProto, Locale.ITALIAN));
-``` -->
+print(geocoder.getDescriptionForNumber(swissNumberProto, Locale.italian));
+```
 
 <!-- ## Mapping Phone Numbers to original carriers
 
@@ -117,10 +117,10 @@ Caveat: We do not provide data about the current carrier of a phone number, only
 the original carrier who is assigned the corresponding range. Read about [number
 portability](FAQ.md#what-is-mobile-number-portability).
 
-```java
+```dart
 PhoneNumber swissMobileNumber =
-    new PhoneNumber().setCountryCode(41).setNationalNumber(798765432L);
-PhoneNumberToCarrierMapper carrierMapper = PhoneNumberToCarrierMapper.getInstance();
+      PhoneNumber()..countryCode = 41..nationalNumber = Int64(798765432);
+PhoneNumberToCarrierMapper carrierMapper = PhoneNumberToCarrierMapper.instance;
 // Outputs "Swisscom"
-System.out.println(carrierMapper.getNameForNumber(swissMobileNumber, Locale.ENGLISH));
+print(carrierMapper.getNameForNumber(swissMobileNumber, Locale.ENGLISH));
 ``` -->

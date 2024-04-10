@@ -1,8 +1,6 @@
 # exclude the tools used to generate the metadata
-tool/**/*.*
-node_modules/
-package.json
-package-lock.json
+tools/**/*.*
+pubspec.lock
 update_resources.sh
 
 # exclude the resources folder that contains the xml and proto files
@@ -12,8 +10,14 @@ resources/**/*.*
 test/**/*.*
 
 # exclude Github Action workflow.
-.github/workflows/build.yml
 .github/workflows/build.txt
+.gitignore
 
 # exclude unnecessary project files
 analysis_options.yaml
+
+# ignore old files in generated directory
+lib/generated/data/**/*.*
+lib/generated/alternate_number_format_metadata.dart
+lib/generated/country_code_to_region_code_map.dart
+lib/generated/country_code_to_region_code_map_test.dart

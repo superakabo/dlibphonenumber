@@ -10,15 +10,6 @@
 # https://dart.dev/guides/libraries/private-files#pubspeclock.
 pubspec.lock
 
-# exclude code changes history
-.history/
-
 # exclude vscode config file
 .vscode/
 
-# exclude the generated javascript files
-tool/generate_metadata.js
-
-# exclude npm dependencies
-node_modules/
-package-lock.json

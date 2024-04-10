@@ -17,8 +17,7 @@
 ///
 library;
 
-import '../generated/phone_number/phonenumber.pb.dart';
-import '../number_grouping_checker.dart';
+import '../generated/classes/phone_number/phonenumber.pb.dart';
 import '../phone_number_matcher.dart';
 import '../phone_number_util.dart';
 
@@ -87,12 +86,19 @@ enum Leniency {
                 number, util)) {
           return false;
         }
-        return matcher.checkNumberGroupingIsValid(
-          number,
-          candidate,
-          util,
-          const NumberGroupingCheckerStrictGrouping(),
-        );
+        return matcher.checkNumberGroupingIsValid(number, candidate, util, (
+          PhoneNumberUtil util,
+          PhoneNumber number,
+          StringBuffer normalizedCandidate,
+          List<String> expectedNumberGroups,
+        ) {
+          return PhoneNumberMatcherImpl.allNumberGroupsRemainGrouped(
+            util,
+            number,
+            normalizedCandidate,
+            expectedNumberGroups,
+          );
+        });
 
       /// Phone numbers accepted are [PhoneNumberUtil.isValidNumber(PhoneNumber)]
       /// valid and are grouped in the same way that we would have formatted it,
@@ -113,12 +119,19 @@ enum Leniency {
                 number, util)) {
           return false;
         }
-        return matcher.checkNumberGroupingIsValid(
-          number,
-          candidate,
-          util,
-          NumberGroupingCheckerExactGrouping(),
-        );
+        return matcher.checkNumberGroupingIsValid(number, candidate, util, (
+          PhoneNumberUtil util,
+          PhoneNumber number,
+          StringBuffer normalizedCandidate,
+          List<String> expectedNumberGroups,
+        ) {
+          return PhoneNumberMatcherImpl.allNumberGroupsAreExactlyPresent(
+            util,
+            number,
+            normalizedCandidate,
+            expectedNumberGroups,
+          );
+        });
     }
   }
 }

@@ -23,7 +23,7 @@ void main() {
   group('PhoneNumberMatchTest', () {
     /// Tests the value type semantics. Equality and hash code must be based on the covered range and
     /// corresponding phone number. Range and number correctness are tested by
-    /// [PhoneNumberMatcherTest}.
+    /// [PhoneNumberMatcherTest].
     test('testValueTypeSemantics', () {
       PhoneNumber number = PhoneNumber();
       PhoneNumberMatch match1 = PhoneNumberMatch(10, '1 800 234 45 67', number);

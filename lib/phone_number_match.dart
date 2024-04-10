@@ -17,7 +17,7 @@
 library;
 
 import 'exceptions/illegal_argument_exception.dart';
-import 'generated/phone_number/phonenumber.pb.dart';
+import 'generated/classes/phone_number/phonenumber.pb.dart';
 
 class PhoneNumberMatch {
   final int start;

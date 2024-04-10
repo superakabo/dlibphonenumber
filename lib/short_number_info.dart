@@ -16,14 +16,13 @@
 ///
 library;
 
+import 'package:dlibphonenumber/metadata_map_loader.dart';
 import 'package:meta/meta.dart';
 
 import 'enums/short_number_cost.dart';
-import 'generated/phone_metadata/phonemetadata.pb.dart';
-import 'generated/phone_number/phonenumber.pb.dart';
-import 'generated/country_code_to_region_code_map.dart';
-import 'generated/country_code_to_region_code_map_test.dart';
-import 'generated/short_number_metadata.dart';
+import 'generated/classes/phone_metadata/phonemetadata.pb.dart';
+import 'generated/classes/phone_number/phonenumber.pb.dart';
+import 'generated/metadata/short_number_metadata_map.dart';
 import 'phone_number_util.dart';
 
 /// Methods for getting information about short phone numbers, such as short codes and emergency
@@ -33,12 +32,7 @@ class ShortNumberInfo {
   /// Returns the singleton instance of the ShortNumberInfo.
   static ShortNumberInfo get instance => _instance;
   static final ShortNumberInfo _instance =
-      ShortNumberInfo._(countryCodeToRegionCodeMap);
-
-  @visibleForTesting
-  static ShortNumberInfo get testInstance => _testInstance;
-  static final ShortNumberInfo _testInstance =
-      ShortNumberInfo._(countryCodeToRegionCodeMapTest);
+      ShortNumberInfo(const ShortNumberMetadataMap());
 
   // In these countries, if extra digits are added to an emergency number, it no longer connects
   // to the emergency service.
@@ -48,22 +42,21 @@ class ShortNumberInfo {
     'NI'
   };
 
-  // A mapping from a country calling code to the region codes which denote the region represented
-  // by that country calling code. In the case of multiple regions sharing a calling code, such as
-  // the NANPA regions, the one indicated with "isMainCountryForCode" in the metadata should be
-  // first.
-  final Map<int, List<String>> _countryCallingCodeToRegionCodeMap;
+  final Map<String, PhoneMetadata?> _phoneMetadataCache = {};
 
-  final Map<String, PhoneMetadata> _phoneMetadataCache = {};
+  final MetadataMapLoader _metadataMapLoader;
 
-  ShortNumberInfo._(this._countryCallingCodeToRegionCodeMap);
+  @internal
+  ShortNumberInfo(
+    this._metadataMapLoader,
+  );
 
   /// Returns a list with the region codes that match the specific country calling code. For
   /// non-geographical country calling codes, the region code 001 is returned. Also, in the case
   /// of no region code being found, an empty list is returned.
   List<String> _getRegionCodesForCountryCode(int countryCallingCode) {
     List<String>? regionCodes =
-        _countryCallingCodeToRegionCodeMap[countryCallingCode];
+        _metadataMapLoader.countryCodeToRegionCodeMap['$countryCallingCode'];
     return (regionCodes == null) ? [] : regionCodes;
   }
 
@@ -79,18 +72,23 @@ class ShortNumberInfo {
   /// A thin wrapper around {@code shortNumberMetadataSource} which catches {@link
   /// IllegalArgumentException} for invalid region code and instead returns {@code null}
   PhoneMetadata? _getShortNumberMetadataForRegion(String? regionCode) {
-    if (regionCode == null) return null;
-    try {
-      PhoneMetadata? metadata = _phoneMetadataCache[regionCode];
-      if (metadata == null) {
-        final rawMetadata = shortNumberMetadata[regionCode];
-        metadata = PhoneMetadata()..mergeFromProto3Json(rawMetadata);
-        _phoneMetadataCache[regionCode] = metadata;
-      }
-      return metadata;
-    } catch (_) {
-      return null;
+    PhoneMetadata? metadata = _phoneMetadataCache[regionCode];
+
+    if (metadata == null && regionCode != null) {
+      metadata = _getShortNumberMetdata(regionCode);
+      _phoneMetadataCache[regionCode] = metadata;
     }
+
+    return metadata;
+  }
+
+  PhoneMetadata? _getShortNumberMetdata(String regionCode) {
+    Map<String, Object?>? territory =
+        _metadataMapLoader.getTerritory(regionCode);
+    if (territory != null) {
+      return PhoneMetadata()..mergeFromProto3Json(territory);
+    }
+    return null;
   }
 
   /// Check whether a short number is a possible number when dialed from the given region. This
@@ -149,16 +147,19 @@ class ShortNumberInfo {
     if (!_regionDialingFromMatchesNumber(number, regionDialingFrom)) {
       return false;
     }
+
     PhoneMetadata? phoneMetadata =
-        _getShortNumberMetadataForRegion(regionDialingFrom);
+        _getShortNumberMetadataForRegion(regionDialingFrom!);
     if (phoneMetadata == null) {
       return false;
     }
+
     String shortNumber = _getNationalSignificantNumber(number);
     PhoneNumberDesc generalDesc = phoneMetadata.generalDesc;
     if (!_matchesPossibleNumberAndNationalNumber(shortNumber, generalDesc)) {
       return false;
     }
+
     PhoneNumberDesc shortNumberDesc = phoneMetadata.shortCode;
     return _matchesPossibleNumberAndNationalNumber(
         shortNumber, shortNumberDesc);
@@ -336,10 +337,12 @@ class ShortNumberInfo {
     if (phoneMetadata == null) {
       return "";
     }
+
     PhoneNumberDesc desc = phoneMetadata.shortCode;
     if (desc.hasExampleNumber()) {
       return desc.exampleNumber;
     }
+
     return "";
   }
 
@@ -418,6 +421,7 @@ class ShortNumberInfo {
       // add additional logic here to handle it.
       return false;
     }
+
     PhoneMetadata? metadata = _getShortNumberMetadataForRegion(regionCode);
     if (metadata == null || !metadata.hasEmergency()) {
       return false;

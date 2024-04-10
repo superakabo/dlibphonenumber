@@ -19,12 +19,14 @@ library;
 import 'package:dlibphonenumber/dlibphonenumber.dart';
 import 'package:test/test.dart';
 
+import 'generated/metadata/phone_number_metadata_map.dart';
+
 /// @fileoverview  Unit tests for the PhoneNumberUtil.
 ///
 /// Note that these tests use the metadata contained in metadatafortesting.js,
 /// not the normal metadata files, so should not be used for regression test
 /// purposes - these tests are illustrative only and test functionality.
-final phoneUtil = PhoneNumberUtil.testInstance;
+final phoneUtil = PhoneNumberUtil(const PhoneNumberMetadataMap());
 
 /// Set up some test numbers to re-use.
 /// TODO: Rewrite this as static functions that return new numbers each time to
@@ -305,19 +307,19 @@ void main() {
 
     test('testIsNumberGeographical', () {
       // Bahamas, mobile phone number.
-      expect(phoneUtil.isNumberGeographical(_bsMobile), false);
+      expect(phoneUtil.isNumberGeographical(phoneNumber: _bsMobile), false);
       // Australian fixed line number.
-      expect(phoneUtil.isNumberGeographical(_auNumber), true);
+      expect(phoneUtil.isNumberGeographical(phoneNumber: _auNumber), true);
       // International toll free number.
-      expect(phoneUtil.isNumberGeographical(_internationalTollFree), false);
+      expect(phoneUtil.isNumberGeographical(phoneNumber: _internationalTollFree), false);
       // We test that mobile phone numbers in relevant regions are indeed considered
       // geographical.
       // Argentina, mobile phone number.
-      expect(phoneUtil.isNumberGeographical(_arMobile), true);
+      expect(phoneUtil.isNumberGeographical(phoneNumber: _arMobile), true);
       // Mexico, mobile phone number.
-      expect(phoneUtil.isNumberGeographical(_mxMobile1), true);
+      expect(phoneUtil.isNumberGeographical(phoneNumber: _mxMobile1), true);
       // Mexico, another mobile phone number.
-      expect(phoneUtil.isNumberGeographical(_mxMobile2), true);
+      expect(phoneUtil.isNumberGeographical(phoneNumber: _mxMobile2), true);
     });
 
     test('testGetLengthOfGeographicalAreaCode', () {
@@ -393,9 +395,9 @@ void main() {
     });
 
     test('testGetCountryMobileToken', () {
-      expect(phoneUtil.getCountryMobileToken(phoneUtil.getCountryCodeForRegion('AR')), '9');
+      expect(PhoneNumberUtil.getCountryMobileToken(phoneUtil.getCountryCodeForRegion('AR')), '9');
       // Country calling code for Sweden, which has no mobile token.
-      expect(phoneUtil.getCountryMobileToken(phoneUtil.getCountryCodeForRegion('SE')), '');
+      expect(PhoneNumberUtil.getCountryMobileToken(phoneUtil.getCountryCodeForRegion('SE')), '');
     });
 
     test('testGetNationalSignificantNumber', () {

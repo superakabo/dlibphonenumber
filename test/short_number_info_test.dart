@@ -18,10 +18,14 @@
 library;
 
 import 'package:dlibphonenumber/dlibphonenumber.dart';
+import 'package:dlibphonenumber/generated/metadata/short_number_metadata_map.dart';
 import 'package:test/test.dart';
 
+import 'generated/metadata/phone_number_metadata_map.dart';
+
 void main() {
-  final shortInfo = ShortNumberInfo.testInstance;
+  final shortInfo = ShortNumberInfo(const ShortNumberMetadataMap());
+
   group('ShortNumberInfoTest', () {
     test('testIsPossibleShortNumber', () {
       PhoneNumber possibleNumber = PhoneNumber();
@@ -387,9 +391,11 @@ void main() {
   });
 }
 
+final phoneUtil = PhoneNumberUtil(const PhoneNumberMetadataMap());
+
 PhoneNumber _parse(String number, String regionCode) {
   try {
-    return PhoneNumberUtil.testInstance.parse(number, regionCode);
+    return phoneUtil.parse(number, regionCode);
   } on NumberParseException catch (e) {
     throw AssertionError("Test input data should always parse correctly: $number ($regionCode) $e");
   }

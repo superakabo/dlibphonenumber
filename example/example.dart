@@ -10,6 +10,8 @@ void main() {
   final String rfc3966 = phoneUtil.format(phoneNumber, PhoneNumberFormat.rfc3966);
   final AsYouTypeFormatter asYouTypeFormatter = phoneUtil.getAsYouTypeFormatter('GH');
   final Iterable<PhoneNumberMatch> foundPhoneNumbers = phoneUtil.findNumbers('Call me on 0201234567', 'GH');
+  final String territory = PhoneNumberOfflineGeocoder.instance.getDescriptionForNumber(phoneNumber, Locale.english);
+  final List<String> timezones = PhoneNumberToTimeZonesMapper.instance.getTimeZonesForNumber(phoneNumber);
 
   /// prints: +233241234567
   print('e164: $e164');
@@ -31,6 +33,12 @@ void main() {
 
   /// prints: [countryCode: 233, nationalNumber: 201234567]
   print('foundPhoneNumbers: ${foundPhoneNumbers.map((e) => e.number)}');
+
+  /// prints: Ghana
+  print('territory: $territory');
+
+  /// prints: [Africa/Accra]
+  print('timezones: $timezones');
 
   /// prints:
   // +

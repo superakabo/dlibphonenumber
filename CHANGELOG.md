@@ -1,3 +1,10 @@
+## 1.1.12
+- Added Geocoding feature
+- Added Timezone feature
+- Updated phone metadata for region code(s): CU, DK, GD, GY, IL, KE, LA, MX, US, ZW
+- Updated geocoding data for country calling code(s): 52 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.11
 - Added findNumbers
 - Added ShortNumberInfo

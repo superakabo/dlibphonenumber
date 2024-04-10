@@ -25,9 +25,8 @@ import 'enums/match_type.dart';
 import 'enums/phone_number_format.dart';
 import 'enums/phone_number_matcher_state.dart';
 import 'exceptions/illegal_argument_exception.dart';
-import 'generated/phone_metadata/phonemetadata.pb.dart';
-import 'generated/phone_number/phonenumber.pb.dart';
-import 'number_grouping_checker.dart';
+import 'generated/classes/phone_metadata/phonemetadata.pb.dart';
+import 'generated/classes/phone_number/phonenumber.pb.dart';
 import 'phone_number_util.dart';
 
 /// A stateful class that finds and extracts telephone numbers from String [text].
@@ -58,6 +57,25 @@ final class PhoneNumberMatcher extends Iterable<PhoneNumberMatch> {
     return PhoneNumberMatcherImpl(util, text, country, leniency, maxTries);
   }
 }
+
+/// Small helper interface such that the number groups can be checked according to different
+/// criteria, both for our default way of performing formatting and for any alternate formats we
+/// may want to check.
+///
+/// Returns true if the groups of digits found in our candidate phone number match our
+/// expectations.
+///
+/// [number] the original number we found when parsing
+/// [normalizedCandidate] the candidate number, normalized to only contain ASCII digits,
+/// but with non-digits (spaces etc) retained
+/// [expectedNumberGroups] the groups of digits that we would expect to see if we
+/// formatted this number
+typedef NumberGroupingChecker = bool Function(
+  PhoneNumberUtil util,
+  PhoneNumber number,
+  StringBuffer normalizedCandidate,
+  List<String> expectedNumberGroups,
+);
 
 final class PhoneNumberMatcherImpl implements Iterator<PhoneNumberMatch> {
   PhoneNumberMatcherImpl(
@@ -595,8 +613,7 @@ final class PhoneNumberMatcherImpl implements Iterator<PhoneNumberMatch> {
         PhoneNumberUtil.normalizeDigits(candidate, true /* keep non-digits */);
     List<String> formattedNumberGroups = _getNationalNumberGroups(util, number);
 
-    if (checker.checkGroups(
-        util, number, normalizedCandidate, formattedNumberGroups)) {
+    if (checker(util, number, normalizedCandidate, formattedNumberGroups)) {
       return true;
     }
 
@@ -620,8 +637,7 @@ final class PhoneNumberMatcherImpl implements Iterator<PhoneNumberMatch> {
 
         formattedNumberGroups =
             _getNationalNumberGroups(util, number, alternateFormat);
-        if (checker.checkGroups(
-            util, number, normalizedCandidate, formattedNumberGroups)) {
+        if (checker(util, number, normalizedCandidate, formattedNumberGroups)) {
           return true;
         }
       }

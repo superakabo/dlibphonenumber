@@ -19,7 +19,7 @@ library;
 
 import 'dart:math';
 import 'package:meta/meta.dart';
-import 'generated/phone_metadata/phonemetadata.pb.dart';
+import 'generated/classes/phone_metadata/phonemetadata.pb.dart';
 import 'phone_number_util.dart';
 
 /// A formatter which formats phone numbers as they are entered.

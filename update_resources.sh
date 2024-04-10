@@ -4,68 +4,68 @@
 # To execute this script, run: (in terminal) 
 # zsh ./update_resources.sh 
 
-# Download phonenumber.proto
-curl --create-dirs -o resources/phonenumber.proto https://raw.githubusercontent.com/google/libphonenumber/master/resources/phonenumber.proto
+# Fetch just the latest resource directory from the libphonenumber repository
+git clone --filter=blob:none --no-checkout https://github.com/google/libphonenumber.git
+cd libphonenumber
+git sparse-checkout set --cone
+git sparse-checkout set \
+    resources/carrier \
+    resources/geocoding \
+    resources/test \
+    resources/timezones \
+    resources/PhoneNumberAlternateFormats.xml \
+    resources/PhoneNumberMetadata.xml \
+    resources/PhoneNumberMetadataForTesting.xml \
+    resources/ShortNumberMetadata.xml \
+    resources/phonemetadata.proto \
+    resources/phonenumber.proto
+git checkout master
 
-# Download phonemetadata.proto
-curl --create-dirs -o resources/phonemetadata.proto https://raw.githubusercontent.com/google/libphonenumber/master/resources/phonemetadata.proto
+cd ..
+# Delete the old resources directory and recreate a new one
+rm -rf ./resources
+mkdir -p ./resources/
 
-# Download PhoneNumberMetadata.xml
-curl --create-dirs -o resources/PhoneNumberMetadata.xml https://raw.githubusercontent.com/google/libphonenumber/master/resources/PhoneNumberMetadata.xml
+# Move the fresh [libphonenumber/resources] into the temp directory.
+mv -f ./libphonenumber/resources/* ./resources/
 
-# Download ShortNumberMetadata.xml
-curl --create-dirs -o resources/ShortNumberMetadata.xml https://raw.githubusercontent.com/google/libphonenumber/master/resources/ShortNumberMetadata.xml
+# Delete the empty libphonenumber directory
+rm -rf ./libphonenumber
 
-# Download PhoneNumberMetadataForTesting.xml
-curl --create-dirs -o resources/PhoneNumberMetadataForTesting.xml https://raw.githubusercontent.com/google/libphonenumber/master/resources/PhoneNumberMetadataForTesting.xml
-
-# Download PhoneNumberAlternateFormats.xml
-curl --create-dirs -o resources/PhoneNumberAlternateFormats.xml https://raw.githubusercontent.com/google/libphonenumber/master/resources/PhoneNumberAlternateFormats.xml
-
-# Generate class from the .proto files found in the resources
+# Generate classes from the .proto files found in the resources
 # folder using protocol buffers (protobuf, protoc_plugin)
 # -----------------------------------------------------------
 # Install the latest version of protoc plugin for dart
 dart pub global activate protoc_plugin
 
-# Create directories for the classes to be generated if they are missing
-mkdir -pv ./lib/generated/phone_metadata
-mkdir -pv ./lib/generated/phone_number
+# Create directories for the proto classes to be generated if they are missing
+mkdir -pv ./lib/generated/classes/phone_metadata
+mkdir -pv ./lib/generated/classes/phone_number
 
-# Generate the Phone Number class from resources/phonenumber.proto
-protoc --dart_out=./lib/generated/phone_number -I ./resources ./resources/phonenumber.proto
+# Generate the Phone Number metadata class from resources/phonenumber.proto
+protoc --dart_out=./lib/generated/classes/phone_number -I ./resources ./resources/phonenumber.proto
 
-# Generate the Phone Metadata class from resources/phonemetadata.proto
-protoc --dart_out=./lib/generated/phone_metadata -I ./resources ./resources/phonemetadata.proto
+# Generate the Phone metadata class from resources/phonemetadata.proto
+protoc --dart_out=./lib/generated/classes/phone_metadata -I ./resources ./resources/phonemetadata.proto
 
-# Build TypeScript code generator tool used to generate
-# the respective Dart files [
-#   phone_number_metadata.dart, 
-#   country_code_to_region_code_map.dart, 
-#   phone_number_alternate_formats
-# ]
-# ------------------------------------------------------------------
-# Compile the TypeScript project to translate the code to JavaScript
-tsc -p ./tool/tsconfig.json
-
-# Generate phone_number_metadata object files
-# -------------------------------------------
-# (Map<String, Map<String, List<Object>>>)
-node ./tool/generate_metadata.js PhoneNumberMetadata.xml false
-
-# Generate test phone_number_metadata object files
-# (Map<String, Map<String, List<Object>>>) 
-node ./tool/generate_metadata.js PhoneNumberMetadataForTesting.xml true
-
-# Generate alternate_format_phone_number_metadata object files
-# ------------------------------------------------------------
-# (Map<String, Map<String, Object>>)
-node ./tool/generate_metadata.js PhoneNumberAlternateFormats.xml false
-
-# Generate short_number_metadata object files
-# -------------------------------------------
-# (Map<String, Map<String, Object>>)
-node ./tool/generate_metadata.js ShortNumberMetadata.xml false
+# Generate metadata files:
+#
+# 1. Phone Number 
+dart run tools/bin/tools.dart metadata -i resources/PhoneNumberMetadata.xml -o lib/generated/metadata/ -t phone_number
+# 2. Phone Number Test
+dart run tools/bin/tools.dart metadata -i resources/PhoneNumberMetadataForTesting.xml -o test/generated/metadata/ -t phone_number
+# 3. Phone Number Alt Formats
+dart run tools/bin/tools.dart metadata -i resources/PhoneNumberAlternateFormats.xml -o lib/generated/metadata/ -t phone_number_alt
+# 4. Short Number
+dart run tools/bin/tools.dart metadata -i resources/ShortNumberMetadata.xml -o lib/generated/metadata/ -t short_number
+# 5. Timezone
+dart run tools/bin/tools.dart metadata -i resources/timezones/map_data.txt -o lib/generated/metadata/ -t timezone
+# 6. Timezone Test
+dart run tools/bin/tools.dart metadata -i resources/test/timezones/map_data.txt -o test/generated/metadata/ -t timezone
+# 7. Geocoding
+dart run tools/bin/tools.dart metadata -i resources/geocoding -o lib/generated/metadata/ -t geocoding
+# 8. Geocoding Test
+dart run tools/bin/tools.dart metadata -i resources/test/geocoding -o test/generated/metadata/ -t geocoding
 
 # Fix Dart code issues (if any)
 dart format ./lib
@@ -77,6 +77,8 @@ dart test -r expanded ./test/as_you_type_formatter_test.dart
 dart test -r expanded ./test/phone_number_match_test.dart
 dart test -r expanded ./test/phone_number_matcher_test.dart
 dart test -r expanded ./test/short_number_info_test.dart
+dart test -r expanded ./test/phone_number_offline_geocoder_test.dart
+dart test -r expanded ./test/phone_number_to_time_zones_mapper_test.dart
 
 # Attempt to publish Dart code to see possible issues.
 dart pub publish --dry-run

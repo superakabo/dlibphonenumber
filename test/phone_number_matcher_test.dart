@@ -18,8 +18,9 @@ library;
 
 import 'package:dlibphonenumber/dlibphonenumber.dart';
 import 'package:test/test.dart';
+import 'generated/metadata/phone_number_metadata_map.dart';
 
-final PhoneNumberUtil phoneUtil = PhoneNumberUtil.testInstance;
+final phoneUtil = PhoneNumberUtil(const PhoneNumberMetadataMap());
 
 void main() {
   group('PhoneNumberMatcherTest', () {
