@@ -1,13 +1,13 @@
 # exclude the tools used to generate the metadata
-tools/**/*.*
+tools/**
 pubspec.lock
 update_resources.sh
 
 # exclude the resources folder that contains the xml and proto files
-resources/**/*.*
+resources/**
 
 # exclude the test folder
-test/**/*.*
+test/**
 
 # exclude Github Action workflow.
 .github/workflows/build.txt
@@ -17,7 +17,7 @@ test/**/*.*
 analysis_options.yaml
 
 # ignore old files in generated directory
-lib/generated/data/**/*.*
+lib/generated/data/**
 lib/generated/alternate_number_format_metadata.dart
 lib/generated/country_code_to_region_code_map.dart
 lib/generated/country_code_to_region_code_map_test.dart
