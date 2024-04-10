@@ -30,7 +30,7 @@ class PhoneNumberMetadataGenerator extends FileWriter with PhoneMetadataParser {
     }
 
     _savePhoneNumberMetadataMap();
-    return 'PhoneNumber metadata generated at ${args.outputDirectory}';
+    return '${args.metadataType} metadata generated at ${args.outputDirectory}';
   }
 
   /// Mark: build supported territories imports and JSON data.

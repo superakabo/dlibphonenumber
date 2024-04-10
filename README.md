@@ -25,8 +25,8 @@ Google's library for parsing, formatting, and validating international phone num
 *   `findNumbers` - finds numbers in text.
 *   `PhoneNumberOfflineGeocoder` - provides geographical information related to
     a phone number.
-<!-- *   `PhoneNumberToCarrierMapper` - provides carrier information related to a
-    phone number. -->
+*   `PhoneNumberToCarrierMapper` - provides carrier information related to a
+    phone number.
 *   `PhoneNumberToTimeZonesMapper` - provides timezone information related to a
     phone number.
 
@@ -111,7 +111,7 @@ print(geocoder.getDescriptionForNumber(swissNumberProto, Locale.german));
 print(geocoder.getDescriptionForNumber(swissNumberProto, Locale.italian));
 ```
 
-<!-- ## Mapping Phone Numbers to original carriers
+## Mapping Phone Numbers to original carriers
 
 Caveat: We do not provide data about the current carrier of a phone number, only
 the original carrier who is assigned the corresponding range. Read about [number
@@ -122,5 +122,5 @@ PhoneNumber swissMobileNumber =
       PhoneNumber()..countryCode = 41..nationalNumber = Int64(798765432);
 PhoneNumberToCarrierMapper carrierMapper = PhoneNumberToCarrierMapper.instance;
 // Outputs "Swisscom"
-print(carrierMapper.getNameForNumber(swissMobileNumber, Locale.ENGLISH));
-``` -->
+print(carrierMapper.getNameForNumber(swissMobileNumber, Locale.english));
+```

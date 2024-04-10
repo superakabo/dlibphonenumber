@@ -27,7 +27,7 @@ class PhoneNumberAltFormatsMetadataGenerator extends FileWriter with PhoneMetada
     }
 
     _savePhoneNumberMetadataMap();
-    return 'PhoneNumber Alternate Formats metadata generated at ${args.outputDirectory}';
+    return '${args.metadataType} Alternate Formats metadata generated at ${args.outputDirectory}';
   }
 
   String _getImportPath(String id) {

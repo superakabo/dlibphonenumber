@@ -52,20 +52,34 @@ protoc --dart_out=./lib/generated/classes/phone_metadata -I ./resources ./resour
 #
 # 1. Phone Number 
 dart run tools/bin/tools.dart metadata -i resources/PhoneNumberMetadata.xml -o lib/generated/metadata/ -t phone_number
+
 # 2. Phone Number Test
 dart run tools/bin/tools.dart metadata -i resources/PhoneNumberMetadataForTesting.xml -o test/generated/metadata/ -t phone_number
+
 # 3. Phone Number Alt Formats
 dart run tools/bin/tools.dart metadata -i resources/PhoneNumberAlternateFormats.xml -o lib/generated/metadata/ -t phone_number_alt
+
 # 4. Short Number
 dart run tools/bin/tools.dart metadata -i resources/ShortNumberMetadata.xml -o lib/generated/metadata/ -t short_number
+
 # 5. Timezone
 dart run tools/bin/tools.dart metadata -i resources/timezones/map_data.txt -o lib/generated/metadata/ -t timezone
+
 # 6. Timezone Test
 dart run tools/bin/tools.dart metadata -i resources/test/timezones/map_data.txt -o test/generated/metadata/ -t timezone
+
 # 7. Geocoding
 dart run tools/bin/tools.dart metadata -i resources/geocoding -o lib/generated/metadata/ -t geocoding
+
 # 8. Geocoding Test
 dart run tools/bin/tools.dart metadata -i resources/test/geocoding -o test/generated/metadata/ -t geocoding
+
+# 9. Carrier
+dart run tools/bin/tools.dart metadata -i resources/carrier -o lib/generated/metadata/ -t carrier
+
+# 10. Carrier Test
+dart run tools/bin/tools.dart metadata -i resources/test/carrier -o test/generated/metadata/ -t carrier
+
 
 # Fix Dart code issues (if any)
 dart format ./lib
@@ -79,6 +93,7 @@ dart test -r expanded ./test/phone_number_matcher_test.dart
 dart test -r expanded ./test/short_number_info_test.dart
 dart test -r expanded ./test/phone_number_offline_geocoder_test.dart
 dart test -r expanded ./test/phone_number_to_time_zones_mapper_test.dart
+dart test -r expanded ./test/phone_number_to_carrier_mapper_test.dart
 
 # Attempt to publish Dart code to see possible issues.
 dart pub publish --dry-run

@@ -3587,7 +3587,7 @@ class PhoneNumberUtil {
   ///
   /// [regionCode] the region for which we want to know whether it supports
   /// mobile number portability or not
-  bool isMobileNumberPortableRegion(String regionCode) {
+  bool isMobileNumberPortableRegion(String? regionCode) {
     PhoneMetadata? metadata = getMetadataForRegion(regionCode: regionCode);
     if (metadata == null) {
       return false;

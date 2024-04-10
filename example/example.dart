@@ -12,6 +12,7 @@ void main() {
   final Iterable<PhoneNumberMatch> foundPhoneNumbers = phoneUtil.findNumbers('Call me on 0201234567', 'GH');
   final String territory = PhoneNumberOfflineGeocoder.instance.getDescriptionForNumber(phoneNumber, Locale.english);
   final List<String> timezones = PhoneNumberToTimeZonesMapper.instance.getTimeZonesForNumber(phoneNumber);
+  final String carrier = PhoneNumberToCarrierMapper.instance.getNameForNumber(phoneNumber, Locale.english);
 
   /// prints: +233241234567
   print('e164: $e164');
@@ -39,6 +40,9 @@ void main() {
 
   /// prints: [Africa/Accra]
   print('timezones: $timezones');
+
+  /// prints: MTN
+  print('carrier: $carrier');
 
   /// prints:
   // +

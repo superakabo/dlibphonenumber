@@ -14,7 +14,7 @@ class TimezoneMetadataGenerator extends FileWriter {
     File file = File(args.inputFilePath);
     Map<int, String> timezones = parseTextFile(file);
     _saveTimezoneMetadataMap(timezones);
-    return 'Timezone metadata generated at ${args.outputDirectory}';
+    return '${args.metadataType} metadata generated at ${args.outputDirectory}';
   }
 
   /// Reads phone prefix data from the provided input stream and returns a SortedMap with the

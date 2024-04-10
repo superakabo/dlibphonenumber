@@ -24,12 +24,12 @@ import 'phone_prefix_map.dart';
 
 /// A helper class doing file handling and lookup of phone number prefix mappings.
 class PrefixFileReader {
-  PrefixFileReader(this._configData, this._locations) {
+  PrefixFileReader(this._configData, this._assetData) {
     _loadMappingFileProvider();
   }
 
   final Map<int, List<String>> _configData;
-  final Map<String, Map<int, String>> _locations;
+  final Map<String, Map<int, String>> _assetData;
 
   final List<Set<String>> _availableLanguages = [];
 
@@ -65,7 +65,7 @@ class PrefixFileReader {
   }
 
   void _loadPhonePrefixMapFromFile(String fileName) {
-    Map<int, String>? location = _locations[fileName];
+    Map<int, String>? location = _assetData[fileName];
 
     if (location != null) {
       final map = PhonePrefixMap(location.entries.toList());

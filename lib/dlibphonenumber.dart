@@ -20,3 +20,4 @@ export 'short_number_info.dart';
 export 'phone_number_to_time_zones_mapper.dart';
 export 'phone_number_offline_geocoder.dart';
 export 'locale.dart';
+export 'phone_number_to_carrier_mapper.dart';

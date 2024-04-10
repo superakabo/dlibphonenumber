@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:args/command_runner.dart';
 
 import 'args_model.dart';
+import 'carrier_metadata_generator.dart';
 import 'geocoding_metadata_generator.dart';
 import 'phone_number_alt_formats_metadata_generator.dart';
 import 'phone_number_metadata_generator.dart';
@@ -65,6 +66,12 @@ class MetadataCommand extends Command<String> {
       '\n'
       'Generate Phone Number Alt Formats metadata:\n'
       'dart run tools/bin/tools.dart metadata -i resources/PhoneNumberAlternateFormats.xml -o lib/generated/metadata/ -t phone_number_alt\n'
+      '\n'
+      'Generate Carrier Test metadata:\n'
+      'dart run tools/bin/tools.dart metadata -i resources/test/carrier -o test/generated/metadata/ -t carrier\n'
+      '\n'
+      'Generate Carrier metadata:\n'
+      'dart run tools/bin/tools.dart metadata -i resources/carrier -o lib/generated/metadata/ -t carrier\n'
       '\n';
 
   @override
@@ -100,6 +107,8 @@ class MetadataCommand extends Command<String> {
         return GeocodingMetadataGenerator(args).start();
 
       case 'carrier':
+        return CarrierMetadataGenerator(args).start();
+
       default:
         return 'Metadata code successfully created';
     }

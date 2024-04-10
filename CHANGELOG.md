@@ -1,3 +1,6 @@
+## 1.1.13
+- Added PhoneNumberToCarrierMapper feature
+
 ## 1.1.12
 - Added Geocoding feature
 - Added Timezone feature

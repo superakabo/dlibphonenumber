@@ -15,9 +15,3 @@ test/**
 
 # exclude unnecessary project files
 analysis_options.yaml
-
-# ignore old files in generated directory
-lib/generated/data/**
-lib/generated/alternate_number_format_metadata.dart
-lib/generated/country_code_to_region_code_map.dart
-lib/generated/country_code_to_region_code_map_test.dart
