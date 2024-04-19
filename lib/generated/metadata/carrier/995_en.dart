@@ -66,6 +66,7 @@ Map<int, String> get995_en() {
     99550090: "Cellfie",
     99550099: "Silknet",
     99551100: "MagtiCom",
+    99551101: "Silknet",
     99551107: "Silknet",
     99552222: "MagtiCom",
     99552225: "Silknet",

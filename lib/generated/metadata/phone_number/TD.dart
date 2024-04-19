@@ -14,7 +14,7 @@ Map<String, Object?> getTD() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:6[0235689]|77|9\\d)\\d{6}",
+      "nationalNumberPattern": "(?:6[0-689]|77|9\\d)\\d{6}",
       "exampleNumber": "63012345",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

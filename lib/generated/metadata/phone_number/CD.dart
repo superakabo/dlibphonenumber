@@ -14,7 +14,7 @@ Map<String, Object?> getCD() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "88\\d{5}|(?:8[0-59]|9[017-9])\\d{7}",
+      "nationalNumberPattern": "88\\d{5}|(?:8[0-69]|9[017-9])\\d{7}",
       "exampleNumber": "991234567",
       "possibleLength": [7, 9],
       "possibleLengthLocalOnly": [-1]

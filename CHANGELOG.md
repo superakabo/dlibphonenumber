@@ -1,5 +1,8 @@
 ## 1.1.13
 - Added PhoneNumberToCarrierMapper feature
+- Updated phone metadata for region code(s): CD, GE, GY, LA, PT, RO, SG, TD
+- Updated geocoding data for country calling code(s): 49 (en)
+- Updated carrier data for country calling code(s): 40 (en), 65 (en), 235 (en), 243 (en), 244 (en), 351 (en), 592 (en), 856 (en), 995 (en)
 
 ## 1.1.12
 - Added Geocoding feature

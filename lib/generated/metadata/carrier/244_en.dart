@@ -7,7 +7,7 @@ Map<int, String> get244_en() {
     24492: "UNITEL",
     24493: "UNITEL",
     24494: "UNITEL",
-    24495: "Africell Angola",
+    24495: "Africell",
     24499: "Movicel"
   };
 }

@@ -9,6 +9,7 @@ Map<int, String> get856_en() {
     856207: "Beeline",
     856208: "Best Telecom",
     856209: "Unitel",
-    856302: "ETL"
+    856302: "ETL",
+    856304: "Unitel"
   };
 }

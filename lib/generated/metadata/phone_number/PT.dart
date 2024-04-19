@@ -16,7 +16,7 @@ Map<String, Object?> getPT() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "6(?:[06]92(?:30|9\\d)|[35]92(?:3[034]|9\\d))\\d{3}|(?:(?:16|6[0356])93|9(?:[1-36]\\d\\d|480))\\d{5}",
+          "6(?:[06]92(?:30|9\\d)|[35]92(?:[049]\\d|3[034]))\\d{3}|(?:(?:16|6[0356])93|9(?:[1-36]\\d\\d|480))\\d{5}",
       "exampleNumber": "912345678",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -106,7 +106,7 @@ Map<String, Object?> getPT() {
       "possibleLengthLocalOnly": [-1]
     },
     "voicemail": {
-      "nationalNumberPattern": "600\\d{6}|6[06]923[34]\\d{3}",
+      "nationalNumberPattern": "600\\d{6}|6[06]92(?:0\\d|3[349]|49)\\d{3}",
       "exampleNumber": "600110000",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

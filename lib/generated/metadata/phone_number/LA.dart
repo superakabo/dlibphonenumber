@@ -15,9 +15,9 @@ Map<String, Object?> getLA() {
       "possibleLengthLocalOnly": [6]
     },
     "mobile": {
-      "nationalNumberPattern": "2088\\d{6}|(?:20[23579]|302)\\d{7}",
+      "nationalNumberPattern": "(?:20(?:[23579]\\d|88)|30(?:2\\d|4))\\d{6}",
       "exampleNumber": "2023123456",
-      "possibleLength": [10],
+      "possibleLength": [9, 10],
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
@@ -102,7 +102,7 @@ Map<String, Object?> getLA() {
       "possibleLengthLocalOnly": [-1]
     },
     "uan": {
-      "nationalNumberPattern": "30[013-9]\\d{6}",
+      "nationalNumberPattern": "30[0135-9]\\d{6}",
       "exampleNumber": "301234567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

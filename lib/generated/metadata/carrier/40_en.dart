@@ -3,6 +3,7 @@
 /// Carrier JSON data for 40_en
 Map<int, String> get40_en() {
   return {
+    4060: "Telekom",
     4062: "Vodafone",
     4064: "Orange",
     4072: "Vodafone",
