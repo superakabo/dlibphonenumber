@@ -23,6 +23,7 @@ Map<int, String> get992_en() {
     99255: "Megafon",
     99270: "Tcell",
     99271: "Babilon-M",
+    99275: "Babilon-M",
     99277: "Tcell",
     99278: "Megafon",
     99280: "ZET-MOBILE",

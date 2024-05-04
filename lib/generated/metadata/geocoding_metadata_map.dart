@@ -487,7 +487,6 @@ import 'geocoding/299_en.dart';
 import 'geocoding/30_en.dart';
 import 'geocoding/31_en.dart';
 import 'geocoding/32_en.dart';
-import 'geocoding/33_en.dart';
 import 'geocoding/34_en.dart';
 import 'geocoding/351_en.dart';
 import 'geocoding/352_en.dart';
@@ -536,7 +535,6 @@ import 'geocoding/593_en.dart';
 import 'geocoding/595_en.dart';
 import 'geocoding/598_en.dart';
 import 'geocoding/599_en.dart';
-import 'geocoding/60_en.dart';
 import 'geocoding/61_en.dart';
 import 'geocoding/62_en.dart';
 import 'geocoding/63_en.dart';
@@ -606,7 +604,6 @@ import 'geocoding/230_fr.dart';
 import 'geocoding/243_fr.dart';
 import 'geocoding/290_fr.dart';
 import 'geocoding/32_fr.dart';
-import 'geocoding/33_fr.dart';
 import 'geocoding/352_fr.dart';
 import 'geocoding/41_fr.dart';
 import 'geocoding/387_hr.dart';
@@ -663,7 +660,6 @@ class GeocodingMetadataMap {
       30: ["en", "el"],
       31: ["en", "nl"],
       32: ["en", "fr", "de", "nl"],
-      33: ["en", "fr"],
       34: ["en", "es"],
       36: ["en", "hu"],
       39: ["en", "it"],
@@ -683,7 +679,6 @@ class GeocodingMetadataMap {
       56: ["en", "es"],
       57: ["en"],
       58: ["en", "es"],
-      60: ["en"],
       61: ["en"],
       62: ["en", "id"],
       63: ["en"],
@@ -1695,7 +1690,6 @@ class GeocodingMetadataMap {
       '30_en': get30_en(),
       '31_en': get31_en(),
       '32_en': get32_en(),
-      '33_en': get33_en(),
       '34_en': get34_en(),
       '351_en': get351_en(),
       '352_en': get352_en(),
@@ -1744,7 +1738,6 @@ class GeocodingMetadataMap {
       '595_en': get595_en(),
       '598_en': get598_en(),
       '599_en': get599_en(),
-      '60_en': get60_en(),
       '61_en': get61_en(),
       '62_en': get62_en(),
       '63_en': get63_en(),
@@ -1814,7 +1807,6 @@ class GeocodingMetadataMap {
       '243_fr': get243_fr(),
       '290_fr': get290_fr(),
       '32_fr': get32_fr(),
-      '33_fr': get33_fr(),
       '352_fr': get352_fr(),
       '41_fr': get41_fr(),
       '387_hr': get387_hr(),

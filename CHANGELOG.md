@@ -1,3 +1,9 @@
+## 1.1.14
+- Updated phone metadata for region code(s): AR, BW, CH, GA, GE, GY, MU, SB, SG, TJ, VI
+- Updated geocoding data for country calling code(s): 1340 (en)
+- Updated carrier data for country calling code(s): 41 (en), 65 (en), 592 (en), 677 (en), 992 (en), 995 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.13
 - Added PhoneNumberToCarrierMapper feature
 - Updated phone metadata for region code(s): CD, GE, GY, LA, PT, RO, SG, TD

@@ -3,6 +3,10 @@
 /// Carrier JSON data for 41_en
 Map<int, String> get41_en() {
   return {
+    4168: "Swisscom",
+    4169: "Swisscom",
+    4172: "Swisscom",
+    4173: "Swisscom",
     41752: "Swisscom",
     41753: "Swisscom",
     41754: "Swisscom",

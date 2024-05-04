@@ -15,7 +15,7 @@ Map<String, Object?> getCH() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "7[35-9]\\d{7}",
+      "nationalNumberPattern": "(?:6[89]|7[235-9])\\d{7}",
       "exampleNumber": "781234567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

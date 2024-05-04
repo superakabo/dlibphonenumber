@@ -10,7 +10,7 @@ Map<String, Object?> getBW() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "(?:2(?:4[0-48]|6[0-24]|9[0578])|3(?:1[0-35-9]|55|[69]\\d|7[013]|81)|4(?:6[03]|7[1267]|9[0-5])|5(?:3[03489]|4[0489]|7[1-47]|88|9[0-49])|6(?:2[1-35]|5[149]|8[067]))\\d{4}",
+          "(?:2(?:4[0-48]|6[0-24]|9[0578])|3(?:1[0-35-9]|55|[69]\\d|7[013]|81)|4(?:6[03]|7[1267]|9[0-5])|5(?:3[03489]|4[0489]|7[1-47]|88|9[0-49])|6(?:2[1-35]|5[149]|8[013467]))\\d{4}",
       "exampleNumber": "2401234",
       "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]
@@ -42,7 +42,7 @@ Map<String, Object?> getBW() {
       "possibleLengthLocalOnly": [-1]
     },
     "voip": {
-      "nationalNumberPattern": "79(?:1(?:[01]\\d|2[0-8])|2[0-7]\\d)\\d{3}",
+      "nationalNumberPattern": "79(?:1(?:[0-2]\\d|3[0-3])|2[0-7]\\d)\\d{3}",
       "exampleNumber": "79101234",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

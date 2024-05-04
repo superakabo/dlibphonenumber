@@ -4,7 +4,7 @@
 Map<String, Object?> getSB() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:[1-6]|[7-9]\\d\\d)\\d{4}",
+      "nationalNumberPattern": "[6-9]\\d{6}|[1-6]\\d{4}",
       "possibleLength": [5, 7]
     },
     "fixedLine": {
@@ -15,7 +15,7 @@ Map<String, Object?> getSB() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "48\\d{3}|(?:(?:7[1-9]|8[4-9])\\d|9(?:1[2-9]|2[013-9]|3[0-2]|[46]\\d|5[0-46-9]|7[0-689]|8[0-79]|9[0-8]))\\d{4}",
+          "48\\d{3}|(?:(?:6[89]|7[1-9]|8[4-9])\\d|9(?:1[2-9]|2[013-9]|3[0-2]|[46]\\d|5[0-46-9]|7[0-689]|8[0-79]|9[0-8]))\\d{4}",
       "exampleNumber": "7421234",
       "possibleLength": [5, 7],
       "possibleLengthLocalOnly": [-1]
@@ -52,7 +52,7 @@ Map<String, Object?> getSB() {
       {
         "pattern": "(\\d{2})(\\d{5})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["7|8[4-9]|9(?:[1-8]|9[0-8])"],
+        "leadingDigitsPattern": ["6[89]|7|8[4-9]|9(?:[1-8]|9[0-8])"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -60,7 +60,7 @@ Map<String, Object?> getSB() {
       {
         "pattern": "(\\d{2})(\\d{5})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["7|8[4-9]|9(?:[1-8]|9[0-8])"],
+        "leadingDigitsPattern": ["6[89]|7|8[4-9]|9(?:[1-8]|9[0-8])"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
