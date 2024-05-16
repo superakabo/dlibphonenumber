@@ -15,7 +15,7 @@ Map<String, Object?> getNE() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:23|7[047]|[89]\\d)\\d{6}",
+      "nationalNumberPattern": "(?:23|7[0467]|[89]\\d)\\d{6}",
       "exampleNumber": "93123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
@@ -58,7 +58,7 @@ Map<String, Object?> getNE() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[089]|2[013]|7[047]"],
+        "leadingDigitsPattern": ["[089]|2[013]|7[0467]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -72,7 +72,7 @@ Map<String, Object?> getNE() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[089]|2[013]|7[047]"],
+        "leadingDigitsPattern": ["[089]|2[013]|7[0467]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

@@ -16,7 +16,7 @@ Map<String, Object?> getRO() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "7020\\d{5}|(?:6(?:[04]0|2\\d)|7(?:0[013-9]|1[0-3]|[2-7]\\d|8[03-8]|9[0-39]))\\d{6}",
+          "(?:630|702)0\\d{5}|(?:6(?:[04]0|2\\d)|7(?:0[013-9]|1[0-3]|[2-7]\\d|8[03-8]|9[0-39]))\\d{6}",
       "exampleNumber": "712034567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

@@ -1,3 +1,8 @@
+## 1.1.15
+- Updated phone metadata for region code(s): AU, BD, CC, CX, GA, GY, NE, RE, RO, UZ
+- Updated geocoding data for country calling code(s): 49 (en)
+- Updated carrier data for country calling code(s): 40 (en), 44 (en), 61 (en), 592 (en)
+
 ## 1.1.14
 - Updated phone metadata for region code(s): AR, BW, CH, GA, GE, GY, MU, SB, SG, TJ, VI
 - Updated geocoding data for country calling code(s): 1340 (en)

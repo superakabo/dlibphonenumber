@@ -18,6 +18,8 @@ Map<int, String> get49_de() {
     495064: "Groß Düngen",
     495384: "Seesen-Groß Rhüden",
     495827: "Unterlüß",
+    496215: "Ludwigshafen",
+    496216: "Ludwigshafen",
     496252: "Heppenheim Bergstraße",
     496321: "Neustadt an der Weinstraße",
     496364: "Nußbach Pfalz",
@@ -52,6 +54,9 @@ Map<int, String> get49_de() {
     4938234: "Born Darß",
     4939883: "Groß Dölln",
     4939934: "Groß Plasten",
-    4939976: "Groß Bützin"
+    4939976: "Groß Bützin",
+    4962195: "Ludwigshafen",
+    4962196: "Ludwigshafen",
+    4962199: "Ludwigshafen"
   };
 }

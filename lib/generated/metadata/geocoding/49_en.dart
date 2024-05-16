@@ -2051,6 +2051,8 @@ Map<int, String> get49_en() {
     496206: "Lampertheim",
     496207: "Wald-Michelbach",
     496209: "Mörlenbach",
+    496215: "Ludwigshafen",
+    496216: "Ludwigshafen",
     496220: "Wilhelmsfeld",
     496221: "Heidelberg",
     496222: "Wiesloch",
@@ -5204,6 +5206,9 @@ Map<int, String> get49_en() {
     4939996: "Törpin",
     4939997: "Jarmen",
     4939998: "Loitz bei Demmin",
-    4939999: "Tutow"
+    4939999: "Tutow",
+    4962195: "Ludwigshafen",
+    4962196: "Ludwigshafen",
+    4962199: "Ludwigshafen"
   };
 }

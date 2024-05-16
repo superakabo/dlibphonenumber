@@ -3,6 +3,7 @@
 /// Carrier JSON data for 61_en
 Map<int, String> get61_en() {
   return {
+    6146: "Telstra",
     6149: "Telstra",
     61400: "Telstra",
     61401: "Optus",
@@ -56,12 +57,7 @@ Map<int, String> get61_en() {
     61457: "Telstra",
     61458: "Telstra",
     61459: "Telstra",
-    61460: "Telstra",
-    61461: "Telstra",
-    61462: "Telstra",
-    61463: "Telstra",
     61466: "Optus",
-    61467: "Telstra",
     61468: "Optus",
     61469: "Lycamobile",
     61472: "Telstra",
@@ -90,7 +86,7 @@ Map<int, String> get61_en() {
     614704: "Lycamobile",
     614705: "Lycamobile",
     614706: "Lycamobile",
-    614707: "Lycamobile",
+    614707: "Telstra",
     614800: "Pivotel Satellite",
     614801: "Telstra",
     614803: "Telstra",

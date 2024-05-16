@@ -43,17 +43,13 @@ Map<String, Object?> getUZ() {
     },
     "id": "UZ",
     "countryCode": 998,
-    "internationalPrefix": "810",
-    "nationalPrefix": "8",
-    "nationalPrefixForParsing": "8",
-    "preferredInternationalPrefix": "8~10",
+    "internationalPrefix": "00",
     "sameMobileAndFixedLinePattern": false,
     "numberFormat": [
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": ["[235-9]"],
-        "nationalPrefixFormattingRule": "8 \$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -62,7 +58,6 @@ Map<String, Object?> getUZ() {
         "pattern": "(\\d{2})(\\d{3})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": ["[235-9]"],
-        "nationalPrefixFormattingRule": "8 \$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

@@ -44,7 +44,7 @@ Map<String, Object?> getRE() {
     },
     "voip": {
       "nationalNumberPattern":
-          "9(?:399[0-3]|479[0-5]|76(?:2[27]|3[0-37]))\\d{4}",
+          "9(?:399[0-3]|479[0-5]|76(?:2[278]|3[0-37]))\\d{4}",
       "exampleNumber": "939901234",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
