@@ -1,3 +1,8 @@
+## 1.1.16
+- Updated phone metadata for region code(s): AO, GB, GY, HK, MX
+- Updated carrier data for country calling code(s): 40 (en), 44 (en), 46 (en), 244 (en), 592 (en), 691 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.15
 - Updated phone metadata for region code(s): AU, BD, CC, CX, GA, GY, NE, RE, RO, UZ
 - Updated geocoding data for country calling code(s): 49 (en)

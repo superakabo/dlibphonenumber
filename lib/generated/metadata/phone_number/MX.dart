@@ -4,9 +4,8 @@
 Map<String, Object?> getMX() {
   return {
     "generalDesc": {
-      "nationalNumberPattern":
-          "1(?:(?:22|44|7[27]|87|9[69])[1-9]|65[0-689])\\d{7}|(?:1(?:[01]\\d|2[13-9]|[35][1-9]|4[0-35-9]|6[0-46-9]|7[013-689]|8[1-69]|9[1-578])|[2-9]\\d)\\d{8}",
-      "possibleLength": [10, 11],
+      "nationalNumberPattern": "[2-9]\\d{9}",
+      "possibleLength": [10],
       "possibleLengthLocalOnly": [7, 8]
     },
     "fixedLine": {
@@ -18,9 +17,9 @@ Map<String, Object?> getMX() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "657[12]\\d{6}|(?:1(?:2(?:2[1-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|3\\d|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-7][1-9]|3[1-8]|8[1-35-9]|9[2-689])|5(?:[56]\\d|88|9[1-79])|6(?:1[2-68]|[2-4][1-9]|5[1-3689]|6[1-57-9]|7[1-7]|8[67]|9[4-8])|7(?:[1-467][1-9]|5[13-9]|8[1-69]|9[17])|8(?:1\\d|2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[1-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69][1-9]|7[12]|8[1-8]))|2(?:2\\d|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|3\\d|7[1-8]|9[1-5])|4(?:1[1-57-9]|[25-7][1-9]|3[1-8]|4\\d|8[1-35-9]|9[2-689])|5(?:[56]\\d|88|9[1-79])|6(?:1[2-68]|[2-4][1-9]|5[1-3689]|6[1-57-9]|7[1-7]|8[67]|9[4-8])|7(?:[1346][1-9]|[27]\\d|5[13-9]|8[1-69]|9[17])|8(?:1\\d|2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[0-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69]\\d|7[12]|8[1-8]))\\d{7}",
-      "exampleNumber": "12221234567",
-      "possibleLength": [10, 11],
+          "657[12]\\d{6}|(?:2(?:2\\d|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|3\\d|7[1-8]|9[1-5])|4(?:1[1-57-9]|[25-7][1-9]|3[1-8]|4\\d|8[1-35-9]|9[2-689])|5(?:[56]\\d|88|9[1-79])|6(?:1[2-68]|[2-4][1-9]|5[1-3689]|6[1-57-9]|7[1-7]|8[67]|9[4-8])|7(?:[1346][1-9]|[27]\\d|5[13-9]|8[1-69]|9[17])|8(?:1\\d|2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[0-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69]\\d|7[12]|8[1-8]))\\d{7}",
+      "exampleNumber": "2221234567",
+      "possibleLength": [10],
       "possibleLengthLocalOnly": [7, 8]
     },
     "tollFree": {
@@ -54,8 +53,6 @@ Map<String, Object?> getMX() {
     "id": "MX",
     "countryCode": 52,
     "internationalPrefix": "0[09]",
-    "nationalPrefix": "01",
-    "nationalPrefixForParsing": "0(?:[12]|4[45])|1",
     "preferredInternationalPrefix": "00",
     "sameMobileAndFixedLinePattern": false,
     "numberFormat": [
@@ -69,25 +66,13 @@ Map<String, Object?> getMX() {
         "pattern": "(\\d{2})(\\d{4})(\\d{4})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["33|5[56]|81"],
-        "nationalPrefixOptionalWhenFormatting": true
+        "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{4})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["[2-9]"],
-        "nationalPrefixOptionalWhenFormatting": true
-      },
-      {
-        "pattern": "(\\d)(\\d{2})(\\d{4})(\\d{4})",
-        "format": "\$2 \$3 \$4",
-        "leadingDigitsPattern": ["1(?:33|5[56]|81)"],
-        "nationalPrefixOptionalWhenFormatting": true
-      },
-      {
-        "pattern": "(\\d)(\\d{3})(\\d{3})(\\d{4})",
-        "format": "\$2 \$3 \$4",
-        "leadingDigitsPattern": ["1"],
-        "nationalPrefixOptionalWhenFormatting": true
+        "nationalPrefixOptionalWhenFormatting": false
       }
     ],
     "intlNumberFormat": [
@@ -95,25 +80,13 @@ Map<String, Object?> getMX() {
         "pattern": "(\\d{2})(\\d{4})(\\d{4})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["33|5[56]|81"],
-        "nationalPrefixOptionalWhenFormatting": true
+        "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{4})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["[2-9]"],
-        "nationalPrefixOptionalWhenFormatting": true
-      },
-      {
-        "pattern": "(\\d)(\\d{2})(\\d{4})(\\d{4})",
-        "format": "\$2 \$3 \$4",
-        "leadingDigitsPattern": ["1(?:33|5[56]|81)"],
-        "nationalPrefixOptionalWhenFormatting": true
-      },
-      {
-        "pattern": "(\\d)(\\d{3})(\\d{3})(\\d{4})",
-        "format": "\$2 \$3 \$4",
-        "leadingDigitsPattern": ["1"],
-        "nationalPrefixOptionalWhenFormatting": true
+        "nationalPrefixOptionalWhenFormatting": false
       }
     ],
     "pager": {
