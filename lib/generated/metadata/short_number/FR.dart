@@ -17,14 +17,15 @@ Map<String, Object?> getFR() {
     },
     "tollFree": {
       "nationalNumberPattern":
-          "1(?:0(?:07|[13]3)|1[02459]|[578]|9[167])|224|(?:3370|74)0|(?:116\\d|3[01])\\d\\d",
+          "1(?:1[02459]|[578]|9[167])|224|(?:3370|74)0|(?:116\\d|3[01])\\d\\d",
       "exampleNumber": "15",
       "possibleLength": [2, 3, 4, 5, 6],
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "nationalNumberPattern": "366\\d\\d|3[2-9]\\d\\d|(?:118|[4-8]\\d)\\d{3}",
-      "exampleNumber": "3200",
+      "nationalNumberPattern":
+          "(?:1(?:0|18\\d)|366|[4-8]\\d\\d)\\d\\d|3[2-9]\\d\\d",
+      "exampleNumber": "1000",
       "possibleLength": [4, 5, 6],
       "possibleLengthLocalOnly": [-1]
     },
@@ -74,8 +75,7 @@ Map<String, Object?> getFR() {
       "possibleLengthLocalOnly": [-1]
     },
     "standardRate": {
-      "nationalNumberPattern":
-          "10(?:[134]4|2[23]|5\\d|99)|202\\d|634|70[06]|(?:106|61)[14]",
+      "nationalNumberPattern": "202\\d|6(?:1[14]|34)|70[06]",
       "exampleNumber": "611",
       "possibleLength": [3, 4],
       "possibleLengthLocalOnly": [-1]

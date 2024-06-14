@@ -81,7 +81,6 @@ import 'geocoding/1301_en.dart';
 import 'geocoding/1302_en.dart';
 import 'geocoding/1303_en.dart';
 import 'geocoding/1304_en.dart';
-import 'geocoding/1305_en.dart';
 import 'geocoding/1306_en.dart';
 import 'geocoding/1307_en.dart';
 import 'geocoding/1308_en.dart';
@@ -424,6 +423,7 @@ import 'geocoding/1985_en.dart';
 import 'geocoding/1986_en.dart';
 import 'geocoding/1989_en.dart';
 import 'geocoding/1203_en.dart';
+import 'geocoding/1305_en.dart';
 import 'geocoding/1345_en.dart';
 import 'geocoding/1713_en.dart';
 import 'geocoding/1718_en.dart';
@@ -1284,7 +1284,6 @@ class GeocodingMetadataMap {
       '1302_en': get1302_en(),
       '1303_en': get1303_en(),
       '1304_en': get1304_en(),
-      '1305_en': get1305_en(),
       '1306_en': get1306_en(),
       '1307_en': get1307_en(),
       '1308_en': get1308_en(),
@@ -1627,6 +1626,7 @@ class GeocodingMetadataMap {
       '1986_en': get1986_en(),
       '1989_en': get1989_en(),
       '1203_en': get1203_en(),
+      '1305_en': get1305_en(),
       '1345_en': get1345_en(),
       '1713_en': get1713_en(),
       '1718_en': get1718_en(),

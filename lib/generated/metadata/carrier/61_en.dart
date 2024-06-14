@@ -89,6 +89,7 @@ Map<int, String> get61_en() {
     614707: "Telstra",
     614800: "Pivotel Satellite",
     614801: "Telstra",
+    614802: "Telstra",
     614803: "Telstra",
     614804: "Telstra",
     614805: "Telstra",

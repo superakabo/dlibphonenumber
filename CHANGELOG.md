@@ -1,3 +1,9 @@
+## 1.1.17
+- Updated phone metadata for region code(s): KE, US
+- Updated short number metadata for region code(s): FR
+- Updated geocoding data for country calling code(s): 1305 (en)
+- Updated carrier data for country calling code(s): 61 (en)
+
 ## 1.1.16
 - Updated phone metadata for region code(s): AO, GB, GY, HK, MX
 - Updated carrier data for country calling code(s): 40 (en), 44 (en), 46 (en), 244 (en), 592 (en), 691 (en)
