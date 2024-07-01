@@ -7,7 +7,7 @@ Map<int, String> get880_en() {
     88013: "Grameenphone",
     88014: "Banglalink",
     88015: "TeleTalk",
-    88016: "Airtel",
+    88016: "Robi",
     88017: "Grameenphone",
     88018: "Robi",
     88019: "Banglalink"

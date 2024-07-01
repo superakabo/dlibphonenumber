@@ -16,7 +16,7 @@ Map<String, Object?> getGY() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:510|6\\d\\d|7(?:[013]\\d|2[0-25-8]|4[0-29]|5[1-9]))\\d{4}",
+          "(?:510|6\\d\\d|7(?:[0135]\\d|2[0-8]|4[0-24-9]))\\d{4}",
       "exampleNumber": "6091234",
       "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]

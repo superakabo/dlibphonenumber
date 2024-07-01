@@ -64,13 +64,16 @@ Map<String, Object?> getFI() {
       "possibleLengthLocalOnly": [-1]
     },
     "shortCode": {
-      "nationalNumberPattern": "11(?:2|6(?:00[06]|1(?:1[17]|23)))|75[12]\\d\\d",
+      "nationalNumberPattern":
+          "11(?:2|6(?:00[06]|1(?:1[17]|23)))|(?:1[235-8]\\d|75[12])\\d\\d",
       "exampleNumber": "112",
       "possibleLength": [3, 5, 6],
       "possibleLengthLocalOnly": [-1]
     },
     "standardRate": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "1[235-8]\\d{3}",
+      "exampleNumber": "12000",
+      "possibleLength": [5],
       "possibleLengthLocalOnly": [-1]
     },
     "carrierSpecific": {

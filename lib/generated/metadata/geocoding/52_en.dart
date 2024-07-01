@@ -219,6 +219,7 @@ Map<int, String> get52_en() {
     52656: "Chihuahua",
     52658: "Baja California",
     52659: "Chihuahua",
+    52660: "Culiacan",
     52661: "Primo Tapia/Rosarito, BCN",
     52662: "Sonora",
     52665: "Tecate, BCN",

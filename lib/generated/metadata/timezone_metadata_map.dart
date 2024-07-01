@@ -979,6 +979,7 @@ class TimezoneMetadataMap {
       52657: "America/Mazatlan",
       52658: "America/Tijuana",
       52659: "America/Mazatlan",
+      52660: "America/Mazatlan",
       52661: "America/Tijuana",
       52662: "America/Mazatlan",
       52663: "America/Mexico_City",

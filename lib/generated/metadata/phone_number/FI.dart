@@ -10,7 +10,7 @@ Map<String, Object?> getFI() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "(?:1[3-79][1-8]|[23568][1-8]\\d|9(?:00|[1-8]\\d))\\d{2,6}",
+          "1[35-7][1-8]\\d{3,6}|(?:1[49][1-8]|[23568][1-8]\\d|9(?:00|[1-8]\\d))\\d{2,6}",
       "exampleNumber": "131234567",
       "possibleLength": [5, 6, 7, 8, 9],
       "possibleLengthLocalOnly": [-1]
@@ -98,7 +98,7 @@ Map<String, Object?> getFI() {
       {
         "pattern": "(\\d)(\\d{4,9})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["(?:1[3-79]|[2568])[1-8]|3(?:0[1-9]|[1-9])|9"],
+        "leadingDigitsPattern": ["(?:1[49]|[2568])[1-8]|3(?:0[1-9]|[1-9])|9"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
@@ -135,7 +135,7 @@ Map<String, Object?> getFI() {
       {
         "pattern": "(\\d)(\\d{4,9})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["(?:1[3-79]|[2568])[1-8]|3(?:0[1-9]|[1-9])|9"],
+        "leadingDigitsPattern": ["(?:1[49]|[2568])[1-8]|3(?:0[1-9]|[1-9])|9"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }

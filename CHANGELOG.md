@@ -1,4 +1,11 @@
 ## 1.1.17
+- Updated phone metadata for region code(s): FI, GE, GY, HK, IL, MU, MX, TD
+- Updated short number metadata for region code(s): FI
+- Updated geocoding data for country calling code(s): 52 (en, es)
+- Updated carrier data for country calling code(s): 230 (en), 235 (en), 592 (en), 852 (en, zh), 880 (en), 995 (en)
+- Updated / refreshed time zone meta data.
+
+## 1.1.17
 - Updated phone metadata for region code(s): KE, US
 - Updated short number metadata for region code(s): FR
 - Updated geocoding data for country calling code(s): 1305 (en)
