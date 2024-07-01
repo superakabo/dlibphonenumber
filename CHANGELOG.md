@@ -1,4 +1,4 @@
-## 1.1.17
+## 1.1.18
 - Updated phone metadata for region code(s): FI, GE, GY, HK, IL, MU, MX, TD
 - Updated short number metadata for region code(s): FI
 - Updated geocoding data for country calling code(s): 52 (en, es)
