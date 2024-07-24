@@ -25,7 +25,7 @@ Map<int, String> get237_en() {
     237685: "NEXTTEL",
     237686: "Orange",
     237687: "Orange",
-    237688: "NEXTTEL",
+    237688: "Orange",
     237689: "NEXTTEL"
   };
 }

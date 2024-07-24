@@ -62,16 +62,16 @@ Map<String, Object?> getCN() {
         "pattern": "(\\d{5,6})",
         "format": "\$1",
         "leadingDigitsPattern": [
-          "1(?:00|2[13])|95",
-          "1(?:00|2(?:11|39))|95",
-          "1(?:00|2(?:110|395))|95"
+          "1(?:00|2[13])|9[56]",
+          "1(?:00|2(?:1|39))|9[56]",
+          "1(?:00|2(?:1|395))|9[56]"
         ],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{5,6})",
         "format": "\$1",
-        "leadingDigitsPattern": ["10|96"],
+        "leadingDigitsPattern": ["10"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {

@@ -4,7 +4,7 @@
 Map<String, Object?> getSC() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "800\\d{4}|(?:[249]\\d|64)\\d{5}",
+      "nationalNumberPattern": "(?:[2489]\\d|64)\\d{5}",
       "possibleLength": [7]
     },
     "fixedLine": {
@@ -26,7 +26,9 @@ Map<String, Object?> getSC() {
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "85\\d{5}",
+      "exampleNumber": "8512345",
+      "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {

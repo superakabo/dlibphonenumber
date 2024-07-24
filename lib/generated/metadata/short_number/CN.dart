@@ -4,8 +4,8 @@
 Map<String, Object?> getCN() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[19]\\d\\d(?:\\d{2,3})?",
-      "possibleLength": [3, 5, 6]
+      "nationalNumberPattern": "[19]\\d{2,5}",
+      "possibleLength": [3, 4, 5, 6]
     },
     "fixedLine": {
       "possibleLength": [-1],
@@ -16,7 +16,7 @@ Map<String, Object?> getCN() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "1(?:1[09]|2(?:[02]|[13]\\d\\d))",
+      "nationalNumberPattern": "1(?:1[09]|2(?:[02]|1\\d\\d|395))",
       "exampleNumber": "110",
       "possibleLength": [3, 5],
       "possibleLengthLocalOnly": [-1]
@@ -65,15 +65,16 @@ Map<String, Object?> getCN() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "1(?:00\\d\\d|1[029]|2(?:[02]|110|395))|95\\d{3,4}",
-      "exampleNumber": "110",
-      "possibleLength": [3, 5, 6],
+          "1(?:00|1[0249]|2395|6[08])|9[56]\\d{3,4}|12[023]|1(?:0(?:[0-26]\\d|8)|21\\d)\\d",
+      "exampleNumber": "100",
+      "possibleLength": [3, 4, 5, 6],
       "possibleLengthLocalOnly": [-1]
     },
     "standardRate": {
-      "nationalNumberPattern": "1(?:00\\d\\d|12)|95\\d{3,4}",
-      "exampleNumber": "112",
-      "possibleLength": [3, 5, 6],
+      "nationalNumberPattern":
+          "1(?:0(?:[0-26]\\d|8)\\d|1[24]|23|6[08])|9[56]\\d{3,4}|100",
+      "exampleNumber": "100",
+      "possibleLength": [3, 4, 5, 6],
       "possibleLengthLocalOnly": [-1]
     },
     "carrierSpecific": {
@@ -82,8 +83,8 @@ Map<String, Object?> getCN() {
     },
     "mobileNumberPortableRegion": false,
     "smsServices": {
-      "nationalNumberPattern": "121\\d\\d",
-      "exampleNumber": "12100",
+      "nationalNumberPattern": "12110",
+      "exampleNumber": "12110",
       "possibleLength": [5],
       "possibleLengthLocalOnly": [-1]
     }

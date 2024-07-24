@@ -53,6 +53,7 @@ Map<int, String> get592_en() {
     592726: "GTT",
     592727: "GTT",
     592728: "GTT",
+    592729: "GTT",
     592740: "E-Networks",
     592741: "E-Networks",
     592742: "E-Networks",

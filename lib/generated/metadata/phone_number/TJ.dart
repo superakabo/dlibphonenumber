@@ -17,7 +17,7 @@ Map<String, Object?> getTJ() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:4(?:1[18]|4[02-479])|81[1-9])\\d{6}|(?:0[0-57-9]|1[017]|2[02]|[34]0|5[05]|7[01578]|8[078]|9\\d)\\d{7}",
+          "(?:33[03-9]|4(?:1[18]|4[02-479])|81[1-9])\\d{6}|(?:0[0-57-9]|1[017]|2[02]|[34]0|5[05]|7[01578]|8[078]|9\\d)\\d{7}",
       "exampleNumber": "917123456",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -63,7 +63,7 @@ Map<String, Object?> getTJ() {
       {
         "pattern": "(\\d{4})(\\d)(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["3[1-5]"],
+        "leadingDigitsPattern": ["3(?:[1245]|3[12])"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
@@ -89,7 +89,7 @@ Map<String, Object?> getTJ() {
       {
         "pattern": "(\\d{4})(\\d)(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["3[1-5]"],
+        "leadingDigitsPattern": ["3(?:[1245]|3[12])"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {

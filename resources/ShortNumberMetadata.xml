@@ -640,7 +640,7 @@
     <territory id="AT">
       <generalDesc>
         <nationalNumberPattern>
-          [168]\d\d(?:
+          [1268]\d\d(?:
             \d(?:
               \d{2}
             )?
@@ -671,6 +671,7 @@
             )
           )|
           (?:
+            220|
             61|
             8108[1-3]
           )0
@@ -695,11 +696,14 @@
       <!-- Added yesss! numbers 810810 , 810820 and 810830 based on their website. 
            Added Georg number 610 based on their website. -->
       <carrierSpecific>
-        <possibleLengths national="3,6"/>
+        <possibleLengths national="3,4,6"/>
         <exampleNumber>610</exampleNumber>
         <nationalNumberPattern>
-          610|
-          810\d{3}
+          (?:
+            220|
+            810\d\d
+          )\d|
+          610
         </nationalNumberPattern>
       </carrierSpecific>
       <emergency>
@@ -2977,11 +2981,7 @@
     <!-- http://www.itu.int/oth/T020200002B/en -->
     <territory id="CN">
       <generalDesc>
-        <nationalNumberPattern>
-          [19]\d\d(?:
-            \d{2,3}
-          )?
-        </nationalNumberPattern>
+        <nationalNumberPattern>[19]\d{2,5}</nationalNumberPattern>
       </generalDesc>
       <!-- 100xx numbers are mainly used for carrier services. They can be dialed nationwide and
            are always routed to the local provider.  Note they can also be used with area codes
@@ -2989,19 +2989,24 @@
            more like fixed-line and is covered under the fixed-line pattern in
            PhoneNumberMetadata.xml. -->
       <shortCode>
-        <possibleLengths national="3,5,6"/>
-        <exampleNumber>110</exampleNumber>
+        <possibleLengths national="[3-6]"/>
+        <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            00\d\d|
-            1[029]|
-            2(?:
-              [02]|
-              110|
-              395
-            )
+            00|
+            1[0249]|
+            2395|
+            6[08]
           )|
-          95\d{3,4}
+          9[56]\d{3,4}|
+          12[023]|
+          1(?:
+            0(?:
+              [0-26]\d|
+              8
+            )|
+            21\d
+          )\d
         </nationalNumberPattern>
       </shortCode>
       <tollFree>
@@ -3012,7 +3017,8 @@
             1[09]|
             2(?:
               [02]|
-              [13]\d\d
+              1\d\d|
+              395
             )
           )
         </nationalNumberPattern>
@@ -3025,14 +3031,20 @@
            specifically wants to reach an operator in a different region. That case is more like
            fixed-line and is covered under the fixed-line pattern in PhoneNumberMetadata.xml. -->
       <standardRate>
-        <possibleLengths national="3,5,6"/>
-        <exampleNumber>112</exampleNumber>
+        <possibleLengths national="[3-6]"/>
+        <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            00\d\d|
-            12
+            0(?:
+              [0-26]\d|
+              8
+            )\d|
+            1[24]|
+            23|
+            6[08]
           )|
-          95\d{3,4}
+          9[56]\d{3,4}|
+          100
         </nationalNumberPattern>
       </standardRate>
       <emergency>
@@ -3050,15 +3062,16 @@
         <exampleNumber>122</exampleNumber>
         <nationalNumberPattern>
           12(?:
-            [13]\d\d|
-            2
+            1\d\d|
+            2|
+            395
           )
         </nationalNumberPattern>
       </expandedEmergency>
       <smsServices>
         <possibleLengths national="5"/>
-        <exampleNumber>12100</exampleNumber>
-        <nationalNumberPattern>121\d\d</nationalNumberPattern>
+        <exampleNumber>12110</exampleNumber>
+        <nationalNumberPattern>12110</nationalNumberPattern>
       </smsServices>
     </territory>
 
@@ -3582,16 +3595,12 @@
     <!-- http://en.wikipedia.org/wiki/Telephone_numbers_in_germany -->
     <territory id="DE">
       <generalDesc>
-        <nationalNumberPattern>
-          1\d\d(?:
-            \d{2,3}
-          )?
-        </nationalNumberPattern>
+        <nationalNumberPattern>[13]\d{2,5}</nationalNumberPattern>
       </generalDesc>
       <!-- 118xx short numbers are used for directory services and 1180xx are used for call
            connect services. -->
       <shortCode>
-        <possibleLengths national="3,5,6"/>
+        <possibleLengths national="[3-6]"/>
         <exampleNumber>110</exampleNumber>
         <nationalNumberPattern>
           11(?:
@@ -3605,6 +3614,7 @@
             )|
             800\d
           )|
+          3311|
           118\d\d
         </nationalNumberPattern>
       </shortCode>
@@ -3618,6 +3628,11 @@
           )
         </nationalNumberPattern>
       </tollFree>
+      <carrierSpecific>
+        <possibleLengths national="4"/>
+        <exampleNumber>3310</exampleNumber>
+        <nationalNumberPattern>331\d</nationalNumberPattern>
+      </carrierSpecific>
       <emergency>
         <possibleLengths national="3"/>
         <exampleNumber>110</exampleNumber>

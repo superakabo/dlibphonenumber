@@ -25,7 +25,7 @@ Map<String, Object?> getKR() {
     },
     "tollFree": {
       "nationalNumberPattern":
-          "00(?:308\\d{6,7}|798\\d{7,9})|(?:00368|80)\\d{7}",
+          "00(?:308\\d{6,7}|798\\d{7,9})|(?:00368|[38]0)\\d{7}",
       "exampleNumber": "801234567",
       "possibleLength": [9, 11, 12, 13, 14],
       "possibleLengthLocalOnly": [-1]
@@ -92,7 +92,7 @@ Map<String, Object?> getKR() {
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{4})",
         "format": "\$1-\$2-\$3",
-        "leadingDigitsPattern": ["60|8"],
+        "leadingDigitsPattern": ["[36]0|8"],
         "nationalPrefixFormattingRule": "0\$1",
         "domesticCarrierCodeFormattingRule": "0\$CC-\$1",
         "nationalPrefixOptionalWhenFormatting": false
@@ -166,7 +166,7 @@ Map<String, Object?> getKR() {
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{4})",
         "format": "\$1-\$2-\$3",
-        "leadingDigitsPattern": ["60|8"],
+        "leadingDigitsPattern": ["[36]0|8"],
         "nationalPrefixFormattingRule": "0\$1",
         "domesticCarrierCodeFormattingRule": "0\$CC-\$1",
         "nationalPrefixOptionalWhenFormatting": false

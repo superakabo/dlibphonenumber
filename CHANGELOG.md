@@ -1,3 +1,9 @@
+## 1.1.19
+- Updated phone metadata for region code(s): BO, GY, KR, LA, MY, SC, SG, TJ, VI
+- Updated short number metadata for region code(s): AT, DE
+- Updated geocoding data for country calling code(s): 86 (en, zh)
+- Updated carrier data for country calling code(s): 61 (en), 65 (en), 237 (en), 591 (en), 592 (en), 992 (en)
+
 ## 1.1.18
 - Updated phone metadata for region code(s): FI, GE, GY, HK, IL, MU, MX, TD
 - Updated short number metadata for region code(s): FI

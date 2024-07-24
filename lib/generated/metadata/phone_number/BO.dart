@@ -4,7 +4,7 @@
 Map<String, Object?> getBO() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:[2-467]\\d\\d|8001)\\d{5}",
+      "nationalNumberPattern": "8001\\d{5}|(?:[2-467]\\d|50)\\d{6}",
       "possibleLength": [8, 9],
       "possibleLengthLocalOnly": [7]
     },
@@ -40,8 +40,10 @@ Map<String, Object?> getBO() {
       "possibleLengthLocalOnly": [-1]
     },
     "voip": {
-      "possibleLength": [-1],
-      "possibleLengthLocalOnly": [-1]
+      "nationalNumberPattern": "50\\d{6}",
+      "exampleNumber": "50123456",
+      "possibleLength": [8],
+      "possibleLengthLocalOnly": [7]
     },
     "id": "BO",
     "countryCode": 591,
@@ -53,7 +55,7 @@ Map<String, Object?> getBO() {
       {
         "pattern": "(\\d)(\\d{7})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["[23]|4[46]"],
+        "leadingDigitsPattern": ["[235]|4[46]"],
         "domesticCarrierCodeFormattingRule": "0\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -76,7 +78,7 @@ Map<String, Object?> getBO() {
       {
         "pattern": "(\\d)(\\d{7})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["[23]|4[46]"],
+        "leadingDigitsPattern": ["[235]|4[46]"],
         "domesticCarrierCodeFormattingRule": "0\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false
       },

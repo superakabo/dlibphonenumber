@@ -31,6 +31,7 @@ Map<int, String> get972_en() {
     9725551: "Annatel",
     9725552: "Annatel",
     9725555: "Rami Levy",
+    9725557: "Rami Levy",
     9725570: "Cellact",
     9725571: "Cellact",
     9725572: "Cellact",
