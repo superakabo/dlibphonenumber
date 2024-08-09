@@ -14,7 +14,7 @@ Map<String, Object?> getAO() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "9[1-579]\\d{7}",
+      "nationalNumberPattern": "9[1-79]\\d{7}",
       "exampleNumber": "923123456",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

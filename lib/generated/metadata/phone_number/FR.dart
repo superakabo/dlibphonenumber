@@ -35,7 +35,7 @@ Map<String, Object?> getFR() {
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {
-      "nationalNumberPattern": "8(?:1[01]|2[0156]|4[02]|84)\\d{6}",
+      "nationalNumberPattern": "8(?:1[01]|2[0156]|4[024]|84)\\d{6}",
       "exampleNumber": "884012345",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

@@ -10,7 +10,7 @@ Map<String, Object?> getEG() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "13[23]\\d{6}|(?:15|57)\\d{6,7}|(?:2[2-4]|3|4[05-8]|5[05]|6[24-689]|8[2468]|9[235-7])\\d{7}",
+          "13[23]\\d{6}|(?:15|57)\\d{6,7}|(?:2\\d|3|4[05-8]|5[05]|6[24-689]|8[2468]|9[235-7])\\d{7}",
       "exampleNumber": "234567890",
       "possibleLength": [8, 9],
       "possibleLengthLocalOnly": [6, 7]

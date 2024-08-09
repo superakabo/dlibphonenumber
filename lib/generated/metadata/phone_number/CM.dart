@@ -14,7 +14,7 @@ Map<String, Object?> getCM() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:24[23]|6[25-9]\\d)\\d{6}",
+      "nationalNumberPattern": "(?:24[23]|6(?:[25-9]\\d|40))\\d{6}",
       "exampleNumber": "671234567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

@@ -8,13 +8,14 @@ Map<String, Object?> getBJ() {
       "possibleLength": [8]
     },
     "fixedLine": {
-      "nationalNumberPattern": "2(?:02|1[037]|2[45]|3[68]|4\\d)\\d{5}",
+      "nationalNumberPattern":
+          "2090\\d{4}|2(?:02|1[037]|2[45]|3[68]|4\\d)\\d{5}",
       "exampleNumber": "20211234",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:4[0-7]|[56]\\d|9[013-9])\\d{6}",
+      "nationalNumberPattern": "(?:4[0-8]|[56]\\d|9[013-9])\\d{6}",
       "exampleNumber": "90011234",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

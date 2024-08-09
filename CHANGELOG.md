@@ -1,3 +1,7 @@
+## 1.1.20
+- Updated phone metadata for region code(s): AO, BD, BJ, CM, CN, DE, DZ, EG, FR, HK, IL, ZA
+- Updated carrier data for country calling code(s): 27 (en), 33 (en), 34 (en), 41 (en), 237 (en), 244 (en), 852 (en, zh)
+
 ## 1.1.19
 - Updated phone metadata for region code(s): BO, GY, KR, LA, MY, SC, SG, TJ, VI
 - Updated short number metadata for region code(s): AT, DE

@@ -4,6 +4,7 @@
 Map<int, String> get237_en() {
   return {
     23762: "Camtel",
+    23764: "Orange",
     23766: "NEXTTEL",
     23767: "MTN Cameroon",
     23769: "Orange",
@@ -26,6 +27,6 @@ Map<int, String> get237_en() {
     237686: "Orange",
     237687: "Orange",
     237688: "Orange",
-    237689: "NEXTTEL"
+    237689: "Orange"
   };
 }

@@ -16,7 +16,7 @@ Map<String, Object?> getDZ() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:5(?:4[0-29]|5\\d|6[0-2])|6(?:[569]\\d|7[0-6])|7[7-9]\\d)\\d{6}",
+          "(?:5(?:4[0-29]|5\\d|6[0-3])|6(?:[569]\\d|7[0-6])|7[7-9]\\d)\\d{6}",
       "exampleNumber": "551234567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

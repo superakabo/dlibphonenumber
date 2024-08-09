@@ -18,7 +18,7 @@ Map<String, Object?> getDE() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "15(?:[0-25-9]\\d\\d|310)\\d{6}|1(?:6[023]|7\\d)\\d{7,8}",
+          "15310\\d{6}|1(?:6[023]|7[0-57-9])\\d{7,8}|1(?:5[0-25-9]|76)\\d{8}",
       "exampleNumber": "15123456789",
       "possibleLength": [10, 11],
       "possibleLengthLocalOnly": [-1]
