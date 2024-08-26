@@ -6,6 +6,7 @@ Map<int, String> get226_en() {
     22601: "Onatel",
     22602: "Onatel",
     22603: "Onatel",
+    22604: "Orange",
     22605: "Orange",
     22606: "Orange",
     22607: "Orange",

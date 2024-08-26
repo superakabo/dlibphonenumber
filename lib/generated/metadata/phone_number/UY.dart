@@ -10,7 +10,7 @@ Map<String, Object?> getUY() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "(?:1(?:770|9(?:20|87))|(?:2\\d|4[2-7])\\d\\d)\\d{4}",
+          "(?:1(?:770|9(?:20|[89]7))|(?:2\\d|4[2-7])\\d\\d)\\d{4}",
       "exampleNumber": "21231234",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [7]

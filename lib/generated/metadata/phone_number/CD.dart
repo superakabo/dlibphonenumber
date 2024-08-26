@@ -4,13 +4,13 @@
 Map<String, Object?> getCD() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[189]\\d{8}|[1-68]\\d{6}",
-      "possibleLength": [7, 9]
+      "nationalNumberPattern": "(?:(?:[189]|5\\d)\\d|2)\\d{7}|[1-68]\\d{6}",
+      "possibleLength": [7, 8, 9, 10]
     },
     "fixedLine": {
-      "nationalNumberPattern": "12\\d{7}|[1-6]\\d{6}",
+      "nationalNumberPattern": "(?:(?:12|573)\\d\\d|276)\\d{5}|[1-6]\\d{6}",
       "exampleNumber": "1234567",
-      "possibleLength": [7, 9],
+      "possibleLength": [7, 8, 9, 10],
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
@@ -61,6 +61,13 @@ Map<String, Object?> getCD() {
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
+        "pattern": "(\\d{2})(\\d{2})(\\d{4})",
+        "format": "\$1 \$2 \$3",
+        "leadingDigitsPattern": ["2"],
+        "nationalPrefixFormattingRule": "0\$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
         "pattern": "(\\d{2})(\\d{3})(\\d{4})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["1"],
@@ -71,6 +78,13 @@ Map<String, Object?> getCD() {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["[89]"],
+        "nationalPrefixFormattingRule": "0\$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
+        "pattern": "(\\d{2})(\\d{2})(\\d{3})(\\d{3})",
+        "format": "\$1 \$2 \$3 \$4",
+        "leadingDigitsPattern": ["5"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
@@ -91,6 +105,13 @@ Map<String, Object?> getCD() {
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
+        "pattern": "(\\d{2})(\\d{2})(\\d{4})",
+        "format": "\$1 \$2 \$3",
+        "leadingDigitsPattern": ["2"],
+        "nationalPrefixFormattingRule": "0\$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
         "pattern": "(\\d{2})(\\d{3})(\\d{4})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["1"],
@@ -101,6 +122,13 @@ Map<String, Object?> getCD() {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["[89]"],
+        "nationalPrefixFormattingRule": "0\$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
+        "pattern": "(\\d{2})(\\d{2})(\\d{3})(\\d{3})",
+        "format": "\$1 \$2 \$3 \$4",
+        "leadingDigitsPattern": ["5"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }

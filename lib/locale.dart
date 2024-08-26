@@ -13,7 +13,7 @@ class Locale {
   });
 
   String getDisplayCountry(Locale locale) {
-    final territory = _locales[locale.language];
+    final Map<String, String>? territory = _locales[locale.language];
     return territory?[country] ?? '';
   }
 

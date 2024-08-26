@@ -4,6 +4,7 @@
 Map<int, String> get243_fr() {
   return {
     2435: "Province Orientale (Kisanga/Mbandaka)",
-    2436: "Nord-Kivu/Sud-Kivu/Maniema"
+    2436: "Nord-Kivu/Sud-Kivu/Maniema",
+    243573: "Oriental Province (Kisanga/Mbandaka)"
   };
 }

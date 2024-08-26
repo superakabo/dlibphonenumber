@@ -15,7 +15,7 @@ Map<String, Object?> getBF() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:0[1-35-7]|5[0-8]|[67]\\d)\\d{6}",
+      "nationalNumberPattern": "(?:0[1-7]|5[0-8]|[67]\\d)\\d{6}",
       "exampleNumber": "70123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

@@ -18,6 +18,7 @@ Map<int, String> get32_en() {
     32487: "Telenet",
     32488: "Telenet",
     32489: "Telenet",
+    324510: "DIGI Communications",
     324618: "N.M.B.S.",
     324630: "Lancelot Telecom",
     324631: "Lancelot Telecom",
@@ -49,7 +50,7 @@ Map<int, String> get32_en() {
     324806: "Telenet",
     324807: "MessageBird BV",
     324809: "Ericsson NV",
-    3245001: "Gateway Communications",
+    3245001: "GATEWAY COMMUNICATIONS S.A.",
     32467306: "Telenet"
   };
 }

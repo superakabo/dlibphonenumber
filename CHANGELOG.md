@@ -1,3 +1,9 @@
+## 1.1.21
+- Updated phone metadata for region code(s): BF, CD, GM, NG, RO, SG, SN, TJ, UY
+- Updated short number metadata for region code(s): CA
+- Updated geocoding data for country calling code(s): 234 (en), 243 (fr)
+- Updated carrier data for country calling code(s): 32 (en), 40 (en), 65 (en), 220 (en), 226 (en), 673 (en), 992 (en)
+
 ## 1.1.20
 - Updated phone metadata for region code(s): AO, BD, BJ, CM, CN, DE, DZ, EG, FR, HK, IL, ZA
 - Updated carrier data for country calling code(s): 27 (en), 33 (en), 34 (en), 41 (en), 237 (en), 244 (en), 852 (en, zh)
