@@ -5,8 +5,8 @@ Map<String, Object?> getID() {
   return {
     "generalDesc": {
       "nationalNumberPattern":
-          "(?:(?:00[1-9]|8\\d)\\d{4}|[1-36])\\d{6}|00\\d{10}|[1-9]\\d{8,10}|[2-9]\\d{7}",
-      "possibleLength": [7, 8, 9, 10, 11, 12, 13],
+          "00[1-9]\\d{9,14}|(?:[1-36]|8\\d{5})\\d{6}|00\\d{9}|[1-9]\\d{8,10}|[2-9]\\d{7}",
+      "possibleLength": [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
       "possibleLengthLocalOnly": [5, 6]
     },
     "fixedLine": {
@@ -24,9 +24,9 @@ Map<String, Object?> getID() {
     },
     "tollFree": {
       "nationalNumberPattern":
-          "00[17]803\\d{7}|(?:177\\d|800)\\d{5,7}|001803\\d{6}",
+          "00(?:1803\\d{5,11}|7803\\d{7})|(?:177\\d|800)\\d{5,7}",
       "exampleNumber": "8001234567",
-      "possibleLength": [8, 9, 10, 11, 12, 13],
+      "possibleLength": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
@@ -119,7 +119,7 @@ Map<String, Object?> getID() {
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
-        "pattern": "(\\d{3})(\\d{3})(\\d{3})(\\d{3})",
+        "pattern": "(\\d{3})(\\d{3})(\\d{3})(\\d{2,8})",
         "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": ["001"],
         "nationalPrefixOptionalWhenFormatting": false
@@ -201,8 +201,8 @@ Map<String, Object?> getID() {
     },
     "mainCountryForCode": false,
     "noInternationalDialling": {
-      "nationalNumberPattern": "001803\\d{6,7}|(?:007803\\d|8071)\\d{6}",
-      "possibleLength": [10, 12, 13],
+      "nationalNumberPattern": "001803\\d{5,11}|(?:007803\\d|8071)\\d{6}",
+      "possibleLength": [10, 11, 12, 13, 14, 15, 16, 17],
       "possibleLengthLocalOnly": [-1]
     },
     "uan": {

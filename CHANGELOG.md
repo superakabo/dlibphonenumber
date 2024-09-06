@@ -1,3 +1,9 @@
+## 1.1.22
+- Updated phone metadata for region code(s): AR, CZ, ET, ID, IL, MX, NZ
+- Updated geocoding data for country calling code(s): 52 (en), 54 (en), 251 (en), 1807 (en)
+- Updated carrier data for country calling code(s): 47 (en), 420 (en), 972 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.21
 - Updated phone metadata for region code(s): BF, CD, GM, NG, RO, SG, SN, TJ, UY
 - Updated short number metadata for region code(s): CA

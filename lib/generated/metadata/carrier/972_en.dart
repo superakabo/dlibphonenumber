@@ -11,6 +11,7 @@ Map<int, String> get972_en() {
     97256: "Ooredoo",
     97258: "Golan Telecom",
     97259: "Jawwal",
+    972510: "Wecom",
     972550: "Beezz",
     972552: "019mobile",
     972556: "Rami Levy",

@@ -9,6 +9,7 @@ Map<int, String> get251_en() {
     251572: "Ghedo, West Region",
     251585: "Pawe, North-West Region",
     2511121: "Addis Ketema I, Addis Ababa",
+    2511147: "Addis Ababa",
     2511154: "ECA, Addis Ababa",
     25111111: "Arada I, Addis Ababa",
     25111112: "Arada II, Addis Ababa",

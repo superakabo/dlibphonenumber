@@ -104,6 +104,7 @@ Map<int, String> get47_en() {
     474063: "telia",
     474064: "telia",
     474065: "telia telecom solution",
+    474066: "Billity",
     474067: "nextgentel",
     474068: "telenor norge",
     474069: "telenor norge",

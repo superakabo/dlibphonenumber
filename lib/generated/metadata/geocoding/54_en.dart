@@ -175,6 +175,7 @@ Map<int, String> get54_en() {
     543407: "Ramallo, Buenos Aires",
     543408: "San Cristóbal, Santa Fe",
     543409: "Moisés Ville, Santa Fe",
+    543433: "Paraná, Entre Ríos",
     543434: "Paraná, Entre Ríos",
     543435: "Nogoyá, Entre Ríos",
     543436: "Victoria, Entre Ríos",

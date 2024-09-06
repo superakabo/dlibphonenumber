@@ -11,7 +11,7 @@ Map<String, Object?> getNZ() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "24099\\d{3}|(?:3[2-79]|[49][2-9]|6[235-9]|7[2-57-9])\\d{6}",
+          "240\\d{5}|(?:3[2-79]|[49][2-9]|6[235-9]|7[2-57-9])\\d{6}",
       "exampleNumber": "32345678",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [7]
