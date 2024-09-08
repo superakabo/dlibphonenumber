@@ -1,18 +1,15 @@
 name: Publish
 
 on:
-  schedule:
-    - cron: '0 12 * * *'  # Runs every day at 12:00 PM UTC
-  workflow_dispatch:      # Allow manual trigger
-  
-permissions:
-  contents: write
+  push:
+    tags:
+    - 'v[0-9999]+.[0-99]+.[0-99]+'    # tag-pattern on pub.dev: 'v{{version}}'
 
 jobs:
   publish:
     runs-on: macos-latest
     permissions:
-      id-token: write # Required for authentication using OIDC
+      id-token: write                 # Required for authentication using OIDC
     with:
       environment: 'pub.dev'
 
@@ -25,9 +22,6 @@ jobs:
 
       - name: Install package dependencies
         run: dart pub get
-
-      - name: Run update resources script
-        run: ./update_resources.sh
 
       - name: Publish to pub.dev
         run: dart pub publish --force
