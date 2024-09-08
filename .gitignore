@@ -13,3 +13,7 @@ pubspec.lock
 # exclude vscode config file
 .vscode/
 
+# ignore the release notes text file from libphonenumber
+# since it will be regenerated when the metadata is updated.
+resources/release_notes.txt
+
