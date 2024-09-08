@@ -17,7 +17,7 @@
 ///
 library;
 
-import 'generated/phone_number/phonenumber.pb.dart';
+import 'generated/classes/phone_number/phonenumber.pb.dart';
 import 'phone_number_matcher.dart';
 import 'phone_number_util.dart';
 

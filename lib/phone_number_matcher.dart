@@ -17,9 +17,9 @@
 ///
 library;
 
-import 'package:dlibphonenumber/phone_number_match.dart';
 import 'package:fixnum/fixnum.dart';
 
+import 'phone_number_match.dart';
 import 'enums/leniency.dart';
 import 'enums/match_type.dart';
 import 'enums/phone_number_format.dart';

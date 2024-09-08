@@ -14,7 +14,6 @@
  /// See the License for the specific language governing permissions and
  /// limitations under the License.
  ///
-library;
 
 import 'package:dlibphonenumber/metadata_map_loader.dart';import 'phone_number/AD.dart';import 'phone_number/AE.dart';import 'phone_number/AM.dart';import 'phone_number/AO.dart';import 'phone_number/AR.dart';import 'phone_number/AU.dart';import 'phone_number/BB.dart';import 'phone_number/BR.dart';import 'phone_number/BS.dart';import 'phone_number/BY.dart';import 'phone_number/CA.dart';import 'phone_number/CC.dart';import 'phone_number/CN.dart';import 'phone_number/CO.dart';import 'phone_number/CX.dart';import 'phone_number/DE.dart';import 'phone_number/FR.dart';import 'phone_number/GB.dart';import 'phone_number/GG.dart';import 'phone_number/IT.dart';import 'phone_number/JP.dart';import 'phone_number/KR.dart';import 'phone_number/MX.dart';import 'phone_number/NZ.dart';import 'phone_number/PL.dart';import 'phone_number/RE.dart';import 'phone_number/RU.dart';import 'phone_number/SE.dart';import 'phone_number/SG.dart';import 'phone_number/TA.dart';import 'phone_number/US.dart';import 'phone_number/UZ.dart';import 'phone_number/YT.dart';import 'phone_number/800.dart';import 'phone_number/882.dart';import 'phone_number/979.dart';///
 /// [fileoverview]

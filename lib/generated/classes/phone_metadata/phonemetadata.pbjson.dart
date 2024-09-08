@@ -19,35 +19,10 @@ const NumberFormat$json = {
   '2': [
     {'1': 'pattern', '3': 1, '4': 2, '5': 9, '10': 'pattern'},
     {'1': 'format', '3': 2, '4': 2, '5': 9, '10': 'format'},
-    {
-      '1': 'leading_digits_pattern',
-      '3': 3,
-      '4': 3,
-      '5': 9,
-      '10': 'leadingDigitsPattern'
-    },
-    {
-      '1': 'national_prefix_formatting_rule',
-      '3': 4,
-      '4': 1,
-      '5': 9,
-      '10': 'nationalPrefixFormattingRule'
-    },
-    {
-      '1': 'national_prefix_optional_when_formatting',
-      '3': 6,
-      '4': 1,
-      '5': 8,
-      '7': 'false',
-      '10': 'nationalPrefixOptionalWhenFormatting'
-    },
-    {
-      '1': 'domestic_carrier_code_formatting_rule',
-      '3': 5,
-      '4': 1,
-      '5': 9,
-      '10': 'domesticCarrierCodeFormattingRule'
-    },
+    {'1': 'leading_digits_pattern', '3': 3, '4': 3, '5': 9, '10': 'leadingDigitsPattern'},
+    {'1': 'national_prefix_formatting_rule', '3': 4, '4': 1, '5': 9, '10': 'nationalPrefixFormattingRule'},
+    {'1': 'national_prefix_optional_when_formatting', '3': 6, '4': 1, '5': 8, '7': 'false', '10': 'nationalPrefixOptionalWhenFormatting'},
+    {'1': 'domestic_carrier_code_formatting_rule', '3': 5, '4': 1, '5': 9, '10': 'domesticCarrierCodeFormattingRule'},
   ],
 };
 
@@ -65,21 +40,9 @@ final $typed_data.Uint8List numberFormatDescriptor = $convert.base64Decode(
 const PhoneNumberDesc$json = {
   '1': 'PhoneNumberDesc',
   '2': [
-    {
-      '1': 'national_number_pattern',
-      '3': 2,
-      '4': 1,
-      '5': 9,
-      '10': 'nationalNumberPattern'
-    },
+    {'1': 'national_number_pattern', '3': 2, '4': 1, '5': 9, '10': 'nationalNumberPattern'},
     {'1': 'possible_length', '3': 9, '4': 3, '5': 5, '10': 'possibleLength'},
-    {
-      '1': 'possible_length_local_only',
-      '3': 10,
-      '4': 3,
-      '5': 5,
-      '10': 'possibleLengthLocalOnly'
-    },
+    {'1': 'possible_length_local_only', '3': 10, '4': 3, '5': 5, '10': 'possibleLengthLocalOnly'},
     {'1': 'example_number', '3': 6, '4': 1, '5': 9, '10': 'exampleNumber'},
   ],
 };
@@ -95,221 +58,37 @@ final $typed_data.Uint8List phoneNumberDescDescriptor = $convert.base64Decode(
 const PhoneMetadata$json = {
   '1': 'PhoneMetadata',
   '2': [
-    {
-      '1': 'general_desc',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'generalDesc'
-    },
-    {
-      '1': 'fixed_line',
-      '3': 2,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'fixedLine'
-    },
-    {
-      '1': 'mobile',
-      '3': 3,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'mobile'
-    },
-    {
-      '1': 'toll_free',
-      '3': 4,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'tollFree'
-    },
-    {
-      '1': 'premium_rate',
-      '3': 5,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'premiumRate'
-    },
-    {
-      '1': 'shared_cost',
-      '3': 6,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'sharedCost'
-    },
-    {
-      '1': 'personal_number',
-      '3': 7,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'personalNumber'
-    },
-    {
-      '1': 'voip',
-      '3': 8,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'voip'
-    },
-    {
-      '1': 'pager',
-      '3': 21,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'pager'
-    },
-    {
-      '1': 'uan',
-      '3': 25,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'uan'
-    },
-    {
-      '1': 'emergency',
-      '3': 27,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'emergency'
-    },
-    {
-      '1': 'voicemail',
-      '3': 28,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'voicemail'
-    },
-    {
-      '1': 'short_code',
-      '3': 29,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'shortCode'
-    },
-    {
-      '1': 'standard_rate',
-      '3': 30,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'standardRate'
-    },
-    {
-      '1': 'carrier_specific',
-      '3': 31,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'carrierSpecific'
-    },
-    {
-      '1': 'sms_services',
-      '3': 33,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'smsServices'
-    },
-    {
-      '1': 'no_international_dialling',
-      '3': 24,
-      '4': 1,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneNumberDesc',
-      '10': 'noInternationalDialling'
-    },
+    {'1': 'general_desc', '3': 1, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'generalDesc'},
+    {'1': 'fixed_line', '3': 2, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'fixedLine'},
+    {'1': 'mobile', '3': 3, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'mobile'},
+    {'1': 'toll_free', '3': 4, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'tollFree'},
+    {'1': 'premium_rate', '3': 5, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'premiumRate'},
+    {'1': 'shared_cost', '3': 6, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'sharedCost'},
+    {'1': 'personal_number', '3': 7, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'personalNumber'},
+    {'1': 'voip', '3': 8, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'voip'},
+    {'1': 'pager', '3': 21, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'pager'},
+    {'1': 'uan', '3': 25, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'uan'},
+    {'1': 'emergency', '3': 27, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'emergency'},
+    {'1': 'voicemail', '3': 28, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'voicemail'},
+    {'1': 'short_code', '3': 29, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'shortCode'},
+    {'1': 'standard_rate', '3': 30, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'standardRate'},
+    {'1': 'carrier_specific', '3': 31, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'carrierSpecific'},
+    {'1': 'sms_services', '3': 33, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'smsServices'},
+    {'1': 'no_international_dialling', '3': 24, '4': 1, '5': 11, '6': '.i18n.phonenumbers.PhoneNumberDesc', '10': 'noInternationalDialling'},
     {'1': 'id', '3': 9, '4': 2, '5': 9, '10': 'id'},
     {'1': 'country_code', '3': 10, '4': 1, '5': 5, '10': 'countryCode'},
-    {
-      '1': 'international_prefix',
-      '3': 11,
-      '4': 1,
-      '5': 9,
-      '10': 'internationalPrefix'
-    },
-    {
-      '1': 'preferred_international_prefix',
-      '3': 17,
-      '4': 1,
-      '5': 9,
-      '10': 'preferredInternationalPrefix'
-    },
+    {'1': 'international_prefix', '3': 11, '4': 1, '5': 9, '10': 'internationalPrefix'},
+    {'1': 'preferred_international_prefix', '3': 17, '4': 1, '5': 9, '10': 'preferredInternationalPrefix'},
     {'1': 'national_prefix', '3': 12, '4': 1, '5': 9, '10': 'nationalPrefix'},
-    {
-      '1': 'preferred_extn_prefix',
-      '3': 13,
-      '4': 1,
-      '5': 9,
-      '10': 'preferredExtnPrefix'
-    },
-    {
-      '1': 'national_prefix_for_parsing',
-      '3': 15,
-      '4': 1,
-      '5': 9,
-      '10': 'nationalPrefixForParsing'
-    },
-    {
-      '1': 'national_prefix_transform_rule',
-      '3': 16,
-      '4': 1,
-      '5': 9,
-      '10': 'nationalPrefixTransformRule'
-    },
-    {
-      '1': 'same_mobile_and_fixed_line_pattern',
-      '3': 18,
-      '4': 1,
-      '5': 8,
-      '7': 'false',
-      '10': 'sameMobileAndFixedLinePattern'
-    },
-    {
-      '1': 'number_format',
-      '3': 19,
-      '4': 3,
-      '5': 11,
-      '6': '.i18n.phonenumbers.NumberFormat',
-      '10': 'numberFormat'
-    },
-    {
-      '1': 'intl_number_format',
-      '3': 20,
-      '4': 3,
-      '5': 11,
-      '6': '.i18n.phonenumbers.NumberFormat',
-      '10': 'intlNumberFormat'
-    },
-    {
-      '1': 'main_country_for_code',
-      '3': 22,
-      '4': 1,
-      '5': 8,
-      '7': 'false',
-      '10': 'mainCountryForCode'
-    },
+    {'1': 'preferred_extn_prefix', '3': 13, '4': 1, '5': 9, '10': 'preferredExtnPrefix'},
+    {'1': 'national_prefix_for_parsing', '3': 15, '4': 1, '5': 9, '10': 'nationalPrefixForParsing'},
+    {'1': 'national_prefix_transform_rule', '3': 16, '4': 1, '5': 9, '10': 'nationalPrefixTransformRule'},
+    {'1': 'same_mobile_and_fixed_line_pattern', '3': 18, '4': 1, '5': 8, '7': 'false', '10': 'sameMobileAndFixedLinePattern'},
+    {'1': 'number_format', '3': 19, '4': 3, '5': 11, '6': '.i18n.phonenumbers.NumberFormat', '10': 'numberFormat'},
+    {'1': 'intl_number_format', '3': 20, '4': 3, '5': 11, '6': '.i18n.phonenumbers.NumberFormat', '10': 'intlNumberFormat'},
+    {'1': 'main_country_for_code', '3': 22, '4': 1, '5': 8, '7': 'false', '10': 'mainCountryForCode'},
     {'1': 'leading_digits', '3': 23, '4': 1, '5': 9, '10': 'leadingDigits'},
-    {
-      '1': 'mobile_number_portable_region',
-      '3': 32,
-      '4': 1,
-      '5': 8,
-      '7': 'false',
-      '10': 'mobileNumberPortableRegion'
-    },
+    {'1': 'mobile_number_portable_region', '3': 32, '4': 1, '5': 8, '7': 'false', '10': 'mobileNumberPortableRegion'},
   ],
   '9': [
     {'1': 26, '2': 27},
@@ -361,19 +140,12 @@ final $typed_data.Uint8List phoneMetadataDescriptor = $convert.base64Decode(
 const PhoneMetadataCollection$json = {
   '1': 'PhoneMetadataCollection',
   '2': [
-    {
-      '1': 'metadata',
-      '3': 1,
-      '4': 3,
-      '5': 11,
-      '6': '.i18n.phonenumbers.PhoneMetadata',
-      '10': 'metadata'
-    },
+    {'1': 'metadata', '3': 1, '4': 3, '5': 11, '6': '.i18n.phonenumbers.PhoneMetadata', '10': 'metadata'},
   ],
 };
 
 /// Descriptor for `PhoneMetadataCollection`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List phoneMetadataCollectionDescriptor =
-    $convert.base64Decode(
-        'ChdQaG9uZU1ldGFkYXRhQ29sbGVjdGlvbhI8CghtZXRhZGF0YRgBIAMoCzIgLmkxOG4ucGhvbm'
-        'VudW1iZXJzLlBob25lTWV0YWRhdGFSCG1ldGFkYXRh');
+final $typed_data.Uint8List phoneMetadataCollectionDescriptor = $convert.base64Decode(
+    'ChdQaG9uZU1ldGFkYXRhQ29sbGVjdGlvbhI8CghtZXRhZGF0YRgBIAMoCzIgLmkxOG4ucGhvbm'
+    'VudW1iZXJzLlBob25lTWV0YWRhdGFSCG1ldGFkYXRh');
+

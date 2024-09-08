@@ -1,0 +1,33 @@
+name: Publish
+
+on:
+  schedule:
+    - cron: '0 12 * * *' # Runs every day at 12:00 PM UTC
+  workflow_dispatch:
+  
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: macos-latest
+    permissions:
+      id-token: write # Required for authentication using OIDC
+    with:
+      environment: 'pub.dev'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set-up Dart
+        uses: dart-lang/setup-dart@v1
+
+      - name: Install package dependencies
+        run: dart pub get
+
+      - name: Run update resources script
+        run: ./update_resources.sh
+
+      - name: Publish to pub.dev
+        run: dart pub publish --force
