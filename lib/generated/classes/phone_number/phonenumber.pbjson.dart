@@ -20,11 +20,37 @@ const PhoneNumber$json = {
     {'1': 'country_code', '3': 1, '4': 2, '5': 5, '10': 'countryCode'},
     {'1': 'national_number', '3': 2, '4': 2, '5': 4, '10': 'nationalNumber'},
     {'1': 'extension', '3': 3, '4': 1, '5': 9, '10': 'extension'},
-    {'1': 'italian_leading_zero', '3': 4, '4': 1, '5': 8, '10': 'italianLeadingZero'},
-    {'1': 'number_of_leading_zeros', '3': 8, '4': 1, '5': 5, '7': '1', '10': 'numberOfLeadingZeros'},
+    {
+      '1': 'italian_leading_zero',
+      '3': 4,
+      '4': 1,
+      '5': 8,
+      '10': 'italianLeadingZero'
+    },
+    {
+      '1': 'number_of_leading_zeros',
+      '3': 8,
+      '4': 1,
+      '5': 5,
+      '7': '1',
+      '10': 'numberOfLeadingZeros'
+    },
     {'1': 'raw_input', '3': 5, '4': 1, '5': 9, '10': 'rawInput'},
-    {'1': 'country_code_source', '3': 6, '4': 1, '5': 14, '6': '.i18n.phonenumbers.PhoneNumber.CountryCodeSource', '10': 'countryCodeSource'},
-    {'1': 'preferred_domestic_carrier_code', '3': 7, '4': 1, '5': 9, '10': 'preferredDomesticCarrierCode'},
+    {
+      '1': 'country_code_source',
+      '3': 6,
+      '4': 1,
+      '5': 14,
+      '6': '.i18n.phonenumbers.PhoneNumber.CountryCodeSource',
+      '10': 'countryCodeSource'
+    },
+    {
+      '1': 'preferred_domestic_carrier_code',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'preferredDomesticCarrierCode'
+    },
   ],
   '4': [PhoneNumber_CountryCodeSource$json],
 };
@@ -54,4 +80,3 @@ final $typed_data.Uint8List phoneNumberDescriptor = $convert.base64Decode(
     'cmNlEg8KC1VOU1BFQ0lGSUVEEAASHgoaRlJPTV9OVU1CRVJfV0lUSF9QTFVTX1NJR04QARIYCh'
     'RGUk9NX05VTUJFUl9XSVRIX0lERBAFEiEKHUZST01fTlVNQkVSX1dJVEhPVVRfUExVU19TSUdO'
     'EAoSGAoURlJPTV9ERUZBVUxUX0NPVU5UUlkQFA==');
-

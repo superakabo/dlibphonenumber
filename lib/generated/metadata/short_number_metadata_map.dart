@@ -1,35 +1,521 @@
- ///
- /// [license]
- /// Copyright (C) 2009-2024 The Libphonenumber Authors
- ///
- /// Licensed under the Apache License, Version 2.0 (the 'License');
- /// you may not use this file except in compliance with the License.
- /// You may obtain a copy of the License at
- ///
- /// http://www.apache.org/licenses/LICENSE-2.0
- ///
- /// Unless required by applicable law or agreed to in writing, software
- /// distributed under the License is distributed on an 'AS IS' BASIS,
- /// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- /// See the License for the specific language governing permissions and
- /// limitations under the License.
- ///
+///
+/// [license]
+/// Copyright (C) 2009-2024 The Libphonenumber Authors
+///
+/// Licensed under the Apache License, Version 2.0 (the 'License');
+/// you may not use this file except in compliance with the License.
+/// You may obtain a copy of the License at
+///
+/// http://www.apache.org/licenses/LICENSE-2.0
+///
+/// Unless required by applicable law or agreed to in writing, software
+/// distributed under the License is distributed on an 'AS IS' BASIS,
+/// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+/// See the License for the specific language governing permissions and
+/// limitations under the License.
+///
+library;
 
-import 'phone_number_metadata_map.dart';import 'short_number/AC.dart';import 'short_number/AD.dart';import 'short_number/AE.dart';import 'short_number/AF.dart';import 'short_number/AG.dart';import 'short_number/AI.dart';import 'short_number/AL.dart';import 'short_number/AM.dart';import 'short_number/AO.dart';import 'short_number/AR.dart';import 'short_number/AS.dart';import 'short_number/AT.dart';import 'short_number/AU.dart';import 'short_number/AW.dart';import 'short_number/AX.dart';import 'short_number/AZ.dart';import 'short_number/BA.dart';import 'short_number/BB.dart';import 'short_number/BD.dart';import 'short_number/BE.dart';import 'short_number/BF.dart';import 'short_number/BG.dart';import 'short_number/BH.dart';import 'short_number/BI.dart';import 'short_number/BJ.dart';import 'short_number/BL.dart';import 'short_number/BM.dart';import 'short_number/BN.dart';import 'short_number/BO.dart';import 'short_number/BQ.dart';import 'short_number/BR.dart';import 'short_number/BS.dart';import 'short_number/BT.dart';import 'short_number/BW.dart';import 'short_number/BY.dart';import 'short_number/BZ.dart';import 'short_number/CA.dart';import 'short_number/CC.dart';import 'short_number/CD.dart';import 'short_number/CF.dart';import 'short_number/CG.dart';import 'short_number/CH.dart';import 'short_number/CI.dart';import 'short_number/CK.dart';import 'short_number/CL.dart';import 'short_number/CM.dart';import 'short_number/CN.dart';import 'short_number/CO.dart';import 'short_number/CR.dart';import 'short_number/CU.dart';import 'short_number/CV.dart';import 'short_number/CW.dart';import 'short_number/CX.dart';import 'short_number/CY.dart';import 'short_number/CZ.dart';import 'short_number/DE.dart';import 'short_number/DJ.dart';import 'short_number/DK.dart';import 'short_number/DM.dart';import 'short_number/DO.dart';import 'short_number/DZ.dart';import 'short_number/EC.dart';import 'short_number/EE.dart';import 'short_number/EG.dart';import 'short_number/EH.dart';import 'short_number/ER.dart';import 'short_number/ES.dart';import 'short_number/ET.dart';import 'short_number/FI.dart';import 'short_number/FJ.dart';import 'short_number/FK.dart';import 'short_number/FM.dart';import 'short_number/FO.dart';import 'short_number/FR.dart';import 'short_number/GA.dart';import 'short_number/GB.dart';import 'short_number/GD.dart';import 'short_number/GE.dart';import 'short_number/GF.dart';import 'short_number/GG.dart';import 'short_number/GH.dart';import 'short_number/GI.dart';import 'short_number/GL.dart';import 'short_number/GM.dart';import 'short_number/GN.dart';import 'short_number/GP.dart';import 'short_number/GR.dart';import 'short_number/GT.dart';import 'short_number/GU.dart';import 'short_number/GW.dart';import 'short_number/GY.dart';import 'short_number/HK.dart';import 'short_number/HN.dart';import 'short_number/HR.dart';import 'short_number/HT.dart';import 'short_number/HU.dart';import 'short_number/ID.dart';import 'short_number/IE.dart';import 'short_number/IL.dart';import 'short_number/IM.dart';import 'short_number/IN.dart';import 'short_number/IQ.dart';import 'short_number/IR.dart';import 'short_number/IS.dart';import 'short_number/IT.dart';import 'short_number/JE.dart';import 'short_number/JM.dart';import 'short_number/JO.dart';import 'short_number/JP.dart';import 'short_number/KE.dart';import 'short_number/KG.dart';import 'short_number/KH.dart';import 'short_number/KI.dart';import 'short_number/KM.dart';import 'short_number/KN.dart';import 'short_number/KP.dart';import 'short_number/KR.dart';import 'short_number/KW.dart';import 'short_number/KY.dart';import 'short_number/KZ.dart';import 'short_number/LA.dart';import 'short_number/LB.dart';import 'short_number/LC.dart';import 'short_number/LI.dart';import 'short_number/LK.dart';import 'short_number/LR.dart';import 'short_number/LS.dart';import 'short_number/LT.dart';import 'short_number/LU.dart';import 'short_number/LV.dart';import 'short_number/LY.dart';import 'short_number/MA.dart';import 'short_number/MC.dart';import 'short_number/MD.dart';import 'short_number/ME.dart';import 'short_number/MF.dart';import 'short_number/MG.dart';import 'short_number/MH.dart';import 'short_number/MK.dart';import 'short_number/ML.dart';import 'short_number/MM.dart';import 'short_number/MN.dart';import 'short_number/MO.dart';import 'short_number/MP.dart';import 'short_number/MQ.dart';import 'short_number/MR.dart';import 'short_number/MS.dart';import 'short_number/MT.dart';import 'short_number/MU.dart';import 'short_number/MV.dart';import 'short_number/MW.dart';import 'short_number/MX.dart';import 'short_number/MY.dart';import 'short_number/MZ.dart';import 'short_number/NA.dart';import 'short_number/NC.dart';import 'short_number/NE.dart';import 'short_number/NF.dart';import 'short_number/NG.dart';import 'short_number/NI.dart';import 'short_number/NL.dart';import 'short_number/NO.dart';import 'short_number/NP.dart';import 'short_number/NR.dart';import 'short_number/NU.dart';import 'short_number/NZ.dart';import 'short_number/OM.dart';import 'short_number/PA.dart';import 'short_number/PE.dart';import 'short_number/PF.dart';import 'short_number/PG.dart';import 'short_number/PH.dart';import 'short_number/PK.dart';import 'short_number/PL.dart';import 'short_number/PM.dart';import 'short_number/PR.dart';import 'short_number/PS.dart';import 'short_number/PT.dart';import 'short_number/PW.dart';import 'short_number/PY.dart';import 'short_number/QA.dart';import 'short_number/RE.dart';import 'short_number/RO.dart';import 'short_number/RS.dart';import 'short_number/RU.dart';import 'short_number/RW.dart';import 'short_number/SA.dart';import 'short_number/SB.dart';import 'short_number/SC.dart';import 'short_number/SD.dart';import 'short_number/SE.dart';import 'short_number/SG.dart';import 'short_number/SH.dart';import 'short_number/SI.dart';import 'short_number/SJ.dart';import 'short_number/SK.dart';import 'short_number/SL.dart';import 'short_number/SM.dart';import 'short_number/SN.dart';import 'short_number/SO.dart';import 'short_number/SR.dart';import 'short_number/SS.dart';import 'short_number/ST.dart';import 'short_number/SV.dart';import 'short_number/SX.dart';import 'short_number/SY.dart';import 'short_number/SZ.dart';import 'short_number/TC.dart';import 'short_number/TD.dart';import 'short_number/TG.dart';import 'short_number/TH.dart';import 'short_number/TJ.dart';import 'short_number/TL.dart';import 'short_number/TM.dart';import 'short_number/TN.dart';import 'short_number/TO.dart';import 'short_number/TR.dart';import 'short_number/TT.dart';import 'short_number/TV.dart';import 'short_number/TW.dart';import 'short_number/TZ.dart';import 'short_number/UA.dart';import 'short_number/UG.dart';import 'short_number/US.dart';import 'short_number/UY.dart';import 'short_number/UZ.dart';import 'short_number/VA.dart';import 'short_number/VC.dart';import 'short_number/VE.dart';import 'short_number/VG.dart';import 'short_number/VI.dart';import 'short_number/VN.dart';import 'short_number/VU.dart';import 'short_number/WF.dart';import 'short_number/WS.dart';import 'short_number/XK.dart';import 'short_number/YE.dart';import 'short_number/YT.dart';import 'short_number/ZA.dart';import 'short_number/ZM.dart';import 'short_number/ZW.dart';///
+import 'phone_number_metadata_map.dart';
+import 'short_number/AC.dart';
+import 'short_number/AD.dart';
+import 'short_number/AE.dart';
+import 'short_number/AF.dart';
+import 'short_number/AG.dart';
+import 'short_number/AI.dart';
+import 'short_number/AL.dart';
+import 'short_number/AM.dart';
+import 'short_number/AO.dart';
+import 'short_number/AR.dart';
+import 'short_number/AS.dart';
+import 'short_number/AT.dart';
+import 'short_number/AU.dart';
+import 'short_number/AW.dart';
+import 'short_number/AX.dart';
+import 'short_number/AZ.dart';
+import 'short_number/BA.dart';
+import 'short_number/BB.dart';
+import 'short_number/BD.dart';
+import 'short_number/BE.dart';
+import 'short_number/BF.dart';
+import 'short_number/BG.dart';
+import 'short_number/BH.dart';
+import 'short_number/BI.dart';
+import 'short_number/BJ.dart';
+import 'short_number/BL.dart';
+import 'short_number/BM.dart';
+import 'short_number/BN.dart';
+import 'short_number/BO.dart';
+import 'short_number/BQ.dart';
+import 'short_number/BR.dart';
+import 'short_number/BS.dart';
+import 'short_number/BT.dart';
+import 'short_number/BW.dart';
+import 'short_number/BY.dart';
+import 'short_number/BZ.dart';
+import 'short_number/CA.dart';
+import 'short_number/CC.dart';
+import 'short_number/CD.dart';
+import 'short_number/CF.dart';
+import 'short_number/CG.dart';
+import 'short_number/CH.dart';
+import 'short_number/CI.dart';
+import 'short_number/CK.dart';
+import 'short_number/CL.dart';
+import 'short_number/CM.dart';
+import 'short_number/CN.dart';
+import 'short_number/CO.dart';
+import 'short_number/CR.dart';
+import 'short_number/CU.dart';
+import 'short_number/CV.dart';
+import 'short_number/CW.dart';
+import 'short_number/CX.dart';
+import 'short_number/CY.dart';
+import 'short_number/CZ.dart';
+import 'short_number/DE.dart';
+import 'short_number/DJ.dart';
+import 'short_number/DK.dart';
+import 'short_number/DM.dart';
+import 'short_number/DO.dart';
+import 'short_number/DZ.dart';
+import 'short_number/EC.dart';
+import 'short_number/EE.dart';
+import 'short_number/EG.dart';
+import 'short_number/EH.dart';
+import 'short_number/ER.dart';
+import 'short_number/ES.dart';
+import 'short_number/ET.dart';
+import 'short_number/FI.dart';
+import 'short_number/FJ.dart';
+import 'short_number/FK.dart';
+import 'short_number/FM.dart';
+import 'short_number/FO.dart';
+import 'short_number/FR.dart';
+import 'short_number/GA.dart';
+import 'short_number/GB.dart';
+import 'short_number/GD.dart';
+import 'short_number/GE.dart';
+import 'short_number/GF.dart';
+import 'short_number/GG.dart';
+import 'short_number/GH.dart';
+import 'short_number/GI.dart';
+import 'short_number/GL.dart';
+import 'short_number/GM.dart';
+import 'short_number/GN.dart';
+import 'short_number/GP.dart';
+import 'short_number/GR.dart';
+import 'short_number/GT.dart';
+import 'short_number/GU.dart';
+import 'short_number/GW.dart';
+import 'short_number/GY.dart';
+import 'short_number/HK.dart';
+import 'short_number/HN.dart';
+import 'short_number/HR.dart';
+import 'short_number/HT.dart';
+import 'short_number/HU.dart';
+import 'short_number/ID.dart';
+import 'short_number/IE.dart';
+import 'short_number/IL.dart';
+import 'short_number/IM.dart';
+import 'short_number/IN.dart';
+import 'short_number/IQ.dart';
+import 'short_number/IR.dart';
+import 'short_number/IS.dart';
+import 'short_number/IT.dart';
+import 'short_number/JE.dart';
+import 'short_number/JM.dart';
+import 'short_number/JO.dart';
+import 'short_number/JP.dart';
+import 'short_number/KE.dart';
+import 'short_number/KG.dart';
+import 'short_number/KH.dart';
+import 'short_number/KI.dart';
+import 'short_number/KM.dart';
+import 'short_number/KN.dart';
+import 'short_number/KP.dart';
+import 'short_number/KR.dart';
+import 'short_number/KW.dart';
+import 'short_number/KY.dart';
+import 'short_number/KZ.dart';
+import 'short_number/LA.dart';
+import 'short_number/LB.dart';
+import 'short_number/LC.dart';
+import 'short_number/LI.dart';
+import 'short_number/LK.dart';
+import 'short_number/LR.dart';
+import 'short_number/LS.dart';
+import 'short_number/LT.dart';
+import 'short_number/LU.dart';
+import 'short_number/LV.dart';
+import 'short_number/LY.dart';
+import 'short_number/MA.dart';
+import 'short_number/MC.dart';
+import 'short_number/MD.dart';
+import 'short_number/ME.dart';
+import 'short_number/MF.dart';
+import 'short_number/MG.dart';
+import 'short_number/MH.dart';
+import 'short_number/MK.dart';
+import 'short_number/ML.dart';
+import 'short_number/MM.dart';
+import 'short_number/MN.dart';
+import 'short_number/MO.dart';
+import 'short_number/MP.dart';
+import 'short_number/MQ.dart';
+import 'short_number/MR.dart';
+import 'short_number/MS.dart';
+import 'short_number/MT.dart';
+import 'short_number/MU.dart';
+import 'short_number/MV.dart';
+import 'short_number/MW.dart';
+import 'short_number/MX.dart';
+import 'short_number/MY.dart';
+import 'short_number/MZ.dart';
+import 'short_number/NA.dart';
+import 'short_number/NC.dart';
+import 'short_number/NE.dart';
+import 'short_number/NF.dart';
+import 'short_number/NG.dart';
+import 'short_number/NI.dart';
+import 'short_number/NL.dart';
+import 'short_number/NO.dart';
+import 'short_number/NP.dart';
+import 'short_number/NR.dart';
+import 'short_number/NU.dart';
+import 'short_number/NZ.dart';
+import 'short_number/OM.dart';
+import 'short_number/PA.dart';
+import 'short_number/PE.dart';
+import 'short_number/PF.dart';
+import 'short_number/PG.dart';
+import 'short_number/PH.dart';
+import 'short_number/PK.dart';
+import 'short_number/PL.dart';
+import 'short_number/PM.dart';
+import 'short_number/PR.dart';
+import 'short_number/PS.dart';
+import 'short_number/PT.dart';
+import 'short_number/PW.dart';
+import 'short_number/PY.dart';
+import 'short_number/QA.dart';
+import 'short_number/RE.dart';
+import 'short_number/RO.dart';
+import 'short_number/RS.dart';
+import 'short_number/RU.dart';
+import 'short_number/RW.dart';
+import 'short_number/SA.dart';
+import 'short_number/SB.dart';
+import 'short_number/SC.dart';
+import 'short_number/SD.dart';
+import 'short_number/SE.dart';
+import 'short_number/SG.dart';
+import 'short_number/SH.dart';
+import 'short_number/SI.dart';
+import 'short_number/SJ.dart';
+import 'short_number/SK.dart';
+import 'short_number/SL.dart';
+import 'short_number/SM.dart';
+import 'short_number/SN.dart';
+import 'short_number/SO.dart';
+import 'short_number/SR.dart';
+import 'short_number/SS.dart';
+import 'short_number/ST.dart';
+import 'short_number/SV.dart';
+import 'short_number/SX.dart';
+import 'short_number/SY.dart';
+import 'short_number/SZ.dart';
+import 'short_number/TC.dart';
+import 'short_number/TD.dart';
+import 'short_number/TG.dart';
+import 'short_number/TH.dart';
+import 'short_number/TJ.dart';
+import 'short_number/TL.dart';
+import 'short_number/TM.dart';
+import 'short_number/TN.dart';
+import 'short_number/TO.dart';
+import 'short_number/TR.dart';
+import 'short_number/TT.dart';
+import 'short_number/TV.dart';
+import 'short_number/TW.dart';
+import 'short_number/TZ.dart';
+import 'short_number/UA.dart';
+import 'short_number/UG.dart';
+import 'short_number/US.dart';
+import 'short_number/UY.dart';
+import 'short_number/UZ.dart';
+import 'short_number/VA.dart';
+import 'short_number/VC.dart';
+import 'short_number/VE.dart';
+import 'short_number/VG.dart';
+import 'short_number/VI.dart';
+import 'short_number/VN.dart';
+import 'short_number/VU.dart';
+import 'short_number/WF.dart';
+import 'short_number/WS.dart';
+import 'short_number/XK.dart';
+import 'short_number/YE.dart';
+import 'short_number/YT.dart';
+import 'short_number/ZA.dart';
+import 'short_number/ZM.dart';
+import 'short_number/ZW.dart';
+
+///
 /// [fileoverview]
 /// This file is automatically generated from [resources/ShortNumberMetadata.xml].
 /// Please do not modify it directly.
 ///
 
- class ShortNumberMetadataMap extends PhoneNumberMetadataMap {
-   const ShortNumberMetadataMap();
+class ShortNumberMetadataMap extends PhoneNumberMetadataMap {
+  const ShortNumberMetadataMap();
 
-   @override
-   Map<String, Object?>? getTerritory(String code) {
-     return _territories[code];
-   }
+  @override
+  Map<String, Object?>? getTerritory(String code) {
+    return _territories[code];
+  }
 
-   Map<String, Map<String, Object?>> get _territories {
-     return {'AC': getAC(),'AD': getAD(),'AE': getAE(),'AF': getAF(),'AG': getAG(),'AI': getAI(),'AL': getAL(),'AM': getAM(),'AO': getAO(),'AR': getAR(),'AS': getAS(),'AT': getAT(),'AU': getAU(),'AW': getAW(),'AX': getAX(),'AZ': getAZ(),'BA': getBA(),'BB': getBB(),'BD': getBD(),'BE': getBE(),'BF': getBF(),'BG': getBG(),'BH': getBH(),'BI': getBI(),'BJ': getBJ(),'BL': getBL(),'BM': getBM(),'BN': getBN(),'BO': getBO(),'BQ': getBQ(),'BR': getBR(),'BS': getBS(),'BT': getBT(),'BW': getBW(),'BY': getBY(),'BZ': getBZ(),'CA': getCA(),'CC': getCC(),'CD': getCD(),'CF': getCF(),'CG': getCG(),'CH': getCH(),'CI': getCI(),'CK': getCK(),'CL': getCL(),'CM': getCM(),'CN': getCN(),'CO': getCO(),'CR': getCR(),'CU': getCU(),'CV': getCV(),'CW': getCW(),'CX': getCX(),'CY': getCY(),'CZ': getCZ(),'DE': getDE(),'DJ': getDJ(),'DK': getDK(),'DM': getDM(),'DO': getDO(),'DZ': getDZ(),'EC': getEC(),'EE': getEE(),'EG': getEG(),'EH': getEH(),'ER': getER(),'ES': getES(),'ET': getET(),'FI': getFI(),'FJ': getFJ(),'FK': getFK(),'FM': getFM(),'FO': getFO(),'FR': getFR(),'GA': getGA(),'GB': getGB(),'GD': getGD(),'GE': getGE(),'GF': getGF(),'GG': getGG(),'GH': getGH(),'GI': getGI(),'GL': getGL(),'GM': getGM(),'GN': getGN(),'GP': getGP(),'GR': getGR(),'GT': getGT(),'GU': getGU(),'GW': getGW(),'GY': getGY(),'HK': getHK(),'HN': getHN(),'HR': getHR(),'HT': getHT(),'HU': getHU(),'ID': getID(),'IE': getIE(),'IL': getIL(),'IM': getIM(),'IN': getIN(),'IQ': getIQ(),'IR': getIR(),'IS': getIS(),'IT': getIT(),'JE': getJE(),'JM': getJM(),'JO': getJO(),'JP': getJP(),'KE': getKE(),'KG': getKG(),'KH': getKH(),'KI': getKI(),'KM': getKM(),'KN': getKN(),'KP': getKP(),'KR': getKR(),'KW': getKW(),'KY': getKY(),'KZ': getKZ(),'LA': getLA(),'LB': getLB(),'LC': getLC(),'LI': getLI(),'LK': getLK(),'LR': getLR(),'LS': getLS(),'LT': getLT(),'LU': getLU(),'LV': getLV(),'LY': getLY(),'MA': getMA(),'MC': getMC(),'MD': getMD(),'ME': getME(),'MF': getMF(),'MG': getMG(),'MH': getMH(),'MK': getMK(),'ML': getML(),'MM': getMM(),'MN': getMN(),'MO': getMO(),'MP': getMP(),'MQ': getMQ(),'MR': getMR(),'MS': getMS(),'MT': getMT(),'MU': getMU(),'MV': getMV(),'MW': getMW(),'MX': getMX(),'MY': getMY(),'MZ': getMZ(),'NA': getNA(),'NC': getNC(),'NE': getNE(),'NF': getNF(),'NG': getNG(),'NI': getNI(),'NL': getNL(),'NO': getNO(),'NP': getNP(),'NR': getNR(),'NU': getNU(),'NZ': getNZ(),'OM': getOM(),'PA': getPA(),'PE': getPE(),'PF': getPF(),'PG': getPG(),'PH': getPH(),'PK': getPK(),'PL': getPL(),'PM': getPM(),'PR': getPR(),'PS': getPS(),'PT': getPT(),'PW': getPW(),'PY': getPY(),'QA': getQA(),'RE': getRE(),'RO': getRO(),'RS': getRS(),'RU': getRU(),'RW': getRW(),'SA': getSA(),'SB': getSB(),'SC': getSC(),'SD': getSD(),'SE': getSE(),'SG': getSG(),'SH': getSH(),'SI': getSI(),'SJ': getSJ(),'SK': getSK(),'SL': getSL(),'SM': getSM(),'SN': getSN(),'SO': getSO(),'SR': getSR(),'SS': getSS(),'ST': getST(),'SV': getSV(),'SX': getSX(),'SY': getSY(),'SZ': getSZ(),'TC': getTC(),'TD': getTD(),'TG': getTG(),'TH': getTH(),'TJ': getTJ(),'TL': getTL(),'TM': getTM(),'TN': getTN(),'TO': getTO(),'TR': getTR(),'TT': getTT(),'TV': getTV(),'TW': getTW(),'TZ': getTZ(),'UA': getUA(),'UG': getUG(),'US': getUS(),'UY': getUY(),'UZ': getUZ(),'VA': getVA(),'VC': getVC(),'VE': getVE(),'VG': getVG(),'VI': getVI(),'VN': getVN(),'VU': getVU(),'WF': getWF(),'WS': getWS(),'XK': getXK(),'YE': getYE(),'YT': getYT(),'ZA': getZA(),'ZM': getZM(),'ZW': getZW(),};
-   }
- }
+  Map<String, Map<String, Object?>> get _territories {
+    return {
+      'AC': getAC(),
+      'AD': getAD(),
+      'AE': getAE(),
+      'AF': getAF(),
+      'AG': getAG(),
+      'AI': getAI(),
+      'AL': getAL(),
+      'AM': getAM(),
+      'AO': getAO(),
+      'AR': getAR(),
+      'AS': getAS(),
+      'AT': getAT(),
+      'AU': getAU(),
+      'AW': getAW(),
+      'AX': getAX(),
+      'AZ': getAZ(),
+      'BA': getBA(),
+      'BB': getBB(),
+      'BD': getBD(),
+      'BE': getBE(),
+      'BF': getBF(),
+      'BG': getBG(),
+      'BH': getBH(),
+      'BI': getBI(),
+      'BJ': getBJ(),
+      'BL': getBL(),
+      'BM': getBM(),
+      'BN': getBN(),
+      'BO': getBO(),
+      'BQ': getBQ(),
+      'BR': getBR(),
+      'BS': getBS(),
+      'BT': getBT(),
+      'BW': getBW(),
+      'BY': getBY(),
+      'BZ': getBZ(),
+      'CA': getCA(),
+      'CC': getCC(),
+      'CD': getCD(),
+      'CF': getCF(),
+      'CG': getCG(),
+      'CH': getCH(),
+      'CI': getCI(),
+      'CK': getCK(),
+      'CL': getCL(),
+      'CM': getCM(),
+      'CN': getCN(),
+      'CO': getCO(),
+      'CR': getCR(),
+      'CU': getCU(),
+      'CV': getCV(),
+      'CW': getCW(),
+      'CX': getCX(),
+      'CY': getCY(),
+      'CZ': getCZ(),
+      'DE': getDE(),
+      'DJ': getDJ(),
+      'DK': getDK(),
+      'DM': getDM(),
+      'DO': getDO(),
+      'DZ': getDZ(),
+      'EC': getEC(),
+      'EE': getEE(),
+      'EG': getEG(),
+      'EH': getEH(),
+      'ER': getER(),
+      'ES': getES(),
+      'ET': getET(),
+      'FI': getFI(),
+      'FJ': getFJ(),
+      'FK': getFK(),
+      'FM': getFM(),
+      'FO': getFO(),
+      'FR': getFR(),
+      'GA': getGA(),
+      'GB': getGB(),
+      'GD': getGD(),
+      'GE': getGE(),
+      'GF': getGF(),
+      'GG': getGG(),
+      'GH': getGH(),
+      'GI': getGI(),
+      'GL': getGL(),
+      'GM': getGM(),
+      'GN': getGN(),
+      'GP': getGP(),
+      'GR': getGR(),
+      'GT': getGT(),
+      'GU': getGU(),
+      'GW': getGW(),
+      'GY': getGY(),
+      'HK': getHK(),
+      'HN': getHN(),
+      'HR': getHR(),
+      'HT': getHT(),
+      'HU': getHU(),
+      'ID': getID(),
+      'IE': getIE(),
+      'IL': getIL(),
+      'IM': getIM(),
+      'IN': getIN(),
+      'IQ': getIQ(),
+      'IR': getIR(),
+      'IS': getIS(),
+      'IT': getIT(),
+      'JE': getJE(),
+      'JM': getJM(),
+      'JO': getJO(),
+      'JP': getJP(),
+      'KE': getKE(),
+      'KG': getKG(),
+      'KH': getKH(),
+      'KI': getKI(),
+      'KM': getKM(),
+      'KN': getKN(),
+      'KP': getKP(),
+      'KR': getKR(),
+      'KW': getKW(),
+      'KY': getKY(),
+      'KZ': getKZ(),
+      'LA': getLA(),
+      'LB': getLB(),
+      'LC': getLC(),
+      'LI': getLI(),
+      'LK': getLK(),
+      'LR': getLR(),
+      'LS': getLS(),
+      'LT': getLT(),
+      'LU': getLU(),
+      'LV': getLV(),
+      'LY': getLY(),
+      'MA': getMA(),
+      'MC': getMC(),
+      'MD': getMD(),
+      'ME': getME(),
+      'MF': getMF(),
+      'MG': getMG(),
+      'MH': getMH(),
+      'MK': getMK(),
+      'ML': getML(),
+      'MM': getMM(),
+      'MN': getMN(),
+      'MO': getMO(),
+      'MP': getMP(),
+      'MQ': getMQ(),
+      'MR': getMR(),
+      'MS': getMS(),
+      'MT': getMT(),
+      'MU': getMU(),
+      'MV': getMV(),
+      'MW': getMW(),
+      'MX': getMX(),
+      'MY': getMY(),
+      'MZ': getMZ(),
+      'NA': getNA(),
+      'NC': getNC(),
+      'NE': getNE(),
+      'NF': getNF(),
+      'NG': getNG(),
+      'NI': getNI(),
+      'NL': getNL(),
+      'NO': getNO(),
+      'NP': getNP(),
+      'NR': getNR(),
+      'NU': getNU(),
+      'NZ': getNZ(),
+      'OM': getOM(),
+      'PA': getPA(),
+      'PE': getPE(),
+      'PF': getPF(),
+      'PG': getPG(),
+      'PH': getPH(),
+      'PK': getPK(),
+      'PL': getPL(),
+      'PM': getPM(),
+      'PR': getPR(),
+      'PS': getPS(),
+      'PT': getPT(),
+      'PW': getPW(),
+      'PY': getPY(),
+      'QA': getQA(),
+      'RE': getRE(),
+      'RO': getRO(),
+      'RS': getRS(),
+      'RU': getRU(),
+      'RW': getRW(),
+      'SA': getSA(),
+      'SB': getSB(),
+      'SC': getSC(),
+      'SD': getSD(),
+      'SE': getSE(),
+      'SG': getSG(),
+      'SH': getSH(),
+      'SI': getSI(),
+      'SJ': getSJ(),
+      'SK': getSK(),
+      'SL': getSL(),
+      'SM': getSM(),
+      'SN': getSN(),
+      'SO': getSO(),
+      'SR': getSR(),
+      'SS': getSS(),
+      'ST': getST(),
+      'SV': getSV(),
+      'SX': getSX(),
+      'SY': getSY(),
+      'SZ': getSZ(),
+      'TC': getTC(),
+      'TD': getTD(),
+      'TG': getTG(),
+      'TH': getTH(),
+      'TJ': getTJ(),
+      'TL': getTL(),
+      'TM': getTM(),
+      'TN': getTN(),
+      'TO': getTO(),
+      'TR': getTR(),
+      'TT': getTT(),
+      'TV': getTV(),
+      'TW': getTW(),
+      'TZ': getTZ(),
+      'UA': getUA(),
+      'UG': getUG(),
+      'US': getUS(),
+      'UY': getUY(),
+      'UZ': getUZ(),
+      'VA': getVA(),
+      'VC': getVC(),
+      'VE': getVE(),
+      'VG': getVG(),
+      'VI': getVI(),
+      'VN': getVN(),
+      'VU': getVU(),
+      'WF': getWF(),
+      'WS': getWS(),
+      'XK': getXK(),
+      'YE': getYE(),
+      'YT': getYT(),
+      'ZA': getZA(),
+      'ZM': getZM(),
+      'ZW': getZW(),
+    };
+  }
+}

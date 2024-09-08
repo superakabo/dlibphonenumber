@@ -2,8 +2,8 @@ name: Publish
 
 on:
   schedule:
-    - cron: '0 12 * * *' # Runs every day at 12:00 PM UTC
-  workflow_dispatch:
+    - cron: '0 12 * * *'  # Runs every day at 12:00 PM UTC
+  workflow_dispatch:      # Allow manual trigger
   
 permissions:
   contents: write
