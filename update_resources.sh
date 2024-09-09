@@ -48,7 +48,7 @@ release_notes="${changelog_output#*|}"
 # stop the process if change log output is empty.
 if [[ -z $changelog_output ]]; then
   echo "No changes detected in the resources directory."
-  exit 1
+  exit 0
 fi
 
 # Generate classes from the .proto files found in the resources
