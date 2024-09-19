@@ -102,6 +102,7 @@ dart run tools/bin/tools.dart metadata -i resources/test/carrier -o test/generat
 
 # Fix Dart code issues (if any)
 dart format ./lib
+dart format ./test
 dart fix --apply
 
 # Run tests

@@ -9,8 +9,7 @@ resources/**
 # exclude the test folder
 test/**
 
-# exclude Github Action workflow.
-.github/workflows/build.txt
+# exclude Github gitignore file
 .gitignore
 
 # exclude unnecessary project files

@@ -1,30 +1,26 @@
-/// Based on the Java code .../phonenumbers/prefixmapper/PhonePrefixMap.java
-///
-/// [license]
-/// Copyright (C) 2011 The Libphonenumber Authors
-///
-/// Licensed under the Apache License, Version 2.0 (the "License");
-/// you may not use this file except in compliance with the License.
-/// You may obtain a copy of the License at
-///
-/// http://www.apache.org/licenses/LICENSE-2.0
-///
-/// Unless required by applicable law or agreed to in writing, software
-/// distributed under the License is distributed on an "AS IS" BASIS,
-/// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-/// See the License for the specific language governing permissions and
-/// limitations under the License.
-///
-library;
+// Based on the Java code .../phonenumbers/prefixmapper/PhonePrefixMap.java
+//
+// Copyright (C) 2011 The Libphonenumber Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 import 'dart:collection';
 
 import 'generated/classes/phone_number/phonenumber.pb.dart';
 import 'phone_number_util.dart';
 
-/// A utility that maps phone number prefixes to a description string, which may
-/// be, for example,
-/// the geographical area the prefix covers.
+/// A utility that maps phone number prefixes to a description string,
+/// which maybe, for example, the geographical area the prefix covers.
 class PhonePrefixMap {
   PhonePrefixMap(this._metadata);
 

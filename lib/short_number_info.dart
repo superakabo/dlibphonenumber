@@ -1,33 +1,32 @@
-/// Based on the original Java code: .../phonenumbers/ShortNumberInfo.java
-/// Copyright (C) 2013 The Libphonenumber Authors
-///
-/// [license]
-/// Licensed under the Apache License, Version 2.0 (the "License");
-/// you may not use this file except in compliance with the License.
-/// You may obtain a copy of the License at
-///
-/// http://www.apache.org/licenses/LICENSE-2.0
-///
-/// Unless required by applicable law or agreed to in writing, software
-/// distributed under the License is distributed on an "AS IS" BASIS,
-/// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-/// See the License for the specific language governing permissions and
-/// limitations under the License.
-///
-library;
+// Based on the original Java code: .../phonenumbers/ShortNumberInfo.java
+// Copyright (C) 2013 The Libphonenumber Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
-import 'package:dlibphonenumber/metadata_map_loader.dart';
 import 'package:meta/meta.dart';
 
 import 'enums/short_number_cost.dart';
 import 'generated/classes/phone_metadata/phonemetadata.pb.dart';
 import 'generated/classes/phone_number/phonenumber.pb.dart';
 import 'generated/metadata/short_number_metadata_map.dart';
+import 'metadata_map_loader.dart';
 import 'phone_number_util.dart';
 
-/// Methods for getting information about short phone numbers, such as short codes and emergency
-/// numbers. Note that most commercial short numbers are not handled here, but by the
-/// [PhoneNumberUtil].
+/// Methods for getting information about short phone numbers,
+/// such as short codes and emergency numbers.
+///
+/// Note that most commercial short numbers are not handled here,
+/// but by the [PhoneNumberUtil].
 class ShortNumberInfo {
   /// Returns the singleton instance of the ShortNumberInfo.
   static ShortNumberInfo get instance => _instance;
@@ -136,8 +135,7 @@ class ShortNumberInfo {
   }
 
   /// Tests whether a short number matches a valid pattern in a region. Note that this doesn't verify
-  /// the number is actually in use, which is impossible to tell by just looking at the number
-  /// itself.
+  /// the number is actually in use, which is impossible to tell by just looking at the number itself.
   ///
   /// [number] the short number for which we want to test the validity
   /// [regionDialingFrom] the region from which the number is dialed
@@ -302,9 +300,9 @@ class ShortNumberInfo {
     return cost;
   }
 
-  // Helper method to get the region code for a given phone number, from a list of possible region
-  // codes. If the list contains more than one region, the first region for which the number is
-  // valid is returned.
+  // Helper method to get the region code for a given phone number,
+  // from a list of possible region codes. If the list contains more
+  // than one region, the first region for which the number is valid is returned.
   String? _getRegionCodeForShortNumberFromRegionList(
       PhoneNumber number, List<String> regionCodes) {
     if (regionCodes.isEmpty) {
@@ -526,8 +524,8 @@ class ShortNumberInfo {
     return nationalNumber.toString();
   }
 
-  // TODO: Once we have benchmarked ShortNumberInfo, consider if it is worth keeping
-  // this performance optimization.
+  // TODO: Once we have benchmarked ShortNumberInfo, consider
+  // if it is worth keeping this performance optimization.
   bool _matchesPossibleNumberAndNationalNumber(
       String number, PhoneNumberDesc numberDesc) {
     if (numberDesc.possibleLength.isNotEmpty &&

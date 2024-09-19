@@ -87,17 +87,23 @@ void main() {
 
   group('PhoneNumberToCarrierMapperTest', () {
     test('testGetNameForMobilePortableRegion', () {
-      expect(carrierMapper.getNameForNumber(_ukMobile1, Locale.english), "British carrier");
+      expect(carrierMapper.getNameForNumber(_ukMobile1, Locale.english),
+          "British carrier");
       expect(
-          carrierMapper.getNameForNumber(_ukMobile1, Locale(language: "sv", country: "SE")), "Brittisk operat\u00F6r");
-      expect(carrierMapper.getNameForNumber(_ukMobile1, Locale.french), "British carrier");
+          carrierMapper.getNameForNumber(
+              _ukMobile1, Locale(language: "sv", country: "SE")),
+          "Brittisk operat\u00F6r");
+      expect(carrierMapper.getNameForNumber(_ukMobile1, Locale.french),
+          "British carrier");
       // Returns an empty string because the UK implements mobile number portability.
       expect(carrierMapper.getSafeDisplayName(_ukMobile1, Locale.english), "");
     });
 
     test('testGetNameForNonMobilePortableRegion', () {
-      expect(carrierMapper.getNameForNumber(_aoMobile1, Locale.english), "Angolan carrier");
-      expect(carrierMapper.getSafeDisplayName(_aoMobile1, Locale.english), "Angolan carrier");
+      expect(carrierMapper.getNameForNumber(_aoMobile1, Locale.english),
+          "Angolan carrier");
+      expect(carrierMapper.getSafeDisplayName(_aoMobile1, Locale.english),
+          "Angolan carrier");
     });
 
     test('testGetNameForFixedLineNumber', () {
@@ -105,23 +111,39 @@ void main() {
       expect(carrierMapper.getNameForNumber(_ukFixed1, Locale.english), "");
       // If the carrier information is present in the files and the method that assumes a valid
       // number is used, a carrier is returned.
-      expect(carrierMapper.getNameForValidNumber(_aoFixed2, Locale.english), "Angolan fixed line carrier");
-      expect(carrierMapper.getNameForValidNumber(_ukFixed2, Locale.english), "");
+      expect(carrierMapper.getNameForValidNumber(_aoFixed2, Locale.english),
+          "Angolan fixed line carrier");
+      expect(
+          carrierMapper.getNameForValidNumber(_ukFixed2, Locale.english), "");
     });
 
     test('testGetNameForFixedOrMobileNumber', () {
-      expect(carrierMapper.getNameForNumber(_usFixedOrMobile, Locale.english), "US carrier");
+      expect(carrierMapper.getNameForNumber(_usFixedOrMobile, Locale.english),
+          "US carrier");
     });
 
     test('testGetNameForPagerNumber', () {
-      expect(carrierMapper.getNameForNumber(_ukPager, Locale.english), "British pager");
+      expect(carrierMapper.getNameForNumber(_ukPager, Locale.english),
+          "British pager");
     });
 
     test('testGetNameForNumberWithNoDataFile', () {
-      expect(carrierMapper.getNameForNumber(_numberWithInvalidCountryCode, Locale.english), "");
-      expect(carrierMapper.getNameForNumber(_internationalTollFree, Locale.english), "");
-      expect(carrierMapper.getNameForValidNumber(_numberWithInvalidCountryCode, Locale.english), "");
-      expect(carrierMapper.getNameForValidNumber(_internationalTollFree, Locale.english), "");
+      expect(
+          carrierMapper.getNameForNumber(
+              _numberWithInvalidCountryCode, Locale.english),
+          "");
+      expect(
+          carrierMapper.getNameForNumber(
+              _internationalTollFree, Locale.english),
+          "");
+      expect(
+          carrierMapper.getNameForValidNumber(
+              _numberWithInvalidCountryCode, Locale.english),
+          "");
+      expect(
+          carrierMapper.getNameForValidNumber(
+              _internationalTollFree, Locale.english),
+          "");
     });
 
     test('testGetNameForNumberWithMissingPrefix', () {
@@ -130,8 +152,10 @@ void main() {
     });
 
     test('testGetNameForInvalidNumber', () {
-      expect(carrierMapper.getNameForNumber(_ukInvalidNumber, Locale.english), "");
-      expect(carrierMapper.getNameForNumber(_aoInvalidNumber, Locale.english), "");
+      expect(
+          carrierMapper.getNameForNumber(_ukInvalidNumber, Locale.english), "");
+      expect(
+          carrierMapper.getNameForNumber(_aoInvalidNumber, Locale.english), "");
     });
   });
 }

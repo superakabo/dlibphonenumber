@@ -1,24 +1,21 @@
-/// Based on the original Java code: .../phonenumbers/prefixmapper/PrefixTimeZonesMap.java
-///
-/// [license]
-/// Copyright (C) 2012 The Libphonenumber Authors
-/// Licensed under the Apache License, Version 2.0 (the "License");
-/// you may not use this file except in compliance with the License.
-/// You may obtain a copy of the License at
-///
-/// http://www.apache.org/licenses/LICENSE-2.0
-///
-/// Unless required by applicable law or agreed to in writing, software
-/// distributed under the License is distributed on an "AS IS" BASIS,
-/// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-/// See the License for the specific language governing permissions and
-/// limitations under the License.
-///
-library;
+// Based on the original Java code: .../phonenumbers/prefixmapper/PrefixTimeZonesMap.java
+//
+// Copyright (C) 2012 The Libphonenumber Authors
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
-import 'package:dlibphonenumber/phone_prefix_map.dart';
-
-import 'dlibphonenumber.dart';
+import 'generated/classes/phone_number/phonenumber.pb.dart';
+import 'phone_number_util.dart';
+import 'phone_prefix_map.dart';
 
 /// A utility that maps phone number prefixes to a list of strings describing the
 /// time zones to which each prefix belongs.
@@ -61,8 +58,8 @@ class PrefixTimeZonesMap {
     return _lookupTimeZonesForNumber(phonePrefix);
   }
 
-  /// Returns the list of time zones [number]'s calling country code
-  /// corresponds to.
+  /// Returns the list of time zones [number]'s calling
+  /// country code corresponds to.
   ///
   /// [number] the phone number to look up
   /// returns the list of corresponding time zones

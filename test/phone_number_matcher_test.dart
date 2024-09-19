@@ -30,48 +30,74 @@ void main() {
       // A date should return true.
       number
         ..countryCode = 1
-        ..countryCodeSource = PhoneNumber_CountryCodeSource.FROM_DEFAULT_COUNTRY;
+        ..countryCodeSource =
+            PhoneNumber_CountryCodeSource.FROM_DEFAULT_COUNTRY;
       String candidate = "1/05/2013";
-      expect(PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(number, candidate), true);
+      expect(
+          PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(
+              number, candidate),
+          true);
 
       // Here, the country code source thinks it started with a country calling code, but this is not
       // the same as the part before the slash, so it's still true.
       number
         ..clear()
         ..countryCode = 274
-        ..countryCodeSource = PhoneNumber_CountryCodeSource.FROM_NUMBER_WITHOUT_PLUS_SIGN;
+        ..countryCodeSource =
+            PhoneNumber_CountryCodeSource.FROM_NUMBER_WITHOUT_PLUS_SIGN;
       candidate = "27/4/2013";
-      expect(PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(number, candidate), true);
+      expect(
+          PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(
+              number, candidate),
+          true);
 
       // Now it should be false, because the first slash is after the country calling code.
       number
         ..clear()
         ..countryCode = 49
-        ..countryCodeSource = PhoneNumber_CountryCodeSource.FROM_NUMBER_WITH_PLUS_SIGN;
+        ..countryCodeSource =
+            PhoneNumber_CountryCodeSource.FROM_NUMBER_WITH_PLUS_SIGN;
       candidate = "49/69/2013";
-      expect(PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(number, candidate), false);
+      expect(
+          PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(
+              number, candidate),
+          false);
 
       number
         ..clear()
         ..countryCode = 49
-        ..countryCodeSource = PhoneNumber_CountryCodeSource.FROM_NUMBER_WITHOUT_PLUS_SIGN;
+        ..countryCodeSource =
+            PhoneNumber_CountryCodeSource.FROM_NUMBER_WITHOUT_PLUS_SIGN;
       candidate = "+49/69/2013";
-      expect(PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(number, candidate), false);
+      expect(
+          PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(
+              number, candidate),
+          false);
 
       candidate = "+ 49/69/2013";
-      expect(PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(number, candidate), false);
+      expect(
+          PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(
+              number, candidate),
+          false);
 
       candidate = "+ 49/69/20/13";
-      expect(PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(number, candidate), true);
+      expect(
+          PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(
+              number, candidate),
+          true);
 
       // Here, the first group is not assumed to be the country calling code, even though it is the
       // same as it, so this should return true.
       number
         ..clear()
         ..countryCode = 49
-        ..countryCodeSource = PhoneNumber_CountryCodeSource.FROM_DEFAULT_COUNTRY;
+        ..countryCodeSource =
+            PhoneNumber_CountryCodeSource.FROM_DEFAULT_COUNTRY;
       candidate = "49/69/2013";
-      expect(PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(number, candidate), true);
+      expect(
+          PhoneNumberMatcherImpl.containsMoreThanOneSlashInNationalNumber(
+              number, candidate),
+          true);
     });
 
     /// See [PhoneNumberUtilTest.testParseNationalNumber()].
@@ -252,7 +278,8 @@ void main() {
       String number4 = "650-443-1223";
       String text = "$number1 - $number2 - $number3 - $number4";
 
-      Iterator<PhoneNumberMatch> iterator = phoneUtil.findNumbers(text, 'US').iterator;
+      Iterator<PhoneNumberMatch> iterator =
+          phoneUtil.findNumbers(text, 'US').iterator;
 
       PhoneNumberMatch? match = iterator.moveNext() ? iterator.current : null;
       _assertMatchProperties(match, text, number1, 'US');
@@ -272,7 +299,8 @@ void main() {
       String number2 = "(800) 443-1223";
       String text = "$number1 $number2";
 
-      Iterator<PhoneNumberMatch> iterator = phoneUtil.findNumbers(text, 'US').iterator;
+      Iterator<PhoneNumberMatch> iterator =
+          phoneUtil.findNumbers(text, 'US').iterator;
       PhoneNumberMatch? match = iterator.moveNext() ? iterator.current : null;
       _assertMatchProperties(match, text, number1, 'US');
 
@@ -284,7 +312,8 @@ void main() {
       String number = "415-666-7777";
       String zipPreceding = "My address is CA 34215 - $number is my number.";
 
-      Iterator<PhoneNumberMatch> iterator = phoneUtil.findNumbers(zipPreceding, 'US').iterator;
+      Iterator<PhoneNumberMatch> iterator =
+          phoneUtil.findNumbers(zipPreceding, 'US').iterator;
       PhoneNumberMatch? match = iterator.moveNext() ? iterator.current : null;
       _assertMatchProperties(match, zipPreceding, number, 'US');
 
@@ -294,7 +323,8 @@ void main() {
 
       String zipFollowing = "My number is $number. 34215 is my zip-code.";
       iterator = phoneUtil.findNumbers(zipFollowing, 'US').iterator;
-      PhoneNumberMatch? matchWithSpaces = iterator.moveNext() ? iterator.current : null;
+      PhoneNumberMatch? matchWithSpaces =
+          iterator.moveNext() ? iterator.current : null;
       _assertMatchProperties(matchWithSpaces, zipFollowing, number, 'US');
     });
 
@@ -302,15 +332,18 @@ void main() {
       expect(PhoneNumberMatcherImpl.isLatinLetter('c'), true);
       expect(PhoneNumberMatcherImpl.isLatinLetter('C'), true);
       expect(PhoneNumberMatcherImpl.isLatinLetter('\u00C9'), true);
-      expect(PhoneNumberMatcherImpl.isLatinLetter('\u0301'), true); // Combining acute accent
+      expect(PhoneNumberMatcherImpl.isLatinLetter('\u0301'),
+          true); // Combining acute accent
       // Punctuation, digits and white-space are not considered "latin letters".
       expect(PhoneNumberMatcherImpl.isLatinLetter(':'), false);
       expect(PhoneNumberMatcherImpl.isLatinLetter('5'), false);
       expect(PhoneNumberMatcherImpl.isLatinLetter('-'), false);
       expect(PhoneNumberMatcherImpl.isLatinLetter('.'), false);
       expect(PhoneNumberMatcherImpl.isLatinLetter(' '), false);
-      expect(PhoneNumberMatcherImpl.isLatinLetter('\u6211'), false); // Chinese character
-      expect(PhoneNumberMatcherImpl.isLatinLetter('\u306E'), false); // Hiragana letter no
+      expect(PhoneNumberMatcherImpl.isLatinLetter('\u6211'),
+          false); // Chinese character
+      expect(PhoneNumberMatcherImpl.isLatinLetter('\u306E'),
+          false); // Hiragana letter no
     });
 
     test('testMatchesWithSurroundingLatinChars', () {
@@ -366,25 +399,32 @@ void main() {
       // characters, but should be considered possible.
       String numberWithPlus = "+14156667777";
       String numberWithBrackets = "(415)6667777";
-      _findMatchesInContexts(possibleOnlyContexts, false, true, 'US', numberWithPlus);
-      _findMatchesInContexts(possibleOnlyContexts, false, true, 'US', numberWithBrackets);
+      _findMatchesInContexts(
+          possibleOnlyContexts, false, true, 'US', numberWithPlus);
+      _findMatchesInContexts(
+          possibleOnlyContexts, false, true, 'US', numberWithBrackets);
 
       List<_NumberContext> validContexts = <_NumberContext>[];
       validContexts.add(_NumberContext("abc", ""));
       validContexts.add(_NumberContext("\u00C9", ""));
       validContexts.add(_NumberContext("\u00C9", ".")); // Trailing punctuation.
-      validContexts.add(_NumberContext("\u00C9", " def")); // Trailing white-space.
+      validContexts
+          .add(_NumberContext("\u00C9", " def")); // Trailing white-space.
 
       // Numbers should be considered valid, since they start with punctuation.
       _findMatchesInContexts(validContexts, true, true, 'US', numberWithPlus);
-      _findMatchesInContexts(validContexts, true, true, 'US', numberWithBrackets);
+      _findMatchesInContexts(
+          validContexts, true, true, 'US', numberWithBrackets);
     });
 
     test('testMatchesWithSurroundingChineseChars', () {
       List<_NumberContext> validContexts = <_NumberContext>[];
-      validContexts.add(_NumberContext("\u6211\u7684\u7535\u8BDD\u53F7\u7801\u662F", ""));
-      validContexts.add(_NumberContext("", "\u662F\u6211\u7684\u7535\u8BDD\u53F7\u7801"));
-      validContexts.add(_NumberContext("\u8BF7\u62E8\u6253", "\u6211\u5728\u660E\u5929"));
+      validContexts.add(
+          _NumberContext("\u6211\u7684\u7535\u8BDD\u53F7\u7801\u662F", ""));
+      validContexts.add(
+          _NumberContext("", "\u662F\u6211\u7684\u7535\u8BDD\u53F7\u7801"));
+      validContexts.add(
+          _NumberContext("\u8BF7\u62E8\u6253", "\u6211\u5728\u660E\u5929"));
 
       // Numbers should be considered valid, since they are surrounded by Chinese.
       _findMatchesInContexts(validContexts, true, true);
@@ -394,14 +434,17 @@ void main() {
       List<_NumberContext> validContexts = <_NumberContext>[];
       validContexts.add(_NumberContext("My number-", "")); // At end of text.
       validContexts.add(_NumberContext("", ".Nice day.")); // At start of text.
-      validContexts.add(_NumberContext("Tel:", ".")); // Punctuation surrounds number.
-      validContexts.add(_NumberContext("Tel: ", " on Saturdays.")); // White-space is also fine.
+      validContexts
+          .add(_NumberContext("Tel:", ".")); // Punctuation surrounds number.
+      validContexts.add(_NumberContext(
+          "Tel: ", " on Saturdays.")); // White-space is also fine.
 
       // Numbers should be considered valid, since they are surrounded by punctuation.
       _findMatchesInContexts(validContexts, true, true);
     });
 
-    test('testMatchesMultiplePhoneNumbersSeparatedByPhoneNumberPunctuation', () {
+    test('testMatchesMultiplePhoneNumbersSeparatedByPhoneNumberPunctuation',
+        () {
       String text = "Call 650-253-4561 -- 455-234-3451";
       String region = 'US';
 
@@ -417,7 +460,8 @@ void main() {
         ..nationalNumber = Int64(4552343451);
       PhoneNumberMatch match2 = PhoneNumberMatch(21, "455-234-3451", number2);
 
-      Iterator<PhoneNumberMatch> matches = phoneUtil.findNumbers(text, region).iterator;
+      Iterator<PhoneNumberMatch> matches =
+          phoneUtil.findNumbers(text, region).iterator;
 
       expect(matches.current, match1);
       expect(matches.current, match2);
@@ -494,21 +538,30 @@ void main() {
     test('testNonMatchingBracketsAreInvalid', () {
       // The digits up to the ", " form a valid US number, but it shouldn't be matched
       // as one since there was a non-matching bracket present.
-      expect(_hasNoMatches(phoneUtil.findNumbers("80.585 [79.964, 81.191]", 'US')), true);
+      expect(
+          _hasNoMatches(phoneUtil.findNumbers("80.585 [79.964, 81.191]", 'US')),
+          true);
 
       // The trailing "]" is thrown away before parsing, so the resultant number,
       // while a valid US number, does not have matching brackets.
-      expect(_hasNoMatches(phoneUtil.findNumbers("80.585 [79.964]", 'US')), true);
+      expect(
+          _hasNoMatches(phoneUtil.findNumbers("80.585 [79.964]", 'US')), true);
 
-      expect(_hasNoMatches(phoneUtil.findNumbers("80.585 ((79.964)", 'US')), true);
+      expect(
+          _hasNoMatches(phoneUtil.findNumbers("80.585 ((79.964)", 'US')), true);
 
       // This case has too many sets of brackets to be valid.
-      expect(_hasNoMatches(phoneUtil.findNumbers("(80).(585) (79).(9)64", 'US')), true);
+      expect(
+          _hasNoMatches(phoneUtil.findNumbers("(80).(585) (79).(9)64", 'US')),
+          true);
     });
 
     test('testNoMatchIfRegionIsEmpty', () {
       // Fail on non-international prefix if region code is empty.
-      expect(_hasNoMatches(phoneUtil.findNumbers("Random text body - number is 0331 6005, see you there", '')), true);
+      expect(
+          _hasNoMatches(phoneUtil.findNumbers(
+              "Random text body - number is 0331 6005, see you there", '')),
+          true);
     });
 
     test('testNoMatchInEmptyString', () {
@@ -517,7 +570,10 @@ void main() {
     });
 
     test('testNoMatchIfNoNumber', () {
-      expect(_hasNoMatches(phoneUtil.findNumbers("Random text body - number is foobar, see you there", 'US')), true);
+      expect(
+          _hasNoMatches(phoneUtil.findNumbers(
+              "Random text body - number is foobar, see you there", 'US')),
+          true);
     });
 
     test('testSequences', () {
@@ -537,7 +593,8 @@ void main() {
         ..nationalNumber = Int64(32316005);
       PhoneNumberMatch match2 = PhoneNumberMatch(19, "032316005", number2);
 
-      Iterator<PhoneNumberMatch> matches = phoneUtil.findNumbers(text, region, Leniency.possible).iterator;
+      Iterator<PhoneNumberMatch> matches =
+          phoneUtil.findNumbers(text, region, Leniency.possible).iterator;
 
       expect(matches.current, match1);
       expect(matches.current, match2);
@@ -562,7 +619,8 @@ void main() {
         expected.add(number);
       }
 
-      Iterable<PhoneNumberMatch> iterable = phoneUtil.findNumbers(numbers.toString(), 'US', Leniency.valid, Int64(10));
+      Iterable<PhoneNumberMatch> iterable = phoneUtil.findNumbers(
+          numbers.toString(), 'US', Leniency.valid, Int64(10));
       List<PhoneNumber> actual = <PhoneNumber>[];
       for (PhoneNumberMatch match in iterable) {
         actual.add(match.number);
@@ -580,7 +638,8 @@ void main() {
         numbers.write("My info: 415-666-7777,");
       }
 
-      Iterable<PhoneNumberMatch> iterable = phoneUtil.findNumbers(numbers.toString(), 'US', Leniency.valid, Int64(10));
+      Iterable<PhoneNumberMatch> iterable = phoneUtil.findNumbers(
+          numbers.toString(), 'US', Leniency.valid, Int64(10));
       expect(iterable.iterator.moveNext(), false);
     });
 
@@ -598,7 +657,8 @@ void main() {
         expected.add(number);
       }
 
-      Iterable<PhoneNumberMatch> iterable = phoneUtil.findNumbers(numbers.toString(), 'US', Leniency.valid, Int64(10));
+      Iterable<PhoneNumberMatch> iterable = phoneUtil.findNumbers(
+          numbers.toString(), 'US', Leniency.valid, Int64(10));
       List<PhoneNumber> actual = <PhoneNumber>[];
       for (PhoneNumberMatch match in iterable) {
         actual.add(match.number);
@@ -608,7 +668,8 @@ void main() {
 
     test('testNonPlusPrefixedNumbersNotFoundForInvalidRegion', () {
       // Does not start with a "+", we won't match it.
-      Iterable<PhoneNumberMatch> iterable = phoneUtil.findNumbers("1 456 764 156", 'ZZ');
+      Iterable<PhoneNumberMatch> iterable =
+          phoneUtil.findNumbers("1 456 764 156", 'ZZ');
       Iterator<PhoneNumberMatch> iterator = iterable.iterator;
 
       expect(iterator.moveNext(), false);
@@ -637,7 +698,8 @@ void main() {
     });
 
     test('testSingleIteration', () {
-      Iterable<PhoneNumberMatch> iterable = phoneUtil.findNumbers("+14156667777", 'ZZ');
+      Iterable<PhoneNumberMatch> iterable =
+          phoneUtil.findNumbers("+14156667777", 'ZZ');
 
       // With hasNext() -> next().
       Iterator<PhoneNumberMatch> iterator = iterable.iterator;
@@ -666,7 +728,8 @@ void main() {
     });
 
     test('testDoubleIteration', () {
-      Iterable<PhoneNumberMatch> iterable = phoneUtil.findNumbers("+14156667777 foobar +14156667777 ", 'ZZ');
+      Iterable<PhoneNumberMatch> iterable =
+          phoneUtil.findNumbers("+14156667777 foobar +14156667777 ", 'ZZ');
 
       // With hasNext() -> next().
       Iterator<PhoneNumberMatch> iterator = iterable.iterator;
@@ -750,8 +813,10 @@ void _findPossibleInContext(String number, String defaultCountry) {
   contextPairs.add(_NumberContext("   ", "\t")); // whitespace only
   contextPairs.add(_NumberContext("Hello ", "")); // no context at end
   contextPairs.add(_NumberContext("", " to call me!")); // no context at start
-  contextPairs.add(_NumberContext("Hi there, call ", " to reach me!")); // no context at start
-  contextPairs.add(_NumberContext("Hi there, call ", ", or don't")); // with commas
+  contextPairs.add(_NumberContext(
+      "Hi there, call ", " to reach me!")); // no context at start
+  contextPairs
+      .add(_NumberContext("Hi there, call ", ", or don't")); // with commas
   // Three examples without whitespace around the number.
   contextPairs.add(_NumberContext("Hi call", ""));
   contextPairs.add(_NumberContext("", "forme"));
@@ -760,12 +825,16 @@ void _findPossibleInContext(String number, String defaultCountry) {
   contextPairs.add(_NumberContext("It's cheap! Call ", " before 6:30"));
   // With a second number later.
   contextPairs.add(_NumberContext("Call ", " or +1800-123-4567!"));
-  contextPairs.add(_NumberContext("Call me on June 2 at", "")); // with a Month-Day date
+  contextPairs
+      .add(_NumberContext("Call me on June 2 at", "")); // with a Month-Day date
   // With publication pages.
-  contextPairs.add(_NumberContext("As quoted by Alfonso 12-15 (2009), you may call me at ", ""));
-  contextPairs.add(_NumberContext("As quoted by Alfonso et al. 12-15 (2009), you may call me at ", ""));
+  contextPairs.add(_NumberContext(
+      "As quoted by Alfonso 12-15 (2009), you may call me at ", ""));
+  contextPairs.add(_NumberContext(
+      "As quoted by Alfonso et al. 12-15 (2009), you may call me at ", ""));
   // With dates, written in the American style.
-  contextPairs.add(_NumberContext("As I said on 03/10/2011, you may call me at ", ""));
+  contextPairs
+      .add(_NumberContext("As I said on 03/10/2011, you may call me at ", ""));
   // With trailing numbers after a comma. The 45 should not be considered an
   // extension.
   contextPairs.add(_NumberContext("", ", 45 days a year"));
@@ -779,7 +848,8 @@ void _findPossibleInContext(String number, String defaultCountry) {
   _doTestInContext(number, defaultCountry, contextPairs, Leniency.possible);
 }
 
-void _doTestInContext(String number, String defaultCountry, List<_NumberContext> contextPairs, Leniency leniency) {
+void _doTestInContext(String number, String defaultCountry,
+    List<_NumberContext> contextPairs, Leniency leniency) {
   for (_NumberContext context in contextPairs) {
     String prefix = context.leadingText;
     String text = prefix + number + context.trailingText;
@@ -787,11 +857,13 @@ void _doTestInContext(String number, String defaultCountry, List<_NumberContext>
     int start = prefix.length;
     int end = start + number.length;
 
-    Iterator<PhoneNumberMatch> iterator = phoneUtil.findNumbers(text, defaultCountry, leniency).iterator;
+    Iterator<PhoneNumberMatch> iterator =
+        phoneUtil.findNumbers(text, defaultCountry, leniency).iterator;
 
     PhoneNumberMatch? match = iterator.moveNext() ? iterator.current : null;
 
-    expect(match, isNotNull, reason: "Did not find a number in '$text'; expected '$number'");
+    expect(match, isNotNull,
+        reason: "Did not find a number in '$text'; expected '$number'");
 
     String extracted = text.substring(match!.start, match.end);
 
@@ -816,7 +888,8 @@ void _ensureTermination(String text, String defaultCountry, Leniency leniency) {
     final StringBuffer matches = StringBuffer();
     // Iterates over all matches.
 
-    final Iterable<PhoneNumberMatch> phoneNumberMatches = phoneUtil.findNumbers(sub, defaultCountry, leniency);
+    final Iterable<PhoneNumberMatch> phoneNumberMatches =
+        phoneUtil.findNumbers(sub, defaultCountry, leniency);
 
     for (PhoneNumberMatch match in phoneNumberMatches) {
       matches
@@ -849,7 +922,8 @@ void _findValidInContext(String number, String defaultCountry) {
 /// its corresponding range is [start, end].
 void _assertEqualRange(String text, int index, int start, int end) {
   String sub = text.substring(index, text.length);
-  Iterator<PhoneNumberMatch> matches = phoneUtil.findNumbers(sub, 'NZ', Leniency.possible).iterator;
+  Iterator<PhoneNumberMatch> matches =
+      phoneUtil.findNumbers(sub, 'NZ', Leniency.possible).iterator;
   expect(matches.moveNext(), true);
   PhoneNumberMatch match = matches.current;
   expect(start - index, match.start);
@@ -859,9 +933,11 @@ void _assertEqualRange(String text, int index, int start, int end) {
 
 /// Asserts that the expected match is non-null, and that the raw string
 /// and expected proto buffer are set appropriately.
-void _assertMatchProperties(PhoneNumberMatch? match, String text, String number, String region) {
+void _assertMatchProperties(
+    PhoneNumberMatch? match, String text, String number, String region) {
   PhoneNumber expectedResult = phoneUtil.parse(number, region);
-  expect(match, isNotNull, reason: "Did not find a number in '$text'; expected $number");
+  expect(match, isNotNull,
+      reason: "Did not find a number in '$text'; expected $number");
   expect(match!.number.countryCode, expectedResult.countryCode);
   expect(match.number.nationalNumber, expectedResult.nationalNumber);
   expect(match.rawString, number);
@@ -913,11 +989,13 @@ bool __hasNoMatches(Iterable<PhoneNumberMatch> iterable) {
   return !iterable.iterator.moveNext();
 }
 
-void _doTestNumberMatchesForLeniency(List<_NumberTest> testCases, Leniency leniency) {
+void _doTestNumberMatchesForLeniency(
+    List<_NumberTest> testCases, Leniency leniency) {
   int noMatchFoundCount = 0;
   int wrongMatchFoundCount = 0;
   for (_NumberTest test in testCases) {
-    Iterator<PhoneNumberMatch> iterator = _findNumbersForLeniency(test.rawString, test.region, leniency);
+    Iterator<PhoneNumberMatch> iterator =
+        _findNumbersForLeniency(test.rawString, test.region, leniency);
     PhoneNumberMatch? match = iterator.moveNext() ? iterator.current : null;
     if (match == null) {
       noMatchFoundCount++;
@@ -933,14 +1011,17 @@ void _doTestNumberMatchesForLeniency(List<_NumberTest> testCases, Leniency lenie
   expect(wrongMatchFoundCount, 0);
 }
 
-Iterator<PhoneNumberMatch> _findNumbersForLeniency(String text, String defaultCountry, Leniency leniency) {
+Iterator<PhoneNumberMatch> _findNumbersForLeniency(
+    String text, String defaultCountry, Leniency leniency) {
   return phoneUtil.findNumbers(text, defaultCountry, leniency).iterator;
 }
 
-void _doTestNumberNonMatchesForLeniency(List<_NumberTest> testCases, Leniency leniency) {
+void _doTestNumberNonMatchesForLeniency(
+    List<_NumberTest> testCases, Leniency leniency) {
   int matchFoundCount = 0;
   for (_NumberTest test in testCases) {
-    Iterator<PhoneNumberMatch> iterator = _findNumbersForLeniency(test.rawString, test.region, leniency);
+    Iterator<PhoneNumberMatch> iterator =
+        _findNumbersForLeniency(test.rawString, test.region, leniency);
     PhoneNumberMatch? match = iterator.moveNext() ? iterator.current : null;
     if (match != null) {
       matchFoundCount++;
@@ -997,7 +1078,8 @@ final List<_NumberTest> _validCases = [
   _NumberTest("800 234 1 111x1111", 'US'),
   _NumberTest("1979-2011 100", 'US'),
   _NumberTest("+494949-4-94", 'DE'), // National number in wrong format
-  _NumberTest("\uFF14\uFF11\uFF15\uFF16\uFF16\uFF16\uFF16-\uFF17\uFF17\uFF17", 'US'),
+  _NumberTest(
+      "\uFF14\uFF11\uFF15\uFF16\uFF16\uFF16\uFF16-\uFF17\uFF17\uFF17", 'US'),
   _NumberTest("2012-0102 08", 'US'), // Very strange formatting.
   _NumberTest("2012-01-02 08", 'US'),
   // Breakdown assistance number with unexpected formatting.
@@ -1033,8 +1115,10 @@ final List<_NumberTest> _strictGroupingCases = [
 
 /// Strings with number-like things that should be found at all levels.
 final List<_NumberTest> _exactGroupingCases = [
-  _NumberTest("\uFF14\uFF11\uFF15\uFF16\uFF16\uFF16\uFF17\uFF17\uFF17\uFF17", 'US'),
-  _NumberTest("\uFF14\uFF11\uFF15-\uFF16\uFF16\uFF16-\uFF17\uFF17\uFF17\uFF17", 'US'),
+  _NumberTest(
+      "\uFF14\uFF11\uFF15\uFF16\uFF16\uFF16\uFF17\uFF17\uFF17\uFF17", 'US'),
+  _NumberTest(
+      "\uFF14\uFF11\uFF15-\uFF16\uFF16\uFF16-\uFF17\uFF17\uFF17\uFF17", 'US'),
   _NumberTest("4156667777", 'US'),
   _NumberTest("4156667777 x 123", 'US'),
   _NumberTest("415-666-7777", 'US'),

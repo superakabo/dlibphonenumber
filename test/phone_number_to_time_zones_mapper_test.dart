@@ -74,7 +74,8 @@ final String _seoulTz = "Asia/Seoul";
 final String _sydneyTz = "Australia/Sydney";
 
 void main() {
-  final prefixTimeZonesMapper = PhoneNumberToTimeZonesMapper(TimezoneMetadataMap.timezones);
+  final prefixTimeZonesMapper =
+      PhoneNumberToTimeZonesMapper(TimezoneMetadataMap.timezones);
 
   group('PhoneNumberToTimeZonesMapperTest', () {
     test('testGetTimeZonesForNumber', () {
@@ -110,7 +111,8 @@ void main() {
       );
       // Test with an invalid country code.
       expect(
-        prefixTimeZonesMapper.getTimeZonesForNumber(_numberWithInvalidCountryCode),
+        prefixTimeZonesMapper
+            .getTimeZonesForNumber(_numberWithInvalidCountryCode),
         PhoneNumberToTimeZonesMapper.unknownTimeZoneList,
       );
       // Test with a non geographical phone number.
@@ -124,11 +126,13 @@ void main() {
       // Test with invalid numbers even when their country code prefixes exist in the
       // mapper.
       expect(
-        prefixTimeZonesMapper.getTimeZonesForGeographicalNumber(_usInvalidNumber),
+        prefixTimeZonesMapper
+            .getTimeZonesForGeographicalNumber(_usInvalidNumber),
         _getNanpaTimeZonesList(),
       );
       expect(
-        prefixTimeZonesMapper.getTimeZonesForGeographicalNumber(_koInvalidNumber),
+        prefixTimeZonesMapper
+            .getTimeZonesForGeographicalNumber(_koInvalidNumber),
         _buildListOfTimeZones([_seoulTz]),
       );
       // Test with valid prefixes.
@@ -154,12 +158,14 @@ void main() {
       );
       // Test with an invalid country code.
       expect(
-        prefixTimeZonesMapper.getTimeZonesForGeographicalNumber(_numberWithInvalidCountryCode),
+        prefixTimeZonesMapper
+            .getTimeZonesForGeographicalNumber(_numberWithInvalidCountryCode),
         PhoneNumberToTimeZonesMapper.unknownTimeZoneList,
       );
       // Test with a non geographical phone number.
       expect(
-        prefixTimeZonesMapper.getTimeZonesForGeographicalNumber(_internationalTollFree),
+        prefixTimeZonesMapper
+            .getTimeZonesForGeographicalNumber(_internationalTollFree),
         PhoneNumberToTimeZonesMapper.unknownTimeZoneList,
       );
     });

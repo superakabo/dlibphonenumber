@@ -23,7 +23,8 @@ import 'package:test/test.dart';
 import 'generated/metadata/geocoding_metadata_map.dart';
 
 void main() {
-  final geocoder = PhoneNumberOfflineGeocoder(GeocodingMetadataMap.config, GeocodingMetadataMap.locations);
+  final geocoder = PhoneNumberOfflineGeocoder(
+      GeocodingMetadataMap.config, GeocodingMetadataMap.locations);
 
   group('PhoneNumberOfflineGeocoderTest', () {
     // Set up some test numbers to re-use.
@@ -94,66 +95,106 @@ void main() {
     test('testGetDescriptionForNumberWithNoDataFile', () {
       // No data file containing mappings for US numbers is available in Chinese for the unittests. As
       // a result, the country name of United States in simplified Chinese is returned.
-      expect(geocoder.getDescriptionForNumber(usNumber1, Locale.simplifiedChinese), '\u7F8E\u56FD');
-      expect(geocoder.getDescriptionForNumber(bsNumber1, Locale(language: 'en', country: 'US')), 'Bahamas');
+      expect(
+          geocoder.getDescriptionForNumber(usNumber1, Locale.simplifiedChinese),
+          '\u7F8E\u56FD');
+      expect(
+          geocoder.getDescriptionForNumber(
+              bsNumber1, Locale(language: 'en', country: 'US')),
+          'Bahamas');
 
-      expect(geocoder.getDescriptionForNumber(auNumber, Locale(language: 'en', country: 'US')), 'Australia');
-      expect(geocoder.getDescriptionForNumber(numberWithInvalidCountryCode, Locale(language: 'en', country: 'US')), '');
-      expect(geocoder.getDescriptionForNumber(internationalTollFree, Locale(language: 'en', country: 'US')), '');
+      expect(
+          geocoder.getDescriptionForNumber(
+              auNumber, Locale(language: 'en', country: 'US')),
+          'Australia');
+      expect(
+          geocoder.getDescriptionForNumber(numberWithInvalidCountryCode,
+              Locale(language: 'en', country: 'US')),
+          '');
+      expect(
+          geocoder.getDescriptionForNumber(
+              internationalTollFree, Locale(language: 'en', country: 'US')),
+          '');
     });
 
     test('testGetDescriptionForNumberWithMissingPrefix', () {
       // Test that the name of the country is returned when the number passed in is
       // valid but not covered by the geocoding data file.
-      expect(geocoder.getDescriptionForNumber(usNumber4, Locale(language: 'en', country: 'US')), 'United States');
+      expect(
+          geocoder.getDescriptionForNumber(
+              usNumber4, Locale(language: 'en', country: 'US')),
+          'United States');
     });
 
     test('testGetDescriptionForNumberBelongingToMultipleCountriesIsEmpty', () {
       // Test that nothing is returned when the number passed in is valid but not
       // covered by the geocoding data file and belongs to multiple countries
-      expect(geocoder.getDescriptionForNumber(nanpaTollFree, Locale(language: 'en', country: 'US')), '');
+      expect(
+          geocoder.getDescriptionForNumber(
+              nanpaTollFree, Locale(language: 'en', country: 'US')),
+          '');
     });
 
     test('testGetDescriptionForNumber_en_US', () {
-      expect(geocoder.getDescriptionForNumber(usNumber1, Locale(language: 'en', country: 'US')), 'CA');
-      expect(geocoder.getDescriptionForNumber(usNumber2, Locale(language: 'en', country: 'US')), 'Mountain View, CA');
-      expect(geocoder.getDescriptionForNumber(usNumber3, Locale(language: 'en', country: 'US')), 'New York, NY');
+      expect(
+          geocoder.getDescriptionForNumber(
+              usNumber1, Locale(language: 'en', country: 'US')),
+          'CA');
+      expect(
+          geocoder.getDescriptionForNumber(
+              usNumber2, Locale(language: 'en', country: 'US')),
+          'Mountain View, CA');
+      expect(
+          geocoder.getDescriptionForNumber(
+              usNumber3, Locale(language: 'en', country: 'US')),
+          'New York, NY');
     });
 
     test('testGetDescriptionForKoreanNumber', () {
-      expect(geocoder.getDescriptionForNumber(koNumber1, Locale.english), 'Seoul');
-      expect(geocoder.getDescriptionForNumber(koNumber2, Locale.english), 'Incheon');
-      expect(geocoder.getDescriptionForNumber(koNumber3, Locale.english), 'Jeju');
-      expect(geocoder.getDescriptionForNumber(koNumber1, Locale.korean), '\uC11C\uC6B8');
-      expect(geocoder.getDescriptionForNumber(koNumber2, Locale.korean), '\uC778\uCC9C');
+      expect(
+          geocoder.getDescriptionForNumber(koNumber1, Locale.english), 'Seoul');
+      expect(geocoder.getDescriptionForNumber(koNumber2, Locale.english),
+          'Incheon');
+      expect(
+          geocoder.getDescriptionForNumber(koNumber3, Locale.english), 'Jeju');
+      expect(geocoder.getDescriptionForNumber(koNumber1, Locale.korean),
+          '\uC11C\uC6B8');
+      expect(geocoder.getDescriptionForNumber(koNumber2, Locale.korean),
+          '\uC778\uCC9C');
     });
 
     test('testGetDescriptionForArgentinianMobileNumber', () {
-      expect(geocoder.getDescriptionForNumber(arMobileNumber, Locale.english), 'La Plata');
+      expect(geocoder.getDescriptionForNumber(arMobileNumber, Locale.english),
+          'La Plata');
     });
 
     test('testGetDescriptionForFallBack', () {
       // No fallback, as the location name for the given phone number is available in
       // the requested language.
-      expect(geocoder.getDescriptionForNumber(usNumber1, Locale.german), 'Kalifornien');
+      expect(geocoder.getDescriptionForNumber(usNumber1, Locale.german),
+          'Kalifornien');
       // German falls back to English.
-      expect(geocoder.getDescriptionForNumber(usNumber3, Locale.german), 'New York, NY');
+      expect(geocoder.getDescriptionForNumber(usNumber3, Locale.german),
+          'New York, NY');
       // Italian falls back to English.
       expect(geocoder.getDescriptionForNumber(usNumber1, Locale.italian), 'CA');
       // Korean doesn't fall back to English.
-      expect(geocoder.getDescriptionForNumber(koNumber3, Locale.korean), '\uB300\uD55C\uBBFC\uAD6D');
+      expect(geocoder.getDescriptionForNumber(koNumber3, Locale.korean),
+          '\uB300\uD55C\uBBFC\uAD6D');
     });
 
     test('testGetDescriptionForNumberWithUserRegion', () {
       // User in Italy, American number. We should just show United States, in
       // Spanish, and not more detailed information.
       expect(
-        geocoder.getDescriptionForNumber(usNumber1, Locale(language: 'es', country: 'ES'), 'IT'),
+        geocoder.getDescriptionForNumber(
+            usNumber1, Locale(language: 'es', country: 'ES'), 'IT'),
         'Estados Unidos',
       );
       // Unknown region - should just show country name.
       expect(
-        geocoder.getDescriptionForNumber(usNumber1, Locale(language: 'es', country: 'ES'), 'ZZ'),
+        geocoder.getDescriptionForNumber(
+            usNumber1, Locale(language: 'es', country: 'ES'), 'ZZ'),
         'Estados Unidos',
       );
       // User in the States, language German, should show detailed data.
@@ -163,20 +204,27 @@ void main() {
       );
       // User in the States, language French, no data for French, so we fallback to
       // English detailed data.
-      expect(geocoder.getDescriptionForNumber(usNumber1, Locale.french, 'US'), 'CA');
+      expect(geocoder.getDescriptionForNumber(usNumber1, Locale.french, 'US'),
+          'CA');
       // Invalid number - return an empty string.
-      expect(geocoder.getDescriptionForNumber(usInvalidNumber, Locale.english, 'US'), '');
+      expect(
+          geocoder.getDescriptionForNumber(
+              usInvalidNumber, Locale.english, 'US'),
+          '');
     });
 
     test('testGetDescriptionForInvalidNumber', () {
-      expect(geocoder.getDescriptionForNumber(koInvalidNumber, Locale.english), '');
-      expect(geocoder.getDescriptionForNumber(usInvalidNumber, Locale.english), '');
+      expect(geocoder.getDescriptionForNumber(koInvalidNumber, Locale.english),
+          '');
+      expect(geocoder.getDescriptionForNumber(usInvalidNumber, Locale.english),
+          '');
     });
 
     test('testGetDescriptionForNonGeographicalNumberWithGeocodingPrefix', () {
       // We have a geocoding prefix, but we shouldn't use it since this is not
       // geographical.
-      expect(geocoder.getDescriptionForNumber(koMobile, Locale.english), 'South Korea');
+      expect(geocoder.getDescriptionForNumber(koMobile, Locale.english),
+          'South Korea');
     });
   });
 }

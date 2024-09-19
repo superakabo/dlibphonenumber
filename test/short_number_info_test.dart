@@ -34,7 +34,10 @@ void main() {
         ..nationalNumber = Int64(123456);
 
       expect(shortInfo.isPossibleShortNumber(possibleNumber), true);
-      expect(shortInfo.isPossibleShortNumberForRegion(_parse("123456", 'FR'), 'FR'), true);
+      expect(
+          shortInfo.isPossibleShortNumberForRegion(
+              _parse("123456", 'FR'), 'FR'),
+          true);
 
       PhoneNumber impossibleNumber = PhoneNumber();
       impossibleNumber
@@ -56,14 +59,17 @@ void main() {
         ..nationalNumber = Int64(1010);
       expect(shortInfo.isValidShortNumber(phoneNumber1), true);
 
-      expect(shortInfo.isValidShortNumberForRegion(_parse("1010", 'FR'), 'FR'), true);
+      expect(shortInfo.isValidShortNumberForRegion(_parse("1010", 'FR'), 'FR'),
+          true);
 
       final phoneNumber2 = PhoneNumber()
         ..countryCode = 33
         ..nationalNumber = Int64(123456);
       expect(shortInfo.isValidShortNumber(phoneNumber2), false);
 
-      expect(shortInfo.isValidShortNumberForRegion(_parse("123456", 'FR'), 'FR'), false);
+      expect(
+          shortInfo.isValidShortNumberForRegion(_parse("123456", 'FR'), 'FR'),
+          false);
 
       // Note that GB and GG share the country calling code 44.
       final phoneNumber3 = PhoneNumber()
@@ -78,22 +84,31 @@ void main() {
         ..countryCode = 1
         ..nationalNumber = Int64(33669);
       expect(shortInfo.isCarrierSpecific(carrierSpecificNumber), true);
-      expect(shortInfo.isCarrierSpecificForRegion(_parse("33669", 'US'), 'US'), true);
+      expect(shortInfo.isCarrierSpecificForRegion(_parse("33669", 'US'), 'US'),
+          true);
 
       PhoneNumber notCarrierSpecificNumber = PhoneNumber();
       notCarrierSpecificNumber
         ..countryCode = 1
         ..nationalNumber = Int64(911);
       expect(shortInfo.isCarrierSpecific(notCarrierSpecificNumber), false);
-      expect(shortInfo.isCarrierSpecificForRegion(_parse("911", 'US'), 'US'), false);
+      expect(shortInfo.isCarrierSpecificForRegion(_parse("911", 'US'), 'US'),
+          false);
 
       PhoneNumber carrierSpecificNumberForSomeRegion = PhoneNumber();
       carrierSpecificNumberForSomeRegion
         ..countryCode = 1
         ..nationalNumber = Int64(211);
-      expect(shortInfo.isCarrierSpecific(carrierSpecificNumberForSomeRegion), true);
-      expect(shortInfo.isCarrierSpecificForRegion(carrierSpecificNumberForSomeRegion, 'US'), true);
-      expect(shortInfo.isCarrierSpecificForRegion(carrierSpecificNumberForSomeRegion, 'BB'), false);
+      expect(shortInfo.isCarrierSpecific(carrierSpecificNumberForSomeRegion),
+          true);
+      expect(
+          shortInfo.isCarrierSpecificForRegion(
+              carrierSpecificNumberForSomeRegion, 'US'),
+          true);
+      expect(
+          shortInfo.isCarrierSpecificForRegion(
+              carrierSpecificNumberForSomeRegion, 'BB'),
+          false);
     });
 
     test('testIsSmsService', () {
@@ -101,60 +116,87 @@ void main() {
       smsServiceNumberForSomeRegion
         ..countryCode = 1
         ..nationalNumber = Int64(21234);
-      expect(shortInfo.isSmsServiceForRegion(smsServiceNumberForSomeRegion, 'US'), true);
-      expect(shortInfo.isSmsServiceForRegion(smsServiceNumberForSomeRegion, 'BB'), false);
+      expect(
+          shortInfo.isSmsServiceForRegion(smsServiceNumberForSomeRegion, 'US'),
+          true);
+      expect(
+          shortInfo.isSmsServiceForRegion(smsServiceNumberForSomeRegion, 'BB'),
+          false);
     });
 
     test('testGetExpectedCost', () {
-      String premiumRateExample = shortInfo.getExampleShortNumberForCost('FR', ShortNumberCost.premiumRate);
-      expect(shortInfo.getExpectedCostForRegion(_parse(premiumRateExample, 'FR'), 'FR'), ShortNumberCost.premiumRate);
+      String premiumRateExample = shortInfo.getExampleShortNumberForCost(
+          'FR', ShortNumberCost.premiumRate);
+      expect(
+          shortInfo.getExpectedCostForRegion(
+              _parse(premiumRateExample, 'FR'), 'FR'),
+          ShortNumberCost.premiumRate);
 
       PhoneNumber premiumRateNumber = PhoneNumber()
         ..countryCode = 33
         ..nationalNumber = Int64.parseInt(premiumRateExample);
-      expect(shortInfo.getExpectedCost(premiumRateNumber), ShortNumberCost.premiumRate);
+      expect(shortInfo.getExpectedCost(premiumRateNumber),
+          ShortNumberCost.premiumRate);
 
-      String standardRateExample = shortInfo.getExampleShortNumberForCost('FR', ShortNumberCost.standardRate);
-      expect(ShortNumberCost.standardRate, shortInfo.getExpectedCostForRegion(_parse(standardRateExample, 'FR'), 'FR'));
+      String standardRateExample = shortInfo.getExampleShortNumberForCost(
+          'FR', ShortNumberCost.standardRate);
+      expect(
+          ShortNumberCost.standardRate,
+          shortInfo.getExpectedCostForRegion(
+              _parse(standardRateExample, 'FR'), 'FR'));
 
       PhoneNumber standardRateNumber = PhoneNumber()
         ..countryCode = 33
         ..nationalNumber = Int64.parseInt(standardRateExample);
-      expect(shortInfo.getExpectedCost(standardRateNumber), ShortNumberCost.standardRate);
+      expect(shortInfo.getExpectedCost(standardRateNumber),
+          ShortNumberCost.standardRate);
 
-      String tollFreeExample = shortInfo.getExampleShortNumberForCost('FR', ShortNumberCost.tollFree);
-      expect(shortInfo.getExpectedCostForRegion(_parse(tollFreeExample, 'FR'), 'FR'), ShortNumberCost.tollFree);
+      String tollFreeExample = shortInfo.getExampleShortNumberForCost(
+          'FR', ShortNumberCost.tollFree);
+      expect(
+          shortInfo.getExpectedCostForRegion(
+              _parse(tollFreeExample, 'FR'), 'FR'),
+          ShortNumberCost.tollFree);
 
       PhoneNumber tollFreeNumber = PhoneNumber()
         ..countryCode = 33
         ..nationalNumber = (Int64.parseInt(tollFreeExample));
-      expect(shortInfo.getExpectedCost(tollFreeNumber), ShortNumberCost.tollFree);
+      expect(
+          shortInfo.getExpectedCost(tollFreeNumber), ShortNumberCost.tollFree);
 
-      expect(ShortNumberCost.unknownCost, shortInfo.getExpectedCostForRegion(_parse("12345", 'FR'), 'FR'));
+      expect(ShortNumberCost.unknownCost,
+          shortInfo.getExpectedCostForRegion(_parse("12345", 'FR'), 'FR'));
 
       PhoneNumber unknownCostNumber = PhoneNumber()
         ..countryCode = 33
         ..nationalNumber = Int64(12345);
-      expect(shortInfo.getExpectedCost(unknownCostNumber), ShortNumberCost.unknownCost);
+      expect(shortInfo.getExpectedCost(unknownCostNumber),
+          ShortNumberCost.unknownCost);
 
       // Test that an invalid number may nevertheless have a cost other than
       // UNKNOWN_COST.
-      expect(shortInfo.isValidShortNumberForRegion(_parse("116123", 'FR'), 'FR'), false);
-      expect(shortInfo.getExpectedCostForRegion(_parse("116123", 'FR'), 'FR'), ShortNumberCost.tollFree);
+      expect(
+          shortInfo.isValidShortNumberForRegion(_parse("116123", 'FR'), 'FR'),
+          false);
+      expect(shortInfo.getExpectedCostForRegion(_parse("116123", 'FR'), 'FR'),
+          ShortNumberCost.tollFree);
 
       PhoneNumber invalidNumber = PhoneNumber()
         ..countryCode = 33
         ..nationalNumber = Int64(116123);
       expect(shortInfo.isValidShortNumber(invalidNumber), false);
-      expect(shortInfo.getExpectedCost(invalidNumber), ShortNumberCost.tollFree);
+      expect(
+          shortInfo.getExpectedCost(invalidNumber), ShortNumberCost.tollFree);
 
       // Test a nonexistent country code.
-      expect(shortInfo.getExpectedCostForRegion(_parse("911", 'US'), 'ZZ'), ShortNumberCost.unknownCost);
+      expect(shortInfo.getExpectedCostForRegion(_parse("911", 'US'), 'ZZ'),
+          ShortNumberCost.unknownCost);
       unknownCostNumber
         ..clear()
         ..countryCode = 123
         ..nationalNumber = Int64(911);
-      expect(shortInfo.getExpectedCost(unknownCostNumber), ShortNumberCost.unknownCost);
+      expect(shortInfo.getExpectedCost(unknownCostNumber),
+          ShortNumberCost.unknownCost);
     });
 
     test('testGetExpectedCostForSharedCountryCallingCode', () {
@@ -182,29 +224,46 @@ void main() {
       expect(shortInfo.isValidShortNumber(ambiguousStandardRateNumber), true);
       expect(shortInfo.isValidShortNumber(ambiguousTollFreeNumber), true);
 
-      expect(shortInfo.isValidShortNumberForRegion(_parse(ambiguousPremiumRateString, 'AU'), 'AU'), true);
       expect(
-        shortInfo.getExpectedCostForRegion(_parse(ambiguousPremiumRateString, 'AU'), 'AU'),
+          shortInfo.isValidShortNumberForRegion(
+              _parse(ambiguousPremiumRateString, 'AU'), 'AU'),
+          true);
+      expect(
+        shortInfo.getExpectedCostForRegion(
+            _parse(ambiguousPremiumRateString, 'AU'), 'AU'),
         ShortNumberCost.premiumRate,
       );
 
-      expect(shortInfo.isValidShortNumberForRegion(_parse(ambiguousPremiumRateString, 'CX'), 'CX'), false);
       expect(
-        shortInfo.getExpectedCostForRegion(_parse(ambiguousPremiumRateString, 'CX'), 'CX'),
+          shortInfo.isValidShortNumberForRegion(
+              _parse(ambiguousPremiumRateString, 'CX'), 'CX'),
+          false);
+      expect(
+        shortInfo.getExpectedCostForRegion(
+            _parse(ambiguousPremiumRateString, 'CX'), 'CX'),
         ShortNumberCost.unknownCost,
       );
 
       // PREMIUM_RATE takes precedence over UNKNOWN_COST.
-      expect(shortInfo.getExpectedCost(ambiguousPremiumRateNumber), ShortNumberCost.premiumRate);
+      expect(shortInfo.getExpectedCost(ambiguousPremiumRateNumber),
+          ShortNumberCost.premiumRate);
 
-      expect(shortInfo.isValidShortNumberForRegion(_parse(ambiguousStandardRateString, 'AU'), 'AU'), true);
       expect(
-        shortInfo.getExpectedCostForRegion(_parse(ambiguousStandardRateString, 'AU'), 'AU'),
+          shortInfo.isValidShortNumberForRegion(
+              _parse(ambiguousStandardRateString, 'AU'), 'AU'),
+          true);
+      expect(
+        shortInfo.getExpectedCostForRegion(
+            _parse(ambiguousStandardRateString, 'AU'), 'AU'),
         ShortNumberCost.standardRate,
       );
-      expect(shortInfo.isValidShortNumberForRegion(_parse(ambiguousStandardRateString, 'CX'), 'CX'), false);
       expect(
-        shortInfo.getExpectedCostForRegion(_parse(ambiguousStandardRateString, 'CX'), 'CX'),
+          shortInfo.isValidShortNumberForRegion(
+              _parse(ambiguousStandardRateString, 'CX'), 'CX'),
+          false);
+      expect(
+        shortInfo.getExpectedCostForRegion(
+            _parse(ambiguousStandardRateString, 'CX'), 'CX'),
         ShortNumberCost.unknownCost,
       );
       expect(
@@ -212,14 +271,22 @@ void main() {
         ShortNumberCost.unknownCost,
       );
 
-      expect(shortInfo.isValidShortNumberForRegion(_parse(ambiguousTollFreeString, 'AU'), 'AU'), true);
       expect(
-        shortInfo.getExpectedCostForRegion(_parse(ambiguousTollFreeString, 'AU'), 'AU'),
+          shortInfo.isValidShortNumberForRegion(
+              _parse(ambiguousTollFreeString, 'AU'), 'AU'),
+          true);
+      expect(
+        shortInfo.getExpectedCostForRegion(
+            _parse(ambiguousTollFreeString, 'AU'), 'AU'),
         ShortNumberCost.tollFree,
       );
-      expect(shortInfo.isValidShortNumberForRegion(_parse(ambiguousTollFreeString, 'CX'), 'CX'), false);
       expect(
-        shortInfo.getExpectedCostForRegion(_parse(ambiguousTollFreeString, 'CX'), 'CX'),
+          shortInfo.isValidShortNumberForRegion(
+              _parse(ambiguousTollFreeString, 'CX'), 'CX'),
+          false);
+      expect(
+        shortInfo.getExpectedCostForRegion(
+            _parse(ambiguousTollFreeString, 'CX'), 'CX'),
         ShortNumberCost.unknownCost,
       );
       expect(
@@ -358,35 +425,49 @@ void main() {
       // Test the emergency number 112, which is valid in both Australia and the
       // Christmas Islands.
       expect(shortInfo.isEmergencyNumber("112", 'AU'), true);
-      expect(shortInfo.isValidShortNumberForRegion(_parse("112", 'AU'), 'AU'), true);
-      expect(shortInfo.getExpectedCostForRegion(_parse("112", 'AU'), 'AU'), ShortNumberCost.tollFree);
+      expect(shortInfo.isValidShortNumberForRegion(_parse("112", 'AU'), 'AU'),
+          true);
+      expect(shortInfo.getExpectedCostForRegion(_parse("112", 'AU'), 'AU'),
+          ShortNumberCost.tollFree);
       expect(shortInfo.isEmergencyNumber("112", 'CX'), true);
-      expect(shortInfo.isValidShortNumberForRegion(_parse("112", 'CX'), 'CX'), true);
-      expect(shortInfo.getExpectedCostForRegion(_parse("112", 'CX'), 'CX'), ShortNumberCost.tollFree);
+      expect(shortInfo.isValidShortNumberForRegion(_parse("112", 'CX'), 'CX'),
+          true);
+      expect(shortInfo.getExpectedCostForRegion(_parse("112", 'CX'), 'CX'),
+          ShortNumberCost.tollFree);
       PhoneNumber sharedEmergencyNumber = PhoneNumber()
         ..countryCode = 61
         ..nationalNumber = Int64(112);
       expect(shortInfo.isValidShortNumber(sharedEmergencyNumber), true);
-      expect(ShortNumberCost.tollFree, shortInfo.getExpectedCost(sharedEmergencyNumber));
+      expect(ShortNumberCost.tollFree,
+          shortInfo.getExpectedCost(sharedEmergencyNumber));
     });
 
     test('testOverlappingNANPANumber', () {
       // 211 is an emergency number in Barbados, while it is a toll-free information
       // line in Canada  and the USA.
       expect(shortInfo.isEmergencyNumber("211", 'BB'), true);
-      expect(shortInfo.getExpectedCostForRegion(_parse("211", 'BB'), 'BB'), ShortNumberCost.tollFree);
+      expect(shortInfo.getExpectedCostForRegion(_parse("211", 'BB'), 'BB'),
+          ShortNumberCost.tollFree);
       expect(shortInfo.isEmergencyNumber("211", 'US'), false);
-      expect(ShortNumberCost.unknownCost, shortInfo.getExpectedCostForRegion(_parse("211", 'US'), 'US'));
+      expect(ShortNumberCost.unknownCost,
+          shortInfo.getExpectedCostForRegion(_parse("211", 'US'), 'US'));
       expect(shortInfo.isEmergencyNumber("211", 'CA'), false);
-      expect(shortInfo.getExpectedCostForRegion(_parse("211", 'CA'), 'CA'), ShortNumberCost.tollFree);
+      expect(shortInfo.getExpectedCostForRegion(_parse("211", 'CA'), 'CA'),
+          ShortNumberCost.tollFree);
     });
 
     test('testCountryCallingCodeIsNotIgnored', () {
       // +46 is the country calling code for Sweden (SE),
       //and 40404 is a valid short number in the US.
-      expect(shortInfo.isPossibleShortNumberForRegion(_parse("+4640404", 'SE'), 'US'), false);
-      expect(shortInfo.isValidShortNumberForRegion(_parse("+4640404", 'SE'), 'US'), false);
-      expect(shortInfo.getExpectedCostForRegion(_parse("+4640404", 'SE'), 'US'), ShortNumberCost.unknownCost);
+      expect(
+          shortInfo.isPossibleShortNumberForRegion(
+              _parse("+4640404", 'SE'), 'US'),
+          false);
+      expect(
+          shortInfo.isValidShortNumberForRegion(_parse("+4640404", 'SE'), 'US'),
+          false);
+      expect(shortInfo.getExpectedCostForRegion(_parse("+4640404", 'SE'), 'US'),
+          ShortNumberCost.unknownCost);
     });
   });
 }
@@ -397,6 +478,7 @@ PhoneNumber _parse(String number, String regionCode) {
   try {
     return phoneUtil.parse(number, regionCode);
   } on NumberParseException catch (e) {
-    throw AssertionError("Test input data should always parse correctly: $number ($regionCode) $e");
+    throw AssertionError(
+        "Test input data should always parse correctly: $number ($regionCode) $e");
   }
 }
