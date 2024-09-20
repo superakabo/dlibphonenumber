@@ -5,7 +5,7 @@
 /// Carrier JSON data for 57_en
 Map<int, String> get57_en() {
   return {
-    579: "Movistar",
+    5791: "Movistar",
     57303: "Uff!",
     57315: "Movistar",
     57316: "Movistar",

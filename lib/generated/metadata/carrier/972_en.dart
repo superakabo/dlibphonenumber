@@ -40,6 +40,7 @@ Map<int, String> get972_en() {
     9725572: "Cellact",
     9725577: "019mobile",
     97255440: "Merkaziya",
-    97255442: "Xphone"
+    97255442: "Xphone",
+    97255443: "Yossi"
   };
 }

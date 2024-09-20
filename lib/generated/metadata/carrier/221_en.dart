@@ -6,6 +6,7 @@
 Map<int, String> get221_en() {
   return {
     22170: "Expresso",
+    22171: "Orange",
     22172: "HAYO",
     22175: "Promobile",
     22176: "Free",

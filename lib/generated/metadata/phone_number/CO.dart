@@ -6,7 +6,7 @@
 Map<String, Object?> getCO() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:60\\d\\d|9101)\\d{6}|(?:1\\d|3)\\d{9}",
+      "nationalNumberPattern": "60\\d{8}|(?:1\\d|[39])\\d{9}",
       "possibleLength": [10, 11],
       "possibleLengthLocalOnly": [7]
     },
@@ -31,9 +31,9 @@ Map<String, Object?> getCO() {
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "nationalNumberPattern": "19(?:0[01]|4[78])\\d{7}",
+      "nationalNumberPattern": "(?:19(?:0[01]|4[78])|901)\\d{7}",
       "exampleNumber": "19001234567",
-      "possibleLength": [11],
+      "possibleLength": [10, 11],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {
@@ -58,7 +58,7 @@ Map<String, Object?> getCO() {
       {
         "pattern": "(\\d{3})(\\d{7})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["6"],
+        "leadingDigitsPattern": ["6|90"],
         "nationalPrefixFormattingRule": "(\$1)",
         "domesticCarrierCodeFormattingRule": "0\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false
@@ -82,7 +82,7 @@ Map<String, Object?> getCO() {
       {
         "pattern": "(\\d{3})(\\d{7})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["6"],
+        "leadingDigitsPattern": ["6|90"],
         "nationalPrefixFormattingRule": "(\$1)",
         "domesticCarrierCodeFormattingRule": "0\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false
