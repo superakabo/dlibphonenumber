@@ -1,6 +1,4 @@
 ## 1.1.23
-- Added the std:: qualifier to string throughout phonenumberutil.
-- Changed several std::string parameters to absl::string_view.
 - Updated phone metadata for region code(s): CO, HK, PA, PE, SG, SN, UZ
 - Updated short number metadata for region code(s): UY
 - Updated geocoding data for country calling code(s): 51 (en)
