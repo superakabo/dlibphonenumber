@@ -4,6 +4,16 @@
 # To execute this script, run: (in terminal) 
 # zsh ./update_resources.sh 
 
+
+# Check for new liphonenumber release
+has_new_release=$(dart run tools/check_release.dart);
+#
+# stop the process if there is no new release.
+if [ "$has_new_release" = false ]; then
+  echo "No new release has been published yet."
+  exit 0
+fi
+
 # Fetch just the latest resource directory from the libphonenumber repository
 # This command also copies files in the root directories specified
 git clone --filter=blob:none --no-checkout https://github.com/google/libphonenumber.git

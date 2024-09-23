@@ -18,7 +18,7 @@ Future<void> _updateChangeLog() async {
   final File changelogFile = File('CHANGELOG.md');
 
   final String currentReleaseNotes = await _readReleaseNotes(releaseNotesFile);
-  final String currentChangelog = await _readReleaseNotes(changelogFile);
+  final String currentChangelog = await _readChangelog(changelogFile);
 
   if (currentReleaseNotes != currentChangelog) {
     final String versionNumber = await _updateVersionInPubspecYaml();
@@ -89,6 +89,34 @@ Future<YamlEditor> _readPubspecYaml(File file) async {
 /// An empty line marks the end of the latest release notes.
 ///
 Future<String> _readReleaseNotes(File file) {
+  late StreamSubscription<String> subscription;
+  final StringBuffer stringBuffer = StringBuffer();
+  final Completer<String> completer = Completer<String>();
+  bool startsWithMetadataChanges = false;
+
+  subscription = file.openRead().transform(utf8.decoder).transform(LineSplitter()).listen((lineOfText) {
+    lineOfText = lineOfText.trim();
+
+    if (lineOfText.contains('Metadata changes:') || lineOfText.contains('Metadata change')) {
+      startsWithMetadataChanges = true;
+    }
+
+    // We are only interested in metadata change-log
+    if (startsWithMetadataChanges) {
+      if (lineOfText.isNotEmpty) {
+        _parseNotes(lineOfText, stringBuffer);
+      } else {
+        subscription.cancel();
+        completer.complete(stringBuffer.toString());
+      }
+    }
+  });
+
+  return completer.future;
+}
+
+/// Reads the projects change-log file for comparisons.
+Future<String> _readChangelog(File file) {
   late StreamSubscription<String> subscription;
   final StringBuffer stringBuffer = StringBuffer();
   final Completer<String> completer = Completer<String>();

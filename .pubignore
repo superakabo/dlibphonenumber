@@ -14,3 +14,7 @@ test/**
 
 # exclude unnecessary project files
 analysis_options.yaml
+
+# ignore libphonenumber release id.
+# this auto-generated file is used by the tooling to check for newer releases.
+.source_release_id
