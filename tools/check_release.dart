@@ -55,7 +55,7 @@ Future<String> _getReleaseId() async {
 Future<void> _saveReleaseId(String releaseId) async {
   final File file = File('source_release_id');
 
-  if (file.existsSync()) {
+  if (!file.existsSync()) {
     await file.create();
   }
 
