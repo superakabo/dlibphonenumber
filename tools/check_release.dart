@@ -38,7 +38,7 @@ Future<String> _checkForNewRelease() async {
 }
 
 Future<String> _getReleaseId() async {
-  final File file = File('.source_release_id');
+  final File file = File('source_release_id');
 
   if (file.existsSync()) {
     return file.readAsString();
@@ -48,7 +48,7 @@ Future<String> _getReleaseId() async {
 }
 
 Future<void> _saveReleaseId(String releaseId) async {
-  final File file = File('.source_release_id');
+  final File file = File('source_release_id');
 
   if (file.existsSync()) {
     await file.create();
