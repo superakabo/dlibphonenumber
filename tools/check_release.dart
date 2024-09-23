@@ -7,6 +7,8 @@ Future<void> main() {
   return _hasNewRelease();
 }
 
+/// Check and compare release ids to see if a new release
+/// has been published.
 Future<void> _hasNewRelease() async {
   final String existingRelease = await _getReleaseId();
   final String newRelease = await _checkForNewRelease();
@@ -19,6 +21,7 @@ Future<void> _hasNewRelease() async {
   print(isNewRelease);
 }
 
+/// Fetch the latest release id from the libphonenumber repository.
 Future<String> _checkForNewRelease() async {
   final Uri url = Uri.parse('https://api.github.com/repos/google/libphonenumber/releases/latest');
 
@@ -37,6 +40,7 @@ Future<String> _checkForNewRelease() async {
   return '';
 }
 
+/// Read the last used release id for libphonenumber.
 Future<String> _getReleaseId() async {
   final File file = File('source_release_id');
 
@@ -47,6 +51,7 @@ Future<String> _getReleaseId() async {
   return '';
 }
 
+/// Save the latest release id for libphonenumber.
 Future<void> _saveReleaseId(String releaseId) async {
   final File file = File('source_release_id');
 
