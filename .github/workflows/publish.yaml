@@ -1,27 +1,37 @@
-name: Publish
+name: Publish to pub.dev
 
 on:
   push:
     tags:
-    - 'v[0-9]+.[0-9]+.[0-9]+'    # tag-pattern on pub.dev: 'v{{version}}'
+    - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    name: 'Publish to pub.dev'
+
+    environment: pub.dev
+
     permissions:
-      id-token: write                 # Required for authentication using OIDC
-    with:
-      environment: 'pub.dev'
+      id-token: write
+
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      # Checkout repository
+      - uses: actions/checkout@v4
 
-      - name: Set-up Dart
-        uses: dart-lang/setup-dart@v1
-
-      - name: Install package dependencies
+      # Setup Dart SDK
+      - uses: dart-lang/setup-dart@v1
+      
+      # Setup package dependencies
+      - name: Install dependencies
         run: dart pub get
 
-      - name: Publish to pub.dev
-        run: dart pub publish --force
+      - name: Publish - dry run
+        run: dart pub publish --dry-run
+
+      # # Publishing...
+      # - name: Publish to pub.dev
+      #   run: dart pub publish -f
+      #   working-directory: ${{ inputs.working-directory }}
+
