@@ -1,4 +1,4 @@
-name: Publish to pub.dev
+name: Publish
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish:
-    name: 'Publish to pub.dev'
+    name: 'Publish'
 
     environment: pub.dev
 
@@ -30,8 +30,7 @@ jobs:
       - name: Publish - dry run
         run: dart pub publish --dry-run
 
-      # # Publishing...
-      # - name: Publish to pub.dev
-      #   run: dart pub publish -f
-      #   working-directory: ${{ inputs.working-directory }}
+      # Publishing
+      - name: Publish to pub.dev
+        run: dart pub publish -f
 
