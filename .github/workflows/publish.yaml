@@ -28,4 +28,3 @@ jobs:
 
       - name: Publish to pub.dev
         run: dart pub publish -f
-
