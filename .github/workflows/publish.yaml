@@ -23,14 +23,9 @@ jobs:
       # Setup Dart SDK
       - uses: dart-lang/setup-dart@v1
       
-      # Setup package dependencies
       - name: Install dependencies
         run: dart pub get
 
-      - name: Publish - dry run
-        run: dart pub publish --dry-run
-
-      # Publishing
       - name: Publish to pub.dev
         run: dart pub publish -f
 
