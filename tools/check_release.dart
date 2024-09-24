@@ -10,12 +10,12 @@ Future<void> main() {
 /// Check and compare release ids to see if a new release
 /// has been published.
 Future<void> _hasNewRelease() async {
-  final String existingRelease = await _getReleaseId();
+  final String existingRelease = _getReleaseId();
   final String newRelease = await _checkForNewRelease();
   final bool isNewRelease = (existingRelease != newRelease);
 
   if (isNewRelease) {
-    await _saveReleaseId(newRelease);
+    _saveReleaseId(newRelease);
   }
 
   print(isNewRelease);
@@ -40,24 +40,22 @@ Future<String> _checkForNewRelease() async {
   return '';
 }
 
+File get _file {
+  return File('./source_release_id');
+}
+
 /// Read the last used release id for libphonenumber.
-Future<String> _getReleaseId() async {
-  final File file = File('source_release_id');
-
-  if (file.existsSync()) {
-    return file.readAsString();
+String _getReleaseId() {
+  if (_file.existsSync()) {
+    return _file.readAsStringSync();
   }
-
   return '';
 }
 
 /// Save the latest release id for libphonenumber.
-Future<void> _saveReleaseId(String releaseId) async {
-  final File file = File('source_release_id');
-
-  if (!file.existsSync()) {
-    await file.create();
+void _saveReleaseId(String releaseId) {
+  if (!_file.existsSync()) {
+    _file.createSync();
   }
-
-  file.writeAsString(releaseId);
+  return _file.writeAsStringSync(releaseId);
 }
