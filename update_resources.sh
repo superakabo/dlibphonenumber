@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# Script to download files from the libphonenumber resources directory using curl.
+# Script to download files from the libphonenumber resources directory.
 # To execute this script, run: (in terminal) 
 # zsh ./update_resources.sh 
 
@@ -125,7 +125,7 @@ dart test -r expanded ./test/phone_number_offline_geocoder_test.dart
 dart test -r expanded ./test/phone_number_to_time_zones_mapper_test.dart
 dart test -r expanded ./test/phone_number_to_carrier_mapper_test.dart
 
-# Check if it is running in GitHub Actions or local machine
+# Check if it is running in GitHub Actions and commit changes.
 if [ "$GITHUB_ACTIONS" = "true" ]; then
 # configure github user properties.
     git config user.name "superakabo"
@@ -139,9 +139,6 @@ if [ "$GITHUB_ACTIONS" = "true" ]; then
 # Create a new release tag.
     git tag -a "v$version_number" -m "$release_notes"
     git push origin "v$version_number"
-#
-# Publish Dart code to pub.dev.
-    dart pub publish -f
 else
 # Attempt to publish Dart code to see possible issues.
     dart pub publish --dry-run
