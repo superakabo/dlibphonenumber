@@ -11,6 +11,7 @@ permissions:
 jobs:
   release:
     runs-on: macos-latest
+    environment: pub.dev
 
     steps:
       - name: Checkout code
