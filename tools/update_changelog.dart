@@ -4,8 +4,8 @@ import 'dart:io';
 
 import 'package:yaml_edit/yaml_edit.dart';
 
-Future<void> main() {
-  return _updateChangeLog();
+Future<void> main() async {
+  return await _updateChangeLog();
 }
 
 ///
