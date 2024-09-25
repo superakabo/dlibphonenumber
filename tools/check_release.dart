@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-Future<void> main() {
-  return _hasNewRelease();
+Future<void> main() async {
+  return await _hasNewRelease();
 }
 
 /// Check and compare release ids to see if a new release
