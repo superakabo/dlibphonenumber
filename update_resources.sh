@@ -125,14 +125,24 @@ dart test -r expanded ./test/phone_number_offline_geocoder_test.dart
 dart test -r expanded ./test/phone_number_to_time_zones_mapper_test.dart
 dart test -r expanded ./test/phone_number_to_carrier_mapper_test.dart
 
-# Attempt to publish Dart code to see possible issues.
-dart pub publish --dry-run
-
+# Check if it is running in GitHub Actions or local machine
+if [ "$GITHUB_ACTIONS" = "true" ]; then
+# configure github user properties.
+    git config user.name "superakabo"
+    git config user.email "superakabo@gmail.com"
+#
 # Commit the updates to the GitHub repository.
-git add -A
-git commit -m "Metadata updates for release $version_number"
-git push origin main
+    git add -A
+    git commit -m "Metadata updates for release $version_number"
+    git push origin main
 #
 # Create a new release tag.
-git tag -a "v$version_number" -m "$release_notes"
-git push origin "v$version_number"
+    git tag -a "v$version_number" -m "$release_notes"
+    git push origin "v$version_number"
+#
+# Publish Dart code to pub.dev.
+    dart pub publish -f
+else
+# Attempt to publish Dart code to see possible issues.
+    dart pub publish --dry-run
+fi

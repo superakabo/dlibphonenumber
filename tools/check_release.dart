@@ -12,13 +12,16 @@ Future<void> main() {
 Future<void> _hasNewRelease() async {
   final String existingRelease = _getReleaseId();
   final String newRelease = await _checkForNewRelease();
-  final bool isNewRelease = (existingRelease != newRelease);
 
-  if (isNewRelease) {
+  if (newRelease.isNotEmpty) {
     _saveReleaseId(newRelease);
   }
 
-  print(isNewRelease);
+  if (existingRelease.isEmpty || (existingRelease != newRelease)) {
+    print(true);
+  } else {
+    print(false);
+  }
 }
 
 /// Fetch the latest release id from the libphonenumber repository.
