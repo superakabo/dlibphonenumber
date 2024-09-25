@@ -1,9 +1,3 @@
-## 1.1.23
-- Updated phone metadata for region code(s): CO, HK, PA, PE, SG, SN, UZ
-- Updated short number metadata for region code(s): UY
-- Updated geocoding data for country calling code(s): 51 (en)
-- Updated carrier data for country calling code(s): 44 (en), 57 (en), 65 (en), 221 (en), 852 (en, zh), 972 (en), 998 (en)
-
 ## 1.1.22
 - Updated phone metadata for region code(s): AR, CZ, ET, ID, IL, MX, NZ
 - Updated geocoding data for country calling code(s): 52 (en), 54 (en), 251 (en), 1807 (en)
