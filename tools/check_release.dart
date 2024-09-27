@@ -13,6 +13,9 @@ Future<void> _hasNewRelease() async {
   final String existingRelease = _getReleaseId();
   final String newRelease = await _checkForNewRelease();
 
+  print('Existing Release ID: $existingRelease');
+  print('New Release ID: $newRelease');
+
   if (newRelease.isNotEmpty) {
     _saveReleaseId(newRelease);
   }
