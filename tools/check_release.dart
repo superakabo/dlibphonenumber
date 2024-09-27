@@ -42,7 +42,7 @@ Future<String> _checkForNewRelease() async {
     final Map<String, dynamic> payload = jsonDecode(response.body);
     return payload['id'].toString();
   } else {
-    print(response.body);
+    print('An error occured: ${response.body}');
   }
 
   return '';
