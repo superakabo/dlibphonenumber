@@ -6,12 +6,33 @@
 
 
 # Check for new liphonenumber release
-has_new_release=$(dart run tools/check_release.dart);
 #
-# stop the process if there is no new release.
-if [ "$has_new_release" = false ]; then
-  echo "No new release has been published yet."
-  exit 0
+# Install jq to process JSON data for the latest release (https://jqlang.github.io/jq).
+brew install jq
+#
+# Extract the latest release id using jq.
+latest_release_id=$(curl -s https://api.github.com/repos/google/libphonenumber/releases/latest | jq -r '.id')
+#
+filename="source_release_id"
+#
+# Check if the file exists
+if [ -f "$filename" ]; then
+    current_release_id=$(cat "$filename")
+    #
+    # exit if current release id is the same as the latest release id.
+    if [ "$current_release_id" -eq "$latest_release_id" ]; then
+        echo "No new release has been published yet."
+        exit 0
+    else
+    # Update the file with the latest release id.
+        echo "$latest_release_id" > "$filename"
+    fi
+else
+    # If it does not exist, create the file
+    touch "$filename"
+    #
+    # Update the file with the latest release id.
+    echo "$latest_release_id" > "$filename"
 fi
 
 # Fetch just the latest resource directory from the libphonenumber repository
