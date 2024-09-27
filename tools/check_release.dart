@@ -43,9 +43,8 @@ Future<String> _checkForNewRelease() async {
     return payload['id'].toString();
   } else {
     print('An error occured: ${response.body}');
+    return '';
   }
-
-  return '';
 }
 
 File get _file {
