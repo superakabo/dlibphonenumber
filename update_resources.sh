@@ -7,6 +7,7 @@
 
 # Check for new liphonenumber release
 has_new_release=$(dart run tools/check_release.dart);
+echo "has new release -> $has_new_release";
 #
 # stop the process if there is no new release.
 if [ "$has_new_release" = false ]; then
