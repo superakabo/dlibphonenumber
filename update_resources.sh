@@ -137,7 +137,7 @@ if [ "$GITHUB_ACTIONS" = "true" ]; then
     git push origin main
 #
 # Create a new release tag.
-    git tag -a "v$version_number" -m "$release_notes"
+    git tag -a "v$version_number" -m "Metadata updates\n$release_notes"
     git push origin "v$version_number"
 else
 # Attempt to publish Dart code to see possible issues.

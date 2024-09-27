@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: '0 12 * * *'        # Runs every day at 12:00 PM UTC
   workflow_dispatch:            # Allow manual trigger
-  
-permissions:
-  contents: write
 
 jobs:
   release:
@@ -15,6 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.DLIBPHONENUMBER_TOKEN }}
 
       - name: Set-up Dart
         uses: dart-lang/setup-dart@v1
