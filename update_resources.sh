@@ -6,6 +6,7 @@
 
 
 # Check for new liphonenumber release
+echo "checking for new release..."
 has_new_release=$(dart run tools/check_release.dart);
 echo "has new release -> $has_new_release";
 #
