@@ -1,3 +1,9 @@
+## 1.1.24
+- Updated phone metadata for region code(s): GE, HK, MG, MM, NO, SJ, UA, UG
+- Updated short number metadata for region code(s): NO, SJ
+- Updated geocoding data for country calling code(s): 95 (en), 261 (en), 380 (en, uk)
+- Updated carrier data for country calling code(s): 256 (en), 380 (en), 852 (en, zh), 995 (en)
+
 ## 1.1.23
 - Updated phone metadata for region code(s): CO, HK, PA, PE, SG, SN, UZ
 - Updated short number metadata for region code(s): UY

@@ -6,8 +6,8 @@
 Map<String, Object?> getSJ() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "1\\d\\d",
-      "possibleLength": [3]
+      "nationalNumberPattern": "[01]\\d\\d(?:\\d{2})?",
+      "possibleLength": [3, 5]
     },
     "fixedLine": {
       "possibleLength": [-1],
@@ -66,9 +66,9 @@ Map<String, Object?> getSJ() {
       "possibleLengthLocalOnly": [-1]
     },
     "shortCode": {
-      "nationalNumberPattern": "11[023]",
+      "nationalNumberPattern": "04\\d{3}|11[023]",
       "exampleNumber": "110",
-      "possibleLength": [3],
+      "possibleLength": [3, 5],
       "possibleLengthLocalOnly": [-1]
     },
     "standardRate": {
@@ -81,7 +81,9 @@ Map<String, Object?> getSJ() {
     },
     "mobileNumberPortableRegion": false,
     "smsServices": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "04\\d{3}",
+      "exampleNumber": "04000",
+      "possibleLength": [5],
       "possibleLengthLocalOnly": [-1]
     }
   };

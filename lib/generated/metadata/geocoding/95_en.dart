@@ -5,6 +5,7 @@
 /// Geocoding JSON data for 95_en
 Map<int, String> get95_en() {
   return {
+    9511: "Yangon",
     95256: "Amarapura",
     951422: "Yangon",
     951423: "Yangon",

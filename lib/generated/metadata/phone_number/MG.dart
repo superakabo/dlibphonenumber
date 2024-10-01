@@ -12,7 +12,7 @@ Map<String, Object?> getMG() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "2072[29]\\d{4}|20(?:2\\d|4[47]|5[3467]|6[279]|7[35]|8[268]|9[245])\\d{5}",
+          "2072[29]\\d{4}|20(?:2\\d|4[47]|5[3467]|6[279]|7[356]|8[268]|9[245])\\d{5}",
       "exampleNumber": "202123456",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [7]

@@ -6,8 +6,8 @@
 Map<String, Object?> getNO() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "1\\d\\d(?:\\d(?:\\d{2})?)?",
-      "possibleLength": [3, 4, 6]
+      "nationalNumberPattern": "[01]\\d{2,5}",
+      "possibleLength": [3, 4, 5, 6]
     },
     "fixedLine": {
       "possibleLength": [-1],
@@ -67,9 +67,9 @@ Map<String, Object?> getNO() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "1(?:1(?:[0239]|61(?:1[17]|23))|2[048]|4(?:12|[59])|7[57]|8[5-9]\\d|90)",
+          "04\\d{3}|1(?:1(?:[0239]|61(?:1[17]|23))|2[048]|4(?:12|[59])|7[57]|8[5-9]\\d|90)",
       "exampleNumber": "110",
-      "possibleLength": [3, 4, 6],
+      "possibleLength": [3, 4, 5, 6],
       "possibleLengthLocalOnly": [-1]
     },
     "standardRate": {
@@ -82,7 +82,9 @@ Map<String, Object?> getNO() {
     },
     "mobileNumberPortableRegion": false,
     "smsServices": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "04\\d{3}",
+      "exampleNumber": "04000",
+      "possibleLength": [5],
       "possibleLengthLocalOnly": [-1]
     }
   };

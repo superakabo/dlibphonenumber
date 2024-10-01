@@ -67,7 +67,7 @@ Map<String, Object?> getSJ() {
     },
     "uan": {
       "nationalNumberPattern":
-          "(?:0[2-9]|81(?:0(?:0[7-9]|1\\d)|5\\d\\d))\\d{3}",
+          "(?:0[235-9]|81(?:0(?:0[7-9]|1\\d)|5\\d\\d))\\d{3}",
       "exampleNumber": "02000",
       "possibleLength": [5, 8],
       "possibleLengthLocalOnly": [-1]

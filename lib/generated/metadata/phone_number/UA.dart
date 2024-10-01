@@ -17,7 +17,8 @@ Map<String, Object?> getUA() {
       "possibleLengthLocalOnly": [5, 6, 7]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:39|50|6[36-8]|7[1-357]|9[1-9])\\d{7}",
+      "nationalNumberPattern":
+          "790\\d{6}|(?:39|50|6[36-8]|7[1-357]|9[1-9])\\d{7}",
       "exampleNumber": "501234567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

@@ -17,6 +17,7 @@ Map<int, String> get261_en() {
     2612069: "Maintirano",
     2612073: "Farafangana",
     2612075: "Fianarantsoa",
+    2612076: "Antananarivo",
     2612082: "Antsiranana",
     2612086: "Nosy Be",
     2612088: "Sambava",
