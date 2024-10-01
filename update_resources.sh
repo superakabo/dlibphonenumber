@@ -13,6 +13,15 @@ brew install jq
 # Extract the latest release id using jq.
 latest_release_id=$(curl -s https://api.github.com/repos/google/libphonenumber/releases/latest | jq -r '.id')
 #
+echo "latest release id: $latest_release_id"
+#
+# Check if latest_release_id is "null" and exit.
+if [ "$latest_release_id" = "null" ]; then
+    echo "Failed to retrieve the latest release ID."
+    exit 0
+fi
+#
+# 
 filename="./source_release_id"
 #
 # Check if the file exists
@@ -158,7 +167,7 @@ if [ "$GITHUB_ACTIONS" = "true" ]; then
     git push origin main
 #
 # Create a new release tag.
-    git tag -a "v$version_number" -m "Metadata updates\n$release_notes"
+    git tag -a "v$version_number" -m "Metadata updates" -m "$release_notes"
     git push origin "v$version_number"
 else
 # Attempt to publish Dart code to see possible issues.
