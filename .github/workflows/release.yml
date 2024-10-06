@@ -57,12 +57,16 @@ jobs:
               else
                   # Update the file with the latest release ID.
                   echo "$latest_release_id" > "$filename"
+
+                  cat "$filename"
               fi
 
           else
               # If it does not exist, create the file and update it with the latest release ID.
               touch "$filename"
               echo "$latest_release_id" > "$filename"
+
+              cat "$filename"
           fi
 
       - name: Set-up Dart
