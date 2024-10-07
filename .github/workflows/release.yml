@@ -39,9 +39,6 @@ jobs:
           # The current libphonenumber release id is stored here.
           filename="./source_release_id"
 
-          # Upadate the file permission to make it writable
-          chmod a+w "$filename"
-
           # Check if the file exists
           if [ -f "$filename" ]; then
               current_release_id=$(cat "$filename")
