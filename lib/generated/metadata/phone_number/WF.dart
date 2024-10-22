@@ -6,7 +6,7 @@
 Map<String, Object?> getWF() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:40|72)\\d{4}|8\\d{5}(?:\\d{3})?",
+      "nationalNumberPattern": "(?:40|72|8\\d{4})\\d{4}|[89]\\d{5}",
       "possibleLength": [6, 9]
     },
     "fixedLine": {
@@ -40,7 +40,9 @@ Map<String, Object?> getWF() {
       "possibleLengthLocalOnly": [-1]
     },
     "voip": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "9[23]\\d{4}",
+      "exampleNumber": "921234",
+      "possibleLength": [6],
       "possibleLengthLocalOnly": [-1]
     },
     "id": "WF",
@@ -51,7 +53,7 @@ Map<String, Object?> getWF() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[478]"],
+        "leadingDigitsPattern": ["[47-9]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
@@ -65,7 +67,7 @@ Map<String, Object?> getWF() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[478]"],
+        "leadingDigitsPattern": ["[47-9]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {

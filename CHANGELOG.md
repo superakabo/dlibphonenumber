@@ -1,3 +1,7 @@
+## 1.1.25
+- Updated phone metadata for region code(s): DE, SG, UG, WF
+- Updated carrier data for country calling code(s): 47 (en)
+
 ## 1.1.24
 - Updated phone metadata for region code(s): GE, HK, MG, MM, NO, SJ, UA, UG
 - Updated short number metadata for region code(s): NO, SJ
