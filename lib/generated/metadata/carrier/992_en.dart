@@ -14,6 +14,7 @@ Map<int, String> get992_en() {
     99210: "O-Mobile",
     99211: "Tcell",
     99217: "Babilon-M",
+    99218: "ZET-MOBILE",
     99230: "O-Mobile",
     99240: "ZET-MOBILE",
     99241: "Megafon",

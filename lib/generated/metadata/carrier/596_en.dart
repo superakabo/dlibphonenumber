@@ -5,7 +5,6 @@
 /// Carrier JSON data for 596_en
 Map<int, String> get596_en() {
   return {
-    596697: "Digicel",
     5966960: "SFR/Rife",
     5966962: "Orange",
     5966963: "Orange",
@@ -39,6 +38,7 @@ Map<int, String> get596_en() {
     59669687: "SFR/Rife",
     59669688: "SFR/Rife",
     59669689: "SFR/Rife",
-    59669699: "Orange"
+    59669699: "Orange",
+    59669727: "Digicel"
   };
 }

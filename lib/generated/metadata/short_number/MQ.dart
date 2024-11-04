@@ -6,8 +6,8 @@
 Map<String, Object?> getMQ() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "1\\d\\d?",
-      "possibleLength": [2, 3]
+      "nationalNumberPattern": "[13]\\d(?:\\d(?:\\d(?:\\d{2})?)?)?",
+      "possibleLength": [2, 3, 4, 6]
     },
     "fixedLine": {
       "possibleLength": [-1],
@@ -18,13 +18,15 @@ Map<String, Object?> getMQ() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "1(?:12|[578])",
+      "nationalNumberPattern": "1(?:12|[578])|3[01]\\d\\d",
       "exampleNumber": "15",
-      "possibleLength": [2, 3],
+      "possibleLength": [2, 3, 4],
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "3[2469]\\d\\d",
+      "exampleNumber": "3200",
+      "possibleLength": [4],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {
@@ -66,13 +68,15 @@ Map<String, Object?> getMQ() {
       "possibleLengthLocalOnly": [-1]
     },
     "shortCode": {
-      "nationalNumberPattern": "1(?:12|[578])",
+      "nationalNumberPattern": "1(?:12|[578])|(?:118[02-9]|3[0-2469])\\d\\d",
       "exampleNumber": "15",
-      "possibleLength": [2, 3],
+      "possibleLength": [2, 3, 4, 6],
       "possibleLengthLocalOnly": [-1]
     },
     "standardRate": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "118\\d{3}",
+      "exampleNumber": "118000",
+      "possibleLength": [6],
       "possibleLengthLocalOnly": [-1]
     },
     "carrierSpecific": {

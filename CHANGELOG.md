@@ -1,3 +1,9 @@
+## 1.1.26
+- Updated phone metadata for region code(s): CO, EE, MG, MQ, MV, PM, SG, TJ
+- Updated short number metadata for region code(s): MQ, PM
+- Updated geocoding data for country calling code(s): 960 (en)
+- Updated carrier data for country calling code(s): 65 (en), 372 (en), 596 (en), 992 (en)
+
 ## 1.1.25
 - Updated phone metadata for region code(s): DE, SG, UG, WF
 - Updated carrier data for country calling code(s): 47 (en)

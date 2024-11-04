@@ -11,7 +11,7 @@ Map<String, Object?> getMV() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "(?:3(?:0[0-3]|3[0-59])|6(?:[58][024689]|6[024-68]|7[02468]))\\d{4}",
+          "(?:3(?:0[0-4]|3[0-59])|6(?:[58][024689]|6[024-68]|7[02468]))\\d{4}",
       "exampleNumber": "6701234",
       "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]

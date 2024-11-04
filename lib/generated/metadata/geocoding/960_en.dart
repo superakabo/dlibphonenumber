@@ -9,6 +9,7 @@ Map<int, String> get960_en() {
     960301: "Malé/Hulhulé/Aarah",
     960302: "Malé Region",
     960303: "Malé Region",
+    960304: "Malé Region",
     960330: "Malé/Hulhulé/Aarah",
     960331: "Malé/Hulhulé/Aarah",
     960332: "Malé/Hulhulé/Aarah",

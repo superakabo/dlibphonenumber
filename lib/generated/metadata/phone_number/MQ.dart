@@ -6,18 +6,18 @@
 Map<String, Object?> getMQ() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "596\\d{6}|(?:69|80|9\\d)\\d{7}",
+      "nationalNumberPattern": "596\\d{6}|(?:69|[89]\\d)\\d{7}",
       "possibleLength": [9]
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "596(?:[03-7]\\d|1[05]|2[7-9]|8[0-39]|9[04-9])\\d{4}",
+          "(?:596(?:[03-7]\\d|1[05]|2[7-9]|8[0-39]|9[04-9])|80[6-9]\\d\\d|9(?:477[6-9]|767[4589]))\\d{4}",
       "exampleNumber": "596301234",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "69(?:6(?:[0-46-9]\\d|5[0-6])|727)\\d{4}",
+      "nationalNumberPattern": "69[67]\\d{6}",
       "exampleNumber": "696201234",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -29,7 +29,9 @@ Map<String, Object?> getMQ() {
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "8[129]\\d{7}",
+      "exampleNumber": "810123456",
+      "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {
@@ -57,7 +59,7 @@ Map<String, Object?> getMQ() {
       {
         "pattern": "(\\d{3})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[569]"],
+        "leadingDigitsPattern": ["[569]|8(?:0[6-9]|[36])"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -73,7 +75,7 @@ Map<String, Object?> getMQ() {
       {
         "pattern": "(\\d{3})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[569]"],
+        "leadingDigitsPattern": ["[569]|8(?:0[6-9]|[36])"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },

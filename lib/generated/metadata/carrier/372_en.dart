@@ -27,6 +27,7 @@ Map<int, String> get372_en() {
     372539: "Telia Eesti AS",
     372545: "Elisa",
     372589: "Elisa",
+    372829: "Tele 2",
     3725461: "Elisa",
     3725462: "Elisa",
     3725463: "Elisa",

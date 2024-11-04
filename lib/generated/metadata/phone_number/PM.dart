@@ -6,17 +6,17 @@
 Map<String, Object?> getPM() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[45]\\d{5}|(?:708|80\\d)\\d{6}",
+      "nationalNumberPattern": "[45]\\d{5}|(?:708|8\\d\\d)\\d{6}",
       "possibleLength": [6, 9]
     },
     "fixedLine": {
-      "nationalNumberPattern": "(?:4[1-35-7]|5[01])\\d{4}",
+      "nationalNumberPattern": "(?:4[1-35-9]|5[0-47-9]|80[6-9]\\d\\d)\\d{4}",
       "exampleNumber": "430123",
-      "possibleLength": [6],
+      "possibleLength": [6, 9],
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:4[02-4]|5[056]|708[45][0-5])\\d{4}",
+      "nationalNumberPattern": "(?:4[02-489]|5[02-9]|708[45][0-5])\\d{4}",
       "exampleNumber": "551234",
       "possibleLength": [6, 9],
       "possibleLengthLocalOnly": [-1]
@@ -28,7 +28,9 @@ Map<String, Object?> getPM() {
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "8[129]\\d{7}",
+      "exampleNumber": "810123456",
+      "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {

@@ -6,16 +6,16 @@
 Map<String, Object?> getCO() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "60\\d{8}|(?:1\\d|[39])\\d{9}",
-      "possibleLength": [10, 11],
-      "possibleLengthLocalOnly": [7]
+      "nationalNumberPattern": "(?:46|60\\d\\d)\\d{6}|(?:1\\d|[39])\\d{9}",
+      "possibleLength": [8, 10, 11],
+      "possibleLengthLocalOnly": [4, 7]
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "601055(?:[0-4]\\d|50)\\d\\d|6010(?:[0-4]\\d|5[0-4])\\d{4}|60(?:[124-7][2-9]|8[1-9])\\d{6}",
+          "601055(?:[0-4]\\d|50)\\d\\d|6010(?:[0-4]\\d|5[0-4])\\d{4}|(?:46|60(?:[124-7][2-9]|8[1-9]))\\d{6}",
       "exampleNumber": "6012345678",
-      "possibleLength": [10],
-      "possibleLengthLocalOnly": [7]
+      "possibleLength": [8, 10],
+      "possibleLengthLocalOnly": [4, 7]
     },
     "mobile": {
       "nationalNumberPattern":
@@ -56,6 +56,12 @@ Map<String, Object?> getCO() {
     "sameMobileAndFixedLinePattern": false,
     "numberFormat": [
       {
+        "pattern": "(\\d{4})(\\d{4})",
+        "format": "\$1 \$2",
+        "leadingDigitsPattern": ["46"],
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
         "pattern": "(\\d{3})(\\d{7})",
         "format": "\$1 \$2",
         "leadingDigitsPattern": ["6|90"],
@@ -79,6 +85,12 @@ Map<String, Object?> getCO() {
       }
     ],
     "intlNumberFormat": [
+      {
+        "pattern": "(\\d{4})(\\d{4})",
+        "format": "\$1 \$2",
+        "leadingDigitsPattern": ["46"],
+        "nationalPrefixOptionalWhenFormatting": false
+      },
       {
         "pattern": "(\\d{3})(\\d{7})",
         "format": "\$1 \$2",
