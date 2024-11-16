@@ -58,6 +58,11 @@ Map<int, String> get590_en() {
     59069132: "Orange",
     59069133: "Orange",
     59069134: "Orange",
-    59069135: "Orange"
+    59069135: "Orange",
+    59070900: "Free Caraïbe",
+    59070901: "Outremer Telecom",
+    59070902: "Digicel",
+    59070903: "Orange",
+    59070904: "Dauphin Telecom"
   };
 }

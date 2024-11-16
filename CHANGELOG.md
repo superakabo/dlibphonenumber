@@ -1,3 +1,8 @@
+## 1.1.27
+- Updated phone metadata for region code(s): AR, BJ, BL, FI, GE, GP, HR, MF, PL, SG
+- Updated short number metadata for region code(s): BJ, FI
+- Updated carrier data for country calling code(s): 48 (en), 65 (en), 229 (en), 385 (en), 590 (en), 995 (en)
+
 ## 1.1.26
 - Updated phone metadata for region code(s): CO, EE, MG, MQ, MV, PM, SG, TJ
 - Updated short number metadata for region code(s): MQ, PM

@@ -22,6 +22,8 @@ Map<int, String> get995_en() {
     995545: "Globalcell",
     995550: "MagtiCom",
     995551: "MagtiCom",
+    995553: "Silknet",
+    995554: "Silknet",
     995555: "Silknet",
     995557: "Silknet",
     995558: "Silknet",

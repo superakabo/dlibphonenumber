@@ -495,7 +495,6 @@ import 'geocoding/358_en.dart';
 import 'geocoding/359_en.dart';
 import 'geocoding/36_en.dart';
 import 'geocoding/370_en.dart';
-import 'geocoding/372_en.dart';
 import 'geocoding/373_en.dart';
 import 'geocoding/374_en.dart';
 import 'geocoding/375_en.dart';
@@ -746,7 +745,6 @@ class GeocodingMetadataMap {
       358: ["sv", "fi", "en"],
       359: ["en", "bg"],
       370: ["en"],
-      372: ["en"],
       373: ["en", "ro", "ru"],
       374: ["en", "hy", "ru"],
       375: ["en", "be", "ru"],
@@ -1696,7 +1694,6 @@ class GeocodingMetadataMap {
       '359_en': get359_en(),
       '36_en': get36_en(),
       '370_en': get370_en(),
-      '372_en': get372_en(),
       '373_en': get373_en(),
       '374_en': get374_en(),
       '375_en': get375_en(),

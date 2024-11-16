@@ -6,20 +6,21 @@
 Map<String, Object?> getBJ() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[24-689]\\d{7}",
-      "possibleLength": [8]
+      "nationalNumberPattern": "(?:01\\d|[24-689])\\d{7}",
+      "possibleLength": [8, 10]
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "2090\\d{4}|2(?:02|1[037]|2[45]|3[68]|4\\d)\\d{5}",
-      "exampleNumber": "20211234",
-      "possibleLength": [8],
+          "2090\\d{4}|(?:012\\d\\d|2(?:02|1[037]|2[45]|3[68]|4\\d))\\d{5}",
+      "exampleNumber": "0120211234",
+      "possibleLength": [8, 10],
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:4[0-8]|[56]\\d|9[013-9])\\d{6}",
-      "exampleNumber": "90011234",
-      "possibleLength": [8],
+      "nationalNumberPattern":
+          "(?:01(?:2[5-9]|[4-69]\\d)|4[0-8]|[56]\\d|9[013-9])\\d{6}",
+      "exampleNumber": "0195123456",
+      "possibleLength": [8, 10],
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
@@ -54,6 +55,12 @@ Map<String, Object?> getBJ() {
         "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": ["[24-689]"],
         "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
+        "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
+        "format": "\$1 \$2 \$3 \$4 \$5",
+        "leadingDigitsPattern": ["0"],
+        "nationalPrefixOptionalWhenFormatting": false
       }
     ],
     "intlNumberFormat": [
@@ -61,6 +68,12 @@ Map<String, Object?> getBJ() {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": ["[24-689]"],
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
+        "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
+        "format": "\$1 \$2 \$3 \$4 \$5",
+        "leadingDigitsPattern": ["0"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -99,7 +112,7 @@ Map<String, Object?> getBJ() {
       "possibleLength": [-1],
       "possibleLengthLocalOnly": [-1]
     },
-    "mobileNumberPortableRegion": false,
+    "mobileNumberPortableRegion": true,
     "smsServices": {
       "possibleLength": [-1],
       "possibleLengthLocalOnly": [-1]

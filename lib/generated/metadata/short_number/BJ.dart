@@ -18,8 +18,8 @@ Map<String, Object?> getBJ() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "11[78]|7[3-5]\\d\\d",
-      "exampleNumber": "117",
+      "nationalNumberPattern": "1(?:1[246-8]|3[68]|6[06])|7[3-5]\\d\\d",
+      "exampleNumber": "112",
       "possibleLength": [3, 4],
       "possibleLengthLocalOnly": [-1]
     },
@@ -56,8 +56,8 @@ Map<String, Object?> getBJ() {
       "possibleLengthLocalOnly": [-1]
     },
     "emergency": {
-      "nationalNumberPattern": "11[78]",
-      "exampleNumber": "117",
+      "nationalNumberPattern": "11[246-8]",
+      "exampleNumber": "112",
       "possibleLength": [3],
       "possibleLengthLocalOnly": [-1]
     },
@@ -66,8 +66,9 @@ Map<String, Object?> getBJ() {
       "possibleLengthLocalOnly": [-1]
     },
     "shortCode": {
-      "nationalNumberPattern": "1(?:1[78]|2[02-5]|60)|7[0-5]\\d\\d",
-      "exampleNumber": "117",
+      "nationalNumberPattern":
+          "1(?:05|1[24-8]|2[02-5]|3[126-8]|5[05]|6[06]|89)|7[0-5]\\d\\d",
+      "exampleNumber": "105",
       "possibleLength": [3, 4],
       "possibleLengthLocalOnly": [-1]
     },
