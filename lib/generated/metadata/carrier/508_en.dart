@@ -11,6 +11,7 @@ Map<int, String> get508_en() {
     50844: "Globaltel",
     50850: "Keyyo",
     50855: "SPM Telecom",
-    50856: "Kav El International"
+    50856: "Kav El International",
+    50870856: "SPM Telecom"
   };
 }

@@ -39,6 +39,9 @@ Map<int, String> get596_en() {
     59669688: "SFR/Rife",
     59669689: "SFR/Rife",
     59669699: "Orange",
-    59669727: "Digicel"
+    59669727: "Digicel",
+    59670910: "Free Caraïbe",
+    59670912: "Digicel",
+    59670913: "Orange"
   };
 }

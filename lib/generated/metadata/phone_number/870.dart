@@ -6,7 +6,7 @@
 Map<String, Object?> get870() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "7\\d{11}|[35-7]\\d{8}",
+      "nationalNumberPattern": "7\\d{11}|[235-7]\\d{8}",
       "possibleLength": [9, 12]
     },
     "fixedLine": {
@@ -36,7 +36,9 @@ Map<String, Object?> get870() {
       "possibleLengthLocalOnly": [-1]
     },
     "voip": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "2\\d{8}",
+      "exampleNumber": "201234567",
+      "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
     },
     "id": "001",
@@ -46,7 +48,7 @@ Map<String, Object?> get870() {
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[35-7]"],
+        "leadingDigitsPattern": ["[235-7]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -54,7 +56,7 @@ Map<String, Object?> get870() {
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[35-7]"],
+        "leadingDigitsPattern": ["[235-7]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

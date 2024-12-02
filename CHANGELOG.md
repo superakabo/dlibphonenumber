@@ -1,3 +1,9 @@
+## 1.1.28
+- Updated phone metadata for region code(s): 870, CA, GE, GF, GU, HK, HN, MQ, PM, RE, SN, SY, TG, US, YT
+- New geocoding data for country calling code(s): 1327 (en), 1942 (en)
+- Updated carrier data for country calling code(s): 27 (en), 34 (en), 81 (en), 221 (en), 228 (en), 262 (en), 351 (en), 508 (en),
+- Updated / refreshed time zone meta data.
+
 ## 1.1.27
 - Updated phone metadata for region code(s): AR, BJ, BL, FI, GE, GP, HR, MF, PL, SG
 - Updated short number metadata for region code(s): BJ, FI

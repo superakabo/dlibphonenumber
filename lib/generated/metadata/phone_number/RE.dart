@@ -6,7 +6,7 @@
 Map<String, Object?> getRE() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:26|[689]\\d)\\d{7}",
+      "nationalNumberPattern": "709\\d{6}|(?:26|[689]\\d)\\d{7}",
       "possibleLength": [9]
     },
     "fixedLine": {
@@ -17,7 +17,7 @@ Map<String, Object?> getRE() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "69(?:2\\d\\d|3(?:[06][0-6]|1[013]|2[0-2]|3[0-39]|4\\d|5[0-5]|7[0-37]|8[0-8]|9[0-479]))\\d{4}",
+          "(?:69(?:2\\d\\d|3(?:[06][0-6]|1[013]|2[0-2]|3[0-39]|4\\d|5[0-5]|7[0-37]|8[0-8]|9[0-479]))|7092[0-3])\\d{4}",
       "exampleNumber": "692123456",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -61,7 +61,7 @@ Map<String, Object?> getRE() {
       {
         "pattern": "(\\d{3})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[2689]"],
+        "leadingDigitsPattern": ["[26-9]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
@@ -70,7 +70,7 @@ Map<String, Object?> getRE() {
       {
         "pattern": "(\\d{3})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[2689]"],
+        "leadingDigitsPattern": ["[26-9]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }

@@ -7,6 +7,7 @@ Map<int, String> get228_en() {
   return {
     22870: "Togo Telecom",
     22871: "Togo Telecom",
+    22872: "Togo Telecom",
     22879: "Moov",
     22890: "Togo Telecom",
     22891: "Togo Telecom",

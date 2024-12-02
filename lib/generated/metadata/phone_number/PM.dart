@@ -16,7 +16,8 @@ Map<String, Object?> getPM() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:4[02-489]|5[02-9]|708[45][0-5])\\d{4}",
+      "nationalNumberPattern":
+          "(?:4[02-489]|5[02-9]|708(?:4[0-5]|5[0-6]))\\d{4}",
       "exampleNumber": "551234",
       "possibleLength": [6, 9],
       "possibleLengthLocalOnly": [-1]

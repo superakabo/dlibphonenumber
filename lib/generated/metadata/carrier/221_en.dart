@@ -13,6 +13,8 @@ Map<int, String> get221_en() {
     22177: "Orange",
     22178: "Orange",
     22179: "ADIE",
-    221757: "Origines"
+    221757: "Origines",
+    2217536: "Orange",
+    2217585: "Orange"
   };
 }

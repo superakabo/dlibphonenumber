@@ -6,7 +6,7 @@
 Map<String, Object?> getYT() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:80|9\\d)\\d{7}|(?:26|63)9\\d{6}",
+      "nationalNumberPattern": "7093\\d{5}|(?:80|9\\d)\\d{7}|(?:26|63)9\\d{6}",
       "possibleLength": [9]
     },
     "fixedLine": {
@@ -17,7 +17,7 @@ Map<String, Object?> getYT() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "639(?:0[0-79]|1[019]|[267]\\d|3[09]|40|5[05-9]|9[04-79])\\d{4}",
+          "(?:639(?:0[0-79]|1[019]|[267]\\d|3[09]|40|5[05-9]|9[04-79])|7093[5-7])\\d{4}",
       "exampleNumber": "639012345",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

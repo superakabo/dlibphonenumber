@@ -35,6 +35,7 @@ Map<int, String> get351_en() {
     3519234: "G9 Telecom",
     3519280: "NOWO",
     3519281: "NOWO",
+    3519282: "Digi Communications",
     3519285: "ONITELECOM",
     3519290: "NOS",
     3519291: "NOS",

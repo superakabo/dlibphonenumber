@@ -96,6 +96,7 @@ import 'geocoding/1321_en.dart';
 import 'geocoding/1323_en.dart';
 import 'geocoding/1325_en.dart';
 import 'geocoding/1326_en.dart';
+import 'geocoding/1327_en.dart';
 import 'geocoding/1329_en.dart';
 import 'geocoding/1330_en.dart';
 import 'geocoding/1331_en.dart';
@@ -398,6 +399,7 @@ import 'geocoding/1937_en.dart';
 import 'geocoding/1938_en.dart';
 import 'geocoding/1940_en.dart';
 import 'geocoding/1941_en.dart';
+import 'geocoding/1942_en.dart';
 import 'geocoding/1943_en.dart';
 import 'geocoding/1945_en.dart';
 import 'geocoding/1947_en.dart';
@@ -875,6 +877,7 @@ class GeocodingMetadataMap {
       1323: ["en"],
       1325: ["en"],
       1326: ["en"],
+      1327: ["en"],
       1329: ["en"],
       1330: ["en"],
       1331: ["en"],
@@ -1186,6 +1189,7 @@ class GeocodingMetadataMap {
       1938: ["en"],
       1940: ["en"],
       1941: ["en"],
+      1942: ["en"],
       1943: ["en"],
       1945: ["en"],
       1947: ["en"],
@@ -1295,6 +1299,7 @@ class GeocodingMetadataMap {
       '1323_en': get1323_en(),
       '1325_en': get1325_en(),
       '1326_en': get1326_en(),
+      '1327_en': get1327_en(),
       '1329_en': get1329_en(),
       '1330_en': get1330_en(),
       '1331_en': get1331_en(),
@@ -1597,6 +1602,7 @@ class GeocodingMetadataMap {
       '1938_en': get1938_en(),
       '1940_en': get1940_en(),
       '1941_en': get1941_en(),
+      '1942_en': get1942_en(),
       '1943_en': get1943_en(),
       '1945_en': get1945_en(),
       '1947_en': get1947_en(),

@@ -25,6 +25,7 @@ Map<int, String> get852_en() {
     852470: "Hutchison Telecom",
     852474: "China Mobile",
     852475: "Hutchison Telecom",
+    852476: "China Mobile",
     852510: "China Mobile",
     852511: "HKT",
     852512: "China Mobile",
@@ -227,7 +228,7 @@ Map<int, String> get852_en() {
     852936: "3",
     852937: "3",
     852938: "SmarTone",
-    852939: "HKT",
+    852939: "China Mobile",
     852940: "HKT",
     852941: "3",
     852942: "3",
@@ -403,6 +404,8 @@ Map<int, String> get852_en() {
     8528488: "SmarTone",
     8528489: "SmarTone",
     8529290: "Multibyte",
-    8529291: "HKT"
+    8529291: "HKT",
+    8529390: "HKT",
+    8529391: "HKT"
   };
 }

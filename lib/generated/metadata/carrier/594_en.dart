@@ -24,6 +24,9 @@ Map<int, String> get594_en() {
     59469436: "Free Caraibe",
     59469437: "Free Caraibe",
     59469446: "SFR",
-    59469447: "SFR"
+    59469447: "SFR",
+    59470930: "Free Caraibe",
+    59470932: "Digicel",
+    59470933: "Orange"
   };
 }
