@@ -921,7 +921,7 @@ class PhoneNumberUtil {
 
   /// Returns the types for a given region which the library has metadata for.
   /// Will not include `fixedLineOrMobile` (if numbers for this non-geographical
-  /// entity could be classified as `fixedLineOrMobile`, both [fixedLine] and
+  /// entity could be classified as `fixedLineOrMobile`, both `fixedLine` and
   /// `mobile` would be present) and `unknown`.
   ///
   /// No types will be returned for invalid or unknown region codes.
@@ -933,9 +933,9 @@ class PhoneNumberUtil {
 
   /// Returns the types for a country-code belonging to a non-geographical entity
   /// which the library has metadata for. Will not include `fixedLineOrMobile`
-  /// (instead both [fixedLine] and `fixedLineOrMobile` (if numbers for this
+  /// (instead both `fixedLine` and `fixedLineOrMobile` (if numbers for this
   /// non-geographical entity could be classified as `fixedLineOrMobile`, both
-  /// [fixedLine] and `mobile` would be present) and `unknown`.
+  /// `fixedLine` and `mobile` would be present) and `unknown`.
   ///
   /// No types will be returned for country calling codes that do not map to a
   /// known non-geographical entity.
