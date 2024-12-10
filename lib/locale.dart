@@ -1,5 +1,5 @@
 /// Based on the supported Geocoding locale directory names
-/// found in the [resources/geocoding] directory.
+/// found in the `resources/geocoding` directory.
 ///
 /// Locale metadata is also based on CLDR version 44.1 from
 /// https://github.dev/unicode-org/cldr-json/blob/main/cldr-json/cldr-localenames-modern

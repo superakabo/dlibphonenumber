@@ -1,6 +1,5 @@
 // Based on the original Java code: .../phonenumbers/NumberParseException.java
 //
-// [license]
 // Copyright (C) 2009 The Libphonenumber Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +21,7 @@ enum ErrorType {
   /// This indicates the string passed is not a valid number. Either the string
   /// had less than 3 digits in it or had an invalid phone-context parameter.
   /// More specifically, the number failed to match the regular expression
-  /// [validPhoneNumber], [rfc3966GlobalNumberDigits], or [rfc3966Domainname].
+  /// `validPhoneNumber`, `rfc3966GlobalNumberDigits`, or `rfc3966Domainname`.
   notANumber('The string supplied did not seem to be a phone number'),
 
   /// This indicates the string started with an international dialing prefix, but

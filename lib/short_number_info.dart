@@ -293,8 +293,6 @@ class ShortNumberInfo {
         case ShortNumberCost.tollFree:
           // Do nothing.
           break;
-        default:
-          break;
       }
     }
     return cost;

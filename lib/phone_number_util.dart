@@ -35,7 +35,7 @@ import 'metadata_map_loader.dart';
 import 'phone_number_match.dart';
 import 'phone_number_matcher.dart';
 
-/// [fileoverview]
+///
 /// Utility for international phone numbers.
 /// Functionality includes formatting, parsing and validation.
 /// (based on the java implementation).
@@ -44,6 +44,7 @@ import 'phone_number_matcher.dart';
 /// be provided using CLDR two-letter region-code format. These should be in
 /// upper-case. The list of the codes can be found here:
 /// http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
+///
 class PhoneNumberUtil {
   static PhoneNumberUtil get instance => _instance;
   static final PhoneNumberUtil _instance =
@@ -906,9 +907,9 @@ class PhoneNumberUtil {
     List<PhoneNumberType> types = [];
 
     for (var type in PhoneNumberType.values) {
-      // Never return [fixedLineOrMobile] (it is a convenience type, and
+      // Never return `fixedLineOrMobile` (it is a convenience type, and
       // represents that a particular number type can't be determined) or
-      // [unknown] (the non-type).
+      // `unknown` (the non-type).
       if (type != PhoneNumberType.fixedLineOrMobile &&
           type != PhoneNumberType.unknown) {
         PhoneNumberDesc desc = _getNumberDescByType(metadata, type);
@@ -919,9 +920,9 @@ class PhoneNumberUtil {
   }
 
   /// Returns the types for a given region which the library has metadata for.
-  /// Will not include [fixedLineOrMobile] (if numbers for this non-geographical
-  /// entity could be classified as [fixedLineOrMobile], both [fixedLine] and
-  /// [mobile] would be present) and [unknown].
+  /// Will not include `fixedLineOrMobile` (if numbers for this non-geographical
+  /// entity could be classified as `fixedLineOrMobile`, both [fixedLine] and
+  /// `mobile` would be present) and `unknown`.
   ///
   /// No types will be returned for invalid or unknown region codes.
   List<PhoneNumberType> getSupportedTypesForRegion(String? regionCode) {
@@ -931,10 +932,10 @@ class PhoneNumberUtil {
   }
 
   /// Returns the types for a country-code belonging to a non-geographical entity
-  /// which the library has metadata for. Will not include [fixedLineOrMobile]
-  /// (instead both [fixedLine] and [fixedLineOrMobile] (if numbers for this
-  /// non-geographical entity could be classified as [fixedLineOrMobile], both
-  /// [fixedLine] and [mobile] would be present) and [unknown].
+  /// which the library has metadata for. Will not include `fixedLineOrMobile`
+  /// (instead both [fixedLine] and `fixedLineOrMobile` (if numbers for this
+  /// non-geographical entity could be classified as `fixedLineOrMobile`, both
+  /// [fixedLine] and `mobile` would be present) and `unknown`.
   ///
   /// No types will be returned for country calling codes that do not map to a
   /// known non-geographical entity.
@@ -1274,15 +1275,15 @@ class PhoneNumberUtil {
   }
 
   /// Formats a phone number in national format for dialing using the carrier as
-  /// specified in the [preferredDomesticCarrierCode] field of the PhoneNumber
+  /// specified in the `preferredDomesticCarrierCode` field of the PhoneNumber
   /// object passed in. If that is missing, use the  [fallbackCarrierCode]
-  /// passed in instead. If there is no  [preferredDomesticCarrierCode],
+  /// passed in instead. If there is no  `preferredDomesticCarrierCode`,
   /// and the [fallbackCarrierCode] contains an empty string, return the
   /// number in national format without any carrier code.
   ///
   /// <p>Use [formatNationalNumberWithCarrierCode] instead if the carrier
   /// code passed in should take precedence over the number's
-  /// [preferredDomesticCarrierCode] when formatting.
+  /// `preferredDomesticCarrierCode` when formatting.
   ///
   /// [number] the phone number to be formatted.
   /// [fallbackCarrierCode] the carrier selection code to be used, if
@@ -1410,9 +1411,9 @@ class PhoneNumberUtil {
   }
 
   /// Formats a phone number for out-of-country dialing purposes. If no
-  /// regionCallingFrom is supplied, we format the number in its [international]
+  /// regionCallingFrom is supplied, we format the number in its `international`
   /// format. If the country calling code is the same as that of the region where
-  /// the number is from, then [national] formatting will be applied.
+  /// the number is from, then `national` formatting will be applied.
   ///
   /// <p>If the number itself has a country calling code of zero or an otherwise
   /// invalid country calling code, then we return the number with no formatting
@@ -1421,7 +1422,7 @@ class PhoneNumberUtil {
   /// <p>Note this function takes care of the case for calling inside of NANPA and
   /// between Russia and Kazakhstan (who share the same country calling code). In
   /// those cases, no international prefix is used. For regions which have multiple
-  /// international prefixes, the number in its [international] format will be
+  /// international prefixes, the number in its `international` format will be
   /// returned instead.
   ///
   /// [number] the phone number to be formatted.
@@ -1503,9 +1504,9 @@ class PhoneNumberUtil {
   }
 
   /// Formats a phone number using the original phone number format that the number
-  /// is parsed from. The original format is embedded in the [countryCodeSource]
+  /// is parsed from. The original format is embedded in the `countryCodeSource`
   /// field of the PhoneNumber object passed in. If such information is missing,
-  /// the number will be formatted into the [national] format by default. When the
+  /// the number will be formatted into the `national` format by default. When the
   /// number contains a leading zero and this is unexpected for this country, or
   /// we don't have a formatting pattern for the number, the method returns the
   /// raw input when it is available.
@@ -2870,7 +2871,7 @@ class PhoneNumberUtil {
   /// dialing prefix from the region we think this number may be dialed in.
   /// returns [PhoneNumber_CountryCodeSource] of the corresponding CountryCodeSource
   /// if an international dialing prefix could be removed from the number, otherwise
-  /// [PhoneNumber_CountryCodeSource.fromDefaultCountry] if the number did not seem to
+  /// `PhoneNumber_CountryCodeSource.fromDefaultCountry` if the number did not seem to
   /// be in international format.
   PhoneNumber_CountryCodeSource maybeStripInternationalPrefixAndNormalize(
     StringBuffer number,
@@ -3044,7 +3045,7 @@ class PhoneNumberUtil {
   /// about the number being parsed, such as the raw input that was entered, how
   /// the country code was derived etc. then call [parseAndKeepRawInput()] instead.
   ///
-  /// This method will throw a [phonenumbers.Error] if the number is not
+  /// This method will throw a `phonenumbers.Error` if the number is not
   /// considered to be a possible number. Note that validation of whether the
   /// number is actually a valid number for a particular region is not performed.
   /// This can be done separately with [isValidNumber].
@@ -3054,7 +3055,7 @@ class PhoneNumberUtil {
   ///     extension. It can also be provided in RFC3966 format.
   /// [defaultRegion] region that we are expecting the number to be
   ///     from. This is only used if the number being parsed is not written in
-  ///     international format. The [countryCode] for the number in this case would
+  ///     international format. The `countryCode` for the number in this case would
   ///     be stored as that of the default region supplied. If the number is
   ///     guaranteed to start with a '+' followed by the country calling code, then
   ///     'ZZ' or null can be supplied.
@@ -3390,21 +3391,21 @@ class PhoneNumberUtil {
 
   /// Takes two phone numbers and compares them for equality.
   ///
-  /// <p>Returns [exactMatch] if the [countryCode], NSN, presence of a leading zero
-  /// for Italian numbers and any extension present are the same. Returns [nsnMatch]
+  /// <p>Returns `exactMatch` if the `countryCode`, NSN, presence of a leading zero
+  /// for Italian numbers and any extension present are the same. Returns `nsnMatch`
   /// if either or both has no region specified, and the NSNs and extensions are
-  /// the same. Returns [shortNsnMatch] if either or both has no region specified,
+  /// the same. Returns `shortNsnMatch` if either or both has no region specified,
   /// or the region specified is the same, and one NSN could be a shorter version
   /// of the other number. This includes the case where one has an extension
-  /// specified, and the other does not. Returns [noMatch] otherwise. For example,
-  /// the numbers +1 345 657 1234 and 657 1234 are a [shortNsnMatch]. The numbers
-  /// +1 345 657 1234 and 345 657 are a [noMatch].
+  /// specified, and the other does not. Returns `noMatch` otherwise. For example,
+  /// the numbers +1 345 657 1234 and 657 1234 are a `shortNsnMatch`. The numbers
+  /// +1 345 657 1234 and 345 657 are a `noMatch`.
   ///
   /// {PhoneNumber|string} [firstNumberIn] first number to compare. If it is a string
   /// it can contain formatting, and can have country calling code specified with + at the start.
   /// {PhoneNumber|string} [secondNumberIn] second number to compare. If it is a string
   /// it can contain formatting, and can have country calling code specified with + at the start.
-  /// returns [MatchType] [notANumber], [noMatch], [shortNsnMatch], [nsnMatch] or [exactMatch]
+  /// returns [MatchType] `notANumber`, `noMatch`, `shortNsnMatch`, `nsnMatch` or `exactMatch`
   /// depending on the level of equality of the two numbers, described in the method definition.
   MatchType isNumberMatch(Object firstNumberIn, Object secondNumberIn) {
     // If the input arguements are strings parse them to a proto buffer format.
@@ -3665,7 +3666,7 @@ class PhoneNumberUtil {
   /// [leniency] the leniency to use when evaluating candidate phone numbers
   /// [maxTries] the maximum number of invalid numbers to try before giving up on the text.
   /// This is to cover degenerate cases where the text has a lot of false positives in it.
-  /// Must be [code >= 0].
+  /// Must be `(code >= 0)`.
   Iterable<PhoneNumberMatch> findNumbers(
     String text,
     String defaultRegion, [

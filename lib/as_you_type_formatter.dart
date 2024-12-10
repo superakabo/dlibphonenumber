@@ -33,7 +33,7 @@ import 'phone_number_util.dart';
 
 /// Constructs an AsYouTypeFormatter for the specific region.
 ///
-/// [_regionCode] the CLDR two-letter region code that denotes the
+/// `regionCode` the CLDR two-letter region code that denotes the
 /// region where the phone number is being entered.
 class AsYouTypeFormatter {
   final PhoneNumberUtil _phoneUtil;
