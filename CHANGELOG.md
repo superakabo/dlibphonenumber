@@ -1,3 +1,10 @@
+## 1.1.29
+- Updated phone metadata for region code(s): CA, DE, DK, IL, JP, KY, MN, UG, US, UZ
+- Updated short number metadata for region code(s): DK
+- Updated geocoding data for country calling code(s): 86 (en, zh), 1345 (en)
+- Updated carrier data for country calling code(s): 45 (en), 229 (en), 972 (en), 976 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.28
 - Updated phone metadata for region code(s): 870, CA, GE, GF, GU, HK, HN, MQ, PM, RE, SN, SY, TG, US, YT
 - New geocoding data for country calling code(s): 1327 (en), 1942 (en)

@@ -67,7 +67,7 @@ Map<String, Object?> getDK() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "1(?:1(?:[2-48]|6(?:00[06]|111))|619[0-2]|8(?:01|1[0238]|28|30|5[13]|8[18]))",
+          "1(?:1(?:[248]|6(?:00[06]|111))|619[0-2]|8(?:01|1[0238]|28|30|5[13]|8[18]))",
       "exampleNumber": "112",
       "possibleLength": [3, 4, 5, 6],
       "possibleLengthLocalOnly": [-1]
