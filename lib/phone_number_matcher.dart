@@ -31,7 +31,7 @@ import 'phone_number_util.dart';
 /// factory methods in [PhoneNumberUtil].
 ///
 /// <p>Vanity numbers (phone numbers using alphabetic digits such as
-/// <tt>1-800-SIX-FLAGS</tt> are not found.
+/// `<tt>1-800-SIX-FLAGS</tt>` are not found.
 final class PhoneNumberMatcher extends Iterable<PhoneNumberMatch> {
   final PhoneNumberUtil util;
   final String text;
