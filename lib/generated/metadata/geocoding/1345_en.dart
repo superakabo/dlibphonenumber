@@ -13,11 +13,11 @@ Map<int, String> get1345_en() {
     134563: "Cayman Islands",
     134580: "Cayman Islands",
     134581: "Cayman Islands",
+    134584: "Cayman Islands",
     134588: "Cayman Islands",
     134594: "Cayman Islands",
     134597: "Cayman Islands",
     1345640: "Cayman Islands",
-    1345848: "Cayman Islands",
     1345914: "Cayman Islands",
     1345949: "George Town"
   };

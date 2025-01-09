@@ -19,7 +19,7 @@ Map<String, Object?> getMN() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:83[01]|92[039])\\d{5}|(?:5[05]|6[069]|8[015689]|9[013-9])\\d{6}",
+          "(?:83[01]|92[039])\\d{5}|(?:5[05]|6[069]|72|8[015689]|9[013-9])\\d{6}",
       "exampleNumber": "88123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
@@ -41,7 +41,7 @@ Map<String, Object?> getMN() {
       "possibleLengthLocalOnly": [-1]
     },
     "voip": {
-      "nationalNumberPattern": "712[0-79]\\d{4}|7(?:1[013-9]|[25-9]\\d)\\d{5}",
+      "nationalNumberPattern": "712[0-79]\\d{4}|7(?:1[013-9]|[5-9]\\d)\\d{5}",
       "exampleNumber": "75123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

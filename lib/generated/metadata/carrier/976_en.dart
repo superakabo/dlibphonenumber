@@ -10,6 +10,7 @@ Map<int, String> get976_en() {
     97660: "ONDO",
     97666: "ONDO",
     97669: "Skytel",
+    97672: "Lime",
     97680: "Unitel",
     97681: "ONDO",
     97683: "G-Mobile",
