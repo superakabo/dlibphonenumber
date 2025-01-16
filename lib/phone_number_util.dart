@@ -1078,14 +1078,14 @@ class PhoneNumberUtil {
   /// [number] the phone number to be formatted.
   /// [numberFormat] the format the phone number should be formatted into.
   String format(PhoneNumber number, PhoneNumberFormat numberFormat) {
-    if (number.nationalNumber == 0 && number.hasRawInput()) {
+    if (number.nationalNumber == 0) {
       // Unparseable numbers that kept their raw input just use that.
       // This is the only case where a number can be formatted as E164 without a
       // leading '+' symbol (but the original number wasn't parseable anyway).
-      // TODO: Consider removing the 'if' above so that unparseable strings
-      // without raw input format to the empty string instead of '+00'
       String rawInput = number.rawInput;
-      if (rawInput.isNotEmpty) return rawInput;
+      if (rawInput.isNotEmpty || !number.hasCountryCode()) {
+        return rawInput;
+      }
     }
 
     int countryCallingCode = number.countryCode;
