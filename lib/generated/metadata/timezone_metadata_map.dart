@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2009-2024 The Libphonenumber Authors
+// Copyright (C) 2009-2025 The Libphonenumber Authors
 //
 // Licensed under the Apache License, Version 2.0 (the 'License');
 // you may not use this file except in compliance with the License.
@@ -2704,7 +2704,22 @@ class TimezoneMetadataMap {
       1907929: "America/Juneau",
       1907966: "America/Juneau",
       1907983: "America/Juneau",
-      1928688: "America/Denver&America/Phoenix",
+      1928283: "America/Denver&America/Phoenix",
+      1928672: "America/Denver&America/Phoenix",
+      1928673: "America/Denver&America/Phoenix",
+      1928674: "America/Denver&America/Phoenix",
+      1928677: "America/Denver&America/Phoenix",
+      1928686: "America/Denver&America/Phoenix",
+      1928697: "America/Denver&America/Phoenix",
+      1928698: "America/Denver&America/Phoenix",
+      1928724: "America/Denver&America/Phoenix",
+      1928725: "America/Denver&America/Phoenix",
+      1928728: "America/Denver&America/Phoenix",
+      1928729: "America/Denver&America/Phoenix",
+      1928755: "America/Denver&America/Phoenix",
+      1928781: "America/Denver&America/Phoenix",
+      1928787: "America/Denver&America/Phoenix",
+      1928871: "America/Denver&America/Phoenix",
       2627092: "Indian/Reunion",
       2627093: "Indian/Mayotte",
       2629398: "Indian/Mayotte",

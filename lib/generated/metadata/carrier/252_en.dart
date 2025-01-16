@@ -25,6 +25,7 @@ Map<int, String> get252_en() {
     25270: "Golis Telecom",
     25271: "Amtel",
     25272: "Golis Telecom",
+    25276: "Somtel",
     25279: "Somtel",
     25280: "Somali Networks",
     25288: "Somali Networks",

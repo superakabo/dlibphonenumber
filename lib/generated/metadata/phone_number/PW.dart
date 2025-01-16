@@ -18,7 +18,7 @@ Map<String, Object?> getPW() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:(?:46|83)[0-5]|6[2-4689]0)\\d{4}|(?:45|77|88)\\d{5}",
+          "(?:(?:46|83)[0-5]|(?:6[2-4689]|78)0)\\d{4}|(?:45|77|88)\\d{5}",
       "exampleNumber": "6201234",
       "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]

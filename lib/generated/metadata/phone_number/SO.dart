@@ -19,7 +19,7 @@ Map<String, Object?> getSO() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:(?:15|(?:3[59]|4[89]|6\\d|7[79]|8[08])\\d|9(?:0\\d|[2-9]))\\d|2(?:4\\d|8))\\d{5}|(?:[67]\\d\\d|904)\\d{5}",
+          "(?:(?:15|(?:3[59]|4[89]|6\\d|7[679]|8[08])\\d|9(?:0\\d|[2-9]))\\d|2(?:4\\d|8))\\d{5}|(?:[67]\\d\\d|904)\\d{5}",
       "exampleNumber": "71123456",
       "possibleLength": [7, 8, 9],
       "possibleLengthLocalOnly": [-1]
@@ -84,7 +84,7 @@ Map<String, Object?> getSO() {
       {
         "pattern": "(\\d{2})(\\d{5,7})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["1|28|6[0-35-9]|77|9[2-9]"],
+        "leadingDigitsPattern": ["1|28|6[0-35-9]|7[67]|9[2-9]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -122,7 +122,7 @@ Map<String, Object?> getSO() {
       {
         "pattern": "(\\d{2})(\\d{5,7})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["1|28|6[0-35-9]|77|9[2-9]"],
+        "leadingDigitsPattern": ["1|28|6[0-35-9]|7[67]|9[2-9]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

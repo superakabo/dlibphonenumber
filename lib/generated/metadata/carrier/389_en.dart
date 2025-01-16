@@ -23,8 +23,6 @@ Map<int, String> get389_en() {
     389794: "Lyca Mobile",
     389795: "Lyca Mobile",
     389799: "A1",
-    3897370: "T-Mobile",
-    3897371: "T-Mobile",
     3897421: "Mobik",
     3897470: "T-Mobile",
     3897471: "T-Mobile",

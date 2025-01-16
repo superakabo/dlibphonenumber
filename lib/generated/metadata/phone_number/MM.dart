@@ -44,7 +44,7 @@ Map<String, Object?> getMM() {
       "possibleLengthLocalOnly": [-1]
     },
     "voip": {
-      "nationalNumberPattern": "1333\\d{4}|[12]468\\d{4}",
+      "nationalNumberPattern": "1333\\d{4}",
       "exampleNumber": "13331234",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

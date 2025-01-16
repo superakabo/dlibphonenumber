@@ -17,7 +17,7 @@ Map<String, Object?> getLV() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "23(?:23[0-57-9]|33[0238])\\d{3}|2(?:[0-24-9]\\d\\d|3(?:0[07]|[14-9]\\d|2[024-9]|3[0-24-9]))\\d{4}",
+          "2333[0-8]\\d{3}|2(?:[0-24-9]\\d\\d|3(?:0[07]|[14-9]\\d|2[02-9]|3[0-24-9]))\\d{4}",
       "exampleNumber": "21234567",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

@@ -11,12 +11,8 @@ Map<int, String> get597_en() {
     59774: "Digicel",
     59775: "Telesur",
     59776: "Digicel",
+    59777: "Telesur",
     59781: "Digicel",
-    59782: "Digicel",
-    597770: "Telesur",
-    597771: "Telesur",
-    597772: "Telesur",
-    597773: "Telesur",
-    597774: "Telesur"
+    59782: "Digicel"
   };
 }

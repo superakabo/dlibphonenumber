@@ -1,3 +1,8 @@
+## 1.1.30
+- Updated phone metadata for region code(s): EH, IL, LV, MA, MK, MM, MU, PW, SO
+- Updated carrier data for country calling code(s): 90 (en), 92 (en), 212 (en), 229 (en), 252 (en), 351 (en), 371 (en), 389 (en),
+- Updated / refreshed time zone meta data.
+
 ## 1.1.29
 - Updated phone metadata for region code(s): CA, DE, DK, IL, JP, KY, MN, UG, US, UZ
 - Updated short number metadata for region code(s): DK
