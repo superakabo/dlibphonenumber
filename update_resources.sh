@@ -52,6 +52,10 @@ if [[ -z $changelog_output ]]; then
   exit 0
 fi
 
+#
+# Escape html tags in the comments of resources/phonemetadata.proto file
+sed 's/<\([^>]*\)>/`<\1>`/g' resources/phonemetadata.proto > temp && mv temp resources/phonemetadata.proto
+
 # Generate classes from the .proto files found in the resources
 # folder using protocol buffers (protobuf, protoc_plugin)
 # 
