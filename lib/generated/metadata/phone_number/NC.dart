@@ -16,7 +16,7 @@ Map<String, Object?> getNC() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:5[0-4]|[79]\\d|8[0-79])\\d{4}",
+      "nationalNumberPattern": "(?:[579]\\d|8[0-79])\\d{4}",
       "exampleNumber": "751234",
       "possibleLength": [6],
       "possibleLengthLocalOnly": [-1]

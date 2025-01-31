@@ -845,23 +845,23 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   ///  format. In this case, the prefix 9 is inserted when dialling from
   ///  overseas, but otherwise the prefix 0 and the carrier selection code
   ///  15 (inserted after the area code of 343) is used.
-  ///  Note: this field is populated by setting a value for <intlFormat> inside
-  ///  the <numberFormat> tag in the XML file. If <intlFormat> is not set then it
-  ///  defaults to the same value as the <format> tag.
+  ///  Note: this field is populated by setting a value for `<intlFormat>` inside
+  ///  the `<numberFormat>` tag in the XML file. If `<intlFormat>` is not set then it
+  ///  defaults to the same value as the `<format>` tag.
   ///
   ///  Examples:
-  ///    To set the <intlFormat> to a different value than the <format>:
-  ///      <numberFormat pattern=....>
-  ///        <format>$1 $2 $3</format>
-  ///        <intlFormat>$1-$2-$3</intlFormat>
-  ///      </numberFormat>
+  ///    To set the `<intlFormat>` to a different value than the `<format>`:
+  ///      `<numberFormat pattern=....>`
+  ///        `<format>`$1 $2 $3`</format>`
+  ///        `<intlFormat>`$1-$2-$3`</intlFormat>`
+  ///      `</numberFormat>`
   ///
-  ///    To have a format only used for national formatting, set <intlFormat> to
+  ///    To have a format only used for national formatting, set `<intlFormat>` to
   ///    "NA":
-  ///      <numberFormat pattern=....>
-  ///        <format>$1 $2 $3</format>
-  ///        <intlFormat>NA</intlFormat>
-  ///      </numberFormat>
+  ///      `<numberFormat pattern=....>`
+  ///        `<format>`$1 $2 $3`</format>`
+  ///        `<intlFormat>`NA`</intlFormat>`
+  ///      `</numberFormat>`
   @$pb.TagNumber(20)
   $core.List<NumberFormat> get intlNumberFormat => $_getList(18);
 

@@ -11,6 +11,7 @@ Map<int, String> get223_en() {
     22382: "Orange",
     22383: "Orange",
     22384: "Orange",
+    22385: "Orange",
     22389: "Sotelma",
     22390: "Orange",
     22391: "Orange",

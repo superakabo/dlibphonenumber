@@ -19,7 +19,7 @@ Map<String, Object?> getPL() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "21(?:1[013-5]|2\\d|3[4-9])\\d{5}|(?:45|5[0137]|6[069]|7[2389]|88)\\d{7}",
+          "2131[89]\\d{4}|21(?:1[013-5]|2\\d|3[2-9])\\d{5}|(?:45|5[0137]|6[069]|7[2389]|88)\\d{7}",
       "exampleNumber": "512345678",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

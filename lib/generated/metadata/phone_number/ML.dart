@@ -11,14 +11,14 @@ Map<String, Object?> getML() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "2(?:07[0-8]|12[67])\\d{4}|(?:2(?:02|1[4-689])|4(?:0[0-4]|4[1-39]))\\d{5}",
+          "2(?:07[0-8]|12[67])\\d{4}|(?:2(?:02|1[4-689])|4(?:0[0-4]|4[1-59]))\\d{5}",
       "exampleNumber": "20212345",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
       "nationalNumberPattern":
-          "2(?:0(?:01|79)|17\\d)\\d{4}|(?:5[01]|[679]\\d|8[2-49])\\d{6}",
+          "2(?:0(?:01|79)|17\\d)\\d{4}|(?:5[01]|[679]\\d|8[2-59])\\d{6}",
       "exampleNumber": "65012345",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

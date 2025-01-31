@@ -5,18 +5,13 @@
 /// Carrier JSON data for 51_en
 Map<int, String> get51_en() {
   return {
+    5190: "Entel",
     5192: "Claro",
     5195: "Movistar",
     5198: "Claro",
     51900: "Claro",
     51901: "Claro",
-    51902: "Entel",
-    51903: "Entel",
-    51904: "Entel",
-    51905: "Entel",
-    51906: "Entel",
-    51907: "Entel",
-    51908: "Entel",
+    51909: "Americatel",
     51910: "Claro",
     51912: "Entel",
     51913: "Claro",

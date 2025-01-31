@@ -1,3 +1,9 @@
+## 1.1.31
+- Updated phone metadata for region code(s): HK, ML, NC, PL, US
+- New geocoding data for country calling code(s): 1274 (en)
+- Updated carrier data for country calling code(s): 41 (en), 48 (en), 51 (en), 223 (en), 268 (en), 852 (en, zh)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.30
 - Updated phone metadata for region code(s): EH, IL, LV, MA, MK, MM, MU, PW, SO
 - Updated carrier data for country calling code(s): 90 (en), 92 (en), 212 (en), 229 (en), 252 (en), 351 (en), 371 (en), 389 (en),
