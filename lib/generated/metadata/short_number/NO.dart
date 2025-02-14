@@ -67,7 +67,7 @@ Map<String, Object?> getNO() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "04\\d{3}|1(?:1(?:[0239]|61(?:1[17]|23))|2[048]|4(?:12|[59])|7[57]|8[5-9]\\d|90)",
+          "04\\d{3}|1(?:1(?:[0239]|61(?:1[17]|23))|2[048]|4(?:12|[59])|7[57]|8\\d\\d|90)",
       "exampleNumber": "110",
       "possibleLength": [3, 4, 5, 6],
       "possibleLengthLocalOnly": [-1]

@@ -1,3 +1,8 @@
+## 1.1.32
+- Updated phone metadata for region code(s): BE, CZ, SR
+- Updated short number metadata for region code(s): NO
+- Updated carrier data for country calling code(s): 33 (en), 41 (en), 255 (en), 351 (en), 503 (en), 597 (en)
+
 ## 1.1.31
 - Updated phone metadata for region code(s): HK, ML, NC, PL, US
 - New geocoding data for country calling code(s): 1274 (en)

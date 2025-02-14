@@ -16,7 +16,7 @@ Map<String, Object?> getSR() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:7[124-7]|8[124-9])\\d{5}",
+      "nationalNumberPattern": "(?:7[124-7]|8[1-9])\\d{5}",
       "exampleNumber": "7412345",
       "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]
