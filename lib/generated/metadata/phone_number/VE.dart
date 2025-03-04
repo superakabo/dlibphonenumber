@@ -18,7 +18,7 @@ Map<String, Object?> getVE() {
       "possibleLengthLocalOnly": [7]
     },
     "mobile": {
-      "nationalNumberPattern": "4(?:1[24-8]|2[46])\\d{7}",
+      "nationalNumberPattern": "4(?:1[24-8]|2[246])\\d{7}",
       "exampleNumber": "4121234567",
       "possibleLength": [10],
       "possibleLengthLocalOnly": [-1]

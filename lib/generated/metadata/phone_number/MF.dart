@@ -42,7 +42,7 @@ Map<String, Object?> getMF() {
       "possibleLengthLocalOnly": [-1]
     },
     "voip": {
-      "nationalNumberPattern": "9(?:(?:39[5-7]|76[018])\\d|475[0-5])\\d{4}",
+      "nationalNumberPattern": "9(?:(?:39[5-7]|76[018])\\d|475[0-6])\\d{4}",
       "exampleNumber": "976012345",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

@@ -39,6 +39,8 @@ Map<int, String> get27_en() {
     2747: "Butterworth/Eastern part of Eastern Cape/Mthatha",
     2748: "Cradock/Northern part of Eastern Cape/Steynsburg",
     2749: "Graaff-Reinet/Western part of Eastern Cape",
+    2750:
+        "Aliwal North/Bloemfontein/Far eastern part of Eastern Cape/Southern and Central Free State",
     2751:
         "Aliwal North/Bloemfontein/Far eastern part of Eastern Cape/Southern and Central Free State",
     2753:

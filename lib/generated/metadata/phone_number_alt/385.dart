@@ -53,7 +53,7 @@ Map<String, Object?> get385() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[2-69]|76"],
+        "leadingDigitsPattern": ["[2-69]|7[67]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
@@ -79,7 +79,7 @@ Map<String, Object?> get385() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[2-69]|76"],
+        "leadingDigitsPattern": ["[2-69]|7[67]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {

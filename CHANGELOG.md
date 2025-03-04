@@ -1,3 +1,10 @@
+## 1.1.33
+- Updated alternate formatting data for country calling code(s): 385
+- Updated phone metadata for region code(s): AR, BL, GF, GP, GY, HK, JP, MF, RE, SG, SL, SN, TJ, UG, VE, ZA
+- Updated geocoding data for country calling code(s): 27 (en)
+- Updated carrier data for country calling code(s): 58 (en), 65 (en), 221 (en), 256 (en), 592 (en), 852 (en, zh), 992 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.32
 - Updated phone metadata for region code(s): BE, CZ, SR
 - Updated short number metadata for region code(s): NO

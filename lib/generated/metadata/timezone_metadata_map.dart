@@ -2857,6 +2857,7 @@ class TimezoneMetadataMap {
       6185129: "Australia/Adelaide&Australia/Perth",
       6189162: "Indian/Cocos",
       6189164: "Indian/Christmas",
+      8170859: "Asia/Tokyo",
       9761362: "Asia/Choibalsan&Asia/Ulaanbaatar",
       9762362: "Asia/Choibalsan&Asia/Ulaanbaatar",
       55553682: "America/Manaus",

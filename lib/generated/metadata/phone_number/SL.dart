@@ -17,7 +17,7 @@ Map<String, Object?> getSL() {
       "possibleLengthLocalOnly": [6]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:25|3[0-5]|66|7[2-9]|8[08]|9[09])\\d{6}",
+      "nationalNumberPattern": "(?:25|3[0-5]|66|7[1-9]|8[08]|9[09])\\d{6}",
       "exampleNumber": "25123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
