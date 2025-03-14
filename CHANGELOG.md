@@ -1,3 +1,7 @@
+## 1.1.34
+- Updated phone metadata for region code(s): AR, MM, SG, US, ZM
+- Updated carrier data for country calling code(s): 36 (en), 65 (en), 260 (en), 855 (en)
+
 ## 1.1.33
 - Updated alternate formatting data for country calling code(s): 385
 - Updated phone metadata for region code(s): AR, BL, GF, GP, GY, HK, JP, MF, RE, SG, SL, SN, TJ, UG, VE, ZA

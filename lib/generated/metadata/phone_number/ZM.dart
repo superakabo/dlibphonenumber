@@ -6,7 +6,7 @@
 Map<String, Object?> getZM() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "800\\d{6}|(?:21|63|[79]\\d)\\d{7}",
+      "nationalNumberPattern": "800\\d{6}|(?:21|[579]\\d|63)\\d{7}",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [6]
     },
@@ -17,7 +17,7 @@ Map<String, Object?> getZM() {
       "possibleLengthLocalOnly": [6]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:7[5-79]|9[5-8])\\d{7}",
+      "nationalNumberPattern": "(?:[59][5-8]|7[5-9])\\d{7}",
       "exampleNumber": "955123456",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -69,7 +69,7 @@ Map<String, Object?> getZM() {
       {
         "pattern": "(\\d{2})(\\d{7})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["[79]"],
+        "leadingDigitsPattern": ["[579]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
@@ -85,7 +85,7 @@ Map<String, Object?> getZM() {
       {
         "pattern": "(\\d{2})(\\d{7})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["[79]"],
+        "leadingDigitsPattern": ["[579]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
