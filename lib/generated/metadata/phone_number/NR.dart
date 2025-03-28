@@ -6,7 +6,7 @@
 Map<String, Object?> getNR() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:444|(?:55|8\\d)\\d|666)\\d{4}",
+      "nationalNumberPattern": "(?:222|444|(?:55|8\\d)\\d|666|777|999)\\d{4}",
       "possibleLength": [7]
     },
     "fixedLine": {
@@ -16,7 +16,7 @@ Map<String, Object?> getNR() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:55[3-9]|666|8\\d\\d)\\d{4}",
+      "nationalNumberPattern": "(?:222|55[3-9]|666|777|8\\d\\d|999)\\d{4}",
       "exampleNumber": "5551234",
       "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]
@@ -49,7 +49,7 @@ Map<String, Object?> getNR() {
       {
         "pattern": "(\\d{3})(\\d{4})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["[4-68]"],
+        "leadingDigitsPattern": ["[24-9]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -57,7 +57,7 @@ Map<String, Object?> getNR() {
       {
         "pattern": "(\\d{3})(\\d{4})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["[4-68]"],
+        "leadingDigitsPattern": ["[24-9]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

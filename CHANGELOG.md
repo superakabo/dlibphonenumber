@@ -1,3 +1,10 @@
+## 1.1.35
+- Updated phone metadata for region code(s): NR, US, UZ, ZA
+- New geocoding data for country calling code(s): 1821 (en)
+- Updated geocoding data for country calling code(s): 27 (en)
+- Updated carrier data for country calling code(s): 27 (en), 389 (en), 674 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.34
 - Updated phone metadata for region code(s): AR, MM, SG, US, ZM
 - Updated carrier data for country calling code(s): 36 (en), 65 (en), 260 (en), 855 (en)
