@@ -10,7 +10,7 @@ A Dart package for working with international phone numbers based on Google's li
 
 ## ✨ Features
 
-✅ **Parse, format, and validate** phone numbers [[`parse()`](#📞-parse-a-phone-number), [`format()`](#📐-format-a-phone-number), [`isValidNumber()`](#👍-validate-a-phone-number)]\
+✅ **Parse, format, and validate** phone numbers [[`parse()`](#parse-a-phone-number), [`format()`](#format-a-phone-number), [`isValidNumber()`](#validate-a-phone-number)]\
 ➝ Convert raw phone numbers into structured objects, apply different formats, and check validity.
 
 ✅ **Identify phone number types** [[`getNumberType()`](#🔢-identify-number-types)]\
