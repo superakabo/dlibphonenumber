@@ -111,14 +111,9 @@ dart format ./test
 dart fix --apply
 
 # Run tests
-dart test -r expanded ./test/phone_number_util_test.dart
-dart test -r expanded ./test/as_you_type_formatter_test.dart
-dart test -r expanded ./test/phone_number_match_test.dart
-dart test -r expanded ./test/phone_number_matcher_test.dart
-dart test -r expanded ./test/short_number_info_test.dart
-dart test -r expanded ./test/phone_number_offline_geocoder_test.dart
-dart test -r expanded ./test/phone_number_to_time_zones_mapper_test.dart
-dart test -r expanded ./test/phone_number_to_carrier_mapper_test.dart
+if [ "$GITHUB_ACTIONS" = "false" ]; then
+    dart test -r expanded
+fi
 
 # Check if it is running in GitHub Actions and commit changes.
 if [ "$GITHUB_ACTIONS" = "true" ]; then
