@@ -24,4 +24,4 @@ source_release_id
 codecov.yml
 
 # ignore code coverage directory
-coverage
+coverage/
