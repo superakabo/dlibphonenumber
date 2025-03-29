@@ -110,7 +110,7 @@ dart format ./lib
 dart format ./test
 dart fix --apply
 
-# Run tests and 
+# Run tests
 if [ "$GITHUB_ACTIONS" = "true" ]; then
 # Install and run tests with coverage for CI
     dart pub global activate coverage
