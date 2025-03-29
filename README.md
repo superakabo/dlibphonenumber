@@ -62,7 +62,7 @@ flutter pub get
 
 ### 🏗️ Usage
 
-#### Parse a Phone Number
+<h4 id="parse-a-phone-number">📞 Parse a Phone Number</h2>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
