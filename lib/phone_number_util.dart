@@ -16,7 +16,6 @@
 
 import 'package:fixnum/fixnum.dart';
 import 'package:meta/meta.dart';
-import 'package:protobuf/protobuf.dart';
 
 import 'as_you_type_formatter.dart';
 import 'enums/error_type.dart';

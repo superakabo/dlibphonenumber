@@ -66,10 +66,19 @@ jobs:
         if: env.skip_steps != 'true'
         uses: dart-lang/setup-dart@v1
 
-      - name: Install package dependencies
+      - name: Upgrade & install package dependencies
         if: env.skip_steps != 'true'
-        run: dart pub get
+        run: dart pub upgrade --major-versions
 
       - name: Run update resources script
         if: env.skip_steps != 'true'
         run: ./update_resources.sh
+      
+      - name: Install and run coverage
+        run: |
+          dart pub global activate coverage
+          dart pub global run coverage:test_with_coverage
+      
+      - name: Upload test coverage to Codecov
+        run: curl -s https://codecov.io/bash | bash
+

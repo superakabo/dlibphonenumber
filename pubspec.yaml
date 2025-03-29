@@ -1,5 +1,5 @@
 name: dlibphonenumber
-description: This is a Dart port of Google's libphonenumber library, Google's library for parsing, formatting, and validating international phone numbers. 
+description: A Dart package for working with international phone numbers based on Google's libphonenumber implementation. It parses, formats, and validates numbers without relying on native dependencies. 
 version: 1.1.35
 homepage: https://github.com/superakabo/dlibphonenumber
 topics:
@@ -19,12 +19,12 @@ environment:
   sdk: ^3.0.0
 
 dependencies:
-  protobuf: ^3.1.0
+  protobuf: ^4.0.0
   meta: ^1.11.0
   fixnum: ^1.1.0
    
 dev_dependencies:
-  lints: ^4.0.0
+  lints: ^5.1.1
   test: ^1.24.9
   args: ^2.4.2
   xml: ^6.5.0

@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: phonenumber.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -17,17 +17,37 @@ import 'package:protobuf/protobuf.dart' as $pb;
 /// general parsing method, but in the method that parses and keeps raw_input.
 /// New fields could be added upon request.
 class PhoneNumber_CountryCodeSource extends $pb.ProtobufEnum {
+  /// Default value returned if this is not set, because the phone number was
+  /// created using parse, not parseAndKeepRawInput. hasCountryCodeSource will
+  /// return false if this is the case.
   static const PhoneNumber_CountryCodeSource UNSPECIFIED =
       PhoneNumber_CountryCodeSource._(0, _omitEnumNames ? '' : 'UNSPECIFIED');
+
+  /// The country_code is derived based on a phone number with a leading "+",
+  /// e.g. the French number "+33 1 42 68 53 00".
   static const PhoneNumber_CountryCodeSource FROM_NUMBER_WITH_PLUS_SIGN =
       PhoneNumber_CountryCodeSource._(
           1, _omitEnumNames ? '' : 'FROM_NUMBER_WITH_PLUS_SIGN');
+
+  /// The country_code is derived based on a phone number with a leading IDD,
+  /// e.g. the French number "011 33 1 42 68 53 00", as it is dialled from US.
   static const PhoneNumber_CountryCodeSource FROM_NUMBER_WITH_IDD =
       PhoneNumber_CountryCodeSource._(
           5, _omitEnumNames ? '' : 'FROM_NUMBER_WITH_IDD');
+
+  /// The country_code is derived based on a phone number without a leading
+  /// "+", e.g. the French number "33 1 42 68 53 00" when defaultCountry is
+  /// supplied as France.
   static const PhoneNumber_CountryCodeSource FROM_NUMBER_WITHOUT_PLUS_SIGN =
       PhoneNumber_CountryCodeSource._(
           10, _omitEnumNames ? '' : 'FROM_NUMBER_WITHOUT_PLUS_SIGN');
+
+  /// The country_code is derived NOT based on the phone number itself, but
+  /// from the defaultCountry parameter provided in the parsing function by the
+  /// clients. This happens mostly for numbers written in the national format
+  /// (without country code). For example, this would be set when parsing the
+  /// French number "01 42 68 53 00", when defaultCountry is supplied as
+  /// France.
   static const PhoneNumber_CountryCodeSource FROM_DEFAULT_COUNTRY =
       PhoneNumber_CountryCodeSource._(
           20, _omitEnumNames ? '' : 'FROM_DEFAULT_COUNTRY');
@@ -46,8 +66,7 @@ class PhoneNumber_CountryCodeSource extends $pb.ProtobufEnum {
   static PhoneNumber_CountryCodeSource? valueOf($core.int value) =>
       _byValue[value];
 
-  const PhoneNumber_CountryCodeSource._($core.int v, $core.String n)
-      : super(v, n);
+  const PhoneNumber_CountryCodeSource._(super.v, super.n);
 }
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

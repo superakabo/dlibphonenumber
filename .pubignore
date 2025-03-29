@@ -9,8 +9,9 @@ resources/**
 # exclude the test folder
 test/**
 
-# exclude Github gitignore file
+# exclude Github workflow and gitignore file
 .gitignore
+.github/**
 
 # exclude unnecessary project files
 analysis_options.yaml
@@ -18,3 +19,6 @@ analysis_options.yaml
 # ignore libphonenumber release id.
 # this auto-generated file is used by the tooling to check for newer releases.
 source_release_id
+
+# ignore codecov.yml used for code coverage reports
+codecov.yml

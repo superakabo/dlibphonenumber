@@ -1,0 +1,51 @@
+codecov:
+  notify:
+    require_ci_to_pass: yes
+
+coverage:
+  status:
+    project:
+      default:
+        target: 80%
+        threshold: 2%
+    patch:
+      default:
+        target: 80%
+        threshold: 2%
+
+  ignore:
+    - ".github/workflows/*"
+    - ".gitignore"
+    - ".pubignore"
+    - "example/*"
+    - "lib/generated/*"
+    - "resources/*"
+    - "test/*"
+    - "tools/*"
+    - "pubspec.yaml"
+    - "pubspec.lock"
+    - "analysis_options.yaml"
+    - "README.md"
+    - "CHANGELOG.md"
+    - "CONTRIBUTING.md"
+    - "FAQ.md"
+    - "LICENSE"
+    - "source_release_id"
+    - "update_resources.sh"
+    - "codecov.yml"
+
+parsers:
+  dart:
+    enable: true
+
+fixes:
+  - "lib/::"
+
+flags:
+  unit_tests:
+    paths:
+      - "lib/"
+    carryforward: true
+
+github_checks:
+  annotations: true

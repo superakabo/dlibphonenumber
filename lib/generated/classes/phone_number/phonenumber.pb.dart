@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: phonenumber.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -15,6 +15,8 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'phonenumber.pbenum.dart';
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'phonenumber.pbenum.dart';
 
@@ -121,7 +123,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasCountryCode() => $_has(0);
   @$pb.TagNumber(1)
-  void clearCountryCode() => clearField(1);
+  void clearCountryCode() => $_clearField(1);
 
   ///  The National (significant) Number, as defined in International
   ///  Telecommunication Union (ITU) Recommendation E.164, without any leading
@@ -147,7 +149,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasNationalNumber() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNationalNumber() => clearField(2);
+  void clearNationalNumber() => $_clearField(2);
 
   /// Extension is not standardized in ITU recommendations, except for being
   /// defined as a series of numbers with a maximum length of 40 digits. It is
@@ -165,7 +167,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasExtension_3() => $_has(2);
   @$pb.TagNumber(3)
-  void clearExtension_3() => clearField(3);
+  void clearExtension_3() => $_clearField(3);
 
   ///  In some countries, the national (significant) number starts with one or
   ///  more "0"s without this being a national prefix or trunk code of some kind.
@@ -193,7 +195,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasItalianLeadingZero() => $_has(3);
   @$pb.TagNumber(4)
-  void clearItalianLeadingZero() => clearField(4);
+  void clearItalianLeadingZero() => $_clearField(4);
 
   /// This field is used to store the raw input string containing phone numbers
   /// before it was canonicalized by the library. For example, it could be used
@@ -208,20 +210,20 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasRawInput() => $_has(4);
   @$pb.TagNumber(5)
-  void clearRawInput() => clearField(5);
+  void clearRawInput() => $_clearField(5);
 
   /// The source from which the country_code is derived.
   @$pb.TagNumber(6)
   PhoneNumber_CountryCodeSource get countryCodeSource => $_getN(5);
   @$pb.TagNumber(6)
   set countryCodeSource(PhoneNumber_CountryCodeSource v) {
-    setField(6, v);
+    $_setField(6, v);
   }
 
   @$pb.TagNumber(6)
   $core.bool hasCountryCodeSource() => $_has(5);
   @$pb.TagNumber(6)
-  void clearCountryCodeSource() => clearField(6);
+  void clearCountryCodeSource() => $_clearField(6);
 
   ///  The carrier selection code that is preferred when calling this phone number
   ///  domestically. This also includes codes that need to be dialed in some
@@ -242,7 +244,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasPreferredDomesticCarrierCode() => $_has(6);
   @$pb.TagNumber(7)
-  void clearPreferredDomesticCarrierCode() => clearField(7);
+  void clearPreferredDomesticCarrierCode() => $_clearField(7);
 
   @$pb.TagNumber(8)
   $core.int get numberOfLeadingZeros => $_getI(7, 1);
@@ -254,7 +256,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool hasNumberOfLeadingZeros() => $_has(7);
   @$pb.TagNumber(8)
-  void clearNumberOfLeadingZeros() => clearField(8);
+  void clearNumberOfLeadingZeros() => $_clearField(8);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');

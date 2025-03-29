@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: phonemetadata.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -12,6 +12,8 @@
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class NumberFormat extends $pb.GeneratedMessage {
   factory NumberFormat({
@@ -103,7 +105,7 @@ class NumberFormat extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPattern() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPattern() => clearField(1);
+  void clearPattern() => $_clearField(1);
 
   /// format specifies how the national (significant) number matched by
   /// pattern should be formatted.
@@ -121,7 +123,7 @@ class NumberFormat extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasFormat() => $_has(1);
   @$pb.TagNumber(2)
-  void clearFormat() => clearField(2);
+  void clearFormat() => $_clearField(2);
 
   ///  This field is a regex that is used to match a certain number of digits
   ///  at the beginning of the national (significant) number. When the match is
@@ -138,7 +140,7 @@ class NumberFormat extends $pb.GeneratedMessage {
   ///  In the case when only one formatting pattern exists, no
   ///  leading_digits_pattern is needed.
   @$pb.TagNumber(3)
-  $core.List<$core.String> get leadingDigitsPattern => $_getList(2);
+  $pb.PbList<$core.String> get leadingDigitsPattern => $_getList(2);
 
   ///  This field specifies how the national prefix ($NP) together with the first
   ///  group ($FG) in the national significant number should be formatted in
@@ -166,7 +168,7 @@ class NumberFormat extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasNationalPrefixFormattingRule() => $_has(3);
   @$pb.TagNumber(4)
-  void clearNationalPrefixFormattingRule() => clearField(4);
+  void clearNationalPrefixFormattingRule() => $_clearField(4);
 
   /// This field specifies how any carrier code ($CC) together with the first
   /// group ($FG) in the national significant number should be formatted
@@ -182,7 +184,7 @@ class NumberFormat extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasDomesticCarrierCodeFormattingRule() => $_has(4);
   @$pb.TagNumber(5)
-  void clearDomesticCarrierCodeFormattingRule() => clearField(5);
+  void clearDomesticCarrierCodeFormattingRule() => $_clearField(5);
 
   /// This field specifies whether the $NP can be omitted when formatting a
   /// number in national format, even though it usually wouldn't be. For example,
@@ -202,7 +204,7 @@ class NumberFormat extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasNationalPrefixOptionalWhenFormatting() => $_has(5);
   @$pb.TagNumber(6)
-  void clearNationalPrefixOptionalWhenFormatting() => clearField(6);
+  void clearNationalPrefixOptionalWhenFormatting() => $_clearField(6);
 }
 
 /// If you add, remove, or rename fields, or change their semantics, check if you
@@ -286,7 +288,7 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasNationalNumberPattern() => $_has(0);
   @$pb.TagNumber(2)
-  void clearNationalNumberPattern() => clearField(2);
+  void clearNationalNumberPattern() => $_clearField(2);
 
   /// An example national significant number for the specific type. It should
   /// not contain any formatting information.
@@ -300,7 +302,7 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasExampleNumber() => $_has(1);
   @$pb.TagNumber(6)
-  void clearExampleNumber() => clearField(6);
+  void clearExampleNumber() => $_clearField(6);
 
   /// These represent the lengths a phone number from this region can be. They
   /// will be sorted from smallest to biggest. Note that these lengths are for
@@ -311,7 +313,7 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
   /// number, or to quickly prune numbers that could not possibly be a phone
   /// number for this locale.
   @$pb.TagNumber(9)
-  $core.List<$core.int> get possibleLength => $_getList(2);
+  $pb.PbList<$core.int> get possibleLength => $_getList(2);
 
   /// These represent the lengths that only local phone numbers (without an area
   /// code) from this region can be. They will be sorted from smallest to
@@ -327,7 +329,7 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
   /// This data is used to calculate whether a number could be a possible number
   /// for a particular type.
   @$pb.TagNumber(10)
-  $core.List<$core.int> get possibleLengthLocalOnly => $_getList(3);
+  $pb.PbList<$core.int> get possibleLengthLocalOnly => $_getList(3);
 }
 
 /// If you add, remove, or rename fields, or change their semantics, check if you
@@ -562,13 +564,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get generalDesc => $_getN(0);
   @$pb.TagNumber(1)
   set generalDesc(PhoneNumberDesc v) {
-    setField(1, v);
+    $_setField(1, v);
   }
 
   @$pb.TagNumber(1)
   $core.bool hasGeneralDesc() => $_has(0);
   @$pb.TagNumber(1)
-  void clearGeneralDesc() => clearField(1);
+  void clearGeneralDesc() => $_clearField(1);
   @$pb.TagNumber(1)
   PhoneNumberDesc ensureGeneralDesc() => $_ensure(0);
 
@@ -576,13 +578,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get fixedLine => $_getN(1);
   @$pb.TagNumber(2)
   set fixedLine(PhoneNumberDesc v) {
-    setField(2, v);
+    $_setField(2, v);
   }
 
   @$pb.TagNumber(2)
   $core.bool hasFixedLine() => $_has(1);
   @$pb.TagNumber(2)
-  void clearFixedLine() => clearField(2);
+  void clearFixedLine() => $_clearField(2);
   @$pb.TagNumber(2)
   PhoneNumberDesc ensureFixedLine() => $_ensure(1);
 
@@ -590,13 +592,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get mobile => $_getN(2);
   @$pb.TagNumber(3)
   set mobile(PhoneNumberDesc v) {
-    setField(3, v);
+    $_setField(3, v);
   }
 
   @$pb.TagNumber(3)
   $core.bool hasMobile() => $_has(2);
   @$pb.TagNumber(3)
-  void clearMobile() => clearField(3);
+  void clearMobile() => $_clearField(3);
   @$pb.TagNumber(3)
   PhoneNumberDesc ensureMobile() => $_ensure(2);
 
@@ -604,13 +606,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get tollFree => $_getN(3);
   @$pb.TagNumber(4)
   set tollFree(PhoneNumberDesc v) {
-    setField(4, v);
+    $_setField(4, v);
   }
 
   @$pb.TagNumber(4)
   $core.bool hasTollFree() => $_has(3);
   @$pb.TagNumber(4)
-  void clearTollFree() => clearField(4);
+  void clearTollFree() => $_clearField(4);
   @$pb.TagNumber(4)
   PhoneNumberDesc ensureTollFree() => $_ensure(3);
 
@@ -618,13 +620,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get premiumRate => $_getN(4);
   @$pb.TagNumber(5)
   set premiumRate(PhoneNumberDesc v) {
-    setField(5, v);
+    $_setField(5, v);
   }
 
   @$pb.TagNumber(5)
   $core.bool hasPremiumRate() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPremiumRate() => clearField(5);
+  void clearPremiumRate() => $_clearField(5);
   @$pb.TagNumber(5)
   PhoneNumberDesc ensurePremiumRate() => $_ensure(4);
 
@@ -632,13 +634,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get sharedCost => $_getN(5);
   @$pb.TagNumber(6)
   set sharedCost(PhoneNumberDesc v) {
-    setField(6, v);
+    $_setField(6, v);
   }
 
   @$pb.TagNumber(6)
   $core.bool hasSharedCost() => $_has(5);
   @$pb.TagNumber(6)
-  void clearSharedCost() => clearField(6);
+  void clearSharedCost() => $_clearField(6);
   @$pb.TagNumber(6)
   PhoneNumberDesc ensureSharedCost() => $_ensure(5);
 
@@ -646,13 +648,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get personalNumber => $_getN(6);
   @$pb.TagNumber(7)
   set personalNumber(PhoneNumberDesc v) {
-    setField(7, v);
+    $_setField(7, v);
   }
 
   @$pb.TagNumber(7)
   $core.bool hasPersonalNumber() => $_has(6);
   @$pb.TagNumber(7)
-  void clearPersonalNumber() => clearField(7);
+  void clearPersonalNumber() => $_clearField(7);
   @$pb.TagNumber(7)
   PhoneNumberDesc ensurePersonalNumber() => $_ensure(6);
 
@@ -660,13 +662,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get voip => $_getN(7);
   @$pb.TagNumber(8)
   set voip(PhoneNumberDesc v) {
-    setField(8, v);
+    $_setField(8, v);
   }
 
   @$pb.TagNumber(8)
   $core.bool hasVoip() => $_has(7);
   @$pb.TagNumber(8)
-  void clearVoip() => clearField(8);
+  void clearVoip() => $_clearField(8);
   @$pb.TagNumber(8)
   PhoneNumberDesc ensureVoip() => $_ensure(7);
 
@@ -685,7 +687,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasId() => $_has(8);
   @$pb.TagNumber(9)
-  void clearId() => clearField(9);
+  void clearId() => $_clearField(9);
 
   /// The country calling code that one would dial from overseas when trying to
   /// dial a phone number in this country. For example, this would be "64" for
@@ -700,7 +702,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $core.bool hasCountryCode() => $_has(9);
   @$pb.TagNumber(10)
-  void clearCountryCode() => clearField(10);
+  void clearCountryCode() => $_clearField(10);
 
   /// The international_prefix of country A is the number that needs to be
   /// dialled from country A to another country (country B). This is followed
@@ -717,7 +719,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $core.bool hasInternationalPrefix() => $_has(10);
   @$pb.TagNumber(11)
-  void clearInternationalPrefix() => clearField(11);
+  void clearInternationalPrefix() => $_clearField(11);
 
   /// The national prefix of country A is the number that needs to be dialled
   /// before the national significant number when dialling internally. This
@@ -735,7 +737,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.bool hasNationalPrefix() => $_has(11);
   @$pb.TagNumber(12)
-  void clearNationalPrefix() => clearField(12);
+  void clearNationalPrefix() => $_clearField(12);
 
   /// The preferred prefix when specifying an extension in this country. This is
   /// used for formatting only, and if this is not specified, a suitable default
@@ -753,7 +755,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   $core.bool hasPreferredExtnPrefix() => $_has(12);
   @$pb.TagNumber(13)
-  void clearPreferredExtnPrefix() => clearField(13);
+  void clearPreferredExtnPrefix() => $_clearField(13);
 
   ///  This field is used for cases where the national prefix of a country
   ///  contains a carrier selection code, and is written in the form of a
@@ -775,7 +777,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(15)
   $core.bool hasNationalPrefixForParsing() => $_has(13);
   @$pb.TagNumber(15)
-  void clearNationalPrefixForParsing() => clearField(15);
+  void clearNationalPrefixForParsing() => $_clearField(15);
 
   /// This field is only populated and used under very rare situations.
   /// For example, mobile numbers in Argentina are written in two completely
@@ -794,7 +796,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(16)
   $core.bool hasNationalPrefixTransformRule() => $_has(14);
   @$pb.TagNumber(16)
-  void clearNationalPrefixTransformRule() => clearField(16);
+  void clearNationalPrefixTransformRule() => $_clearField(16);
 
   /// If the international prefix that we want to use when formatting the number
   /// for out-of-country dialling contains non-digit symbols, or there is more
@@ -812,7 +814,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(17)
   $core.bool hasPreferredInternationalPrefix() => $_has(15);
   @$pb.TagNumber(17)
-  void clearPreferredInternationalPrefix() => clearField(17);
+  void clearPreferredInternationalPrefix() => $_clearField(17);
 
   /// Specifies whether the mobile and fixed-line patterns are the same or not.
   /// This is used to speed up determining phone number type in countries where
@@ -827,7 +829,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(18)
   $core.bool hasSameMobileAndFixedLinePattern() => $_has(16);
   @$pb.TagNumber(18)
-  void clearSameMobileAndFixedLinePattern() => clearField(18);
+  void clearSameMobileAndFixedLinePattern() => $_clearField(18);
 
   /// Note that the number format here is used for formatting only, not parsing.
   /// Hence all the varied ways a user *may* write a number need not be recorded
@@ -835,7 +837,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   /// is absent, the national significant number will be formatted as a whole
   /// without any formatting applied.
   @$pb.TagNumber(19)
-  $core.List<NumberFormat> get numberFormat => $_getList(17);
+  $pb.PbList<NumberFormat> get numberFormat => $_getList(17);
 
   ///  This field is populated only when the national significant number is
   ///  formatted differently when it forms part of the INTERNATIONAL format
@@ -863,19 +865,19 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   ///        `<intlFormat>`NA`</intlFormat>`
   ///      `</numberFormat>`
   @$pb.TagNumber(20)
-  $core.List<NumberFormat> get intlNumberFormat => $_getList(18);
+  $pb.PbList<NumberFormat> get intlNumberFormat => $_getList(18);
 
   @$pb.TagNumber(21)
   PhoneNumberDesc get pager => $_getN(19);
   @$pb.TagNumber(21)
   set pager(PhoneNumberDesc v) {
-    setField(21, v);
+    $_setField(21, v);
   }
 
   @$pb.TagNumber(21)
   $core.bool hasPager() => $_has(19);
   @$pb.TagNumber(21)
-  void clearPager() => clearField(21);
+  void clearPager() => $_clearField(21);
   @$pb.TagNumber(21)
   PhoneNumberDesc ensurePager() => $_ensure(19);
 
@@ -895,7 +897,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(22)
   $core.bool hasMainCountryForCode() => $_has(20);
   @$pb.TagNumber(22)
-  void clearMainCountryForCode() => clearField(22);
+  void clearMainCountryForCode() => $_clearField(22);
 
   /// This field is populated only for countries or regions that share a country
   /// calling code. If a number matches this pattern, it could belong to this
@@ -917,7 +919,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(23)
   $core.bool hasLeadingDigits() => $_has(21);
   @$pb.TagNumber(23)
-  void clearLeadingDigits() => clearField(23);
+  void clearLeadingDigits() => $_clearField(23);
 
   /// The rules here distinguish the numbers that are only able to be dialled
   /// nationally.
@@ -925,13 +927,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get noInternationalDialling => $_getN(22);
   @$pb.TagNumber(24)
   set noInternationalDialling(PhoneNumberDesc v) {
-    setField(24, v);
+    $_setField(24, v);
   }
 
   @$pb.TagNumber(24)
   $core.bool hasNoInternationalDialling() => $_has(22);
   @$pb.TagNumber(24)
-  void clearNoInternationalDialling() => clearField(24);
+  void clearNoInternationalDialling() => $_clearField(24);
   @$pb.TagNumber(24)
   PhoneNumberDesc ensureNoInternationalDialling() => $_ensure(22);
 
@@ -939,13 +941,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get uan => $_getN(23);
   @$pb.TagNumber(25)
   set uan(PhoneNumberDesc v) {
-    setField(25, v);
+    $_setField(25, v);
   }
 
   @$pb.TagNumber(25)
   $core.bool hasUan() => $_has(23);
   @$pb.TagNumber(25)
-  void clearUan() => clearField(25);
+  void clearUan() => $_clearField(25);
   @$pb.TagNumber(25)
   PhoneNumberDesc ensureUan() => $_ensure(23);
 
@@ -953,13 +955,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get emergency => $_getN(24);
   @$pb.TagNumber(27)
   set emergency(PhoneNumberDesc v) {
-    setField(27, v);
+    $_setField(27, v);
   }
 
   @$pb.TagNumber(27)
   $core.bool hasEmergency() => $_has(24);
   @$pb.TagNumber(27)
-  void clearEmergency() => clearField(27);
+  void clearEmergency() => $_clearField(27);
   @$pb.TagNumber(27)
   PhoneNumberDesc ensureEmergency() => $_ensure(24);
 
@@ -967,13 +969,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get voicemail => $_getN(25);
   @$pb.TagNumber(28)
   set voicemail(PhoneNumberDesc v) {
-    setField(28, v);
+    $_setField(28, v);
   }
 
   @$pb.TagNumber(28)
   $core.bool hasVoicemail() => $_has(25);
   @$pb.TagNumber(28)
-  void clearVoicemail() => clearField(28);
+  void clearVoicemail() => $_clearField(28);
   @$pb.TagNumber(28)
   PhoneNumberDesc ensureVoicemail() => $_ensure(25);
 
@@ -981,13 +983,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get shortCode => $_getN(26);
   @$pb.TagNumber(29)
   set shortCode(PhoneNumberDesc v) {
-    setField(29, v);
+    $_setField(29, v);
   }
 
   @$pb.TagNumber(29)
   $core.bool hasShortCode() => $_has(26);
   @$pb.TagNumber(29)
-  void clearShortCode() => clearField(29);
+  void clearShortCode() => $_clearField(29);
   @$pb.TagNumber(29)
   PhoneNumberDesc ensureShortCode() => $_ensure(26);
 
@@ -995,13 +997,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get standardRate => $_getN(27);
   @$pb.TagNumber(30)
   set standardRate(PhoneNumberDesc v) {
-    setField(30, v);
+    $_setField(30, v);
   }
 
   @$pb.TagNumber(30)
   $core.bool hasStandardRate() => $_has(27);
   @$pb.TagNumber(30)
-  void clearStandardRate() => clearField(30);
+  void clearStandardRate() => $_clearField(30);
   @$pb.TagNumber(30)
   PhoneNumberDesc ensureStandardRate() => $_ensure(27);
 
@@ -1009,13 +1011,13 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   PhoneNumberDesc get carrierSpecific => $_getN(28);
   @$pb.TagNumber(31)
   set carrierSpecific(PhoneNumberDesc v) {
-    setField(31, v);
+    $_setField(31, v);
   }
 
   @$pb.TagNumber(31)
   $core.bool hasCarrierSpecific() => $_has(28);
   @$pb.TagNumber(31)
-  void clearCarrierSpecific() => clearField(31);
+  void clearCarrierSpecific() => $_clearField(31);
   @$pb.TagNumber(31)
   PhoneNumberDesc ensureCarrierSpecific() => $_ensure(28);
 
@@ -1033,19 +1035,19 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(32)
   $core.bool hasMobileNumberPortableRegion() => $_has(29);
   @$pb.TagNumber(32)
-  void clearMobileNumberPortableRegion() => clearField(32);
+  void clearMobileNumberPortableRegion() => $_clearField(32);
 
   @$pb.TagNumber(33)
   PhoneNumberDesc get smsServices => $_getN(30);
   @$pb.TagNumber(33)
   set smsServices(PhoneNumberDesc v) {
-    setField(33, v);
+    $_setField(33, v);
   }
 
   @$pb.TagNumber(33)
   $core.bool hasSmsServices() => $_has(30);
   @$pb.TagNumber(33)
-  void clearSmsServices() => clearField(33);
+  void clearSmsServices() => $_clearField(33);
   @$pb.TagNumber(33)
   PhoneNumberDesc ensureSmsServices() => $_ensure(30);
 }
@@ -1103,7 +1105,7 @@ class PhoneMetadataCollection extends $pb.GeneratedMessage {
   static PhoneMetadataCollection? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<PhoneMetadata> get metadata => $_getList(0);
+  $pb.PbList<PhoneMetadata> get metadata => $_getList(0);
 }
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
