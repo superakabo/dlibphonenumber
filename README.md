@@ -13,34 +13,34 @@ A Dart package for working with international phone numbers based on Google's li
 ✅ **Parse, format, and validate** phone numbers [[`parse()`](#parse-a-phone-number), [`format()`](#format-a-phone-number), [`isValidNumber()`](#validate-a-phone-number)]\
 ➝ Convert raw phone numbers into structured objects, apply different formats, and check validity.
 
-✅ **Identify phone number types** [[`getNumberType()`](#🔢-identify-number-types)]\
+✅ **Identify phone number types** [[`getNumberType()`](#identify-number-types)]\
 ➝ Distinguishes between Fixed-line, Mobile, Toll-free, Premium Rate, VoIP, etc.
 
-✅ **Match and compare phone numbers** [[`isNumberMatch()`](#🔄-match-and-compare-phone-numbers)]\
+✅ **Match and compare phone numbers** [[`isNumberMatch()`](#match-and-compare-phone-numbers)]\
 ➝ Determines whether two numbers are the same or similar.
 
-✅ **Generate example phone numbers** [[`getExampleNumber()`](#💡-generate-example-numbers)]\
+✅ **Generate example phone numbers** [[`getExampleNumber()`](#generate-example-numbers)]\
 ➝ Provides valid phone number examples for various countries/regions.
 
-✅ **Perform quick validation** [[`isPossibleNumber()`](#👌-perform-quick-validation)]\
+✅ **Perform quick validation** [[`isPossibleNumber()`](#perform-quick-validation)]\
 ➝ Checks if a number has a valid length without requiring region-specific details.
 
-✅ **Validate phone numbers for a specific region** [[`isValidNumberForRegion()`](#🌍-validate-numbers-for-a-specific-region)]\
+✅ **Validate phone numbers for a specific region** [[`isValidNumberForRegion()`](#validate-numbers-for-a-specific-region)]\
 ➝ Ensures a phone number is valid in the given country based on length and prefix rules.
 
-✅ **Format phone numbers as-you-type** [[`getAsYouTypeFormatter()`](#📐-format-numbers-as-you-type)]\
+✅ **Format phone numbers as-you-type** [[`getAsYouTypeFormatter()`](#format-numbers-as-you-type)]\
 ➝ Dynamically formats phone numbers as users enter each digit.
 
-✅ **Extract phone numbers from text** [[`findNumbers()`](#🔍-extract-numbers-from-text)]\
+✅ **Extract phone numbers from text** [[`findNumbers()`](#extract-numbers-from-text)]\
 ➝ Detects phone numbers within a block of text (e.g., 'Call me on 0241234567').
 
-✅ **Geocode phone numbers** [[`getDescriptionForNumber()`](#🌍-geocode-a-phone-number)]\
+✅ **Geocode phone numbers** [[`getDescriptionForNumber()`](#geocode-a-phone-number)]\
 ➝ Retrieves geographical information related to a phone number (e.g., 'Zurich' for a Swiss number).
 
-✅ **Retrieve carrier information** [[`getNameForNumber()`](#📡-retrieve-carrier-information)]\
+✅ **Retrieve carrier information** [[`getNameForNumber()`](#retrieve-carrier-information)]\
 ➝ Identifies the telecom provider associated with a number (e.g., 'AT&T', 'Vodafone').
 
-✅ **Find associated timezones** [[`getTimeZonesForNumber()`](#🕰-find-associated-time-zones)]\
+✅ **Find associated timezones** [[`getTimeZonesForNumber()`](#find-associated-time-zones)]\
 ➝ Returns timezone(s) linked to a phone number (e.g., 'America/New_York').
 
 ## 🚀 Quick Start
@@ -62,7 +62,7 @@ flutter pub get
 
 ### 🏗️ Usage
 
-<h4 id="parse-a-phone-number">📞 Parse a Phone Number</h2>
+<h4 id="parse-a-phone-number">📞 Parse a Phone Number</h4>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
@@ -72,7 +72,7 @@ final PhoneNumber phoneNumber = phoneUtil.parse('0241234567', 'GH');
 print('$phoneNumber'); // countryCode: 233, nationalNumber: 241234567
 ```
 
-#### 👍 Validate a Phone Number
+<h4 id="validate-a-phone-number">👍 Validate a Phone Number</h4>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
@@ -83,7 +83,7 @@ final bool validPhoneNumber = phoneUtil.isValidNumber(phoneNumber);
 print('$validPhoneNumber'); // true
 ```
 
-#### 📐 Format a Phone Number
+<h4 id="format-a-phone-number">📐 Format a Phone Number</h4>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
@@ -104,7 +104,7 @@ final String rfc3966 = phoneUtil.format(phoneNumber, PhoneNumberFormat.rfc3966);
 print('$rfc3966'); // tel:+233-24-123-4567
 ```
 
-#### 🔢 Identify Number Types
+<h4 id="identify-number-types">🔢 Identify Number Types</h4>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
@@ -115,7 +115,7 @@ final PhoneNumberType type = phoneUtil.getNumberType(phoneNumber);
 print('$type'); // PhoneNumberType.mobile
 ```
 
-#### 🔄 Match and Compare Phone Numbers
+<h4 id="match-and-compare-phone-numbers">🔄 Match and Compare Phone Numbers</h4>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
@@ -127,7 +127,7 @@ final MatchType matchType = phoneUtil.isNumberMatch(phoneNumber1, phoneNumber2);
 print('$matchType'); // MatchType.exactMatch
 ```
 
-#### 💡 Generate Example Numbers
+<h4 id="generate-example-numbers">💡 Generate Example Numbers</h4>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
@@ -137,7 +137,7 @@ final PhoneNumber? examplePhoneNumber = phoneUtil.getExampleNumber('GH');
 print('$examplePhoneNumber'); // countryCode: 233, nationalNumber: 302345678
 ```
 
-#### 👌 Perform Quick Validation
+<h4 id="perform-quick-validation">👌 Perform Quick Validation</h4>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
@@ -148,7 +148,7 @@ final bool isPhoneNumber = phoneUtil.isPossibleNumber(phoneNumber);
 print('$isPhoneNumber'); // true
 ```
 
-#### 🌍 Validate Numbers for a Specific Region
+<h4 id="validate-numbers-for-a-specific-region">🌍 Validate Numbers for a Specific Region</h4>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
@@ -159,8 +159,7 @@ final bool isValidRegionNumber = phoneUtil.isValidNumberForRegion(phoneNumber, '
 print('$isValidRegionNumber'); // false
 ```
 
-
-#### 🔍 Extract Numbers from Text
+<h4 id="extract-numbers-from-text">🔍 Extract Numbers from Text</h4>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
@@ -170,7 +169,7 @@ final Iterable<PhoneNumberMatch> foundPhoneNumbers = phoneUtil.findNumbers('Call
 print('${foundPhoneNumbers.map((e) => e.number)}'); // [countryCode: 233, nationalNumber: 201234567]
 ```
 
-#### 🌍 Geocode a Phone Number
+<h4 id="geocode-a-phone-number">🌍 Geocode a Phone Number</h4>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
@@ -181,7 +180,7 @@ final String territory = PhoneNumberOfflineGeocoder.instance.getDescriptionForNu
 print('$territory'); // Ghana
 ```
 
-#### 📡 Retrieve Carrier Information
+<h4 id="retrieve-carrier-information">📡 Retrieve Carrier Information</h4>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
@@ -192,7 +191,7 @@ final String carrier = PhoneNumberToCarrierMapper.instance.getNameForNumber(phon
 print('$carrier'); // MTN
 ```
 
-#### 🕰 Find Associated Time Zones
+<h4 id="find-associated-time-zones">🕰 Find Associated Time Zones</h4>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
@@ -203,7 +202,7 @@ final List<String> timezones = PhoneNumberToTimeZonesMapper.instance.getTimeZone
 print('$timezones'); // [Africa/Accra]
 ```
 
-#### 📐 Format Numbers As-You-Type
+<h4 id="format-numbers-as-you-type">📐 Format Numbers As-You-Type</h4>
 
 ```dart
 import 'package:dlibphonenumber/dlibphonenumber.dart';
