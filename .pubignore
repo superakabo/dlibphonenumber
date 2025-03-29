@@ -22,3 +22,6 @@ source_release_id
 
 # ignore codecov.yml used for code coverage reports
 codecov.yml
+
+# ignore code coverage directory
+coverage
