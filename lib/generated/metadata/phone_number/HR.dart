@@ -6,9 +6,8 @@
 Map<String, Object?> getHR() {
   return {
     "generalDesc": {
-      "nationalNumberPattern":
-          "(?:[24-69]\\d|3[0-79])\\d{7}|80\\d{5,7}|[1-79]\\d{7}|6\\d{5,6}",
-      "possibleLength": [6, 7, 8, 9],
+      "nationalNumberPattern": "[2-69]\\d{8}|80\\d{5,7}|[1-79]\\d{7}|6\\d{6}",
+      "possibleLength": [7, 8, 9],
       "possibleLengthLocalOnly": [6, 7]
     },
     "fixedLine": {
@@ -32,9 +31,9 @@ Map<String, Object?> getHR() {
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "nationalNumberPattern": "6[01459]\\d{6}|6[01]\\d{4,5}",
-      "exampleNumber": "611234",
-      "possibleLength": [6, 7, 8],
+      "nationalNumberPattern": "6[01459]\\d{6}|6[01]\\d{5}",
+      "exampleNumber": "6001234",
+      "possibleLength": [7, 8],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {
@@ -59,7 +58,7 @@ Map<String, Object?> getHR() {
     "sameMobileAndFixedLinePattern": false,
     "numberFormat": [
       {
-        "pattern": "(\\d{2})(\\d{2})(\\d{2,3})",
+        "pattern": "(\\d{2})(\\d{2})(\\d{3})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["6[01]"],
         "nationalPrefixFormattingRule": "0\$1",
@@ -110,7 +109,7 @@ Map<String, Object?> getHR() {
     ],
     "intlNumberFormat": [
       {
-        "pattern": "(\\d{2})(\\d{2})(\\d{2,3})",
+        "pattern": "(\\d{2})(\\d{2})(\\d{3})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["6[01]"],
         "nationalPrefixFormattingRule": "0\$1",

@@ -220,6 +220,7 @@ Map<int, String> get52_en() {
     52652: "Chihuahua",
     52653: "Luis B. Sanchez/San Luis Rio Colorado, SON",
     52656: "Chihuahua",
+    52657: "Chihuahua",
     52658: "Baja California",
     52659: "Chihuahua",
     52660: "Culiacan",
@@ -384,8 +385,6 @@ Map<int, String> get52_en() {
     52996: "Campeche",
     52997: "Yucatan",
     52998: "Quintana Roo",
-    52999: "Conkal/Merida, YUC",
-    526571: "Chihuahua",
-    526572: "Juarez/Chihuahua"
+    52999: "Conkal/Merida, YUC"
   };
 }

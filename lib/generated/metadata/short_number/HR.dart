@@ -6,7 +6,7 @@
 Map<String, Object?> getHR() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[19]\\d{1,5}",
+      "nationalNumberPattern": "[016-9]\\d{1,5}",
       "possibleLength": [2, 3, 4, 5, 6]
     },
     "fixedLine": {
@@ -24,9 +24,9 @@ Map<String, Object?> getHR() {
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "nationalNumberPattern": "118\\d\\d",
-      "exampleNumber": "11800",
-      "possibleLength": [5],
+      "nationalNumberPattern": "06\\d|(?:118|[6-8]\\d{3})\\d\\d",
+      "exampleNumber": "060",
+      "possibleLength": [3, 5, 6],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {
@@ -69,7 +69,7 @@ Map<String, Object?> getHR() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "1(?:1(?:2|6(?:00[06]|1(?:1[17]|23))|8\\d\\d)|3977|9(?:[2-5]|87))|9[34]",
+          "(?:06|[6-8]\\d{4})\\d|1(?:1(?:2|6(?:00[06]|1(?:1[17]|23))|8\\d\\d)|3977|9(?:[2-5]|87))|9[34]",
       "exampleNumber": "93",
       "possibleLength": [2, 3, 4, 5, 6],
       "possibleLengthLocalOnly": [-1]

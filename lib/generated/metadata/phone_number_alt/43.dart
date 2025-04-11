@@ -96,7 +96,7 @@ Map<String, Object?> get43() {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})(\\d{3,4})",
         "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": [
-          "(?:31|4)6|51|6(?:5[0-3579]|[6-9])|7(?:20|32|8)|[89]"
+          "(?:31|4)6|51|6(?:485|5[0-3579]|[6-9])|7(?:20|32|8)|[89]"
         ],
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -104,7 +104,7 @@ Map<String, Object?> get43() {
         "pattern": "(\\d{3})(\\d{3})(\\d{2})(\\d{2,3})",
         "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": [
-          "(?:31|4)6|51|6(?:5[0-3579]|[6-9])|7(?:20|32|8)|[89]"
+          "(?:31|4)6|51|6(?:485|5[0-3579]|[6-9])|7(?:20|32|8)|[89]"
         ],
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -112,7 +112,7 @@ Map<String, Object?> get43() {
         "pattern": "(\\d{3})(\\d{2})(\\d{2})(\\d{2,3})",
         "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": [
-          "(?:31|4)6|51|6(?:5[0-3579]|[6-9])|7(?:20|32|8)|[89]"
+          "(?:31|4)6|51|6(?:485|5[0-3579]|[6-9])|7(?:20|32|8)|[89]"
         ],
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -120,7 +120,7 @@ Map<String, Object?> get43() {
         "pattern": "(\\d{4})(\\d{3})(\\d{3,4})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": [
-          "2|3(?:1[1-578]|[3-68])|4[2378]|5[2-6]|6(?:[124]|5[468])|7(?:2[1-8]|35|[4-79])"
+          "2|3(?:1[1-578]|[3-68])|4[2378]|5[2-6]|6(?:[12]|4(?:[135-7]|8[34])|5[468])|7(?:2[1-8]|35|[4-79])"
         ],
         "nationalPrefixOptionalWhenFormatting": false
       }
@@ -184,7 +184,7 @@ Map<String, Object?> get43() {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})(\\d{3,4})",
         "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": [
-          "(?:31|4)6|51|6(?:5[0-3579]|[6-9])|7(?:20|32|8)|[89]"
+          "(?:31|4)6|51|6(?:485|5[0-3579]|[6-9])|7(?:20|32|8)|[89]"
         ],
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -192,7 +192,7 @@ Map<String, Object?> get43() {
         "pattern": "(\\d{3})(\\d{3})(\\d{2})(\\d{2,3})",
         "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": [
-          "(?:31|4)6|51|6(?:5[0-3579]|[6-9])|7(?:20|32|8)|[89]"
+          "(?:31|4)6|51|6(?:485|5[0-3579]|[6-9])|7(?:20|32|8)|[89]"
         ],
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -200,7 +200,7 @@ Map<String, Object?> get43() {
         "pattern": "(\\d{3})(\\d{2})(\\d{2})(\\d{2,3})",
         "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": [
-          "(?:31|4)6|51|6(?:5[0-3579]|[6-9])|7(?:20|32|8)|[89]"
+          "(?:31|4)6|51|6(?:485|5[0-3579]|[6-9])|7(?:20|32|8)|[89]"
         ],
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -208,7 +208,7 @@ Map<String, Object?> get43() {
         "pattern": "(\\d{4})(\\d{3})(\\d{3,4})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": [
-          "2|3(?:1[1-578]|[3-68])|4[2378]|5[2-6]|6(?:[124]|5[468])|7(?:2[1-8]|35|[4-79])"
+          "2|3(?:1[1-578]|[3-68])|4[2378]|5[2-6]|6(?:[12]|4(?:[135-7]|8[34])|5[468])|7(?:2[1-8]|35|[4-79])"
         ],
         "nationalPrefixOptionalWhenFormatting": false
       }

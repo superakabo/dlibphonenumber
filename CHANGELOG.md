@@ -1,3 +1,10 @@
+## 1.1.36
+- Updated alternate formatting data for country calling code(s): 43
+- Updated phone metadata for region code(s): AT, GD, HK, HR, MX, RE
+- Updated short number metadata for region code(s): HR
+- Updated geocoding data for country calling code(s): 52 (en)
+- Updated carrier data for country calling code(s): 43 (en), 229 (en), 262 (en), 852 (en, zh)
+
 ## 1.1.35
 - Updated phone metadata for region code(s): NR, US, UZ, ZA
 - New geocoding data for country calling code(s): 1821 (en)
