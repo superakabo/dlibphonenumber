@@ -111,19 +111,11 @@ dart format ./test
 dart fix --apply
 
 # Run tests
-if [ "$GITHUB_ACTIONS" = "true" ]; then
-# Install and run tests with coverage for CI
-    dart pub global activate coverage
-    dart pub global run coverage:test_with_coverage
-# Upload test coverage to Codecov
-    curl -s https://codecov.io/bash | bash
-else
-    dart test -r expanded
-fi
+dart test -r expanded
 
 # Check if it is running in GitHub Actions and commit changes.
 if [ "$GITHUB_ACTIONS" = "true" ]; then
-# configure github user properties.
+# Configure github user properties.
     git config user.name "superakabo"
     git config user.email "superakabo@gmail.com"
 #

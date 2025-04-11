@@ -12,7 +12,7 @@ void main() {
   final PhoneNumberType numberType1 = phoneUtil.getNumberType(phoneNumber1);
   final PhoneNumberType numberType2 = phoneUtil.getNumberType(phoneNumber2);
   final MatchType matchType = phoneUtil.isNumberMatch(phoneNumber1, phoneNumber2);
-  final PhoneNumber? examplePhoneNumber = phoneUtil.getExampleNumber('GH');
+  final PhoneNumber? examplePhoneNumber = phoneUtil.getExampleNumber('IC');
   final bool isPhoneNumber = phoneUtil.isPossibleNumber(phoneNumber2);
   final bool isValidRegionNumber = phoneUtil.isValidNumberForRegion(phoneNumber1, 'US');
   final AsYouTypeFormatter asYouTypeFormatter = phoneUtil.getAsYouTypeFormatter('GH');
