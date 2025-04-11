@@ -25,3 +25,5 @@ codecov.yml
 
 # ignore code coverage directory
 coverage/
+coverage.lcov
+codecov.*
