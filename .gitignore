@@ -15,4 +15,5 @@ resources/release_notes.txt
 
 # ignore code coverage directory
 coverage/
-
+coverage.lcov
+codecov.*
