@@ -6,15 +6,15 @@
 Map<String, Object?> getNG() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "38\\d{6}|[78]\\d{9,13}|(?:20|9\\d)\\d{8}",
-      "possibleLength": [8, 10, 11, 12, 13, 14],
+      "nationalNumberPattern": "(?:20|9\\d)\\d{8}|[78]\\d{9,13}",
+      "possibleLength": [10, 11, 12, 13, 14],
       "possibleLengthLocalOnly": [6, 7]
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "(?:20(?:[1259]\\d|3[013-9]|4[1-8]|6[024-689]|7[1-79]|8[2-9])|38)\\d{6}",
+          "20(?:[1259]\\d|3[013-9]|4[1-8]|6[024-689]|7[1-79]|8[2-9])\\d{6}",
       "exampleNumber": "2033123456",
-      "possibleLength": [8, 10],
+      "possibleLength": [10],
       "possibleLengthLocalOnly": [6, 7]
     },
     "mobile": {
@@ -54,13 +54,6 @@ Map<String, Object?> getNG() {
     "sameMobileAndFixedLinePattern": false,
     "numberFormat": [
       {
-        "pattern": "(\\d{2})(\\d{3})(\\d{2,3})",
-        "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["3"],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
         "pattern": "(\\d{3})(\\d{3})(\\d{3,4})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["[7-9]"],
@@ -97,13 +90,6 @@ Map<String, Object?> getNG() {
       }
     ],
     "intlNumberFormat": [
-      {
-        "pattern": "(\\d{2})(\\d{3})(\\d{2,3})",
-        "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["3"],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{3,4})",
         "format": "\$1 \$2 \$3",

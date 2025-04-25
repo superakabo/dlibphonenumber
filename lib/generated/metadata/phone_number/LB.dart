@@ -11,14 +11,14 @@ Map<String, Object?> getLB() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "7(?:62|8[0-7]|9[04-9])\\d{4}|(?:[14-69]\\d|2(?:[14-69]\\d|[78][1-9])|7[2-57]|8[02-9])\\d{5}",
+          "7(?:62|8[0-6]|9[04-9])\\d{4}|(?:[14-69]\\d|2(?:[14-69]\\d|[78][1-9])|7[2-57]|8[02-9])\\d{5}",
       "exampleNumber": "1123456",
       "possibleLength": [7, 8],
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
       "nationalNumberPattern":
-          "793(?:[01]\\d|2[0-4])\\d{3}|(?:(?:3|81)\\d|7(?:[01]\\d|6[013-9]|8[89]|9[12]))\\d{5}",
+          "787\\d{4}|(?:(?:3|81)\\d|7(?:[01]\\d|6[013-9]|8[89]|9[1-3]))\\d{5}",
       "exampleNumber": "71123456",
       "possibleLength": [7, 8],
       "possibleLengthLocalOnly": [-1]

@@ -44,6 +44,7 @@ Map<int, String> get961_en() {
     961767: "Touch",
     961768: "Touch",
     961769: "Touch",
+    961787: "Touch",
     961788: "Touch",
     961789: "Touch",
     961791: "Alfa",

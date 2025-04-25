@@ -43,6 +43,8 @@ Map<int, String> get230_en() {
     230702: "MTML",
     230703: "Emtel",
     230704: "Emtel",
+    230705: "Cellplus",
+    230706: "Cellplus",
     230730: "Emtel",
     230731: "MTML",
     230733: "Cellplus",

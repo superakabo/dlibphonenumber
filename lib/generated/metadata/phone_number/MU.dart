@@ -11,14 +11,14 @@ Map<String, Object?> getMU() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "(?:2(?:[0346-8]\\d|1[0-7])|4(?:[013568]\\d|2[4-8]|71|90)|54(?:[3-5]\\d|71)|6\\d\\d|8(?:14|3[129]))\\d{4}",
+          "(?:2(?:[0346-8]\\d|1[0-8])|4(?:[013568]\\d|2[4-8]|71|90)|54(?:[3-5]\\d|71)|6\\d\\d|8(?:14|3[129]))\\d{4}",
       "exampleNumber": "54480123",
       "possibleLength": [7, 8],
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
       "nationalNumberPattern":
-          "5(?:4(?:2[1-389]|7[1-9])|87[15-8])\\d{4}|(?:5(?:2[5-9]|4[3-689]|[57]\\d|8[0-689]|9[0-8])|7(?:0[0-4]|3[013]))\\d{5}",
+          "5(?:4(?:2[1-389]|7[1-9])|87[15-8])\\d{4}|(?:5(?:2[5-9]|4[3-689]|[57]\\d|8[0-689]|9[0-8])|7(?:0[0-6]|3[013]))\\d{5}",
       "exampleNumber": "52512345",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
@@ -95,7 +95,9 @@ Map<String, Object?> getMU() {
       }
     ],
     "pager": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "219\\d{4}",
+      "exampleNumber": "2190123",
+      "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]
     },
     "mainCountryForCode": false,

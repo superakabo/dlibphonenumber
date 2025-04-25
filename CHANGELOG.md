@@ -1,3 +1,8 @@
+## 1.1.37
+- Updated phone metadata for region code(s): BI, BR, LB, MU, NG, SG, SY
+- Updated geocoding data for country calling code(s): 55 (en), 230 (en, es, fr), 234 (en)
+- Updated carrier data for country calling code(s): 33 (en), 65 (en), 230 (en), 961 (en), 963 (en)
+
 ## 1.1.36
 - Updated alternate formatting data for country calling code(s): 43
 - Updated phone metadata for region code(s): AT, GD, HK, HR, MX, RE

@@ -5,7 +5,6 @@
 /// Geocoding JSON data for 234_en
 Map<int, String> get234_en() {
   return {
-    2343: "Oyo",
     234201: "Lagos",
     234202: "Ibadan",
     234209: "Abuja",

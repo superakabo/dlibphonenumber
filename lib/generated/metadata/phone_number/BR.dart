@@ -7,7 +7,7 @@ Map<String, Object?> getBR() {
   return {
     "generalDesc": {
       "nationalNumberPattern":
-          "(?:[1-46-9]\\d\\d|5(?:[0-46-9]\\d|5[0-46-9]))\\d{8}|[1-9]\\d{9}|[3589]\\d{8}|[34]\\d{7}",
+          "[1-467]\\d{9,10}|55[0-46-9]\\d{8}|[34]\\d{7}|55\\d{7,8}|(?:5[0-46-9]|[89]\\d)\\d{7,9}",
       "possibleLength": [8, 9, 10, 11],
       "possibleLengthLocalOnly": [8, 9]
     },
@@ -32,14 +32,14 @@ Map<String, Object?> getBR() {
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "nationalNumberPattern": "300\\d{6}|[59]00\\d{6,7}",
-      "exampleNumber": "300123456",
+      "nationalNumberPattern": "[59]00\\d{6,7}",
+      "exampleNumber": "500123456",
       "possibleLength": [9, 10],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {
       "nationalNumberPattern":
-          "(?:30[03]\\d{3}|4(?:0(?:0\\d|20)|370))\\d{4}|300\\d{5}",
+          "(?:30[03]\\d{3}|4(?:0(?:0\\d|20)|370|864))\\d{4}|300\\d{5}",
       "exampleNumber": "40041234",
       "possibleLength": [8, 10],
       "possibleLengthLocalOnly": [-1]
@@ -72,7 +72,10 @@ Map<String, Object?> getBR() {
       {
         "pattern": "(\\d{4})(\\d{4})",
         "format": "\$1-\$2",
-        "leadingDigitsPattern": ["300|4(?:0[02]|37)", "4(?:02|37)0|[34]00"],
+        "leadingDigitsPattern": [
+          "300|4(?:0[02]|37|86)",
+          "300|4(?:0(?:0|20)|370|864)"
+        ],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
@@ -120,7 +123,10 @@ Map<String, Object?> getBR() {
       {
         "pattern": "(\\d{4})(\\d{4})",
         "format": "\$1-\$2",
-        "leadingDigitsPattern": ["300|4(?:0[02]|37)", "4(?:02|37)0|[34]00"],
+        "leadingDigitsPattern": [
+          "300|4(?:0[02]|37|86)",
+          "300|4(?:0(?:0|20)|370|864)"
+        ],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
@@ -156,7 +162,7 @@ Map<String, Object?> getBR() {
     "mainCountryForCode": false,
     "noInternationalDialling": {
       "nationalNumberPattern":
-          "30(?:0\\d{5,7}|3\\d{7})|40(?:0\\d|20)\\d{4}|800\\d{6,7}",
+          "(?:30[03]\\d{3}|4(?:0(?:0\\d|20)|864))\\d{4}|800\\d{6,7}|300\\d{5}",
       "possibleLength": [8, 9, 10],
       "possibleLengthLocalOnly": [-1]
     },
