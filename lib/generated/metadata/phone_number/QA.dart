@@ -52,7 +52,7 @@ Map<String, Object?> getQA() {
       {
         "pattern": "(\\d{3})(\\d{4})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["2[16]|8"],
+        "leadingDigitsPattern": ["2[136]|8"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
@@ -66,7 +66,7 @@ Map<String, Object?> getQA() {
       {
         "pattern": "(\\d{3})(\\d{4})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["2[16]|8"],
+        "leadingDigitsPattern": ["2[136]|8"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
@@ -77,7 +77,7 @@ Map<String, Object?> getQA() {
       }
     ],
     "pager": {
-      "nationalNumberPattern": "2[16]\\d{5}",
+      "nationalNumberPattern": "2[136]\\d{5}",
       "exampleNumber": "2123456",
       "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]

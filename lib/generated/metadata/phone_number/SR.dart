@@ -6,7 +6,7 @@
 Map<String, Object?> getSR() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:[2-5]|68|[78]\\d)\\d{5}",
+      "nationalNumberPattern": "(?:[2-5]|68|[78]\\d|90)\\d{5}",
       "possibleLength": [6, 7]
     },
     "fixedLine": {
@@ -22,11 +22,15 @@ Map<String, Object?> getSR() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "80\\d{5}",
+      "exampleNumber": "8012345",
+      "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "90\\d{5}",
+      "exampleNumber": "9012345",
+      "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {
@@ -63,7 +67,7 @@ Map<String, Object?> getSR() {
       {
         "pattern": "(\\d{3})(\\d{4})",
         "format": "\$1-\$2",
-        "leadingDigitsPattern": ["[6-8]"],
+        "leadingDigitsPattern": ["[6-9]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -83,7 +87,7 @@ Map<String, Object?> getSR() {
       {
         "pattern": "(\\d{3})(\\d{4})",
         "format": "\$1-\$2",
-        "leadingDigitsPattern": ["[6-8]"],
+        "leadingDigitsPattern": ["[6-9]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

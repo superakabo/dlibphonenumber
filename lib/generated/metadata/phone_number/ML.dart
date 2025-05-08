@@ -18,7 +18,7 @@ Map<String, Object?> getML() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "2(?:0(?:01|79)|17\\d)\\d{4}|(?:5[01]|[679]\\d|8[2-59])\\d{6}",
+          "2(?:0(?:01|79)|17\\d)\\d{4}|(?:5[0-3]|[679]\\d|8[2-59])\\d{6}",
       "exampleNumber": "65012345",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

@@ -1,3 +1,7 @@
+## 1.1.38
+- Updated phone metadata for region code(s): EH, IL, LA, MA, ML, QA, SG, SR
+- Updated carrier data for country calling code(s): 49 (en), 65 (en), 597 (en), 856 (en)
+
 ## 1.1.37
 - Updated phone metadata for region code(s): BI, BR, LB, MU, NG, SG, SY
 - Updated geocoding data for country calling code(s): 55 (en), 230 (en, es, fr), 234 (en)
