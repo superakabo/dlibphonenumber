@@ -12,14 +12,14 @@ Map<String, Object?> getCO() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "601055(?:[0-4]\\d|50)\\d\\d|6010(?:[0-4]\\d|5[0-4])\\d{4}|(?:46|60(?:[124-7][2-9]|8[1-9]))\\d{6}",
+          "601055(?:[0-4]\\d|50)\\d\\d|6010(?:[0-4]\\d|5[0-4])\\d{4}|(?:46|60(?:[18][1-9]|[24-7][2-9]))\\d{6}",
       "exampleNumber": "6012345678",
       "possibleLength": [8, 10],
       "possibleLengthLocalOnly": [4, 7]
     },
     "mobile": {
       "nationalNumberPattern":
-          "333301[0-5]\\d{3}|3333(?:00|2[5-9]|[3-9]\\d)\\d{4}|(?:3(?:24[1-9]|3(?:00|3[0-24-9]))|9101)\\d{6}|3(?:0[0-5]|1\\d|2[0-3]|5[01]|70)\\d{7}",
+          "333301[0-5]\\d{3}|3333(?:00|2[5-9]|[3-9]\\d)\\d{4}|(?:3(?:(?:0[0-5]|1\\d|5[01]|70)\\d|2(?:[0-3]\\d|4[1-9])|3(?:00|3[0-24-9]))|9(?:101|408))\\d{6}",
       "exampleNumber": "3211234567",
       "possibleLength": [10],
       "possibleLengthLocalOnly": [-1]
@@ -72,7 +72,7 @@ Map<String, Object?> getCO() {
       {
         "pattern": "(\\d{3})(\\d{7})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["3[0-357]|91"],
+        "leadingDigitsPattern": ["3[0-357]|9[14]"],
         "domesticCarrierCodeFormattingRule": "0\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -102,7 +102,7 @@ Map<String, Object?> getCO() {
       {
         "pattern": "(\\d{3})(\\d{7})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["3[0-357]|91"],
+        "leadingDigitsPattern": ["3[0-357]|9[14]"],
         "domesticCarrierCodeFormattingRule": "0\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false
       },

@@ -88,13 +88,9 @@ class PhoneNumber extends $pb.GeneratedMessage {
         8, _omitFieldNames ? '' : 'numberOfLeadingZeros', $pb.PbFieldType.O3,
         defaultOrMaker: 1);
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PhoneNumber clone() => PhoneNumber()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PhoneNumber copyWith(void Function(PhoneNumber) updates) =>
       super.copyWith((message) => updates(message as PhoneNumber))
           as PhoneNumber;
@@ -125,20 +121,20 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearCountryCode() => $_clearField(1);
 
-  ///  The National (significant) Number, as defined in International
-  ///  Telecommunication Union (ITU) Recommendation E.164, without any leading
-  ///  zero. The leading-zero is stored separately if required, since this is an
-  ///  uint64 and hence cannot store such information. Do not use this field
-  ///  directly: if you want the national significant number, call the
-  ///  getNationalSignificantNumber method of PhoneNumberUtil.
+  /// The National (significant) Number, as defined in International
+  /// Telecommunication Union (ITU) Recommendation E.164, without any leading
+  /// zero. The leading-zero is stored separately if required, since this is an
+  /// uint64 and hence cannot store such information. Do not use this field
+  /// directly: if you want the national significant number, call the
+  /// getNationalSignificantNumber method of PhoneNumberUtil.
   ///
-  ///  For countries which have the concept of an "area code" or "national
-  ///  destination code", this is included in the National (significant) Number.
-  ///  Although the ITU says the maximum length should be 15, we have found longer
-  ///  numbers in some countries e.g. Germany.
-  ///  Note that the National (significant) Number does not contain the National
-  ///  (trunk) prefix. Obviously, as a uint64, it will never contain any
-  ///  formatting (hyphens, spaces, parentheses), nor any alphanumeric spellings.
+  /// For countries which have the concept of an "area code" or "national
+  /// destination code", this is included in the National (significant) Number.
+  /// Although the ITU says the maximum length should be 15, we have found longer
+  /// numbers in some countries e.g. Germany.
+  /// Note that the National (significant) Number does not contain the National
+  /// (trunk) prefix. Obviously, as a uint64, it will never contain any
+  /// formatting (hyphens, spaces, parentheses), nor any alphanumeric spellings.
   @$pb.TagNumber(2)
   $fixnum.Int64 get nationalNumber => $_getI64(1);
   @$pb.TagNumber(2)
@@ -169,22 +165,22 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearExtension_3() => $_clearField(3);
 
-  ///  In some countries, the national (significant) number starts with one or
-  ///  more "0"s without this being a national prefix or trunk code of some kind.
-  ///  For example, the leading zero in the national (significant) number of an
-  ///  Italian phone number indicates the number is a fixed-line number.  There
-  ///  have been plans to migrate fixed-line numbers to start with the digit two
-  ///  since December 2000, but it has not happened yet. See
-  ///  http://en.wikipedia.org/wiki/%2B39 for more details.
+  /// In some countries, the national (significant) number starts with one or
+  /// more "0"s without this being a national prefix or trunk code of some kind.
+  /// For example, the leading zero in the national (significant) number of an
+  /// Italian phone number indicates the number is a fixed-line number.  There
+  /// have been plans to migrate fixed-line numbers to start with the digit two
+  /// since December 2000, but it has not happened yet. See
+  /// http://en.wikipedia.org/wiki/%2B39 for more details.
   ///
-  ///  These fields can be safely ignored (there is no need to set them) for most
-  ///  countries. Some limited number of countries behave like Italy - for these
-  ///  cases, if the leading zero(s) of a number would be retained even when
-  ///  dialling internationally, set this flag to true, and also set the number of
-  ///  leading zeros.
+  /// These fields can be safely ignored (there is no need to set them) for most
+  /// countries. Some limited number of countries behave like Italy - for these
+  /// cases, if the leading zero(s) of a number would be retained even when
+  /// dialling internationally, set this flag to true, and also set the number of
+  /// leading zeros.
   ///
-  ///  Clients who use the parsing functionality of the i18n phone
-  ///  number libraries will have these fields set if necessary automatically.
+  /// Clients who use the parsing functionality of the i18n phone
+  /// number libraries will have these fields set if necessary automatically.
   @$pb.TagNumber(4)
   $core.bool get italianLeadingZero => $_getBF(3);
   @$pb.TagNumber(4)
@@ -225,15 +221,15 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearCountryCodeSource() => $_clearField(6);
 
-  ///  The carrier selection code that is preferred when calling this phone number
-  ///  domestically. This also includes codes that need to be dialed in some
-  ///  countries when calling from landlines to mobiles or vice versa. For
-  ///  example, in Columbia, a "3" needs to be dialed before the phone number
-  ///  itself when calling from a mobile phone to a domestic landline phone and
-  ///  vice versa.
+  /// The carrier selection code that is preferred when calling this phone number
+  /// domestically. This also includes codes that need to be dialed in some
+  /// countries when calling from landlines to mobiles or vice versa. For
+  /// example, in Columbia, a "3" needs to be dialed before the phone number
+  /// itself when calling from a mobile phone to a domestic landline phone and
+  /// vice versa.
   ///
-  ///  Note this is the "preferred" code, which means other codes may work as
-  ///  well.
+  /// Note this is the "preferred" code, which means other codes may work as
+  /// well.
   @$pb.TagNumber(7)
   $core.String get preferredDomesticCarrierCode => $_getSZ(6);
   @$pb.TagNumber(7)

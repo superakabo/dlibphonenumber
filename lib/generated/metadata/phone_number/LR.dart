@@ -6,8 +6,7 @@
 Map<String, Object?> getLR() {
   return {
     "generalDesc": {
-      "nationalNumberPattern":
-          "(?:[245]\\d|33|77|88)\\d{7}|(?:2\\d|[4-6])\\d{6}",
+      "nationalNumberPattern": "(?:[2457]\\d|33|88)\\d{7}|(?:2\\d|[4-6])\\d{6}",
       "possibleLength": [7, 8, 9]
     },
     "fixedLine": {
@@ -18,7 +17,7 @@ Map<String, Object?> getLR() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:(?:(?:22|33)0|555|(?:77|88)\\d)\\d|4(?:240|[67]))\\d{5}|[56]\\d{6}",
+          "(?:(?:(?:22|33)0|555|7(?:6[01]|7\\d)|88\\d)\\d|4(?:240|[67]))\\d{5}|[56]\\d{6}",
       "exampleNumber": "770123456",
       "possibleLength": [7, 9],
       "possibleLengthLocalOnly": [-1]

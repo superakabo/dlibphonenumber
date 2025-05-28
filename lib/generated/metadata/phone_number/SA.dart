@@ -6,7 +6,7 @@
 Map<String, Object?> getSA() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "92\\d{7}|(?:[15]|8\\d)\\d{8}",
+      "nationalNumberPattern": "(?:[15]\\d|800|92)\\d{7}",
       "possibleLength": [9, 10],
       "possibleLengthLocalOnly": [7]
     },
@@ -77,13 +77,6 @@ Map<String, Object?> getSA() {
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
-        "pattern": "(\\d{3})(\\d{3})(\\d{3,4})",
-        "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["81"],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
         "pattern": "(\\d{3})(\\d{3})(\\d{4})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["8"],
@@ -112,13 +105,6 @@ Map<String, Object?> getSA() {
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
-        "pattern": "(\\d{3})(\\d{3})(\\d{3,4})",
-        "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["81"],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
         "pattern": "(\\d{3})(\\d{3})(\\d{4})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["8"],
@@ -135,9 +121,7 @@ Map<String, Object?> getSA() {
       "possibleLengthLocalOnly": [-1]
     },
     "uan": {
-      "nationalNumberPattern": "811\\d{7}",
-      "exampleNumber": "8110123456",
-      "possibleLength": [10],
+      "possibleLength": [-1],
       "possibleLengthLocalOnly": [-1]
     },
     "emergency": {

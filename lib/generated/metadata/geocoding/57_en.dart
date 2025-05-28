@@ -6,6 +6,7 @@
 Map<int, String> get57_en() {
   return {
     576010: "Cundinamarca",
+    576011: "Bogotá",
     576012: "Bogotá",
     576013: "Bogotá",
     576014: "Bogotá",

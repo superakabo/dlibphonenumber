@@ -16,7 +16,7 @@ Map<String, Object?> getBI() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "64[0-2]\\d{5}|(?:29|[67][125-9])\\d{6}",
+      "nationalNumberPattern": "(?:29|6[124-9]|7[125-9])\\d{6}",
       "exampleNumber": "79561234",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

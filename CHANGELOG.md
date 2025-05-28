@@ -1,3 +1,10 @@
+## 1.1.39
+- Updated phone metadata for region code(s): BI, CA, CO, HK, IR, LI, LR, MY, SA, US
+- New geocoding data for country calling code(s): 1257 (en)
+- Updated geocoding data for country calling code(s): 57 (en)
+- Updated carrier data for country calling code(s): 33 (en), 57 (en), 61 (en), 81 (en), 98 (en, fa), 229 (en), 370 (en),
+- Updated / refreshed time zone meta data.
+
 ## 1.1.38
 - Updated phone metadata for region code(s): EH, IL, LA, MA, ML, QA, SG, SR
 - Updated carrier data for country calling code(s): 49 (en), 65 (en), 597 (en), 856 (en)

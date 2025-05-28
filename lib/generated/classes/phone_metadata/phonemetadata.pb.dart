@@ -67,13 +67,9 @@ class NumberFormat extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'domesticCarrierCodeFormattingRule')
     ..aOB(6, _omitFieldNames ? '' : 'nationalPrefixOptionalWhenFormatting');
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NumberFormat clone() => NumberFormat()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NumberFormat copyWith(void Function(NumberFormat) updates) =>
       super.copyWith((message) => updates(message as NumberFormat))
           as NumberFormat;
@@ -125,39 +121,39 @@ class NumberFormat extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearFormat() => $_clearField(2);
 
-  ///  This field is a regex that is used to match a certain number of digits
-  ///  at the beginning of the national (significant) number. When the match is
-  ///  successful, the accompanying pattern and format should be used to format
-  ///  this number. For example, if leading_digits="[1-3]|44", then all the
-  ///  national numbers starting with 1, 2, 3 or 44 should be formatted using the
-  ///  accompanying pattern and format.
+  /// This field is a regex that is used to match a certain number of digits
+  /// at the beginning of the national (significant) number. When the match is
+  /// successful, the accompanying pattern and format should be used to format
+  /// this number. For example, if leading_digits="[1-3]|44", then all the
+  /// national numbers starting with 1, 2, 3 or 44 should be formatted using the
+  /// accompanying pattern and format.
   ///
-  ///  The first leadingDigitsPattern matches up to the first three digits of the
-  ///  national (significant) number; the next one matches the first four digits,
-  ///  then the first five and so on, until the leadingDigitsPattern can uniquely
-  ///  identify one pattern and format to be used to format the number.
+  /// The first leadingDigitsPattern matches up to the first three digits of the
+  /// national (significant) number; the next one matches the first four digits,
+  /// then the first five and so on, until the leadingDigitsPattern can uniquely
+  /// identify one pattern and format to be used to format the number.
   ///
-  ///  In the case when only one formatting pattern exists, no
-  ///  leading_digits_pattern is needed.
+  /// In the case when only one formatting pattern exists, no
+  /// leading_digits_pattern is needed.
   @$pb.TagNumber(3)
   $pb.PbList<$core.String> get leadingDigitsPattern => $_getList(2);
 
-  ///  This field specifies how the national prefix ($NP) together with the first
-  ///  group ($FG) in the national significant number should be formatted in
-  ///  the NATIONAL format when a national prefix exists for a certain country.
-  ///  For example, when this field contains "($NP$FG)", a number from Beijing,
-  ///  China (whose $NP = 0), which would by default be formatted without
-  ///  national prefix as 10 1234 5678 in NATIONAL format, will instead be
-  ///  formatted as (010) 1234 5678; to format it as (0)10 1234 5678, the field
-  ///  would contain "($NP)$FG". Note $FG should always be present in this field,
-  ///  but $NP can be omitted. For example, having "$FG" could indicate the
-  ///  number should be formatted in NATIONAL format without the national prefix.
-  ///  This is commonly used to override the rule specified for the territory in
-  ///  the XML file.
+  /// This field specifies how the national prefix ($NP) together with the first
+  /// group ($FG) in the national significant number should be formatted in
+  /// the NATIONAL format when a national prefix exists for a certain country.
+  /// For example, when this field contains "($NP$FG)", a number from Beijing,
+  /// China (whose $NP = 0), which would by default be formatted without
+  /// national prefix as 10 1234 5678 in NATIONAL format, will instead be
+  /// formatted as (010) 1234 5678; to format it as (0)10 1234 5678, the field
+  /// would contain "($NP)$FG". Note $FG should always be present in this field,
+  /// but $NP can be omitted. For example, having "$FG" could indicate the
+  /// number should be formatted in NATIONAL format without the national prefix.
+  /// This is commonly used to override the rule specified for the territory in
+  /// the XML file.
   ///
-  ///  When this field is missing, a number will be formatted without national
-  ///  prefix in NATIONAL format. This field does not affect how a number
-  ///  is formatted in other formats, such as INTERNATIONAL.
+  /// When this field is missing, a number will be formatted without national
+  /// prefix in NATIONAL format. This field does not affect how a number
+  /// is formatted in other formats, such as INTERNATIONAL.
   @$pb.TagNumber(4)
   $core.String get nationalPrefixFormattingRule => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -252,13 +248,9 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
         $pb.PbFieldType.P3)
     ..hasRequiredFields = false;
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PhoneNumberDesc clone() => PhoneNumberDesc()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PhoneNumberDesc copyWith(void Function(PhoneNumberDesc) updates) =>
       super.copyWith((message) => updates(message as PhoneNumberDesc))
           as PhoneNumberDesc;
@@ -530,13 +522,9 @@ class PhoneMetadata extends $pb.GeneratedMessage {
     ..aOM<PhoneNumberDesc>(33, _omitFieldNames ? '' : 'smsServices',
         subBuilder: PhoneNumberDesc.create);
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PhoneMetadata clone() => PhoneMetadata()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PhoneMetadata copyWith(void Function(PhoneMetadata) updates) =>
       super.copyWith((message) => updates(message as PhoneMetadata))
           as PhoneMetadata;
@@ -757,16 +745,16 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   void clearPreferredExtnPrefix() => $_clearField(13);
 
-  ///  This field is used for cases where the national prefix of a country
-  ///  contains a carrier selection code, and is written in the form of a
-  ///  regular expression. For example, to dial the number 2222-2222 in
-  ///  Fortaleza, Brazil (area code 85) using the long distance carrier Oi
-  ///  (selection code 31), one would dial 0 31 85 2222 2222. Assuming the
-  ///  only other possible carrier selection code is 32, the field will
-  ///  contain "03[12]".
+  /// This field is used for cases where the national prefix of a country
+  /// contains a carrier selection code, and is written in the form of a
+  /// regular expression. For example, to dial the number 2222-2222 in
+  /// Fortaleza, Brazil (area code 85) using the long distance carrier Oi
+  /// (selection code 31), one would dial 0 31 85 2222 2222. Assuming the
+  /// only other possible carrier selection code is 32, the field will
+  /// contain "03[12]".
   ///
-  ///  When it is missing from the XML file, this field inherits the value of
-  ///  national_prefix, if that is present.
+  /// When it is missing from the XML file, this field inherits the value of
+  /// national_prefix, if that is present.
   @$pb.TagNumber(15)
   $core.String get nationalPrefixForParsing => $_getSZ(13);
   @$pb.TagNumber(15)
@@ -839,31 +827,31 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(19)
   $pb.PbList<NumberFormat> get numberFormat => $_getList(17);
 
-  ///  This field is populated only when the national significant number is
-  ///  formatted differently when it forms part of the INTERNATIONAL format
-  ///  and NATIONAL format. A case in point is mobile numbers in Argentina:
-  ///  The number, which would be written in INTERNATIONAL format as
-  ///  +54 9 343 555 1212, will be written as 0343 15 555 1212 for NATIONAL
-  ///  format. In this case, the prefix 9 is inserted when dialling from
-  ///  overseas, but otherwise the prefix 0 and the carrier selection code
-  ///  15 (inserted after the area code of 343) is used.
-  ///  Note: this field is populated by setting a value for `<intlFormat>` inside
-  ///  the `<numberFormat>` tag in the XML file. If `<intlFormat>` is not set then it
-  ///  defaults to the same value as the `<format>` tag.
+  /// This field is populated only when the national significant number is
+  /// formatted differently when it forms part of the INTERNATIONAL format
+  /// and NATIONAL format. A case in point is mobile numbers in Argentina:
+  /// The number, which would be written in INTERNATIONAL format as
+  /// +54 9 343 555 1212, will be written as 0343 15 555 1212 for NATIONAL
+  /// format. In this case, the prefix 9 is inserted when dialling from
+  /// overseas, but otherwise the prefix 0 and the carrier selection code
+  /// 15 (inserted after the area code of 343) is used.
+  /// Note: this field is populated by setting a value for `<intlFormat>` inside
+  /// the `<numberFormat>` tag in the XML file. If `<intlFormat>` is not set then it
+  /// defaults to the same value as the `<format>` tag.
   ///
-  ///  Examples:
-  ///    To set the `<intlFormat>` to a different value than the `<format>`:
-  ///      `<numberFormat pattern=....>`
-  ///        `<format>`$1 $2 $3`</format>`
-  ///        `<intlFormat>`$1-$2-$3`</intlFormat>`
-  ///      `</numberFormat>`
+  /// Examples:
+  ///   To set the `<intlFormat>` to a different value than the `<format>`:
+  ///     `<numberFormat pattern=....>`
+  ///       `<format>`$1 $2 $3`</format>`
+  ///       `<intlFormat>`$1-$2-$3`</intlFormat>`
+  ///     `</numberFormat>`
   ///
-  ///    To have a format only used for national formatting, set `<intlFormat>` to
-  ///    "NA":
-  ///      `<numberFormat pattern=....>`
-  ///        `<format>`$1 $2 $3`</format>`
-  ///        `<intlFormat>`NA`</intlFormat>`
-  ///      `</numberFormat>`
+  ///   To have a format only used for national formatting, set `<intlFormat>` to
+  ///   "NA":
+  ///     `<numberFormat pattern=....>`
+  ///       `<format>`$1 $2 $3`</format>`
+  ///       `<intlFormat>`NA`</intlFormat>`
+  ///     `</numberFormat>`
   @$pb.TagNumber(20)
   $pb.PbList<NumberFormat> get intlNumberFormat => $_getList(18);
 
@@ -1079,14 +1067,10 @@ class PhoneMetadataCollection extends $pb.GeneratedMessage {
         1, _omitFieldNames ? '' : 'metadata', $pb.PbFieldType.PM,
         subBuilder: PhoneMetadata.create);
 
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PhoneMetadataCollection clone() =>
       PhoneMetadataCollection()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PhoneMetadataCollection copyWith(
           void Function(PhoneMetadataCollection) updates) =>
       super.copyWith((message) => updates(message as PhoneMetadataCollection))

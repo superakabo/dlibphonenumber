@@ -366,6 +366,7 @@ class TimezoneMetadataMap {
       1253: "America/Los_Angeles",
       1254: "America/Chicago",
       1256: "America/Chicago",
+      1257: "America/Vancouver",
       1260: "America/New_York",
       1262: "America/Chicago",
       1263: "America/Toronto",
