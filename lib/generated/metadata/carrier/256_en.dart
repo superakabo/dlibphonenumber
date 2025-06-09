@@ -19,6 +19,7 @@ Map<int, String> get256_en() {
     256727: "Tangerine",
     256728: "Talkio",
     256790: "MTN",
+    256791: "MTN",
     256798: "Africell",
     256799: "Africell"
   };

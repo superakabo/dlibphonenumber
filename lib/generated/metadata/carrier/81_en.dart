@@ -9,6 +9,7 @@ Map<int, String> get81_en() {
     81702: "KDDI",
     81704: "NTT Docomo",
     81707: "NTT Docomo",
+    81709: "Rakuten Communications",
     81801: "NTT Docomo",
     81802: "NTT Docomo",
     81803: "Softbank",

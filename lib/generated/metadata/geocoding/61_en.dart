@@ -16,6 +16,8 @@ Map<int, String> get61_en() {
     61235: "New South Wales",
     61236: "New South Wales",
     61237: "New South Wales",
+    61241:
+        "Clarence Town/Dungog/Eccleston/East Gresford/Maitland/Mulbring/Karuah/Laguna/Wards River/Wootton/Tea Gardens/Swansea/Newcastle/Nelson Bay/Raymond Terrace/Stroud/Newcastle",
     61261: "Canberra",
     61262: "Canberra",
     61272: "Sydney",
@@ -265,6 +267,8 @@ Map<int, String> get61_en() {
     617558: "Southport",
     618513:
         "Marble Bar/Millstream/Mitchell/Mount Bruce/Newman/Onslow/Ord/Pannawonica/Paraburdoo/Port Hedland/Roebuck/Sandfire/Telfer/Tom Price/Whaleback/Wittenoom/Wyndham/Derby/Broome/Christmas Island/Cocos Island/Dampier/De Grey/Fitzroy Crossing/Great Sandy/Hall's Creek/Karratha/Kununurra/Leopold",
+    618514:
+        "Roebuck /Sandfire /Tom Price/Telfer/Wyndham/Whaleback /Wittenoom/Wyndham",
     618611: "Perth",
     618614: "Perth",
     618616: "Perth",

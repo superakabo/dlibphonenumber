@@ -1187,6 +1187,7 @@ class TimezoneMetadataMap {
       618510: "Australia/Adelaide&Australia/Perth",
       618511: "Australia/Perth",
       618513: "Australia/Sydney",
+      618514: "Australia/Sydney",
       691920: "Pacific/Ponape",
       691921: "Pacific/Ponape",
       691924: "Pacific/Ponape",

@@ -1,3 +1,10 @@
+## 1.1.40
+- Updated phone metadata for region code(s): AU, BW, CC, CX, DE, LB, MN, PA, PT, SG, UG
+- Updated short number metadata for region code(s): DE
+- Updated geocoding data for country calling code(s): 61 (en)
+- Updated carrier data for country calling code(s): 46 (en), 47 (en), 48 (en), 65 (en), 81 (en), 256 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.39
 - Updated phone metadata for region code(s): BI, CA, CO, HK, IR, LI, LR, MY, SA, US
 - New geocoding data for country calling code(s): 1257 (en)

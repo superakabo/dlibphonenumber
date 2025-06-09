@@ -44,7 +44,7 @@ Map<String, Object?> getBW() {
       "possibleLengthLocalOnly": [-1]
     },
     "voip": {
-      "nationalNumberPattern": "79(?:1(?:[0-2]\\d|3[0-3])|2[0-7]\\d)\\d{3}",
+      "nationalNumberPattern": "79(?:1(?:[0-2]\\d|3[0-8])|2[0-7]\\d)\\d{3}",
       "exampleNumber": "79101234",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

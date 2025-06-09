@@ -18,7 +18,7 @@ Map<String, Object?> getLB() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "787\\d{4}|(?:(?:3|81)\\d|7(?:[01]\\d|6[013-9]|8[89]|9[1-3]))\\d{5}",
+          "(?:(?:3|81)\\d|7(?:[01]\\d|6[013-9]|8[7-9]|9[1-3]))\\d{5}",
       "exampleNumber": "71123456",
       "possibleLength": [7, 8],
       "possibleLengthLocalOnly": [-1]
@@ -58,7 +58,7 @@ Map<String, Object?> getLB() {
         "pattern": "(\\d)(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": [
-          "[13-69]|7(?:[2-57]|62|8[0-7]|9[04-9])|8[02-9]"
+          "[13-69]|7(?:[2-57]|62|8[0-6]|9[04-9])|8[02-9]"
         ],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
@@ -75,7 +75,7 @@ Map<String, Object?> getLB() {
         "pattern": "(\\d)(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": [
-          "[13-69]|7(?:[2-57]|62|8[0-7]|9[04-9])|8[02-9]"
+          "[13-69]|7(?:[2-57]|62|8[0-6]|9[04-9])|8[02-9]"
         ],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false

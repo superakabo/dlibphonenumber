@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -31,40 +32,29 @@ class PhoneNumber extends $pb.GeneratedMessage {
     $core.String? preferredDomesticCarrierCode,
     $core.int? numberOfLeadingZeros,
   }) {
-    final $result = create();
-    if (countryCode != null) {
-      $result.countryCode = countryCode;
-    }
-    if (nationalNumber != null) {
-      $result.nationalNumber = nationalNumber;
-    }
-    if (extension_3 != null) {
-      $result.extension_3 = extension_3;
-    }
-    if (italianLeadingZero != null) {
-      $result.italianLeadingZero = italianLeadingZero;
-    }
-    if (rawInput != null) {
-      $result.rawInput = rawInput;
-    }
-    if (countryCodeSource != null) {
-      $result.countryCodeSource = countryCodeSource;
-    }
-    if (preferredDomesticCarrierCode != null) {
-      $result.preferredDomesticCarrierCode = preferredDomesticCarrierCode;
-    }
-    if (numberOfLeadingZeros != null) {
-      $result.numberOfLeadingZeros = numberOfLeadingZeros;
-    }
-    return $result;
+    final result = create();
+    if (countryCode != null) result.countryCode = countryCode;
+    if (nationalNumber != null) result.nationalNumber = nationalNumber;
+    if (extension_3 != null) result.extension_3 = extension_3;
+    if (italianLeadingZero != null)
+      result.italianLeadingZero = italianLeadingZero;
+    if (rawInput != null) result.rawInput = rawInput;
+    if (countryCodeSource != null) result.countryCodeSource = countryCodeSource;
+    if (preferredDomesticCarrierCode != null)
+      result.preferredDomesticCarrierCode = preferredDomesticCarrierCode;
+    if (numberOfLeadingZeros != null)
+      result.numberOfLeadingZeros = numberOfLeadingZeros;
+    return result;
   }
-  PhoneNumber._() : super();
-  factory PhoneNumber.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory PhoneNumber.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
+
+  PhoneNumber._();
+
+  factory PhoneNumber.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PhoneNumber.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PhoneNumber',
@@ -95,10 +85,12 @@ class PhoneNumber extends $pb.GeneratedMessage {
       super.copyWith((message) => updates(message as PhoneNumber))
           as PhoneNumber;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static PhoneNumber create() => PhoneNumber._();
+  @$core.override
   PhoneNumber createEmptyInstance() => create();
   static $pb.PbList<PhoneNumber> createRepeated() => $pb.PbList<PhoneNumber>();
   @$core.pragma('dart2js:noInline')
@@ -112,10 +104,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.int get countryCode => $_getIZ(0);
   @$pb.TagNumber(1)
-  set countryCode($core.int v) {
-    $_setSignedInt32(0, v);
-  }
-
+  set countryCode($core.int value) => $_setSignedInt32(0, value);
   @$pb.TagNumber(1)
   $core.bool hasCountryCode() => $_has(0);
   @$pb.TagNumber(1)
@@ -138,10 +127,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $fixnum.Int64 get nationalNumber => $_getI64(1);
   @$pb.TagNumber(2)
-  set nationalNumber($fixnum.Int64 v) {
-    $_setInt64(1, v);
-  }
-
+  set nationalNumber($fixnum.Int64 value) => $_setInt64(1, value);
   @$pb.TagNumber(2)
   $core.bool hasNationalNumber() => $_has(1);
   @$pb.TagNumber(2)
@@ -156,10 +142,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get extension_3 => $_getSZ(2);
   @$pb.TagNumber(3)
-  set extension_3($core.String v) {
-    $_setString(2, v);
-  }
-
+  set extension_3($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasExtension_3() => $_has(2);
   @$pb.TagNumber(3)
@@ -184,10 +167,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool get italianLeadingZero => $_getBF(3);
   @$pb.TagNumber(4)
-  set italianLeadingZero($core.bool v) {
-    $_setBool(3, v);
-  }
-
+  set italianLeadingZero($core.bool value) => $_setBool(3, value);
   @$pb.TagNumber(4)
   $core.bool hasItalianLeadingZero() => $_has(3);
   @$pb.TagNumber(4)
@@ -199,10 +179,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get rawInput => $_getSZ(4);
   @$pb.TagNumber(5)
-  set rawInput($core.String v) {
-    $_setString(4, v);
-  }
-
+  set rawInput($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
   $core.bool hasRawInput() => $_has(4);
   @$pb.TagNumber(5)
@@ -212,10 +189,8 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   PhoneNumber_CountryCodeSource get countryCodeSource => $_getN(5);
   @$pb.TagNumber(6)
-  set countryCodeSource(PhoneNumber_CountryCodeSource v) {
-    $_setField(6, v);
-  }
-
+  set countryCodeSource(PhoneNumber_CountryCodeSource value) =>
+      $_setField(6, value);
   @$pb.TagNumber(6)
   $core.bool hasCountryCodeSource() => $_has(5);
   @$pb.TagNumber(6)
@@ -233,10 +208,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.String get preferredDomesticCarrierCode => $_getSZ(6);
   @$pb.TagNumber(7)
-  set preferredDomesticCarrierCode($core.String v) {
-    $_setString(6, v);
-  }
-
+  set preferredDomesticCarrierCode($core.String value) => $_setString(6, value);
   @$pb.TagNumber(7)
   $core.bool hasPreferredDomesticCarrierCode() => $_has(6);
   @$pb.TagNumber(7)
@@ -245,16 +217,14 @@ class PhoneNumber extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.int get numberOfLeadingZeros => $_getI(7, 1);
   @$pb.TagNumber(8)
-  set numberOfLeadingZeros($core.int v) {
-    $_setSignedInt32(7, v);
-  }
-
+  set numberOfLeadingZeros($core.int value) => $_setSignedInt32(7, value);
   @$pb.TagNumber(8)
   $core.bool hasNumberOfLeadingZeros() => $_has(7);
   @$pb.TagNumber(8)
   void clearNumberOfLeadingZeros() => $_clearField(8);
 }
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames =
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
     $core.bool.fromEnvironment('protobuf.omit_message_names');

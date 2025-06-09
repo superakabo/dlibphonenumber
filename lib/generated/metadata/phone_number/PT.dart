@@ -87,7 +87,7 @@ Map<String, Object?> getPT() {
       }
     ],
     "pager": {
-      "nationalNumberPattern": "6(?:222\\d|8988)\\d{4}",
+      "nationalNumberPattern": "6(?:222\\d|89(?:00|88|99))\\d{4}",
       "exampleNumber": "622212345",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

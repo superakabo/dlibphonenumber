@@ -19,7 +19,7 @@ Map<String, Object?> getMN() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:83[01]|92[039])\\d{5}|(?:5[05]|6[069]|72|8[015689]|9[013-9])\\d{6}",
+          "(?:83[01]|92[0139])\\d{5}|(?:5[05]|6[069]|72|8[015689]|9[013-9])\\d{6}",
       "exampleNumber": "88123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

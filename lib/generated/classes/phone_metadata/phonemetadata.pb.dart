@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -24,36 +25,30 @@ class NumberFormat extends $pb.GeneratedMessage {
     $core.String? domesticCarrierCodeFormattingRule,
     $core.bool? nationalPrefixOptionalWhenFormatting,
   }) {
-    final $result = create();
-    if (pattern != null) {
-      $result.pattern = pattern;
-    }
-    if (format != null) {
-      $result.format = format;
-    }
-    if (leadingDigitsPattern != null) {
-      $result.leadingDigitsPattern.addAll(leadingDigitsPattern);
-    }
-    if (nationalPrefixFormattingRule != null) {
-      $result.nationalPrefixFormattingRule = nationalPrefixFormattingRule;
-    }
-    if (domesticCarrierCodeFormattingRule != null) {
-      $result.domesticCarrierCodeFormattingRule =
+    final result = create();
+    if (pattern != null) result.pattern = pattern;
+    if (format != null) result.format = format;
+    if (leadingDigitsPattern != null)
+      result.leadingDigitsPattern.addAll(leadingDigitsPattern);
+    if (nationalPrefixFormattingRule != null)
+      result.nationalPrefixFormattingRule = nationalPrefixFormattingRule;
+    if (domesticCarrierCodeFormattingRule != null)
+      result.domesticCarrierCodeFormattingRule =
           domesticCarrierCodeFormattingRule;
-    }
-    if (nationalPrefixOptionalWhenFormatting != null) {
-      $result.nationalPrefixOptionalWhenFormatting =
+    if (nationalPrefixOptionalWhenFormatting != null)
+      result.nationalPrefixOptionalWhenFormatting =
           nationalPrefixOptionalWhenFormatting;
-    }
-    return $result;
+    return result;
   }
-  NumberFormat._() : super();
-  factory NumberFormat.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory NumberFormat.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
+
+  NumberFormat._();
+
+  factory NumberFormat.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NumberFormat.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'NumberFormat',
@@ -74,10 +69,12 @@ class NumberFormat extends $pb.GeneratedMessage {
       super.copyWith((message) => updates(message as NumberFormat))
           as NumberFormat;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static NumberFormat create() => NumberFormat._();
+  @$core.override
   NumberFormat createEmptyInstance() => create();
   static $pb.PbList<NumberFormat> createRepeated() =>
       $pb.PbList<NumberFormat>();
@@ -94,10 +91,7 @@ class NumberFormat extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get pattern => $_getSZ(0);
   @$pb.TagNumber(1)
-  set pattern($core.String v) {
-    $_setString(0, v);
-  }
-
+  set pattern($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasPattern() => $_has(0);
   @$pb.TagNumber(1)
@@ -112,10 +106,7 @@ class NumberFormat extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get format => $_getSZ(1);
   @$pb.TagNumber(2)
-  set format($core.String v) {
-    $_setString(1, v);
-  }
-
+  set format($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasFormat() => $_has(1);
   @$pb.TagNumber(2)
@@ -157,10 +148,7 @@ class NumberFormat extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get nationalPrefixFormattingRule => $_getSZ(3);
   @$pb.TagNumber(4)
-  set nationalPrefixFormattingRule($core.String v) {
-    $_setString(3, v);
-  }
-
+  set nationalPrefixFormattingRule($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasNationalPrefixFormattingRule() => $_has(3);
   @$pb.TagNumber(4)
@@ -173,10 +161,8 @@ class NumberFormat extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get domesticCarrierCodeFormattingRule => $_getSZ(4);
   @$pb.TagNumber(5)
-  set domesticCarrierCodeFormattingRule($core.String v) {
-    $_setString(4, v);
-  }
-
+  set domesticCarrierCodeFormattingRule($core.String value) =>
+      $_setString(4, value);
   @$pb.TagNumber(5)
   $core.bool hasDomesticCarrierCodeFormattingRule() => $_has(4);
   @$pb.TagNumber(5)
@@ -193,10 +179,8 @@ class NumberFormat extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool get nationalPrefixOptionalWhenFormatting => $_getBF(5);
   @$pb.TagNumber(6)
-  set nationalPrefixOptionalWhenFormatting($core.bool v) {
-    $_setBool(5, v);
-  }
-
+  set nationalPrefixOptionalWhenFormatting($core.bool value) =>
+      $_setBool(5, value);
   @$pb.TagNumber(6)
   $core.bool hasNationalPrefixOptionalWhenFormatting() => $_has(5);
   @$pb.TagNumber(6)
@@ -212,28 +196,24 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
     $core.Iterable<$core.int>? possibleLength,
     $core.Iterable<$core.int>? possibleLengthLocalOnly,
   }) {
-    final $result = create();
-    if (nationalNumberPattern != null) {
-      $result.nationalNumberPattern = nationalNumberPattern;
-    }
-    if (exampleNumber != null) {
-      $result.exampleNumber = exampleNumber;
-    }
-    if (possibleLength != null) {
-      $result.possibleLength.addAll(possibleLength);
-    }
-    if (possibleLengthLocalOnly != null) {
-      $result.possibleLengthLocalOnly.addAll(possibleLengthLocalOnly);
-    }
-    return $result;
+    final result = create();
+    if (nationalNumberPattern != null)
+      result.nationalNumberPattern = nationalNumberPattern;
+    if (exampleNumber != null) result.exampleNumber = exampleNumber;
+    if (possibleLength != null) result.possibleLength.addAll(possibleLength);
+    if (possibleLengthLocalOnly != null)
+      result.possibleLengthLocalOnly.addAll(possibleLengthLocalOnly);
+    return result;
   }
-  PhoneNumberDesc._() : super();
-  factory PhoneNumberDesc.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory PhoneNumberDesc.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
+
+  PhoneNumberDesc._();
+
+  factory PhoneNumberDesc.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PhoneNumberDesc.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PhoneNumberDesc',
@@ -255,10 +235,12 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
       super.copyWith((message) => updates(message as PhoneNumberDesc))
           as PhoneNumberDesc;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static PhoneNumberDesc create() => PhoneNumberDesc._();
+  @$core.override
   PhoneNumberDesc createEmptyInstance() => create();
   static $pb.PbList<PhoneNumberDesc> createRepeated() =>
       $pb.PbList<PhoneNumberDesc>();
@@ -273,10 +255,7 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get nationalNumberPattern => $_getSZ(0);
   @$pb.TagNumber(2)
-  set nationalNumberPattern($core.String v) {
-    $_setString(0, v);
-  }
-
+  set nationalNumberPattern($core.String value) => $_setString(0, value);
   @$pb.TagNumber(2)
   $core.bool hasNationalNumberPattern() => $_has(0);
   @$pb.TagNumber(2)
@@ -287,10 +266,7 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.String get exampleNumber => $_getSZ(1);
   @$pb.TagNumber(6)
-  set exampleNumber($core.String v) {
-    $_setString(1, v);
-  }
-
+  set exampleNumber($core.String value) => $_setString(1, value);
   @$pb.TagNumber(6)
   $core.bool hasExampleNumber() => $_has(1);
   @$pb.TagNumber(6)
@@ -360,109 +336,59 @@ class PhoneMetadata extends $pb.GeneratedMessage {
     $core.bool? mobileNumberPortableRegion,
     PhoneNumberDesc? smsServices,
   }) {
-    final $result = create();
-    if (generalDesc != null) {
-      $result.generalDesc = generalDesc;
-    }
-    if (fixedLine != null) {
-      $result.fixedLine = fixedLine;
-    }
-    if (mobile != null) {
-      $result.mobile = mobile;
-    }
-    if (tollFree != null) {
-      $result.tollFree = tollFree;
-    }
-    if (premiumRate != null) {
-      $result.premiumRate = premiumRate;
-    }
-    if (sharedCost != null) {
-      $result.sharedCost = sharedCost;
-    }
-    if (personalNumber != null) {
-      $result.personalNumber = personalNumber;
-    }
-    if (voip != null) {
-      $result.voip = voip;
-    }
-    if (id != null) {
-      $result.id = id;
-    }
-    if (countryCode != null) {
-      $result.countryCode = countryCode;
-    }
-    if (internationalPrefix != null) {
-      $result.internationalPrefix = internationalPrefix;
-    }
-    if (nationalPrefix != null) {
-      $result.nationalPrefix = nationalPrefix;
-    }
-    if (preferredExtnPrefix != null) {
-      $result.preferredExtnPrefix = preferredExtnPrefix;
-    }
-    if (nationalPrefixForParsing != null) {
-      $result.nationalPrefixForParsing = nationalPrefixForParsing;
-    }
-    if (nationalPrefixTransformRule != null) {
-      $result.nationalPrefixTransformRule = nationalPrefixTransformRule;
-    }
-    if (preferredInternationalPrefix != null) {
-      $result.preferredInternationalPrefix = preferredInternationalPrefix;
-    }
-    if (sameMobileAndFixedLinePattern != null) {
-      $result.sameMobileAndFixedLinePattern = sameMobileAndFixedLinePattern;
-    }
-    if (numberFormat != null) {
-      $result.numberFormat.addAll(numberFormat);
-    }
-    if (intlNumberFormat != null) {
-      $result.intlNumberFormat.addAll(intlNumberFormat);
-    }
-    if (pager != null) {
-      $result.pager = pager;
-    }
-    if (mainCountryForCode != null) {
-      $result.mainCountryForCode = mainCountryForCode;
-    }
-    if (leadingDigits != null) {
-      $result.leadingDigits = leadingDigits;
-    }
-    if (noInternationalDialling != null) {
-      $result.noInternationalDialling = noInternationalDialling;
-    }
-    if (uan != null) {
-      $result.uan = uan;
-    }
-    if (emergency != null) {
-      $result.emergency = emergency;
-    }
-    if (voicemail != null) {
-      $result.voicemail = voicemail;
-    }
-    if (shortCode != null) {
-      $result.shortCode = shortCode;
-    }
-    if (standardRate != null) {
-      $result.standardRate = standardRate;
-    }
-    if (carrierSpecific != null) {
-      $result.carrierSpecific = carrierSpecific;
-    }
-    if (mobileNumberPortableRegion != null) {
-      $result.mobileNumberPortableRegion = mobileNumberPortableRegion;
-    }
-    if (smsServices != null) {
-      $result.smsServices = smsServices;
-    }
-    return $result;
+    final result = create();
+    if (generalDesc != null) result.generalDesc = generalDesc;
+    if (fixedLine != null) result.fixedLine = fixedLine;
+    if (mobile != null) result.mobile = mobile;
+    if (tollFree != null) result.tollFree = tollFree;
+    if (premiumRate != null) result.premiumRate = premiumRate;
+    if (sharedCost != null) result.sharedCost = sharedCost;
+    if (personalNumber != null) result.personalNumber = personalNumber;
+    if (voip != null) result.voip = voip;
+    if (id != null) result.id = id;
+    if (countryCode != null) result.countryCode = countryCode;
+    if (internationalPrefix != null)
+      result.internationalPrefix = internationalPrefix;
+    if (nationalPrefix != null) result.nationalPrefix = nationalPrefix;
+    if (preferredExtnPrefix != null)
+      result.preferredExtnPrefix = preferredExtnPrefix;
+    if (nationalPrefixForParsing != null)
+      result.nationalPrefixForParsing = nationalPrefixForParsing;
+    if (nationalPrefixTransformRule != null)
+      result.nationalPrefixTransformRule = nationalPrefixTransformRule;
+    if (preferredInternationalPrefix != null)
+      result.preferredInternationalPrefix = preferredInternationalPrefix;
+    if (sameMobileAndFixedLinePattern != null)
+      result.sameMobileAndFixedLinePattern = sameMobileAndFixedLinePattern;
+    if (numberFormat != null) result.numberFormat.addAll(numberFormat);
+    if (intlNumberFormat != null)
+      result.intlNumberFormat.addAll(intlNumberFormat);
+    if (pager != null) result.pager = pager;
+    if (mainCountryForCode != null)
+      result.mainCountryForCode = mainCountryForCode;
+    if (leadingDigits != null) result.leadingDigits = leadingDigits;
+    if (noInternationalDialling != null)
+      result.noInternationalDialling = noInternationalDialling;
+    if (uan != null) result.uan = uan;
+    if (emergency != null) result.emergency = emergency;
+    if (voicemail != null) result.voicemail = voicemail;
+    if (shortCode != null) result.shortCode = shortCode;
+    if (standardRate != null) result.standardRate = standardRate;
+    if (carrierSpecific != null) result.carrierSpecific = carrierSpecific;
+    if (mobileNumberPortableRegion != null)
+      result.mobileNumberPortableRegion = mobileNumberPortableRegion;
+    if (smsServices != null) result.smsServices = smsServices;
+    return result;
   }
-  PhoneMetadata._() : super();
-  factory PhoneMetadata.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory PhoneMetadata.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
+
+  PhoneMetadata._();
+
+  factory PhoneMetadata.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PhoneMetadata.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PhoneMetadata',
@@ -529,10 +455,12 @@ class PhoneMetadata extends $pb.GeneratedMessage {
       super.copyWith((message) => updates(message as PhoneMetadata))
           as PhoneMetadata;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static PhoneMetadata create() => PhoneMetadata._();
+  @$core.override
   PhoneMetadata createEmptyInstance() => create();
   static $pb.PbList<PhoneMetadata> createRepeated() =>
       $pb.PbList<PhoneMetadata>();
@@ -551,10 +479,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   PhoneNumberDesc get generalDesc => $_getN(0);
   @$pb.TagNumber(1)
-  set generalDesc(PhoneNumberDesc v) {
-    $_setField(1, v);
-  }
-
+  set generalDesc(PhoneNumberDesc value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasGeneralDesc() => $_has(0);
   @$pb.TagNumber(1)
@@ -565,10 +490,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   PhoneNumberDesc get fixedLine => $_getN(1);
   @$pb.TagNumber(2)
-  set fixedLine(PhoneNumberDesc v) {
-    $_setField(2, v);
-  }
-
+  set fixedLine(PhoneNumberDesc value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasFixedLine() => $_has(1);
   @$pb.TagNumber(2)
@@ -579,10 +501,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   PhoneNumberDesc get mobile => $_getN(2);
   @$pb.TagNumber(3)
-  set mobile(PhoneNumberDesc v) {
-    $_setField(3, v);
-  }
-
+  set mobile(PhoneNumberDesc value) => $_setField(3, value);
   @$pb.TagNumber(3)
   $core.bool hasMobile() => $_has(2);
   @$pb.TagNumber(3)
@@ -593,10 +512,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   PhoneNumberDesc get tollFree => $_getN(3);
   @$pb.TagNumber(4)
-  set tollFree(PhoneNumberDesc v) {
-    $_setField(4, v);
-  }
-
+  set tollFree(PhoneNumberDesc value) => $_setField(4, value);
   @$pb.TagNumber(4)
   $core.bool hasTollFree() => $_has(3);
   @$pb.TagNumber(4)
@@ -607,10 +523,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   PhoneNumberDesc get premiumRate => $_getN(4);
   @$pb.TagNumber(5)
-  set premiumRate(PhoneNumberDesc v) {
-    $_setField(5, v);
-  }
-
+  set premiumRate(PhoneNumberDesc value) => $_setField(5, value);
   @$pb.TagNumber(5)
   $core.bool hasPremiumRate() => $_has(4);
   @$pb.TagNumber(5)
@@ -621,10 +534,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   PhoneNumberDesc get sharedCost => $_getN(5);
   @$pb.TagNumber(6)
-  set sharedCost(PhoneNumberDesc v) {
-    $_setField(6, v);
-  }
-
+  set sharedCost(PhoneNumberDesc value) => $_setField(6, value);
   @$pb.TagNumber(6)
   $core.bool hasSharedCost() => $_has(5);
   @$pb.TagNumber(6)
@@ -635,10 +545,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   PhoneNumberDesc get personalNumber => $_getN(6);
   @$pb.TagNumber(7)
-  set personalNumber(PhoneNumberDesc v) {
-    $_setField(7, v);
-  }
-
+  set personalNumber(PhoneNumberDesc value) => $_setField(7, value);
   @$pb.TagNumber(7)
   $core.bool hasPersonalNumber() => $_has(6);
   @$pb.TagNumber(7)
@@ -649,10 +556,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   PhoneNumberDesc get voip => $_getN(7);
   @$pb.TagNumber(8)
-  set voip(PhoneNumberDesc v) {
-    $_setField(8, v);
-  }
-
+  set voip(PhoneNumberDesc value) => $_setField(8, value);
   @$pb.TagNumber(8)
   $core.bool hasVoip() => $_has(7);
   @$pb.TagNumber(8)
@@ -668,10 +572,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.String get id => $_getSZ(8);
   @$pb.TagNumber(9)
-  set id($core.String v) {
-    $_setString(8, v);
-  }
-
+  set id($core.String value) => $_setString(8, value);
   @$pb.TagNumber(9)
   $core.bool hasId() => $_has(8);
   @$pb.TagNumber(9)
@@ -683,10 +584,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $core.int get countryCode => $_getIZ(9);
   @$pb.TagNumber(10)
-  set countryCode($core.int v) {
-    $_setSignedInt32(9, v);
-  }
-
+  set countryCode($core.int value) => $_setSignedInt32(9, value);
   @$pb.TagNumber(10)
   $core.bool hasCountryCode() => $_has(9);
   @$pb.TagNumber(10)
@@ -700,10 +598,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $core.String get internationalPrefix => $_getSZ(10);
   @$pb.TagNumber(11)
-  set internationalPrefix($core.String v) {
-    $_setString(10, v);
-  }
-
+  set internationalPrefix($core.String value) => $_setString(10, value);
   @$pb.TagNumber(11)
   $core.bool hasInternationalPrefix() => $_has(10);
   @$pb.TagNumber(11)
@@ -718,10 +613,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.String get nationalPrefix => $_getSZ(11);
   @$pb.TagNumber(12)
-  set nationalPrefix($core.String v) {
-    $_setString(11, v);
-  }
-
+  set nationalPrefix($core.String value) => $_setString(11, value);
   @$pb.TagNumber(12)
   $core.bool hasNationalPrefix() => $_has(11);
   @$pb.TagNumber(12)
@@ -736,10 +628,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   $core.String get preferredExtnPrefix => $_getSZ(12);
   @$pb.TagNumber(13)
-  set preferredExtnPrefix($core.String v) {
-    $_setString(12, v);
-  }
-
+  set preferredExtnPrefix($core.String value) => $_setString(12, value);
   @$pb.TagNumber(13)
   $core.bool hasPreferredExtnPrefix() => $_has(12);
   @$pb.TagNumber(13)
@@ -758,10 +647,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(15)
   $core.String get nationalPrefixForParsing => $_getSZ(13);
   @$pb.TagNumber(15)
-  set nationalPrefixForParsing($core.String v) {
-    $_setString(13, v);
-  }
-
+  set nationalPrefixForParsing($core.String value) => $_setString(13, value);
   @$pb.TagNumber(15)
   $core.bool hasNationalPrefixForParsing() => $_has(13);
   @$pb.TagNumber(15)
@@ -777,10 +663,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(16)
   $core.String get nationalPrefixTransformRule => $_getSZ(14);
   @$pb.TagNumber(16)
-  set nationalPrefixTransformRule($core.String v) {
-    $_setString(14, v);
-  }
-
+  set nationalPrefixTransformRule($core.String value) => $_setString(14, value);
   @$pb.TagNumber(16)
   $core.bool hasNationalPrefixTransformRule() => $_has(14);
   @$pb.TagNumber(16)
@@ -795,10 +678,8 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(17)
   $core.String get preferredInternationalPrefix => $_getSZ(15);
   @$pb.TagNumber(17)
-  set preferredInternationalPrefix($core.String v) {
-    $_setString(15, v);
-  }
-
+  set preferredInternationalPrefix($core.String value) =>
+      $_setString(15, value);
   @$pb.TagNumber(17)
   $core.bool hasPreferredInternationalPrefix() => $_has(15);
   @$pb.TagNumber(17)
@@ -810,10 +691,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(18)
   $core.bool get sameMobileAndFixedLinePattern => $_getBF(16);
   @$pb.TagNumber(18)
-  set sameMobileAndFixedLinePattern($core.bool v) {
-    $_setBool(16, v);
-  }
-
+  set sameMobileAndFixedLinePattern($core.bool value) => $_setBool(16, value);
   @$pb.TagNumber(18)
   $core.bool hasSameMobileAndFixedLinePattern() => $_has(16);
   @$pb.TagNumber(18)
@@ -858,10 +736,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(21)
   PhoneNumberDesc get pager => $_getN(19);
   @$pb.TagNumber(21)
-  set pager(PhoneNumberDesc v) {
-    $_setField(21, v);
-  }
-
+  set pager(PhoneNumberDesc value) => $_setField(21, value);
   @$pb.TagNumber(21)
   $core.bool hasPager() => $_has(19);
   @$pb.TagNumber(21)
@@ -878,10 +753,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(22)
   $core.bool get mainCountryForCode => $_getBF(20);
   @$pb.TagNumber(22)
-  set mainCountryForCode($core.bool v) {
-    $_setBool(20, v);
-  }
-
+  set mainCountryForCode($core.bool value) => $_setBool(20, value);
   @$pb.TagNumber(22)
   $core.bool hasMainCountryForCode() => $_has(20);
   @$pb.TagNumber(22)
@@ -900,10 +772,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(23)
   $core.String get leadingDigits => $_getSZ(21);
   @$pb.TagNumber(23)
-  set leadingDigits($core.String v) {
-    $_setString(21, v);
-  }
-
+  set leadingDigits($core.String value) => $_setString(21, value);
   @$pb.TagNumber(23)
   $core.bool hasLeadingDigits() => $_has(21);
   @$pb.TagNumber(23)
@@ -914,10 +783,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(24)
   PhoneNumberDesc get noInternationalDialling => $_getN(22);
   @$pb.TagNumber(24)
-  set noInternationalDialling(PhoneNumberDesc v) {
-    $_setField(24, v);
-  }
-
+  set noInternationalDialling(PhoneNumberDesc value) => $_setField(24, value);
   @$pb.TagNumber(24)
   $core.bool hasNoInternationalDialling() => $_has(22);
   @$pb.TagNumber(24)
@@ -928,10 +794,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(25)
   PhoneNumberDesc get uan => $_getN(23);
   @$pb.TagNumber(25)
-  set uan(PhoneNumberDesc v) {
-    $_setField(25, v);
-  }
-
+  set uan(PhoneNumberDesc value) => $_setField(25, value);
   @$pb.TagNumber(25)
   $core.bool hasUan() => $_has(23);
   @$pb.TagNumber(25)
@@ -942,10 +805,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(27)
   PhoneNumberDesc get emergency => $_getN(24);
   @$pb.TagNumber(27)
-  set emergency(PhoneNumberDesc v) {
-    $_setField(27, v);
-  }
-
+  set emergency(PhoneNumberDesc value) => $_setField(27, value);
   @$pb.TagNumber(27)
   $core.bool hasEmergency() => $_has(24);
   @$pb.TagNumber(27)
@@ -956,10 +816,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(28)
   PhoneNumberDesc get voicemail => $_getN(25);
   @$pb.TagNumber(28)
-  set voicemail(PhoneNumberDesc v) {
-    $_setField(28, v);
-  }
-
+  set voicemail(PhoneNumberDesc value) => $_setField(28, value);
   @$pb.TagNumber(28)
   $core.bool hasVoicemail() => $_has(25);
   @$pb.TagNumber(28)
@@ -970,10 +827,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(29)
   PhoneNumberDesc get shortCode => $_getN(26);
   @$pb.TagNumber(29)
-  set shortCode(PhoneNumberDesc v) {
-    $_setField(29, v);
-  }
-
+  set shortCode(PhoneNumberDesc value) => $_setField(29, value);
   @$pb.TagNumber(29)
   $core.bool hasShortCode() => $_has(26);
   @$pb.TagNumber(29)
@@ -984,10 +838,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(30)
   PhoneNumberDesc get standardRate => $_getN(27);
   @$pb.TagNumber(30)
-  set standardRate(PhoneNumberDesc v) {
-    $_setField(30, v);
-  }
-
+  set standardRate(PhoneNumberDesc value) => $_setField(30, value);
   @$pb.TagNumber(30)
   $core.bool hasStandardRate() => $_has(27);
   @$pb.TagNumber(30)
@@ -998,10 +849,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(31)
   PhoneNumberDesc get carrierSpecific => $_getN(28);
   @$pb.TagNumber(31)
-  set carrierSpecific(PhoneNumberDesc v) {
-    $_setField(31, v);
-  }
-
+  set carrierSpecific(PhoneNumberDesc value) => $_setField(31, value);
   @$pb.TagNumber(31)
   $core.bool hasCarrierSpecific() => $_has(28);
   @$pb.TagNumber(31)
@@ -1016,10 +864,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(32)
   $core.bool get mobileNumberPortableRegion => $_getBF(29);
   @$pb.TagNumber(32)
-  set mobileNumberPortableRegion($core.bool v) {
-    $_setBool(29, v);
-  }
-
+  set mobileNumberPortableRegion($core.bool value) => $_setBool(29, value);
   @$pb.TagNumber(32)
   $core.bool hasMobileNumberPortableRegion() => $_has(29);
   @$pb.TagNumber(32)
@@ -1028,10 +873,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(33)
   PhoneNumberDesc get smsServices => $_getN(30);
   @$pb.TagNumber(33)
-  set smsServices(PhoneNumberDesc v) {
-    $_setField(33, v);
-  }
-
+  set smsServices(PhoneNumberDesc value) => $_setField(33, value);
   @$pb.TagNumber(33)
   $core.bool hasSmsServices() => $_has(30);
   @$pb.TagNumber(33)
@@ -1044,19 +886,19 @@ class PhoneMetadataCollection extends $pb.GeneratedMessage {
   factory PhoneMetadataCollection({
     $core.Iterable<PhoneMetadata>? metadata,
   }) {
-    final $result = create();
-    if (metadata != null) {
-      $result.metadata.addAll(metadata);
-    }
-    return $result;
+    final result = create();
+    if (metadata != null) result.metadata.addAll(metadata);
+    return result;
   }
-  PhoneMetadataCollection._() : super();
-  factory PhoneMetadataCollection.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory PhoneMetadataCollection.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
+
+  PhoneMetadataCollection._();
+
+  factory PhoneMetadataCollection.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PhoneMetadataCollection.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PhoneMetadataCollection',
@@ -1076,10 +918,12 @@ class PhoneMetadataCollection extends $pb.GeneratedMessage {
       super.copyWith((message) => updates(message as PhoneMetadataCollection))
           as PhoneMetadataCollection;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static PhoneMetadataCollection create() => PhoneMetadataCollection._();
+  @$core.override
   PhoneMetadataCollection createEmptyInstance() => create();
   static $pb.PbList<PhoneMetadataCollection> createRepeated() =>
       $pb.PbList<PhoneMetadataCollection>();
@@ -1092,6 +936,7 @@ class PhoneMetadataCollection extends $pb.GeneratedMessage {
   $pb.PbList<PhoneMetadata> get metadata => $_getList(0);
 }
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames =
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
     $core.bool.fromEnvironment('protobuf.omit_message_names');
