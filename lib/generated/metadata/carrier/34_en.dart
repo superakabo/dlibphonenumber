@@ -202,6 +202,8 @@ Map<int, String> get34_en() {
     347227: "Yoigo",
     347228: "Yoigo",
     347277: "Vodafone",
+    347440: "Alai",
+    347442: "PTV",
     347446: "PTV",
     347449: "Alai",
     347477: "Orange",

@@ -6,7 +6,7 @@
 Map<String, Object?> getHT() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:[2-489]\\d|55)\\d{6}",
+      "nationalNumberPattern": "[2-589]\\d{7}",
       "possibleLength": [8]
     },
     "fixedLine": {
@@ -16,7 +16,7 @@ Map<String, Object?> getHT() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:[34]\\d|55)\\d{6}",
+      "nationalNumberPattern": "(?:[34]\\d|5[56])\\d{6}",
       "exampleNumber": "34101234",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

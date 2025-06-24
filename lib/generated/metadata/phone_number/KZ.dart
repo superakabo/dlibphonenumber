@@ -63,7 +63,7 @@ Map<String, Object?> getKZ() {
       "possibleLengthLocalOnly": [-1]
     },
     "mainCountryForCode": false,
-    "leadingDigits": "33|7",
+    "leadingDigits": "33622|7",
     "noInternationalDialling": {
       "nationalNumberPattern": "751\\d{7}",
       "possibleLength": [10],

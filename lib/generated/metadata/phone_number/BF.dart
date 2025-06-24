@@ -6,7 +6,7 @@
 Map<String, Object?> getBF() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[025-7]\\d{7}",
+      "nationalNumberPattern": "(?:[025-7]\\d|44)\\d{6}",
       "possibleLength": [8]
     },
     "fixedLine": {
@@ -17,7 +17,7 @@ Map<String, Object?> getBF() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:0[1-7]|5[0-8]|[67]\\d)\\d{6}",
+      "nationalNumberPattern": "(?:0[1-7]|44|5[0-8]|[67]\\d)\\d{6}",
       "exampleNumber": "70123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
@@ -50,7 +50,7 @@ Map<String, Object?> getBF() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[025-7]"],
+        "leadingDigitsPattern": ["[024-7]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -58,7 +58,7 @@ Map<String, Object?> getBF() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[025-7]"],
+        "leadingDigitsPattern": ["[024-7]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

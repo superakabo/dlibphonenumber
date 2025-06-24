@@ -5,6 +5,7 @@
 /// Carrier JSON data for 226_en
 Map<int, String> get226_en() {
   return {
+    2264: "Orange",
     22601: "Onatel",
     22602: "Onatel",
     22603: "Onatel",

@@ -18,7 +18,6 @@ Map<int, String> get996_en() {
     99677: "Sky mobile",
     99688: "ALFA Telecom",
     99691: "Smart Connect",
-    996506: "Winline",
     996600: "Sky mobile",
     996990: "ALFA Telecom",
     996995: "ALFA Telecom",

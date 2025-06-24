@@ -1,3 +1,10 @@
+## 1.1.41
+- Updated phone metadata for region code(s): BF, DE, EH, GY, HK, HT, KZ, MA, RU, UG
+- Updated short number metadata for region code(s): AT
+- Updated geocoding data for country calling code(s): 7 (en, ru)
+- Updated carrier data for country calling code(s): 34 (en), 44 (en), 46 (en), 47 (en), 226 (en), 592 (en), 852 (en, zh),
+- Updated / refreshed time zone meta data.
+
 ## 1.1.40
 - Updated phone metadata for region code(s): AU, BW, CC, CX, DE, LB, MN, PA, PT, SG, UG
 - Updated short number metadata for region code(s): DE
