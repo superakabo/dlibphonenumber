@@ -302,6 +302,7 @@ import 'geocoding/1740_en.dart';
 import 'geocoding/1742_en.dart';
 import 'geocoding/1743_en.dart';
 import 'geocoding/1747_en.dart';
+import 'geocoding/1748_en.dart';
 import 'geocoding/1753_en.dart';
 import 'geocoding/1754_en.dart';
 import 'geocoding/1757_en.dart';
@@ -417,6 +418,7 @@ import 'geocoding/1970_en.dart';
 import 'geocoding/1971_en.dart';
 import 'geocoding/1972_en.dart';
 import 'geocoding/1973_en.dart';
+import 'geocoding/1975_en.dart';
 import 'geocoding/1978_en.dart';
 import 'geocoding/1979_en.dart';
 import 'geocoding/1980_en.dart';
@@ -1092,6 +1094,7 @@ class GeocodingMetadataMap {
       1742: ["en"],
       1743: ["en"],
       1747: ["en"],
+      1748: ["en"],
       1753: ["en"],
       1754: ["en"],
       1757: ["en"],
@@ -1210,6 +1213,7 @@ class GeocodingMetadataMap {
       1971: ["en"],
       1972: ["en"],
       1973: ["en"],
+      1975: ["en"],
       1978: ["en"],
       1979: ["en"],
       1980: ["en"],
@@ -1511,6 +1515,7 @@ class GeocodingMetadataMap {
       '1742_en': get1742_en(),
       '1743_en': get1743_en(),
       '1747_en': get1747_en(),
+      '1748_en': get1748_en(),
       '1753_en': get1753_en(),
       '1754_en': get1754_en(),
       '1757_en': get1757_en(),
@@ -1626,6 +1631,7 @@ class GeocodingMetadataMap {
       '1971_en': get1971_en(),
       '1972_en': get1972_en(),
       '1973_en': get1973_en(),
+      '1975_en': get1975_en(),
       '1978_en': get1978_en(),
       '1979_en': get1979_en(),
       '1980_en': get1980_en(),

@@ -4,5 +4,11 @@
 
 /// Carrier JSON data for 235_en
 Map<int, String> get235_en() {
-  return {2356: "Airtel", 2357: "Sotel", 2358: "Airtel", 2359: "Tigo"};
+  return {
+    2353: "Moov",
+    2356: "Airtel",
+    2357: "Sotel",
+    2358: "Airtel",
+    2359: "Tigo"
+  };
 }

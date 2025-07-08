@@ -1,3 +1,9 @@
+## 1.1.42
+- Updated phone metadata for region code(s): CZ, GM, HK, KW, TD, US, WS
+- New geocoding data for country calling code(s): 1748 (en), 1975 (en)
+- Updated carrier data for country calling code(s): 220 (en), 235 (en), 237 (en), 685 (en), 852 (en, zh), 995 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.41
 - Updated phone metadata for region code(s): BF, DE, EH, GY, HK, HT, KZ, MA, RU, UG
 - Updated short number metadata for region code(s): AT

@@ -6,7 +6,7 @@
 Map<String, Object?> getTD() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:22|[689]\\d|77)\\d{6}",
+      "nationalNumberPattern": "(?:22|30|[689]\\d|77)\\d{6}",
       "possibleLength": [8]
     },
     "fixedLine": {
@@ -16,7 +16,7 @@ Map<String, Object?> getTD() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:[69]\\d|77|8[56])\\d{6}",
+      "nationalNumberPattern": "(?:30|[69]\\d|77|8[56])\\d{6}",
       "exampleNumber": "63012345",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
@@ -50,7 +50,7 @@ Map<String, Object?> getTD() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[26-9]"],
+        "leadingDigitsPattern": ["[236-9]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -58,7 +58,7 @@ Map<String, Object?> getTD() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[26-9]"],
+        "leadingDigitsPattern": ["[236-9]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

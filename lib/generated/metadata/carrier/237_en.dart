@@ -5,6 +5,7 @@
 /// Carrier JSON data for 237_en
 Map<int, String> get237_en() {
   return {
+    23724: "Camtel",
     23762: "Camtel",
     23764: "Orange",
     23766: "NEXTTEL",

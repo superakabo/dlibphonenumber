@@ -16,7 +16,7 @@ Map<String, Object?> getWS() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:7[1-35-7]|8(?:[3-7]|9\\d{3}))\\d{5}",
+      "nationalNumberPattern": "(?:7[1-35-8]|8(?:[3-7]|9\\d{3}))\\d{5}",
       "exampleNumber": "7212345",
       "possibleLength": [7, 10],
       "possibleLengthLocalOnly": [-1]
