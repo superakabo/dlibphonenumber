@@ -11,6 +11,7 @@ Map<int, String> get977_en() {
     977962: "Smart Telecom",
     977963: "NSTPL",
     977970: "NCell",
+    977971: "NCell",
     977972: "UTL",
     977974: "NDCL",
     977975: "NDCL",

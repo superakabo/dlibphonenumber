@@ -5,6 +5,7 @@
 /// Carrier JSON data for 268_en
 Map<int, String> get268_en() {
   return {
+    26875: "Eswatini Mobile",
     26876: "Swazi MTN",
     26877: "SPTC",
     26878: "Swazi MTN",

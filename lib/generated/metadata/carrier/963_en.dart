@@ -5,6 +5,7 @@
 /// Carrier JSON data for 963_en
 Map<int, String> get963_en() {
   return {
+    96350: "Rcell",
     96391: "Wafa Telecom",
     96392: "Wafa Telecom",
     96393: "Syriatel",

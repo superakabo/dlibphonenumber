@@ -67,6 +67,12 @@ Map<String, Object?> getJP() {
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
+        "pattern": "(\\d{8,10})",
+        "format": "\$1",
+        "leadingDigitsPattern": ["000"],
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1-\$2-\$3",
         "leadingDigitsPattern": ["(?:12|57|99)0"],

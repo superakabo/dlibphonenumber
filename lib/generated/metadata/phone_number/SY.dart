@@ -6,7 +6,7 @@
 Map<String, Object?> getSY() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[1-39]\\d{8}|[1-5]\\d{7}",
+      "nationalNumberPattern": "[1-359]\\d{8}|[1-5]\\d{7}",
       "possibleLength": [8, 9],
       "possibleLengthLocalOnly": [6, 7]
     },
@@ -18,7 +18,7 @@ Map<String, Object?> getSY() {
       "possibleLengthLocalOnly": [6, 7]
     },
     "mobile": {
-      "nationalNumberPattern": "9[1-9]\\d{7}",
+      "nationalNumberPattern": "(?:50|9[1-9])\\d{7}",
       "exampleNumber": "944567890",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -53,14 +53,14 @@ Map<String, Object?> getSY() {
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{3,4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[1-5]"],
+        "leadingDigitsPattern": ["[1-4]|5[1-3]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": true
       },
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["9"],
+        "leadingDigitsPattern": ["[59]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": true
       }
@@ -69,14 +69,14 @@ Map<String, Object?> getSY() {
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{3,4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[1-5]"],
+        "leadingDigitsPattern": ["[1-4]|5[1-3]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": true
       },
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["9"],
+        "leadingDigitsPattern": ["[59]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": true
       }

@@ -1,3 +1,8 @@
+## 1.1.43
+- Updated phone metadata for region code(s): AU, CC, CL, CX, ET, JP, NP, SY, SZ
+- Updated short number metadata for region code(s): JP
+- Updated carrier data for country calling code(s): 43 (en), 48 (en), 56 (en), 61 (en), 268 (en), 963 (en), 977 (en)
+
 ## 1.1.42
 - Updated phone metadata for region code(s): CZ, GM, HK, KW, TD, US, WS
 - New geocoding data for country calling code(s): 1748 (en), 1975 (en)
