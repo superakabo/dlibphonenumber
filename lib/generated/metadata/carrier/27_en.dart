@@ -23,6 +23,7 @@ Map<int, String> get27_en() {
     2782: "Vodacom",
     2783: "MTN",
     2784: "Cell C",
+    27600: "Liquid Intelligent Technology",
     27601: "Telkom Mobile",
     27602: "Telkom Mobile",
     27603: "MTN",

@@ -18,7 +18,7 @@ Map<String, Object?> getPG() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:7\\d|8[1-38])\\d{6}",
+      "nationalNumberPattern": "(?:7\\d|8[1-48])\\d{6}",
       "exampleNumber": "70123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

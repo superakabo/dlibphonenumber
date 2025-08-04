@@ -7,7 +7,7 @@ Map<String, Object?> getJP() {
   return {
     "generalDesc": {
       "nationalNumberPattern":
-          "00[1-9]\\d{6,14}|[257-9]\\d{9}|(?:00|[1-9]\\d\\d)\\d{6}",
+          "00[1-9]\\d{6,14}|[25-9]\\d{9}|(?:00|[1-9]\\d\\d)\\d{6}",
       "possibleLength": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
     },
     "fixedLine": {
@@ -18,7 +18,7 @@ Map<String, Object?> getJP() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "[7-9]0[1-9]\\d{7}",
+      "nationalNumberPattern": "(?:601[0-4]0|[7-9]0[1-9]\\d\\d)\\d{5}",
       "exampleNumber": "9012345678",
       "possibleLength": [10],
       "possibleLengthLocalOnly": [-1]
@@ -56,7 +56,7 @@ Map<String, Object?> getJP() {
     "countryCode": 81,
     "internationalPrefix": "010",
     "nationalPrefix": "0",
-    "nationalPrefixForParsing": "(000[259]\\d{6})\$|(?:(?:003768)0?)|0",
+    "nationalPrefixForParsing": "(000[2569]\\d{4,6})\$|(?:(?:003768)0?)|0",
     "nationalPrefixTransformRule": "\$1",
     "sameMobileAndFixedLinePattern": false,
     "numberFormat": [
@@ -101,8 +101,8 @@ Map<String, Object?> getJP() {
         "pattern": "(\\d)(\\d{4})(\\d{4})",
         "format": "\$1-\$2-\$3",
         "leadingDigitsPattern": [
-          "[36]|4(?:2[09]|7[01])",
-          "[36]|4(?:2(?:0|9[02-69])|7(?:0[019]|1))"
+          "3|4(?:2[09]|7[01])|6[1-9]",
+          "3|4(?:2(?:0|9[02-69])|7(?:0[019]|1))|6[1-9]"
         ],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
@@ -147,7 +147,7 @@ Map<String, Object?> getJP() {
       {
         "pattern": "(\\d{2})(\\d{4})(\\d{4})",
         "format": "\$1-\$2-\$3",
-        "leadingDigitsPattern": ["[257-9]"],
+        "leadingDigitsPattern": ["[25-9]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -206,8 +206,8 @@ Map<String, Object?> getJP() {
         "pattern": "(\\d)(\\d{4})(\\d{4})",
         "format": "\$1-\$2-\$3",
         "leadingDigitsPattern": [
-          "[36]|4(?:2[09]|7[01])",
-          "[36]|4(?:2(?:0|9[02-69])|7(?:0[019]|1))"
+          "3|4(?:2[09]|7[01])|6[1-9]",
+          "3|4(?:2(?:0|9[02-69])|7(?:0[019]|1))|6[1-9]"
         ],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
@@ -240,7 +240,7 @@ Map<String, Object?> getJP() {
       {
         "pattern": "(\\d{2})(\\d{4})(\\d{4})",
         "format": "\$1-\$2-\$3",
-        "leadingDigitsPattern": ["[257-9]"],
+        "leadingDigitsPattern": ["[25-9]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }

@@ -17,7 +17,7 @@ Map<String, Object?> getEH() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:6(?:[0-79]\\d|8[0-247-9])|7(?:[0167]\\d|2[0-8]|5[0-3]|8[0-7]))\\d{6}",
+          "(?:6(?:[0-79]\\d|8[0-247-9])|7(?:[0167]\\d|2[0-8]|5[0-5]|8[0-7]))\\d{6}",
       "exampleNumber": "650123456",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

@@ -6,8 +6,8 @@
 Map<String, Object?> getJP() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[01]\\d\\d(?:\\d{5}(?:\\d{2})?)?",
-      "possibleLength": [3, 8, 10]
+      "nationalNumberPattern": "[01]\\d\\d(?:\\d{5,7})?",
+      "possibleLength": [3, 8, 9, 10]
     },
     "fixedLine": {
       "possibleLength": [-1],
@@ -66,10 +66,9 @@ Map<String, Object?> getJP() {
       "possibleLengthLocalOnly": [-1]
     },
     "shortCode": {
-      "nationalNumberPattern":
-          "000[259]\\d{6}|1(?:0[24]|1[089]|44|89)|000[2569]\\d{4}",
+      "nationalNumberPattern": "000[2569]\\d{4,6}|1(?:0[24]|1[089]|44|89)",
       "exampleNumber": "102",
-      "possibleLength": [3, 8, 10],
+      "possibleLength": [3, 8, 9, 10],
       "possibleLengthLocalOnly": [-1]
     },
     "standardRate": {
@@ -82,9 +81,9 @@ Map<String, Object?> getJP() {
     },
     "mobileNumberPortableRegion": false,
     "smsServices": {
-      "nationalNumberPattern": "000[259]\\d{6}|000[2569]\\d{4}",
+      "nationalNumberPattern": "000[2569]\\d{4,6}",
       "exampleNumber": "00020000",
-      "possibleLength": [8, 10],
+      "possibleLength": [8, 9, 10],
       "possibleLengthLocalOnly": [-1]
     }
   };

@@ -1,3 +1,9 @@
+## 1.1.44
+- Updated phone metadata for region code(s): DO, EH, IL, JP, MA, MN, OM, PG, SG, US
+- Updated short number metadata for region code(s): DE, JP
+- Updated geocoding data for country calling code(s): 34 (en, es)
+- Updated carrier data for country calling code(s): 27 (en), 32 (en), 65 (en), 81 (en), 675 (en), 968 (en), 976 (en), 996 (en)
+
 ## 1.1.43
 - Updated phone metadata for region code(s): AU, CC, CL, CX, ET, JP, NP, SY, SZ
 - Updated short number metadata for region code(s): JP

@@ -25,7 +25,7 @@ Map<String, Object?> getDO() {
     },
     "tollFree": {
       "nationalNumberPattern":
-          "8(?:00(?:14|[2-9]\\d)|(?:33|44|55|66|77|88)[2-9]\\d)\\d{5}",
+          "800(?:14|[2-9]\\d)\\d{5}|8[024]9[01]\\d{6}|8(?:33|44|55|66|77|88)[2-9]\\d{6}",
       "exampleNumber": "8002123456",
       "possibleLength": [10],
       "possibleLengthLocalOnly": [-1]

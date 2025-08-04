@@ -18,7 +18,7 @@ Map<String, Object?> getSG() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "897[0-5]\\d{4}|(?:8(?:0[1-9]|[1-8]\\d|9[0-6])|9[0-8]\\d)\\d{5}",
+          "89(?:7[0-689]|80)\\d{4}|(?:8(?:0[1-9]|[1-8]\\d|9[0-6])|9[0-8]\\d)\\d{5}",
       "exampleNumber": "81234567",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
