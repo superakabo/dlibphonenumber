@@ -56,7 +56,7 @@ Map<String, Object?> getJE() {
     "countryCode": 44,
     "internationalPrefix": "00",
     "nationalPrefix": "0",
-    "nationalPrefixForParsing": "([0-24-8]\\d{5})\$|0",
+    "nationalPrefixForParsing": "([0-24-8]\\d{5})\$|0|180020",
     "nationalPrefixTransformRule": "1534\$1",
     "sameMobileAndFixedLinePattern": false,
     "pager": {

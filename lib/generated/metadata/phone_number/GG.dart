@@ -56,7 +56,7 @@ Map<String, Object?> getGG() {
     "countryCode": 44,
     "internationalPrefix": "00",
     "nationalPrefix": "0",
-    "nationalPrefixForParsing": "([25-9]\\d{5})\$|0",
+    "nationalPrefixForParsing": "([25-9]\\d{5})\$|0|180020",
     "nationalPrefixTransformRule": "1481\$1",
     "sameMobileAndFixedLinePattern": false,
     "pager": {

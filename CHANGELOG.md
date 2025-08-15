@@ -1,3 +1,8 @@
+## 1.1.45
+- Updated phone metadata for region code(s): GB, GG, GM, GY, IM, JE
+- Updated geocoding data for country calling code(s): 61 (en), 81 (en, ja)
+- Updated carrier data for country calling code(s): 220 (en), 370 (en), 592 (en)
+
 ## 1.1.44
 - Updated phone metadata for region code(s): DO, EH, IL, JP, MA, MN, OM, PG, SG, US
 - Updated short number metadata for region code(s): DE, JP

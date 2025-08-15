@@ -56,7 +56,7 @@ Map<String, Object?> getIM() {
     "countryCode": 44,
     "internationalPrefix": "00",
     "nationalPrefix": "0",
-    "nationalPrefixForParsing": "([25-8]\\d{5})\$|0",
+    "nationalPrefixForParsing": "([25-8]\\d{5})\$|0|180020",
     "nationalPrefixTransformRule": "1624\$1",
     "sameMobileAndFixedLinePattern": false,
     "pager": {

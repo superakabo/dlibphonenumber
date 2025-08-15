@@ -58,7 +58,7 @@ Map<String, Object?> getGB() {
     "internationalPrefix": "00",
     "nationalPrefix": "0",
     "preferredExtnPrefix": " x",
-    "nationalPrefixForParsing": "0",
+    "nationalPrefixForParsing": "0|180020",
     "sameMobileAndFixedLinePattern": false,
     "numberFormat": [
       {

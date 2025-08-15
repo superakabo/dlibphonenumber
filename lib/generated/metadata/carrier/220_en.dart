@@ -20,6 +20,8 @@ Map<int, String> get220_en() {
     22054: "QCell",
     22058: "QCell",
     22059: "QCell",
+    22086: "Comium",
+    22087: "Comium",
     220556: "QCell"
   };
 }
