@@ -6,8 +6,9 @@
 Map<String, Object?> getUY() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "0004\\d{2,9}|[1249]\\d{7}|(?:[49]\\d|80)\\d{5}",
-      "possibleLength": [6, 7, 8, 9, 10, 11, 12, 13],
+      "nationalNumberPattern":
+          "0004\\d{2,9}|[1249]\\d{7}|2\\d{3,4}|(?:[49]\\d|80)\\d{5}",
+      "possibleLength": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
       "possibleLengthLocalOnly": [7]
     },
     "fixedLine": {
@@ -57,6 +58,12 @@ Map<String, Object?> getUY() {
     "sameMobileAndFixedLinePattern": false,
     "numberFormat": [
       {
+        "pattern": "(\\d{4,5})",
+        "format": "\$1",
+        "leadingDigitsPattern": ["21"],
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
         "pattern": "(\\d{3})(\\d{3,4})",
         "format": "\$1 \$2",
         "leadingDigitsPattern": ["0"],
@@ -96,6 +103,12 @@ Map<String, Object?> getUY() {
       }
     ],
     "intlNumberFormat": [
+      {
+        "pattern": "(\\d{4,5})",
+        "format": "\$1",
+        "leadingDigitsPattern": ["21"],
+        "nationalPrefixOptionalWhenFormatting": false
+      },
       {
         "pattern": "(\\d{3})(\\d{3,4})",
         "format": "\$1 \$2",
@@ -145,7 +158,9 @@ Map<String, Object?> getUY() {
       "possibleLengthLocalOnly": [-1]
     },
     "uan": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "21\\d{2,3}",
+      "exampleNumber": "21123",
+      "possibleLength": [4, 5],
       "possibleLengthLocalOnly": [-1]
     },
     "emergency": {

@@ -5,6 +5,7 @@
 /// Carrier JSON data for 597_en
 Map<int, String> get597_en() {
   return {
+    5976: "Telesur",
     59771: "Digicel",
     59772: "Digicel",
     59774: "Digicel",

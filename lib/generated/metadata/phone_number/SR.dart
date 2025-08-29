@@ -6,17 +6,17 @@
 Map<String, Object?> getSR() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:[2-5]|68|[78]\\d|90)\\d{5}",
+      "nationalNumberPattern": "(?:[2-5]|[6-8]\\d|90)\\d{5}",
       "possibleLength": [6, 7]
     },
     "fixedLine": {
-      "nationalNumberPattern": "(?:2[1-3]|3[0-7]|(?:4|68)\\d|5[2-58])\\d{4}",
+      "nationalNumberPattern": "(?:2[1-3]|3[0-7]|4\\d|5[2-58])\\d{4}",
       "exampleNumber": "211234",
-      "possibleLength": [6, 7],
+      "possibleLength": [6],
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:7[124-7]|8[1-9])\\d{5}",
+      "nationalNumberPattern": "(?:6[08]|7[124-7]|8[1-9])\\d{5}",
       "exampleNumber": "7412345",
       "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]

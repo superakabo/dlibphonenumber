@@ -6,7 +6,7 @@
 Map<String, Object?> getBT() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[17]\\d{7}|[2-8]\\d{6}",
+      "nationalNumberPattern": "[178]\\d{7}|[2-8]\\d{6}",
       "possibleLength": [7, 8],
       "possibleLengthLocalOnly": [6]
     },
@@ -18,7 +18,7 @@ Map<String, Object?> getBT() {
       "possibleLengthLocalOnly": [6]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:1[67]|77)\\d{6}",
+      "nationalNumberPattern": "(?:1[67]|[78]7)\\d{6}",
       "exampleNumber": "17123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
@@ -57,13 +57,13 @@ Map<String, Object?> getBT() {
       {
         "pattern": "(\\d)(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[2-68]|7[246]"],
+        "leadingDigitsPattern": ["[2-6]|7[246]|8[2-4]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["1[67]|7"],
+        "leadingDigitsPattern": ["1[67]|[78]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -71,13 +71,13 @@ Map<String, Object?> getBT() {
       {
         "pattern": "(\\d)(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[2-68]|7[246]"],
+        "leadingDigitsPattern": ["[2-6]|7[246]|8[2-4]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["1[67]|7"],
+        "leadingDigitsPattern": ["1[67]|[78]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

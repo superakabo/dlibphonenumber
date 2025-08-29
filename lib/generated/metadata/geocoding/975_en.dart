@@ -10,9 +10,11 @@ Map<int, String> get975_en() {
     9754: "Trashigang",
     9755: "Phuentsholing",
     9756: "Gelephu",
-    9758: "Paro",
     97572: "Samdrup Jongkhar",
     97574: "Samdrup Jongkhar",
-    97576: "Samdrup Jongkhar"
+    97576: "Samdrup Jongkhar",
+    97582: "Paro",
+    97583: "Paro",
+    97584: "Paro"
   };
 }

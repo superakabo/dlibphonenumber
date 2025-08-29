@@ -6,7 +6,7 @@
 Map<String, Object?> getUY() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[129]\\d{2,4}",
+      "nationalNumberPattern": "[19]\\d{2,4}",
       "possibleLength": [3, 4, 5]
     },
     "fixedLine": {
@@ -66,8 +66,7 @@ Map<String, Object?> getUY() {
       "possibleLengthLocalOnly": [-1]
     },
     "shortCode": {
-      "nationalNumberPattern":
-          "1(?:0[4-9]|1[2368]|2[0-3568]|787|997\\d?)|21997|911",
+      "nationalNumberPattern": "1(?:0[4-9]|1[2368]|2[0-3568]|787|997\\d?)|911",
       "exampleNumber": "104",
       "possibleLength": [3, 4, 5],
       "possibleLengthLocalOnly": [-1]

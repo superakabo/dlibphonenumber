@@ -54,6 +54,8 @@ Map<int, String> get41_en() {
     417553: "Swisscom",
     417557: "Swisscom",
     417600: "Sunrise",
+    417601: "Sunrise",
+    417602: "Sunrise",
     417603: "Sunrise",
     417604: "Sunrise",
     417605: "Sunrise",

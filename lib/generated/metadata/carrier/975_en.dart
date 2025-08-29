@@ -6,6 +6,7 @@
 Map<int, String> get975_en() {
   return {
     9751: "B-Mobile of Bhutan Telecom",
-    97577: "TashiCell of Tashi InfoComm"
+    97577: "TashiCell of Tashi InfoComm",
+    97587: "TashiCell of Tashi InfoComm"
   };
 }

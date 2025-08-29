@@ -17,7 +17,7 @@ Map<String, Object?> getOM() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "1505\\d{4}|(?:7(?:[126-9]\\d|41)|9(?:0[1-9]|[1-9]\\d))\\d{5}",
+          "1505\\d{4}|(?:7(?:[125-9]\\d|41)|9(?:0[1-9]|[1-9]\\d))\\d{5}",
       "exampleNumber": "92123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

@@ -9,6 +9,7 @@ Map<int, String> get968_en() {
     96871: "Omantel",
     96872: "Omantel",
     96874: "Ooredoo",
+    96875: "Vodafone Oman",
     96876: "Vodafone Oman",
     96877: "Vodafone Oman",
     96878: "Ooredoo",
