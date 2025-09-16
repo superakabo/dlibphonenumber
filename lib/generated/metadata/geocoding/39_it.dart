@@ -131,7 +131,6 @@ Map<int, String> get39_it() {
     390789: "Olbia",
     390827: "Sant'Angelo dei Lombardi",
     390828: "Battipaglia",
-    390831: "Brindisi",
     390833: "Gallipoli",
     390835: "Matera",
     390836: "Maglie",

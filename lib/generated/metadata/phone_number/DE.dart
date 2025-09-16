@@ -68,6 +68,12 @@ Map<String, Object?> getDE() {
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
+        "pattern": "(\\d{6})",
+        "format": "\$1",
+        "leadingDigitsPattern": ["227", "2277"],
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
         "pattern": "(\\d{3})(\\d{3,12})",
         "format": "\$1 \$2",
         "leadingDigitsPattern": [

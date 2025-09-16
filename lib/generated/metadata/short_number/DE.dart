@@ -6,7 +6,7 @@
 Map<String, Object?> getDE() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[137]\\d{2,5}",
+      "nationalNumberPattern": "[1-478]\\d{2,5}",
       "possibleLength": [3, 4, 5, 6]
     },
     "fixedLine": {
@@ -67,7 +67,7 @@ Map<String, Object?> getDE() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "11(?:[025]|6(?:00[06]|1(?:1[167]|23))|800\\d)|3311|7(?:0\\d{3}|464)|118\\d\\d",
+          "11(?:[025]|6(?:00[06]|1(?:1[167]|23))|800\\d)|22(?:044|5(?:43|80)|7700|922)|33(?:11|3[34])|44844|7(?:0\\d{3}|464)|80808|118\\d\\d",
       "exampleNumber": "110",
       "possibleLength": [3, 4, 5, 6],
       "possibleLengthLocalOnly": [-1]
@@ -77,16 +77,18 @@ Map<String, Object?> getDE() {
       "possibleLengthLocalOnly": [-1]
     },
     "carrierSpecific": {
-      "nationalNumberPattern": "(?:331|7(?:0\\d\\d|46))\\d",
+      "nationalNumberPattern":
+          "(?:33[13]|746)\\d|(?:22(?:[059]|7\\d)|(?:44|80)8|70\\d)\\d\\d",
       "exampleNumber": "3310",
-      "possibleLength": [4, 5],
+      "possibleLength": [4, 5, 6],
       "possibleLengthLocalOnly": [-1]
     },
     "mobileNumberPortableRegion": false,
     "smsServices": {
-      "nationalNumberPattern": "7(?:0\\d\\d|46)\\d",
-      "exampleNumber": "7460",
-      "possibleLength": [4, 5],
+      "nationalNumberPattern":
+          "(?:333|746)\\d|(?:22(?:[059]|7\\d)|(?:44|80)8|70\\d)\\d\\d",
+      "exampleNumber": "3330",
+      "possibleLength": [4, 5, 6],
       "possibleLengthLocalOnly": [-1]
     }
   };

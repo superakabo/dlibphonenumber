@@ -103,6 +103,7 @@ Map<int, String> get39_en() {
     390823: "Caserta",
     390824: "Benevento",
     390825: "Avellino",
+    390831: "Brindisi",
     390832: "Lecce",
     390862: "L'Aquila",
     390865: "Isernia",

@@ -6,7 +6,7 @@
 Map<String, Object?> getLV() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:[268]\\d|90)\\d{6}",
+      "nationalNumberPattern": "(?:[268]\\d|78|90)\\d{6}",
       "possibleLength": [8]
     },
     "fixedLine": {
@@ -56,7 +56,7 @@ Map<String, Object?> getLV() {
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[269]|8[01]"],
+        "leadingDigitsPattern": ["[2679]|8[01]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -64,7 +64,7 @@ Map<String, Object?> getLV() {
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[269]|8[01]"],
+        "leadingDigitsPattern": ["[2679]|8[01]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

@@ -1,3 +1,11 @@
+## 1.1.47
+- Updated phone metadata for region code(s): CZ, DE, IT, LI, LV, ME, SG, US
+- Updated short number metadata for region code(s): DE
+- New geocoding data for country calling code(s): 1686 (en)
+- Updated geocoding data for country calling code(s): 39 (en, it), 61 (en)
+- Updated carrier data for country calling code(s): 46 (en), 65 (en), 420 (en), 998 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.46
 - Updated phone metadata for region code(s): BT, DE, GY, IL, OM, PA, SG, SR, UY
 - Updated short number metadata for region code(s): UY
