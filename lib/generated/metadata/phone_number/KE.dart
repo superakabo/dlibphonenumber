@@ -18,7 +18,8 @@ Map<String, Object?> getKE() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:1(?:0[0-8]|1[0-7]|2[014]|30)|7\\d\\d)\\d{6}",
+      "nationalNumberPattern":
+          "(?:1(?:0[0-8]|1\\d|2[014]|[34]0)|7\\d\\d)\\d{6}",
       "exampleNumber": "712123456",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

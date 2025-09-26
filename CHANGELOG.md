@@ -1,3 +1,8 @@
+## 1.1.48
+- Updated phone metadata for region code(s): KE, UG, US
+- Updated short number metadata for region code(s): DE, ES
+- Updated carrier data for country calling code(s): 254 (en), 256 (en)
+
 ## 1.1.47
 - Updated phone metadata for region code(s): CZ, DE, IT, LI, LV, ME, SG, US
 - Updated short number metadata for region code(s): DE
