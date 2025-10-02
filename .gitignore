@@ -17,3 +17,5 @@ resources/release_notes.txt
 coverage/
 coverage.lcov
 
+# FVM Version Cache
+.fvm/
