@@ -17,7 +17,7 @@ Map<String, Object?> getCZ() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "7(?:060\\d|19(?:[0-4]\\d|50))\\d{4}|(?:60[1-8]|7(?:0[2-5]|[2379]\\d))\\d{6}",
+          "7(?:060\\d|19(?:[0-5]\\d|6[0-6]))\\d{4}|(?:60[1-8]|7(?:0[2-5]|[2379]\\d))\\d{6}",
       "exampleNumber": "601123456",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

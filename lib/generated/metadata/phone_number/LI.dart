@@ -18,7 +18,7 @@ Map<String, Object?> getLI() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:6(?:(?:4[5-9]|5\\d)\\d|6(?:[024-6]\\d|[17]0|3[7-9]))\\d|7(?:[37-9]\\d|42|56))\\d{4}",
+          "(?:6(?:(?:4[5-9]|5\\d)\\d|6(?:[024-68]\\d|1[01]|3[7-9]|70))\\d|7(?:[37-9]\\d|42|56))\\d{4}",
       "exampleNumber": "660234567",
       "possibleLength": [7, 9],
       "possibleLengthLocalOnly": [-1]

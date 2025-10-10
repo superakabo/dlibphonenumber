@@ -1,3 +1,11 @@
+## 1.1.49
+- Updated phone metadata for region code(s): CZ, ES, GE, HK, JO, LI, US
+- Updated short number metadata for region code(s): ES
+- New geocoding data for country calling code(s): 1324 (en)
+- Updated geocoding data for country calling code(s): 1437 (en)
+- Updated carrier data for country calling code(s): 34 (en), 65 (en), 233 (en), 423 (en), 673 (en), 852 (en, zh), 962 (en),
+- Updated / refreshed time zone meta data.
+
 ## 1.1.48
 - Updated phone metadata for region code(s): KE, UG, US
 - Updated short number metadata for region code(s): DE, ES

@@ -181,6 +181,8 @@ Map<int, String> get34_en() {
     346989: "Vodafone",
     347110: "Zinnia",
     347111: "Vodafone",
+    347112: "Orange",
+    347115: "Orange",
     347117: "Vodafone",
     347121: "Yoigo",
     347122: "Yoigo",

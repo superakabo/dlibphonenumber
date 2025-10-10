@@ -6,7 +6,7 @@
 Map<String, Object?> getJO() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:(?:[2689]|7\\d)\\d|32|53)\\d{6}",
+      "nationalNumberPattern": "(?:(?:[2689]|7\\d)\\d|32|427|53)\\d{6}",
       "possibleLength": [8, 9]
     },
     "fixedLine": {
@@ -17,7 +17,7 @@ Map<String, Object?> getJO() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "7(?:[78][0-25-9]|9\\d)\\d{6}",
+      "nationalNumberPattern": "(?:427|7(?:[78][0-25-9]|9\\d))\\d{6}",
       "exampleNumber": "790123456",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -81,7 +81,7 @@ Map<String, Object?> getJO() {
       {
         "pattern": "(\\d)(\\d{4})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["7"],
+        "leadingDigitsPattern": ["[47]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
@@ -111,7 +111,7 @@ Map<String, Object?> getJO() {
       {
         "pattern": "(\\d)(\\d{4})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["7"],
+        "leadingDigitsPattern": ["[47]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }

@@ -96,6 +96,7 @@ import 'geocoding/1319_en.dart';
 import 'geocoding/1320_en.dart';
 import 'geocoding/1321_en.dart';
 import 'geocoding/1323_en.dart';
+import 'geocoding/1324_en.dart';
 import 'geocoding/1325_en.dart';
 import 'geocoding/1326_en.dart';
 import 'geocoding/1327_en.dart';
@@ -883,6 +884,7 @@ class GeocodingMetadataMap {
       1320: ["en"],
       1321: ["en"],
       1323: ["en"],
+      1324: ["en"],
       1325: ["en"],
       1326: ["en"],
       1327: ["en"],
@@ -1311,6 +1313,7 @@ class GeocodingMetadataMap {
       '1320_en': get1320_en(),
       '1321_en': get1321_en(),
       '1323_en': get1323_en(),
+      '1324_en': get1324_en(),
       '1325_en': get1325_en(),
       '1326_en': get1326_en(),
       '1327_en': get1327_en(),

@@ -4,5 +4,5 @@
 
 /// Carrier JSON data for 962_en
 Map<int, String> get962_en() {
-  return {96277: "Orange", 96278: "Umniah", 96279: "Zain JO"};
+  return {9624: "Orange", 96277: "Orange", 96278: "Umniah", 96279: "Zain JO"};
 }

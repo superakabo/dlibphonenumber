@@ -18,7 +18,7 @@ Map<String, Object?> getES() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:590[16]00\\d|9(?:6906(?:09|10)|7390\\d\\d))\\d\\d|(?:6\\d|7[1-48])\\d{7}",
+          "96906(?:09|10)\\d\\d|(?:590(?:10[0-2]|600)|97390\\d)\\d{3}|(?:6\\d|7[1-48])\\d{7}",
       "exampleNumber": "612345678",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

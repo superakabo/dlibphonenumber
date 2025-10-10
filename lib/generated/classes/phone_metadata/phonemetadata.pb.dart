@@ -63,7 +63,7 @@ class NumberFormat extends $pb.GeneratedMessage {
     ..aOB(6, _omitFieldNames ? '' : 'nationalPrefixOptionalWhenFormatting');
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  NumberFormat clone() => NumberFormat()..mergeFromMessage(this);
+  NumberFormat clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NumberFormat copyWith(void Function(NumberFormat) updates) =>
       super.copyWith((message) => updates(message as NumberFormat))
@@ -229,7 +229,7 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PhoneNumberDesc clone() => PhoneNumberDesc()..mergeFromMessage(this);
+  PhoneNumberDesc clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PhoneNumberDesc copyWith(void Function(PhoneNumberDesc) updates) =>
       super.copyWith((message) => updates(message as PhoneNumberDesc))
@@ -412,7 +412,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
     ..aOM<PhoneNumberDesc>(8, _omitFieldNames ? '' : 'voip',
         subBuilder: PhoneNumberDesc.create)
     ..aQS(9, _omitFieldNames ? '' : 'id')
-    ..a<$core.int>(10, _omitFieldNames ? '' : 'countryCode', $pb.PbFieldType.O3)
+    ..aI(10, _omitFieldNames ? '' : 'countryCode')
     ..aOS(11, _omitFieldNames ? '' : 'internationalPrefix')
     ..aOS(12, _omitFieldNames ? '' : 'nationalPrefix')
     ..aOS(13, _omitFieldNames ? '' : 'preferredExtnPrefix')
@@ -420,11 +420,9 @@ class PhoneMetadata extends $pb.GeneratedMessage {
     ..aOS(16, _omitFieldNames ? '' : 'nationalPrefixTransformRule')
     ..aOS(17, _omitFieldNames ? '' : 'preferredInternationalPrefix')
     ..aOB(18, _omitFieldNames ? '' : 'sameMobileAndFixedLinePattern')
-    ..pc<NumberFormat>(
-        19, _omitFieldNames ? '' : 'numberFormat', $pb.PbFieldType.PM,
+    ..pPM<NumberFormat>(19, _omitFieldNames ? '' : 'numberFormat',
         subBuilder: NumberFormat.create)
-    ..pc<NumberFormat>(
-        20, _omitFieldNames ? '' : 'intlNumberFormat', $pb.PbFieldType.PM,
+    ..pPM<NumberFormat>(20, _omitFieldNames ? '' : 'intlNumberFormat',
         subBuilder: NumberFormat.create)
     ..aOM<PhoneNumberDesc>(21, _omitFieldNames ? '' : 'pager',
         subBuilder: PhoneNumberDesc.create)
@@ -449,7 +447,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
         subBuilder: PhoneNumberDesc.create);
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PhoneMetadata clone() => PhoneMetadata()..mergeFromMessage(this);
+  PhoneMetadata clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PhoneMetadata copyWith(void Function(PhoneMetadata) updates) =>
       super.copyWith((message) => updates(message as PhoneMetadata))
@@ -905,13 +903,11 @@ class PhoneMetadataCollection extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'i18n.phonenumbers'),
       createEmptyInstance: create)
-    ..pc<PhoneMetadata>(
-        1, _omitFieldNames ? '' : 'metadata', $pb.PbFieldType.PM,
+    ..pPM<PhoneMetadata>(1, _omitFieldNames ? '' : 'metadata',
         subBuilder: PhoneMetadata.create);
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PhoneMetadataCollection clone() =>
-      PhoneMetadataCollection()..mergeFromMessage(this);
+  PhoneMetadataCollection clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PhoneMetadataCollection copyWith(
           void Function(PhoneMetadataCollection) updates) =>

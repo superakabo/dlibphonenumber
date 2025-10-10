@@ -9,6 +9,7 @@ Map<int, String> get673_en() {
     67372: "UNN",
     67373: "UNN",
     67374: "UNN",
+    67375: "UNN",
     67376: "UNN",
     67377: "UNN",
     67379: "UNN",
