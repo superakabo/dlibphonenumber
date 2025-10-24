@@ -18,7 +18,7 @@ Map<String, Object?> getRO() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "11(?:2|6\\d{3})",
+      "nationalNumberPattern": "11(?:[23]|6\\d{3})",
       "exampleNumber": "112",
       "possibleLength": [3, 6],
       "possibleLengthLocalOnly": [-1]
@@ -69,7 +69,7 @@ Map<String, Object?> getRO() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "1(?:1(?:2|6(?:000|1(?:11|23))|8(?:(?:01|8[18])1|119|[23]00|932))|[24]\\d\\d|9(?:0(?:00|19)|1[19]|21|3[02]|5[178]))|8[48]\\d\\d",
+          "1(?:1(?:[23]|6(?:000|1(?:11|23))|8(?:(?:01|8[18])1|119|[23]00|932))|[24]\\d\\d|9(?:0(?:00|19)|1[19]|21|3[02]|5[178]))|8[48]\\d\\d",
       "exampleNumber": "112",
       "possibleLength": [3, 4, 5, 6],
       "possibleLengthLocalOnly": [-1]
@@ -84,9 +84,9 @@ Map<String, Object?> getRO() {
     },
     "mobileNumberPortableRegion": false,
     "smsServices": {
-      "nationalNumberPattern": "(?:1[24]|8[48])\\d\\d",
-      "exampleNumber": "1200",
-      "possibleLength": [4],
+      "nationalNumberPattern": "113|(?:1[24]|8[48])\\d\\d",
+      "exampleNumber": "113",
+      "possibleLength": [3, 4],
       "possibleLengthLocalOnly": [-1]
     }
   };

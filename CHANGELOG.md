@@ -1,3 +1,9 @@
+## 1.1.50
+- Updated phone metadata for region code(s): AU, CC, CX, GB, LB, MG, SN
+- Updated short number metadata for region code(s): RO
+- Updated carrier data for country calling code(s): 57 (en), 61 (en), 221 (en), 255 (en), 261 (en), 852 (zh), 961 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.49
 - Updated phone metadata for region code(s): CZ, ES, GE, HK, JO, LI, US
 - Updated short number metadata for region code(s): ES
