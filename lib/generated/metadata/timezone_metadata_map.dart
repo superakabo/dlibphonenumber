@@ -1017,6 +1017,7 @@ class TimezoneMetadataMap {
       56323: "America/Santiago",
       59352: "America/Guayaquil&Pacific/Galapagos",
       61731: "Australia/Brisbane",
+      61855: "Australia/Adelaide&Australia/Perth",
       62007: "Asia/Jakarta&Asia/Makassar",
       62379: "Asia/Jakarta&Asia/Makassar",
       62403: "Asia/Jayapura&Asia/Makassar",

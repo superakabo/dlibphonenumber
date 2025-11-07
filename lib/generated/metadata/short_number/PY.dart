@@ -6,8 +6,8 @@
 Map<String, Object?> getPY() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[19]\\d\\d",
-      "possibleLength": [3]
+      "nationalNumberPattern": "[159]\\d\\d(?:\\d{4})?",
+      "possibleLength": [3, 7]
     },
     "fixedLine": {
       "possibleLength": [-1],
@@ -66,9 +66,9 @@ Map<String, Object?> getPY() {
       "possibleLengthLocalOnly": [-1]
     },
     "shortCode": {
-      "nationalNumberPattern": "1[1-9]\\d|911",
+      "nationalNumberPattern": "(?:1[01]|51)\\d{5}|911|1[1-9]\\d",
       "exampleNumber": "110",
-      "possibleLength": [3],
+      "possibleLength": [3, 7],
       "possibleLengthLocalOnly": [-1]
     },
     "standardRate": {
@@ -76,12 +76,16 @@ Map<String, Object?> getPY() {
       "possibleLengthLocalOnly": [-1]
     },
     "carrierSpecific": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "(?:1[01]|51)\\d{5}",
+      "exampleNumber": "1000000",
+      "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]
     },
     "mobileNumberPortableRegion": false,
     "smsServices": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "(?:1[01]|51)\\d{5}",
+      "exampleNumber": "1000000",
+      "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]
     }
   };

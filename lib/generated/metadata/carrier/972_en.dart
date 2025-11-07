@@ -32,6 +32,7 @@ Map<int, String> get972_en() {
     9725543: "Maskyoo",
     9725544: "Cellran Cellular Communications",
     9725545: "Maskyoo",
+    9725546: "Xphone",
     9725550: "Annatel",
     9725551: "Annatel",
     9725552: "Annatel",

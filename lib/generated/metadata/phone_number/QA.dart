@@ -10,8 +10,7 @@ Map<String, Object?> getQA() {
       "possibleLength": [7, 8, 9, 11]
     },
     "fixedLine": {
-      "nationalNumberPattern":
-          "4(?:1111|2022)\\d{3}|4(?:[04]\\d\\d|14[0-6]|999)\\d{4}",
+      "nationalNumberPattern": "4(?:(?:[014]\\d\\d|999)\\d|2022)\\d{3}",
       "exampleNumber": "44123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

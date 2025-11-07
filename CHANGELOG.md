@@ -1,3 +1,10 @@
+## 1.1.51
+- Updated phone metadata for region code(s): AU, BJ, CC, CX, ET, IL, IR, MC, PY, QA, SG, SV, TJ, UG, ZA
+- Updated short number metadata for region code(s): PY
+- Updated geocoding data for country calling code(s): 61 (en)
+- Updated carrier data for country calling code(s): 61 (en), 65 (en), 98 (en, fa), 229 (en), 256 (en), 372 (en), 377 (en),
+- Updated / refreshed time zone meta data.
+
 ## 1.1.50
 - Updated phone metadata for region code(s): AU, CC, CX, GB, LB, MG, SN
 - Updated short number metadata for region code(s): RO

@@ -6,21 +6,19 @@
 Map<String, Object?> getBJ() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:01\\d|[24-689])\\d{7}",
+      "nationalNumberPattern": "(?:01\\d|8)\\d{7}",
       "possibleLength": [8, 10]
     },
     "fixedLine": {
-      "nationalNumberPattern":
-          "2090\\d{4}|(?:012\\d\\d|2(?:02|1[037]|2[45]|3[68]|4\\d))\\d{5}",
+      "nationalNumberPattern": "012\\d{7}",
       "exampleNumber": "0120211234",
-      "possibleLength": [8, 10],
+      "possibleLength": [10],
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern":
-          "(?:01(?:2[5-9]|[4-69]\\d)|4[0-8]|[56]\\d|9[013-9])\\d{6}",
+      "nationalNumberPattern": "01(?:2[5-9]|[4-69]\\d)\\d{6}",
       "exampleNumber": "0195123456",
-      "possibleLength": [8, 10],
+      "possibleLength": [10],
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
@@ -53,7 +51,7 @@ Map<String, Object?> getBJ() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[24-689]"],
+        "leadingDigitsPattern": ["8"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
@@ -67,7 +65,7 @@ Map<String, Object?> getBJ() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[24-689]"],
+        "leadingDigitsPattern": ["8"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {

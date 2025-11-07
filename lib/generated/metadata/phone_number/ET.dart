@@ -19,7 +19,7 @@ Map<String, Object?> getET() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "700[1-9]\\d{5}|(?:7(?:0[1-9]|1[0-8]|22|77|86|99)|9\\d\\d)\\d{6}",
+          "700[1-9]\\d{5}|(?:7(?:0[1-9]|1[0-8]|2[1-35-79]|3\\d|77|86|99)|9\\d\\d)\\d{6}",
       "exampleNumber": "911234567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

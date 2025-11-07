@@ -76,8 +76,6 @@ class NumberFormat extends $pb.GeneratedMessage {
   static NumberFormat create() => NumberFormat._();
   @$core.override
   NumberFormat createEmptyInstance() => create();
-  static $pb.PbList<NumberFormat> createRepeated() =>
-      $pb.PbList<NumberFormat>();
   @$core.pragma('dart2js:noInline')
   static NumberFormat getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<NumberFormat>(create);
@@ -242,8 +240,6 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
   static PhoneNumberDesc create() => PhoneNumberDesc._();
   @$core.override
   PhoneNumberDesc createEmptyInstance() => create();
-  static $pb.PbList<PhoneNumberDesc> createRepeated() =>
-      $pb.PbList<PhoneNumberDesc>();
   @$core.pragma('dart2js:noInline')
   static PhoneNumberDesc getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PhoneNumberDesc>(create);
@@ -460,8 +456,6 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   static PhoneMetadata create() => PhoneMetadata._();
   @$core.override
   PhoneMetadata createEmptyInstance() => create();
-  static $pb.PbList<PhoneMetadata> createRepeated() =>
-      $pb.PbList<PhoneMetadata>();
   @$core.pragma('dart2js:noInline')
   static PhoneMetadata getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PhoneMetadata>(create);
@@ -921,8 +915,6 @@ class PhoneMetadataCollection extends $pb.GeneratedMessage {
   static PhoneMetadataCollection create() => PhoneMetadataCollection._();
   @$core.override
   PhoneMetadataCollection createEmptyInstance() => create();
-  static $pb.PbList<PhoneMetadataCollection> createRepeated() =>
-      $pb.PbList<PhoneMetadataCollection>();
   @$core.pragma('dart2js:noInline')
   static PhoneMetadataCollection getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PhoneMetadataCollection>(create);

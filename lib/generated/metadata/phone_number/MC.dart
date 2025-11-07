@@ -6,7 +6,7 @@
 Map<String, Object?> getMC() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:[3489]|6\\d)\\d{7}",
+      "nationalNumberPattern": "(?:[3489]|[67]\\d)\\d{7}",
       "possibleLength": [8, 9]
     },
     "fixedLine": {
@@ -16,7 +16,7 @@ Map<String, Object?> getMC() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "4(?:[469]\\d|5[1-9])\\d{5}|(?:3|6\\d)\\d{7}",
+      "nationalNumberPattern": "4(?:[469]\\d|5[1-9])\\d{5}|(?:3|[67]\\d)\\d{7}",
       "exampleNumber": "612345678",
       "possibleLength": [8, 9],
       "possibleLengthLocalOnly": [-1]
@@ -72,7 +72,7 @@ Map<String, Object?> getMC() {
       {
         "pattern": "(\\d)(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4 \$5",
-        "leadingDigitsPattern": ["6"],
+        "leadingDigitsPattern": ["[67]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
@@ -94,7 +94,7 @@ Map<String, Object?> getMC() {
       {
         "pattern": "(\\d)(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4 \$5",
-        "leadingDigitsPattern": ["6"],
+        "leadingDigitsPattern": ["[67]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }

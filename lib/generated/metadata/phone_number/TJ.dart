@@ -6,7 +6,7 @@
 Map<String, Object?> getTJ() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[0-57-9]\\d{8}",
+      "nationalNumberPattern": "(?:[0-57-9]\\d|66)\\d{7}",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [3, 5, 6, 7]
     },
@@ -19,7 +19,7 @@ Map<String, Object?> getTJ() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:33[03-9]|4(?:1[18]|4[02-479])|81[1-9])\\d{6}|(?:[09]\\d|1[0-27-9]|2[0-27]|[34]0|5[05]|7[01578]|8[078])\\d{7}",
+          "(?:33[03-9]|4(?:1[18]|4[02-479])|81[1-9])\\d{6}|(?:[09]\\d|1[0-27-9]|2[0-27]|3[08]|40|5[05]|66|7[01578]|8[078])\\d{7}",
       "exampleNumber": "917123456",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -71,7 +71,7 @@ Map<String, Object?> getTJ() {
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[0-57-9]"],
+        "leadingDigitsPattern": ["\\d"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -97,7 +97,7 @@ Map<String, Object?> getTJ() {
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[0-57-9]"],
+        "leadingDigitsPattern": ["\\d"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

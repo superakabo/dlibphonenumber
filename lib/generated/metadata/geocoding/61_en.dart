@@ -28,6 +28,8 @@ Map<int, String> get61_en() {
     61349:
         "Cowes/Cranbourne/Emerald/Healesville/Koo Wee Rup/Marysville/Mornington/Pakenham/Red Hill/Rosebud/Tankerton/Warburton",
     61390: "Melbourne",
+    61855:
+        "Bakers Hill/Bindoon/Bullsbrook East/Byford/Dwellingup/Gidgegannup/Gingin/Guilderton/Mandurah/Mount Helena/Mount Wells/Pinjarra/Rockingham/Toodyay/Yanchep",
     612383: "Goulburn",
     612384: "New South Wales",
     612385: "Goulburn",

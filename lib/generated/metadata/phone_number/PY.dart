@@ -63,6 +63,12 @@ Map<String, Object?> getPY() {
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
+        "pattern": "(\\d{7})",
+        "format": "\$1",
+        "leadingDigitsPattern": ["[15]"],
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
         "pattern": "(\\d{2})(\\d{5})",
         "format": "\$1 \$2",
         "leadingDigitsPattern": ["[26]1|3[289]|4[1246-8]|7[1-3]|8[1-36]"],
