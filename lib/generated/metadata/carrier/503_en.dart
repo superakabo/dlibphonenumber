@@ -5,7 +5,8 @@
 /// Carrier JSON data for 503_en
 Map<int, String> get503_en() {
   return {
-    5035: "Claro",
+    50350: "Claro",
+    50351: "Tigo",
     50361: "Movistar",
     50365: "SIGET",
     50366: "SIGET",

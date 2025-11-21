@@ -17,7 +17,7 @@ Map<String, Object?> getSN() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "7(?:[05-8]\\d|[19]0|21)\\d{6}",
+      "nationalNumberPattern": "7(?:[015-8]\\d|21|90)\\d{6}",
       "exampleNumber": "701234567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

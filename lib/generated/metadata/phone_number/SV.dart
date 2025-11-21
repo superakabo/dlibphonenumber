@@ -6,8 +6,7 @@
 Map<String, Object?> getSV() {
   return {
     "generalDesc": {
-      "nationalNumberPattern":
-          "(?:[267]\\d\\d|500)\\d{5}|(?:80\\d|900)\\d{4}(?:\\d{4})?",
+      "nationalNumberPattern": "[25-7]\\d{7}|(?:80\\d|900)\\d{4}(?:\\d{4})?",
       "possibleLength": [7, 8, 11]
     },
     "fixedLine": {
@@ -18,7 +17,7 @@ Map<String, Object?> getSV() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:500[0-4]|[67]\\d{3})\\d{4}",
+      "nationalNumberPattern": "(?:5(?:00[0-4]|100)|[67]\\d{3})\\d{4}",
       "exampleNumber": "70123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

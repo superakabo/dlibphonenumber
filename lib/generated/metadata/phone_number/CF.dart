@@ -16,7 +16,7 @@ Map<String, Object?> getCF() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "7[024-7]\\d{6}",
+      "nationalNumberPattern": "7[02-7]\\d{6}",
       "exampleNumber": "70012345",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

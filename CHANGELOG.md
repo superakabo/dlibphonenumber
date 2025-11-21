@@ -1,3 +1,8 @@
+## 1.1.52
+- Updated phone metadata for region code(s): CF, EE, EH, GE, IN, LB, MA, OM, SG, SN, SV, UG
+- Updated geocoding data for country calling code(s): 61 (en), 91 (en), 212 (en)
+- Updated carrier data for country calling code(s): 34 (en), 45 (en), 65 (en), 91 (en), 236 (en), 256 (en), 503 (en), 961 (en),
+
 ## 1.1.51
 - Updated phone metadata for region code(s): AU, BJ, CC, CX, ET, IL, IR, MC, PY, QA, SG, SV, TJ, UG, ZA
 - Updated short number metadata for region code(s): PY

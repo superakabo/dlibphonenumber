@@ -18,7 +18,7 @@ Map<String, Object?> getLB() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:(?:3|81)\\d|7(?:[01]\\d|6[013-9]|8[7-9]|9[0-3]))\\d{5}",
+          "(?:(?:3|81)\\d|7(?:[01]\\d|6[013-9]|8[7-9]|9[0-4]))\\d{5}",
       "exampleNumber": "71123456",
       "possibleLength": [7, 8],
       "possibleLengthLocalOnly": [-1]
