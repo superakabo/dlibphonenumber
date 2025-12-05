@@ -16,7 +16,7 @@ Map<String, Object?> getTZ() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:6[125-9]|7[13-9])\\d{7}",
+      "nationalNumberPattern": "(?:6[1-35-9]|7[13-9])\\d{7}",
       "exampleNumber": "621234567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

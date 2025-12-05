@@ -456,6 +456,7 @@ import 'geocoding/225_en.dart';
 import 'geocoding/226_en.dart';
 import 'geocoding/227_en.dart';
 import 'geocoding/228_en.dart';
+import 'geocoding/229_en.dart';
 import 'geocoding/230_en.dart';
 import 'geocoding/232_en.dart';
 import 'geocoding/233_en.dart';
@@ -710,6 +711,7 @@ class GeocodingMetadataMap {
       226: ["en"],
       227: ["en"],
       228: ["en", "fr", "es"],
+      229: ["en"],
       230: ["en", "fr", "es"],
       232: ["en"],
       233: ["en"],
@@ -1670,6 +1672,7 @@ class GeocodingMetadataMap {
       '226_en': get226_en(),
       '227_en': get227_en(),
       '228_en': get228_en(),
+      '229_en': get229_en(),
       '230_en': get230_en(),
       '232_en': get232_en(),
       '233_en': get233_en(),

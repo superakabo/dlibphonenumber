@@ -18,6 +18,7 @@ Map<int, String> get34_en() {
     34611: "Republica Movil",
     34612: "Syma",
     34613: "Yoigo",
+    34614: "DigiMobil",
     34615: "Orange",
     34616: "Movistar",
     34617: "Vodafone",

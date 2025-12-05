@@ -1,3 +1,8 @@
+## 1.1.53
+- Updated phone metadata for region code(s): GY, IL, MU, TD, TZ, UG, UZ
+- New geocoding data for country calling code(s): 229 (en)
+- Updated carrier data for country calling code(s): 34 (en), 230 (en), 255 (en), 256 (en), 998 (en)
+
 ## 1.1.52
 - Updated phone metadata for region code(s): CF, EE, EH, GE, IN, LB, MA, OM, SG, SN, SV, UG
 - Updated geocoding data for country calling code(s): 61 (en), 91 (en), 212 (en)
