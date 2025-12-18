@@ -18,7 +18,7 @@ Map<String, Object?> getMG() {
       "possibleLengthLocalOnly": [7]
     },
     "mobile": {
-      "nationalNumberPattern": "3[2-46-9]\\d{7}",
+      "nationalNumberPattern": "3[2-9]\\d{7}",
       "exampleNumber": "321234567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

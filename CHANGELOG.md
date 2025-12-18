@@ -1,3 +1,11 @@
+## 1.1.54
+- Updated alternate formatting data for country calling code(s): 91
+- Updated phone metadata for region code(s): CL, EE, ET, GE, GY, HK, IN, KR, MG, SG, SV, US
+- New geocoding data for country calling code(s): 1353 (en)
+- Updated geocoding data for country calling code(s): 251 (en)
+- Updated carrier data for country calling code(s): 34 (en), 36 (en), 43 (en), 48 (en), 56 (en), 65 (en), 261 (en), 501 (en),
+- Updated / refreshed time zone meta data.
+
 ## 1.1.53
 - Updated phone metadata for region code(s): GY, IL, MU, TD, TZ, UG, UZ
 - New geocoding data for country calling code(s): 229 (en)
