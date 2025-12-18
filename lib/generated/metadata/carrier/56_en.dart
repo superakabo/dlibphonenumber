@@ -151,6 +151,7 @@ Map<int, String> get56_en() {
     567226: "Complejo Manufacturero De Equipos Telefonicos S.A.C.I.",
     569100: "WOM",
     569101: "Pacifico Cable S.P.A.",
+    569102: "Pacifico Cable S.P.A.",
     569304: "Claro",
     569310: "WOM",
     569311: "WOM",

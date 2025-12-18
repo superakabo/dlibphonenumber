@@ -1,6 +1,6 @@
 name: dlibphonenumber
 description: A Dart package for working with international phone numbers based on Google's libphonenumber implementation. 
-version: 1.1.53
+version: 1.1.54
 homepage: https://github.com/superakabo/dlibphonenumber
 topics:
   - phonenumber

@@ -17,7 +17,7 @@ Map<String, Object?> getSV() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:5(?:00[0-4]|100)|[67]\\d{3})\\d{4}",
+      "nationalNumberPattern": "[5-7]\\d{7}",
       "exampleNumber": "70123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
