@@ -5,6 +5,7 @@
 /// Carrier JSON data for 852_en
 Map<int, String> get852_en() {
   return {
+    85240: "China Mobile",
     85261: "HKT",
     852440: "China Mobile",
     852441: "HKT",
@@ -400,10 +401,10 @@ Map<int, String> get852_en() {
     8525749: "HKT",
     8525768: "Lycamobile",
     8525769: "Lycamobile",
-    8525906: "21Vianet",
-    8525907: "21Vianet",
-    8525908: "Lycamobile",
-    8525909: "Lycamobile",
+    8525906: "China Mobile",
+    8525907: "China Mobile",
+    8525908: "China Mobile",
+    8525909: "China Mobile",
     8526260: "3",
     8526261: "Webbing",
     8526360: "HKT",

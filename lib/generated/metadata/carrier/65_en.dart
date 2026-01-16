@@ -475,6 +475,7 @@ Map<int, String> get65_en() {
     658992: "Simba",
     658993: "Simba",
     658994: "Simba",
+    658995: "M1",
     659001: "StarHub",
     659002: "StarHub",
     659003: "StarHub",

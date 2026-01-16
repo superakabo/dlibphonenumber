@@ -1,3 +1,8 @@
+## 1.1.55
+- Updated phone metadata for region code(s): AE, AG, AI, AS, BB, BM, BS, CA, DM, DO, GD, GU, HK, JM, KN, KR, KY, LC, MA,
+- Updated geocoding data for country calling code(s): 1305 (en)
+- Updated carrier data for country calling code(s): 33 (en), 34 (en), 39 (en), 41 (en), 65 (en), 81 (en), 255 (en), 256 (en),
+
 ## 1.1.54
 - Updated alternate formatting data for country calling code(s): 91
 - Updated phone metadata for region code(s): CL, EE, ET, GE, GY, HK, IN, KR, MG, SG, SV, US

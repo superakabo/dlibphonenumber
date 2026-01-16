@@ -57,60 +57,46 @@ Map<String, Object?> getMA() {
     "sameMobileAndFixedLinePattern": false,
     "numberFormat": [
       {
-        "pattern": "(\\d{3})(\\d{2})(\\d{2})(\\d{2})",
-        "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["5[45]"],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
         "pattern": "(\\d{4})(\\d{5})",
         "format": "\$1-\$2",
-        "leadingDigitsPattern": ["5(?:[19]|2[2-46-9]|3[3-9])|8(?:0[89]|92)"],
+        "leadingDigitsPattern": ["892"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{2})(\\d{7})",
         "format": "\$1-\$2",
-        "leadingDigitsPattern": ["8"],
+        "leadingDigitsPattern": ["8(?:0[0-7]|9)"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
-        "pattern": "(\\d{3})(\\d{6})",
-        "format": "\$1-\$2",
-        "leadingDigitsPattern": ["[5-7]"],
+        "pattern": "(\\d)(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
+        "format": "\$1 \$2 \$3 \$4 \$5",
+        "leadingDigitsPattern": ["[5-8]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
     "intlNumberFormat": [
       {
-        "pattern": "(\\d{3})(\\d{2})(\\d{2})(\\d{2})",
-        "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["5[45]"],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
         "pattern": "(\\d{4})(\\d{5})",
         "format": "\$1-\$2",
-        "leadingDigitsPattern": ["5(?:[19]|2[2-46-9]|3[3-9])|8(?:0[89]|92)"],
+        "leadingDigitsPattern": ["892"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{2})(\\d{7})",
         "format": "\$1-\$2",
-        "leadingDigitsPattern": ["8"],
+        "leadingDigitsPattern": ["8(?:0[0-7]|9)"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
-        "pattern": "(\\d{3})(\\d{6})",
-        "format": "\$1-\$2",
-        "leadingDigitsPattern": ["[5-7]"],
+        "pattern": "(\\d)(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
+        "format": "\$1 \$2 \$3 \$4 \$5",
+        "leadingDigitsPattern": ["[5-8]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }

@@ -18,7 +18,7 @@ Map<String, Object?> getAE() {
       "possibleLengthLocalOnly": [7]
     },
     "mobile": {
-      "nationalNumberPattern": "5[024-68]\\d{7}",
+      "nationalNumberPattern": "5[02-68]\\d{7}",
       "exampleNumber": "501234567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
