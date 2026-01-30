@@ -11,14 +11,14 @@ Map<String, Object?> getAS() {
       "possibleLengthLocalOnly": [7]
     },
     "fixedLine": {
-      "nationalNumberPattern": "6846(?:22|33|44|55|77|88|9[19])\\d{4}",
+      "nationalNumberPattern": "684(?:274|6(?:22|33|44|55|77|88|9[19]))\\d{4}",
       "exampleNumber": "6846221234",
       "possibleLength": [10],
       "possibleLengthLocalOnly": [7]
     },
     "mobile": {
       "nationalNumberPattern":
-          "684(?:2(?:48|5[2468]|7[26])|7(?:3[13]|70|82))\\d{4}",
+          "684(?:2(?:48|5[2468]|7[246])|7(?:3[13]|70|82))\\d{4}",
       "exampleNumber": "6847331234",
       "possibleLength": [10],
       "possibleLengthLocalOnly": [7]

@@ -18,7 +18,7 @@ Map<String, Object?> getBE() {
     },
     "mobile": {
       "nationalNumberPattern": "4[5-9]\\d{7}",
-      "exampleNumber": "470123456",
+      "exampleNumber": "450001234",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
     },

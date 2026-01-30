@@ -16,6 +16,7 @@ Map<int, String> get243_en() {
     24389: "Orange",
     24390: "Africell",
     24391: "Africell",
+    24396: "Airtel",
     24397: "Airtel",
     24398: "Airtel",
     24399: "Airtel"

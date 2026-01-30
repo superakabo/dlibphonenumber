@@ -59,7 +59,6 @@ Map<String, Object?> getEH() {
       "possibleLengthLocalOnly": [-1]
     },
     "mainCountryForCode": false,
-    "leadingDigits": "528[89]",
     "noInternationalDialling": {
       "possibleLength": [-1],
       "possibleLengthLocalOnly": [-1]

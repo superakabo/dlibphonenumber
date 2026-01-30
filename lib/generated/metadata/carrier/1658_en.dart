@@ -4,5 +4,12 @@
 
 /// Carrier JSON data for 1658_en
 Map<int, String> get1658_en() {
-  return {1658295: "Cable & Wireless"};
+  return {
+    165820: "Flow",
+    165821: "Flow",
+    165822: "Flow",
+    165823: "Flow",
+    165824: "Flow",
+    1658295: "Flow"
+  };
 }

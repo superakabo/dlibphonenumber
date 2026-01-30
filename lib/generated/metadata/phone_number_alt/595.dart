@@ -41,7 +41,7 @@ Map<String, Object?> get595() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[26]1|3[289]|4[1246-8]|7[1-3]|8[1-36]"],
+        "leadingDigitsPattern": ["3[289]|4|61|7[1-3]|8[1-36]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
@@ -65,7 +65,7 @@ Map<String, Object?> get595() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[26]1|3[289]|4[1246-8]|7[1-3]|8[1-36]"],
+        "leadingDigitsPattern": ["3[289]|4|61|7[1-3]|8[1-36]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {

@@ -22,7 +22,7 @@ Map<int, String> get966_en() {
     966576: "Lebara",
     966577: "Lebara",
     966578: "Lebara",
-    966579: "Lebara",
+    966579: "STC",
     9665150: "Virgin",
     9665151: "Virgin",
     9665152: "Virgin",
@@ -36,6 +36,8 @@ Map<int, String> get966_en() {
     9665735: "STC",
     9665736: "STC",
     9665737: "STC",
-    9665738: "STC"
+    9665738: "STC",
+    9665790: "Lebara",
+    9665791: "Lebara"
   };
 }

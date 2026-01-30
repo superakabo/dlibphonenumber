@@ -31,6 +31,7 @@ import 'carrier/1284_en.dart';
 import 'carrier/1340_en.dart';
 import 'carrier/1345_en.dart';
 import 'carrier/1473_en.dart';
+import 'carrier/1658_en.dart';
 import 'carrier/1664_en.dart';
 import 'carrier/1671_en.dart';
 import 'carrier/1784_en.dart';
@@ -38,7 +39,6 @@ import 'carrier/1787_en.dart';
 import 'carrier/1869_en.dart';
 import 'carrier/1876_en.dart';
 import 'carrier/1939_en.dart';
-import 'carrier/1658_en.dart';
 import 'carrier/1659_en.dart';
 import 'carrier/1670_en.dart';
 import 'carrier/20_en.dart';
@@ -519,6 +519,7 @@ class CarrierMetadataMap {
       '1340_en': get1340_en(),
       '1345_en': get1345_en(),
       '1473_en': get1473_en(),
+      '1658_en': get1658_en(),
       '1664_en': get1664_en(),
       '1671_en': get1671_en(),
       '1784_en': get1784_en(),
@@ -526,7 +527,6 @@ class CarrierMetadataMap {
       '1869_en': get1869_en(),
       '1876_en': get1876_en(),
       '1939_en': get1939_en(),
-      '1658_en': get1658_en(),
       '1659_en': get1659_en(),
       '1670_en': get1670_en(),
       '20_en': get20_en(),

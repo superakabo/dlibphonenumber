@@ -11,7 +11,7 @@ Map<String, Object?> getMA() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "5(?:(?:18|4[0679]|5[03])\\d|2(?:[0-25-79]\\d|3[1-578]|4[02-46-8]|8[0235-7])|3(?:[0-47]\\d|5[02-9]|6[02-8]|8[014-9]|9[3-9]))\\d{5}",
+          "5(?:(?:18|4[0679]|5[03])\\d|2(?:[0-25-79]\\d|3[1-578]|4[02-46-8]|8[0235-9])|3(?:[0-47]\\d|5[02-9]|6[02-8]|8[014-9]|9[3-9]))\\d{5}",
       "exampleNumber": "520123456",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -106,6 +106,7 @@ Map<String, Object?> getMA() {
       "possibleLengthLocalOnly": [-1]
     },
     "mainCountryForCode": true,
+    "leadingDigits": "[5-8]",
     "noInternationalDialling": {
       "possibleLength": [-1],
       "possibleLengthLocalOnly": [-1]

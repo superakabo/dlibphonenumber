@@ -1,3 +1,9 @@
+## 1.1.56
+- Updated alternate formatting data for country calling code(s): 595
+- Updated phone metadata for region code(s): AS, BE, CD, EH, GY, IR, JM, MA, MU, PY, SA, US
+- Updated short number metadata for region code(s): PY
+- Updated carrier data for country calling code(s): 98 (en, fa), 243 (en), 357 (en), 966 (en), 1658 (en)
+
 ## 1.1.55
 - Updated phone metadata for region code(s): AE, AG, AI, AS, BB, BM, BS, CA, DM, DO, GD, GU, HK, JM, KN, KR, KY, LC, MA,
 - Updated geocoding data for country calling code(s): 1305 (en)

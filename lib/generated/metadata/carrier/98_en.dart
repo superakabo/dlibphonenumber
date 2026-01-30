@@ -23,6 +23,7 @@ Map<int, String> get98_en() {
     989982: "Shatel Mobile",
     989990: "IR-MCI",
     989991: "Irancell",
+    989993: "Aptel",
     989995: "IR-MCI",
     989996: "IR-MCI",
     989998: "Rightel",

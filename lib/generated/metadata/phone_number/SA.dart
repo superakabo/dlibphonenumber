@@ -18,7 +18,7 @@ Map<String, Object?> getSA() {
       "possibleLengthLocalOnly": [7]
     },
     "mobile": {
-      "nationalNumberPattern": "579[01]\\d{5}|5(?:[013-689]\\d|7[0-8])\\d{6}",
+      "nationalNumberPattern": "579[0-8]\\d{5}|5(?:[013-689]\\d|7[0-8])\\d{6}",
       "exampleNumber": "512345678",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
