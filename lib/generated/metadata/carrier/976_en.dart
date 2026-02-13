@@ -5,7 +5,6 @@
 /// Carrier JSON data for 976_en
 Map<int, String> get976_en() {
   return {
-    97650: "Unitel",
     97655: "Unitel",
     97660: "ONDO",
     97666: "ONDO",
@@ -28,6 +27,16 @@ Map<int, String> get976_en() {
     97696: "Skytel",
     97697: "G-Mobile",
     97698: "G-Mobile",
-    97699: "Mobicom"
+    97699: "Mobicom",
+    976500: "Unitel",
+    976501: "Unitel",
+    976502: "Unitel",
+    976503: "Unitel",
+    976504: "Unitel",
+    976505: "Mobicom",
+    976506: "Mobicom",
+    976507: "Mobicom",
+    976508: "Mobicom",
+    976509: "Mobicom"
   };
 }

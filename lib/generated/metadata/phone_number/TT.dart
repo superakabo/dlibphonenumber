@@ -25,7 +25,8 @@ Map<String, Object?> getTT() {
       "possibleLengthLocalOnly": [7]
     },
     "tollFree": {
-      "nationalNumberPattern": "8(?:00|33|44|55|66|77|88)[2-9]\\d{6}",
+      "nationalNumberPattern":
+          "868800\\d{4}|8(?:00|33|44|55|66|77|88)[2-9]\\d{6}",
       "exampleNumber": "8002345678",
       "possibleLength": [10],
       "possibleLengthLocalOnly": [-1]

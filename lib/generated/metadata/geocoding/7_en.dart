@@ -5,6 +5,7 @@
 /// Geocoding JSON data for 7_en
 Map<int, String> get7_en() {
   return {
+    733: "Baikonur",
     736: "Simferopol",
     740: "Kaliningrad",
     7301: "Republic of Buryatia",
@@ -128,7 +129,6 @@ Map<int, String> get7_en() {
     77279: "Almaty",
     77282: "Taldykorgan",
     77292: "Aktau",
-    733622: "Baikonur",
     771030: "Atasu",
     771031: "Aksu-Ayuly",
     771032: "Karazhal",

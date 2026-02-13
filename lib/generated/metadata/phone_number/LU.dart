@@ -18,7 +18,7 @@ Map<String, Object?> getLU() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "6(?:[269][18]|5[1568]|7[189]|81)\\d{6}",
+      "nationalNumberPattern": "6(?:[26][18]|5[1568]|7[189]|81|9[128])\\d{6}",
       "exampleNumber": "628123456",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -86,7 +86,16 @@ Map<String, Object?> getLU() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{1,2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["2(?:[0367]|4[3-8])"],
+        "leadingDigitsPattern": ["20"],
+        "domesticCarrierCodeFormattingRule": "\$CC \$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
+        "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{1,5})",
+        "format": "\$1 \$2 \$3 \$4",
+        "leadingDigitsPattern": [
+          "[3-57]|8[13-9]|9(?:0[89]|[2-579])|(?:2|80)[2-9]"
+        ],
         "domesticCarrierCodeFormattingRule": "\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -114,16 +123,7 @@ Map<String, Object?> getLU() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{1,2})",
         "format": "\$1 \$2 \$3 \$4 \$5",
-        "leadingDigitsPattern": ["2(?:[0367]|4[3-8])"],
-        "domesticCarrierCodeFormattingRule": "\$CC \$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
-        "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{1,5})",
-        "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": [
-          "[3-57]|8[13-9]|9(?:0[89]|[2-579])|(?:2|80)[2-9]"
-        ],
+        "leadingDigitsPattern": ["20"],
         "domesticCarrierCodeFormattingRule": "\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
@@ -157,7 +157,16 @@ Map<String, Object?> getLU() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{1,2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["2(?:[0367]|4[3-8])"],
+        "leadingDigitsPattern": ["20"],
+        "domesticCarrierCodeFormattingRule": "\$CC \$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
+        "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{1,5})",
+        "format": "\$1 \$2 \$3 \$4",
+        "leadingDigitsPattern": [
+          "[3-57]|8[13-9]|9(?:0[89]|[2-579])|(?:2|80)[2-9]"
+        ],
         "domesticCarrierCodeFormattingRule": "\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -185,16 +194,7 @@ Map<String, Object?> getLU() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{1,2})",
         "format": "\$1 \$2 \$3 \$4 \$5",
-        "leadingDigitsPattern": ["2(?:[0367]|4[3-8])"],
-        "domesticCarrierCodeFormattingRule": "\$CC \$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
-        "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{1,5})",
-        "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": [
-          "[3-57]|8[13-9]|9(?:0[89]|[2-579])|(?:2|80)[2-9]"
-        ],
+        "leadingDigitsPattern": ["20"],
         "domesticCarrierCodeFormattingRule": "\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false
       }

@@ -41,7 +41,7 @@ Map<String, Object?> get352() {
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["2(?:[0367]|4[3-8])"],
+        "leadingDigitsPattern": ["20"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -49,7 +49,7 @@ Map<String, Object?> get352() {
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["2(?:[0367]|4[3-8])"],
+        "leadingDigitsPattern": ["20"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

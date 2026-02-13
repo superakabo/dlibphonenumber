@@ -4,5 +4,5 @@
 
 /// Geocoding JSON data for 1445_en
 Map<int, String> get1445_en() {
-  return {1445: "Philadelphia"};
+  return {1445: "Philadelphia, PA"};
 }

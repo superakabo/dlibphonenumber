@@ -6,11 +6,11 @@
 Map<String, Object?> getCF() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:[27]\\d{3}|8776)\\d{4}",
+      "nationalNumberPattern": "8776\\d{4}|(?:[27]\\d|61)\\d{6}",
       "possibleLength": [8]
     },
     "fixedLine": {
-      "nationalNumberPattern": "2[12]\\d{6}",
+      "nationalNumberPattern": "(?:2[12]|61)\\d{6}",
       "exampleNumber": "21612345",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
@@ -51,7 +51,7 @@ Map<String, Object?> getCF() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[278]"],
+        "leadingDigitsPattern": ["[26-8]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -59,7 +59,7 @@ Map<String, Object?> getCF() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[278]"],
+        "leadingDigitsPattern": ["[26-8]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

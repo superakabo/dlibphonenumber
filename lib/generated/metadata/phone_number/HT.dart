@@ -16,7 +16,7 @@ Map<String, Object?> getHT() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:[34]\\d|5[56])\\d{6}",
+      "nationalNumberPattern": "(?:[34]\\d|5[568])\\d{6}",
       "exampleNumber": "34101234",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

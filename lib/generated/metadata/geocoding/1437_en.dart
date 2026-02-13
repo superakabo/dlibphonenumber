@@ -4,5 +4,5 @@
 
 /// Geocoding JSON data for 1437_en
 Map<int, String> get1437_en() {
-  return {1437: "Toronto"};
+  return {1437: "Toronto, ON"};
 }

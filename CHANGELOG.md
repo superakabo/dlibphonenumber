@@ -1,3 +1,10 @@
+## 1.1.57
+- Updated alternate formatting data for country calling code(s): 352
+- Updated phone metadata for region code(s): CF, HT, KZ, LU, PL, RU, SG, TT, TZ
+- Updated geocoding data for country calling code(s): 7 (en, ru), 1437 (en), 1445 (en)
+- Updated carrier data for country calling code(s): 32 (en), 65 (en), 255 (en), 381 (en), 685 (en), 853 (en), 976 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.56
 - Updated alternate formatting data for country calling code(s): 595
 - Updated phone metadata for region code(s): AS, BE, CD, EH, GY, IR, JM, MA, MU, PY, SA, US
