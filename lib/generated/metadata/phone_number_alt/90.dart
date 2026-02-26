@@ -41,7 +41,7 @@ Map<String, Object?> get90() {
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[2-4]|5(?:[02-69]|1[06])"],
+        "leadingDigitsPattern": ["[2-4]|5(?:[02-79]|1[06])"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
@@ -55,7 +55,7 @@ Map<String, Object?> get90() {
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[2-4]|5(?:[02-69]|1[06])"],
+        "leadingDigitsPattern": ["[2-4]|5(?:[02-79]|1[06])"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {

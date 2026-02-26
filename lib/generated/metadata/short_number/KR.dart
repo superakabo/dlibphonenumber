@@ -6,8 +6,8 @@
 Map<String, Object?> getKR() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "1\\d{2,4}",
-      "possibleLength": [3, 4, 5]
+      "nationalNumberPattern": "1\\d\\d(?:\\d(?:\\d(?:\\d{3})?)?)?",
+      "possibleLength": [3, 4, 5, 8]
     },
     "fixedLine": {
       "possibleLength": [-1],
@@ -67,9 +67,9 @@ Map<String, Object?> getKR() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "1(?:[016-9]114|3(?:0[01]|2|3[0-35-9]|45?|5[057]|6[569]|7[79]|8[2589]|9[0189]))|1(?:0[015]|1\\d|2[01357-9]|41|8[28])",
+          "1(?:[01679]114|3(?:0[01]|2|3[0-35-9]|45?|5[057]|6[569]|7[79]|8[2589]|9[0189])|55[15]\\d{4}|8(?:(?:11|44|66)\\d{4}|[28]))|1(?:0[015]|1\\d|2[01357-9]|41|8114)",
       "exampleNumber": "100",
-      "possibleLength": [3, 4, 5],
+      "possibleLength": [3, 4, 5, 8],
       "possibleLengthLocalOnly": [-1]
     },
     "standardRate": {
@@ -77,14 +77,17 @@ Map<String, Object?> getKR() {
       "possibleLengthLocalOnly": [-1]
     },
     "carrierSpecific": {
-      "nationalNumberPattern": "1(?:0[01]|1[4-6]|41)|1(?:[06-9]1\\d|111)\\d",
+      "nationalNumberPattern":
+          "1(?:0[01]|1[4-6]|41|8114)|1(?:[0679]1\\d|111)\\d",
       "exampleNumber": "100",
       "possibleLength": [3, 5],
       "possibleLengthLocalOnly": [-1]
     },
     "mobileNumberPortableRegion": false,
     "smsServices": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "1(?:55|8[146])\\d{5}",
+      "exampleNumber": "15500000",
+      "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
     }
   };

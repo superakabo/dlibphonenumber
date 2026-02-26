@@ -16,6 +16,7 @@ Map<int, String> get232_en() {
     23233: "Africell",
     23234: "QCELL",
     23235: "IPTEL",
+    23270: "Africell",
     23277: "Africell"
   };
 }

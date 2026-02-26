@@ -1,3 +1,11 @@
+## 1.1.58
+- Updated alternate formatting data for country calling code(s): 90
+- Updated phone metadata for region code(s): 882, HK, MY, PA, SL, TG, TR
+- Updated short number metadata for region code(s): KR
+- New geocoding data for country calling code(s): 1728 (en)
+- Updated carrier data for country calling code(s): 33 (en), 44 (en), 55 (en), 60 (en), 81 (en), 90 (en), 228 (en), 232 (en),
+- Updated / refreshed time zone meta data.
+
 ## 1.1.57
 - Updated alternate formatting data for country calling code(s): 352
 - Updated phone metadata for region code(s): CF, HT, KZ, LU, PL, RU, SG, TT, TZ

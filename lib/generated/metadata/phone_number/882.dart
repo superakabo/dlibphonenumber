@@ -16,7 +16,7 @@ Map<String, Object?> get882() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "342\\d{4}|(?:337|49)\\d{6}|(?:3(?:2|47|7\\d{3})|50\\d{3})\\d{7}",
+          "342\\d{4}|(?:337|49)\\d{6}|(?:3(?:2|47|7\\d{3})|5(?:0\\d{3}|2[0-2]))\\d{7}",
       "exampleNumber": "3421234",
       "possibleLength": [7, 8, 9, 10, 12],
       "possibleLengthLocalOnly": [-1]
@@ -81,7 +81,7 @@ Map<String, Object?> get882() {
       {
         "pattern": "(\\d{2})(\\d{4})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["10|23|3(?:[15]|4[57])|4|51"],
+        "leadingDigitsPattern": ["10|23|3(?:[15]|4[57])|4|5[12]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
@@ -131,7 +131,7 @@ Map<String, Object?> get882() {
       {
         "pattern": "(\\d{2})(\\d{4})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["10|23|3(?:[15]|4[57])|4|51"],
+        "leadingDigitsPattern": ["10|23|3(?:[15]|4[57])|4|5[12]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
