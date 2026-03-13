@@ -18,7 +18,7 @@ Map<String, Object?> getGY() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "91[1-3]",
+      "nationalNumberPattern": "91[1-4]",
       "exampleNumber": "911",
       "possibleLength": [3],
       "possibleLengthLocalOnly": [-1]
@@ -67,7 +67,7 @@ Map<String, Object?> getGY() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "0(?:02|(?:17|80)1|444|7(?:[67]7|9)|9(?:0[78]|[2-47]))|1(?:443|5[568])|91[1-3]",
+          "0(?:02|(?:17|80)1|444|7(?:[67]7|9)|9(?:0[78]|[2-47]))|1(?:443|5[568])|91[1-4]",
       "exampleNumber": "002",
       "possibleLength": [3, 4],
       "possibleLengthLocalOnly": [-1]

@@ -17,7 +17,7 @@ Map<String, Object?> getVU() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:[58]\\d|7[013-7])\\d{5}",
+      "nationalNumberPattern": "(?:[58]\\d|7[0-7])\\d{5}",
       "exampleNumber": "5912345",
       "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]

@@ -18,7 +18,7 @@ Map<String, Object?> getPM() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "1[578]|3(?:0\\d|1[689])\\d",
+      "nationalNumberPattern": "1[578]|310[0-245]|3(?:0\\d|1[1-689])\\d",
       "exampleNumber": "15",
       "possibleLength": [2, 4],
       "possibleLengthLocalOnly": [-1]
@@ -69,7 +69,7 @@ Map<String, Object?> getPM() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "1[578]|31(?:03|[689]\\d)|(?:118[02-9]|3[02469])\\d\\d",
+          "1[578]|31(?:0[0-5]|[1-689]\\d)|(?:118[02-9]|3[02469])\\d\\d",
       "exampleNumber": "15",
       "possibleLength": [2, 4, 6],
       "possibleLengthLocalOnly": [-1]
@@ -81,8 +81,8 @@ Map<String, Object?> getPM() {
       "possibleLengthLocalOnly": [-1]
     },
     "carrierSpecific": {
-      "nationalNumberPattern": "310\\d",
-      "exampleNumber": "3100",
+      "nationalNumberPattern": "3103",
+      "exampleNumber": "3103",
       "possibleLength": [4],
       "possibleLengthLocalOnly": [-1]
     },

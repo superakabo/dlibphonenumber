@@ -6,18 +6,19 @@
 Map<String, Object?> getPM() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[45]\\d{5}|(?:708|8\\d\\d)\\d{6}",
+      "nationalNumberPattern": "[78]\\d{8}|[2-9]\\d{5}",
       "possibleLength": [6, 9]
     },
     "fixedLine": {
-      "nationalNumberPattern": "(?:4[1-35-9]|5[0-47-9]|80[6-9]\\d\\d)\\d{4}",
+      "nationalNumberPattern":
+          "80[6-9]\\d{6}|(?:[236-9]\\d|4[1-35-9]|5[0-47-9])\\d{4}",
       "exampleNumber": "430123",
       "possibleLength": [6, 9],
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:4[02-489]|5[02-9]|708(?:4[0-5]|5[0-6]))\\d{4}",
+          "708(?:4[0-5]|5[0-6])\\d{4}|(?:[236-9]\\d|4[02-489]|5[02-9])\\d{4}",
       "exampleNumber": "551234",
       "possibleLength": [6, 9],
       "possibleLengthLocalOnly": [-1]
@@ -56,7 +57,7 @@ Map<String, Object?> getPM() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[45]"],
+        "leadingDigitsPattern": ["[2-9]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -78,7 +79,7 @@ Map<String, Object?> getPM() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[45]"],
+        "leadingDigitsPattern": ["[2-9]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },

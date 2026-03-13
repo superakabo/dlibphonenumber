@@ -7,6 +7,7 @@ Map<int, String> get229_en() {
   return {
     229014: "Celtiis",
     229015: "MTN",
+    2290128: "Celtiis",
     2290142: "MTN",
     2290145: "Moov",
     2290146: "MTN",

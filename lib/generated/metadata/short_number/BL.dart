@@ -6,8 +6,8 @@
 Map<String, Object?> getBL() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "1\\d",
-      "possibleLength": [2]
+      "nationalNumberPattern": "[13]\\d(?:\\d\\d(?:\\d{2})?)?",
+      "possibleLength": [2, 4, 6]
     },
     "fixedLine": {
       "possibleLength": [-1],
@@ -18,13 +18,15 @@ Map<String, Object?> getBL() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "18",
+      "nationalNumberPattern": "18|3(?:00|1[0-689])\\d",
       "exampleNumber": "18",
-      "possibleLength": [2],
+      "possibleLength": [2, 4],
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "3[2469]\\d\\d",
+      "exampleNumber": "3200",
+      "possibleLength": [4],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {
@@ -66,9 +68,10 @@ Map<String, Object?> getBL() {
       "possibleLengthLocalOnly": [-1]
     },
     "shortCode": {
-      "nationalNumberPattern": "18",
+      "nationalNumberPattern":
+          "18|3(?:00[0-79]|1[0-689]\\d)|(?:118[02-9]|3[2469])\\d\\d",
       "exampleNumber": "18",
-      "possibleLength": [2],
+      "possibleLength": [2, 4, 6],
       "possibleLengthLocalOnly": [-1]
     },
     "standardRate": {

@@ -1,3 +1,9 @@
+## 1.1.59
+- Updated phone metadata for region code(s): BL, GF, GP, GY, KY, MF, PL, PM, VU
+- Updated short number metadata for region code(s): BL, GF, GP, GY, MF, PM
+- Updated geocoding data for country calling code(s): 48 (en)
+- Updated carrier data for country calling code(s): 33 (en), 44 (en), 229 (en), 591 (en), 1345 (en)
+
 ## 1.1.58
 - Updated alternate formatting data for country calling code(s): 90
 - Updated phone metadata for region code(s): 882, HK, MY, PA, SL, TG, TR

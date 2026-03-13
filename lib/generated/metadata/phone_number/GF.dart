@@ -6,12 +6,12 @@
 Map<String, Object?> getGF() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:[56]94\\d|7093)\\d{5}|(?:80|9\\d)\\d{7}",
+      "nationalNumberPattern": "7093\\d{5}|(?:[56]94|[89]\\d\\d)\\d{6}",
       "possibleLength": [9]
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "594(?:[02-49]\\d|1[0-5]|5[6-9]|6[0-3]|80)\\d{4}",
+          "(?:594(?:[02-49]\\d|1[0-5]|5[6-9]|6[0-3]|80)|80[6-9]\\d\\d)\\d{4}",
       "exampleNumber": "594101234",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -29,7 +29,9 @@ Map<String, Object?> getGF() {
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "8[129]\\d{7}",
+      "exampleNumber": "890123456",
+      "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {
@@ -56,7 +58,7 @@ Map<String, Object?> getGF() {
       {
         "pattern": "(\\d{3})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[5-7]|9[47]"],
+        "leadingDigitsPattern": ["[5-7]|80[6-9]|9[47]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -72,7 +74,7 @@ Map<String, Object?> getGF() {
       {
         "pattern": "(\\d{3})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[5-7]|9[47]"],
+        "leadingDigitsPattern": ["[5-7]|80[6-9]|9[47]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },

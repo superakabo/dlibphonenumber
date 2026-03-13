@@ -6,6 +6,7 @@
 Map<int, String> get1345_en() {
   return {
     134532: "Digicel",
+    134541: "Paradise Mobile",
     134542: "Digicel",
     134551: "Digicel",
     134552: "Digicel",

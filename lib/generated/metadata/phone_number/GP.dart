@@ -6,7 +6,7 @@
 Map<String, Object?> getGP() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:590\\d|7090)\\d{5}|(?:69|80|9\\d)\\d{7}",
+      "nationalNumberPattern": "(?:590\\d|7090)\\d{5}|(?:69|[89]\\d)\\d{7}",
       "possibleLength": [9]
     },
     "fixedLine": {
@@ -24,13 +24,15 @@ Map<String, Object?> getGP() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "80[0-5]\\d{6}",
+      "nationalNumberPattern": "80\\d{7}",
       "exampleNumber": "800012345",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "8[129]\\d{7}",
+      "exampleNumber": "810123456",
+      "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {
