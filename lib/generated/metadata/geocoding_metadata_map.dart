@@ -303,6 +303,7 @@ import 'geocoding/1731_en.dart';
 import 'geocoding/1732_en.dart';
 import 'geocoding/1734_en.dart';
 import 'geocoding/1737_en.dart';
+import 'geocoding/1738_en.dart';
 import 'geocoding/1740_en.dart';
 import 'geocoding/1742_en.dart';
 import 'geocoding/1743_en.dart';
@@ -1097,6 +1098,7 @@ class GeocodingMetadataMap {
       1732: ["en"],
       1734: ["en"],
       1737: ["en"],
+      1738: ["en"],
       1740: ["en"],
       1742: ["en"],
       1743: ["en"],
@@ -1523,6 +1525,7 @@ class GeocodingMetadataMap {
       '1732_en': get1732_en(),
       '1734_en': get1734_en(),
       '1737_en': get1737_en(),
+      '1738_en': get1738_en(),
       '1740_en': get1740_en(),
       '1742_en': get1742_en(),
       '1743_en': get1743_en(),

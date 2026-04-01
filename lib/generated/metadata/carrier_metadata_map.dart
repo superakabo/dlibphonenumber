@@ -41,6 +41,7 @@ import 'carrier/1876_en.dart';
 import 'carrier/1939_en.dart';
 import 'carrier/1659_en.dart';
 import 'carrier/1670_en.dart';
+import 'carrier/1721_en.dart';
 import 'carrier/20_en.dart';
 import 'carrier/211_en.dart';
 import 'carrier/212_en.dart';
@@ -488,6 +489,7 @@ class CarrierMetadataMap {
       1670: ["en"],
       1671: ["en"],
       1684: ["en"],
+      1721: ["en"],
       1758: ["en"],
       1767: ["en"],
       1784: ["en"],
@@ -529,6 +531,7 @@ class CarrierMetadataMap {
       '1939_en': get1939_en(),
       '1659_en': get1659_en(),
       '1670_en': get1670_en(),
+      '1721_en': get1721_en(),
       '20_en': get20_en(),
       '211_en': get211_en(),
       '212_en': get212_en(),

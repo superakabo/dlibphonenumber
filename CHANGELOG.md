@@ -1,3 +1,10 @@
+## 1.1.60
+- Updated phone metadata for region code(s): BF, BL, CM, GF, GH, GP, GU, KE, MF, MQ, MY, SX, TD, TJ, US
+- New geocoding data for country calling code(s): 1738 (en)
+- New carrier data for country calling code(s): 1721 (en)
+- Updated carrier data for country calling code(s): 60 (en), 599 (en), 992 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.59
 - Updated phone metadata for region code(s): BL, GF, GP, GY, KY, MF, PL, PM, VU
 - Updated short number metadata for region code(s): BL, GF, GP, GY, MF, PM

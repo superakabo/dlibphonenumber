@@ -6,12 +6,12 @@
 Map<String, Object?> getMQ() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:596\\d|7091)\\d{5}|(?:69|[89]\\d)\\d{7}",
+      "nationalNumberPattern": "7091\\d{5}|(?:[56]9|[89]\\d)\\d{7}",
       "possibleLength": [9]
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "(?:596(?:[03-7]\\d|1[05]|2[7-9]|8[0-39]|9[04-9])|80[6-9]\\d\\d|9(?:477[6-9]|767[4589]))\\d{4}",
+          "(?:59(?:6(?:[03-7]\\d|1[05]|2[7-9]|8[0-39]|9[04-9])|89\\d)|80[6-9]\\d\\d|9(?:477[6-9]|767[4589]))\\d{4}",
       "exampleNumber": "596301234",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

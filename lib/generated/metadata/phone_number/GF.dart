@@ -6,12 +6,12 @@
 Map<String, Object?> getGF() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "7093\\d{5}|(?:[56]94|[89]\\d\\d)\\d{6}",
+      "nationalNumberPattern": "(?:694\\d|7093)\\d{5}|(?:59|[89]\\d)\\d{7}",
       "possibleLength": [9]
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "(?:594(?:[02-49]\\d|1[0-5]|5[6-9]|6[0-3]|80)|80[6-9]\\d\\d)\\d{4}",
+          "(?:59(?:4(?:[02-49]\\d|1[0-5]|5[6-9]|6[0-3]|80)|88\\d)|80[6-9]\\d\\d)\\d{4}",
       "exampleNumber": "594101234",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

@@ -6,12 +6,12 @@
 Map<String, Object?> getMF() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:590\\d|7090)\\d{5}|(?:69|[89]\\d)\\d{7}",
+      "nationalNumberPattern": "7090\\d{5}|(?:[56]9|[89]\\d)\\d{7}",
       "possibleLength": [9]
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "590(?:0[079]|[14]3|[27][79]|3[03-7]|5[0-268]|87)\\d{4}",
+          "(?:59(?:0(?:0[079]|[14]3|[27][79]|3[03-7]|5[0-268]|87)|87\\d)|80[6-9]\\d\\d)\\d{4}",
       "exampleNumber": "590271234",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -24,7 +24,7 @@ Map<String, Object?> getMF() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "80\\d{7}",
+      "nationalNumberPattern": "80[0-5]\\d{6}",
       "exampleNumber": "800012345",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

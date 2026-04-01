@@ -6,12 +6,12 @@
 Map<String, Object?> getGP() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:590\\d|7090)\\d{5}|(?:69|[89]\\d)\\d{7}",
+      "nationalNumberPattern": "7090\\d{5}|(?:[56]9|[89]\\d)\\d{7}",
       "possibleLength": [9]
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "590(?:0[1-68]|[14][0-24-9]|2[0-68]|3[1-9]|5[3-579]|[68][0-689]|7[08]|9\\d)\\d{4}",
+          "(?:59(?:0(?:0[1-68]|[14][0-24-9]|2[0-68]|3[1-9]|5[3-579]|[68][0-689]|7[08]|9\\d)|87\\d)|80[6-9]\\d\\d)\\d{4}",
       "exampleNumber": "590201234",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -24,7 +24,7 @@ Map<String, Object?> getGP() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "80\\d{7}",
+      "nationalNumberPattern": "80[0-5]\\d{6}",
       "exampleNumber": "800012345",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -59,7 +59,7 @@ Map<String, Object?> getGP() {
       {
         "pattern": "(\\d{3})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[5-79]"],
+        "leadingDigitsPattern": ["[5-79]|80[6-9]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -75,7 +75,7 @@ Map<String, Object?> getGP() {
       {
         "pattern": "(\\d{3})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[5-79]"],
+        "leadingDigitsPattern": ["[5-79]|80[6-9]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },

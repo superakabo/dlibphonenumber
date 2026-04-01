@@ -6,7 +6,7 @@
 Map<String, Object?> getGH() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:[235]\\d{3}|800)\\d{5}",
+      "nationalNumberPattern": "[235]\\d{8}|800\\d{5,6}",
       "possibleLength": [8, 9],
       "possibleLengthLocalOnly": [7]
     },
@@ -25,9 +25,9 @@ Map<String, Object?> getGH() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "800\\d{5}",
+      "nationalNumberPattern": "800\\d{5,6}",
       "exampleNumber": "80012345",
-      "possibleLength": [8],
+      "possibleLength": [8, 9],
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
@@ -69,7 +69,7 @@ Map<String, Object?> getGH() {
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[235]"],
+        "leadingDigitsPattern": ["[2358]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
@@ -85,7 +85,7 @@ Map<String, Object?> getGH() {
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[235]"],
+        "leadingDigitsPattern": ["[2358]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
@@ -96,8 +96,8 @@ Map<String, Object?> getGH() {
     },
     "mainCountryForCode": false,
     "noInternationalDialling": {
-      "nationalNumberPattern": "800\\d{5}",
-      "possibleLength": [8],
+      "nationalNumberPattern": "800\\d{5,6}",
+      "possibleLength": [8, 9],
       "possibleLengthLocalOnly": [-1]
     },
     "uan": {

@@ -6,7 +6,7 @@
 Map<String, Object?> getBF() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:[025-7]\\d|44)\\d{6}",
+      "nationalNumberPattern": "[024-7]\\d{7}",
       "possibleLength": [8]
     },
     "fixedLine": {
@@ -17,7 +17,7 @@ Map<String, Object?> getBF() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:0[1-7]|44|5[0-8]|[67]\\d)\\d{6}",
+      "nationalNumberPattern": "(?:0[1-7]|4[4-6]|5[0-8]|[67]\\d)\\d{6}",
       "exampleNumber": "70123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

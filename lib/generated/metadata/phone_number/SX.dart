@@ -11,13 +11,13 @@ Map<String, Object?> getSX() {
       "possibleLengthLocalOnly": [7]
     },
     "fixedLine": {
-      "nationalNumberPattern": "7215(?:4[2-8]|8[239]|9[056])\\d{4}",
+      "nationalNumberPattern": "7215(?:4[2-8]|8[39]|9[056])\\d{4}",
       "exampleNumber": "7215425678",
       "possibleLength": [10],
       "possibleLengthLocalOnly": [7]
     },
     "mobile": {
-      "nationalNumberPattern": "7215(?:1[02]|2\\d|5[034679]|8[014-8])\\d{4}",
+      "nationalNumberPattern": "7215(?:1[02]|2\\d|5[034679]|8[0-24-8])\\d{4}",
       "exampleNumber": "7215205678",
       "possibleLength": [10],
       "possibleLengthLocalOnly": [7]

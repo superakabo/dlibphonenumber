@@ -137,6 +137,7 @@ Map<int, String> get60_en() {
     601174: "YTL",
     601175: "YTL",
     601176: "Eastel",
+    601178: "Eastel",
     601591: "DiGi",
     601592: "Celcom",
     601596: "DiGi",
