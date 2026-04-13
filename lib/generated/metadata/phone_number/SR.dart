@@ -6,11 +6,11 @@
 Map<String, Object?> getSR() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:[2-5]|[6-8]\\d|90)\\d{5}",
+      "nationalNumberPattern": "(?:[2-5]|[6-9]\\d)\\d{5}",
       "possibleLength": [6, 7]
     },
     "fixedLine": {
-      "nationalNumberPattern": "(?:2[1-3]|3[0-7]|4\\d|5[2-58])\\d{4}",
+      "nationalNumberPattern": "(?:2[1-3]|3[0-7]|4\\d|5[2-578])\\d{4}",
       "exampleNumber": "211234",
       "possibleLength": [6],
       "possibleLengthLocalOnly": [-1]
@@ -42,9 +42,9 @@ Map<String, Object?> getSR() {
       "possibleLengthLocalOnly": [-1]
     },
     "voip": {
-      "nationalNumberPattern": "56\\d{4}",
+      "nationalNumberPattern": "(?:56|91\\d)\\d{4}",
       "exampleNumber": "561234",
-      "possibleLength": [6],
+      "possibleLength": [6, 7],
       "possibleLengthLocalOnly": [-1]
     },
     "id": "SR",

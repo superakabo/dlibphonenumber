@@ -18,7 +18,7 @@ Map<String, Object?> getBW() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:321|7[1-8]\\d)\\d{5}",
+      "nationalNumberPattern": "(?:321|7(?:[1-8]\\d|9[03]))\\d{5}",
       "exampleNumber": "71123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

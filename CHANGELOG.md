@@ -1,3 +1,8 @@
+## 1.1.61
+- Updated phone metadata for region code(s): BW, IL, MN, RE, SR, YT
+- Updated carrier data for country calling code(s): 34 (en), 267 (en), 359 (en), 972 (en), 976 (en)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.60
 - Updated phone metadata for region code(s): BF, BL, CM, GF, GH, GP, GU, KE, MF, MQ, MY, SX, TD, TJ, US
 - New geocoding data for country calling code(s): 1738 (en)

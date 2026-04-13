@@ -12,14 +12,14 @@ Map<String, Object?> getMN() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "[12]2[1-3]\\d{5,6}|(?:(?:[12](?:1|27)|5[368])\\d\\d|7(?:0(?:[0-5]\\d|7[078]|80)|128))\\d{4}|[12](?:3[2-8]|4[2-68]|5[1-4689])\\d{6,7}",
+          "[12](?:2[1-3]|(?:3[2-8]|4[2-68]|5[1-4689])\\d)\\d{5,6}|7(?:0(?:[0-5]\\d|7[078]|80)|128)\\d{4}|[12]27\\d{6}|(?:11|2[16]|5[368])\\d{6}",
       "exampleNumber": "53123456",
       "possibleLength": [8, 9, 10],
       "possibleLengthLocalOnly": [4, 5, 6]
     },
     "mobile": {
       "nationalNumberPattern":
-          "92[0139]\\d{5}|(?:5[05]|6[069]|7[28]|8[0135689]|9[013-9])\\d{6}",
+          "(?:87[01]|92[0139])\\d{5}|(?:5[05]|6[069]|7[28]|8[0135689]|9[013-9])\\d{6}",
       "exampleNumber": "88123456",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
@@ -56,7 +56,7 @@ Map<String, Object?> getMN() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[12]1"],
+        "leadingDigitsPattern": ["11|2[16]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -95,7 +95,7 @@ Map<String, Object?> getMN() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[12]1"],
+        "leadingDigitsPattern": ["11|2[16]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },

@@ -19,7 +19,7 @@ Map<String, Object?> getIL() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "55(?:4(?:0[0-2]|[16]0)|57[0-289])\\d{4}|5(?:(?:[0-2][02-9]|[36]\\d|[49][2-9]|8[3-7])\\d|5(?:01|2\\d|3[0-3]|4[3-5]|5[0-25689]|6[6-8]|7[0-267]|8[7-9]|9[1-9]))\\d{5}",
+          "55(?:4(?:0[0-3]|[16]0)|57[0-289])\\d{4}|5(?:(?:[0-2][02-9]|[36]\\d|[49][2-9]|8[3-7])\\d|5(?:01|2\\d|3[0-3]|4[3-5]|5[0-25689]|6[6-8]|7[0-267]|8[7-9]|9[1-9]))\\d{5}",
       "exampleNumber": "502345678",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -31,7 +31,7 @@ Map<String, Object?> getIL() {
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "nationalNumberPattern": "1212\\d{4}|1(?:200|9(?:0[0-2]|19))\\d{6}",
+      "nationalNumberPattern": "1212\\d{4}|1(?:200|9(?:0[0-2]|19|9\\d))\\d{6}",
       "exampleNumber": "1919123456",
       "possibleLength": [8, 10],
       "possibleLengthLocalOnly": [-1]

@@ -6,11 +6,12 @@
 Map<String, Object?> getYT() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "7093\\d{5}|(?:80|9\\d)\\d{7}|(?:26|63)9\\d{6}",
+      "nationalNumberPattern": "(?:639\\d|7093)\\d{5}|(?:26|80|9\\d)\\d{7}",
       "possibleLength": [9]
     },
     "fixedLine": {
-      "nationalNumberPattern": "269(?:0[0-467]|15|5[0-4]|6\\d|[78]0)\\d{4}",
+      "nationalNumberPattern":
+          "26(?:89\\d|9(?:0[0-467]|15|5[0-4]|6\\d|[78]0))\\d{4}",
       "exampleNumber": "269601234",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

@@ -44,6 +44,8 @@ Map<int, String> get267_en() {
     267776: "Mascom",
     267777: "Mascom",
     267778: "Mascom",
-    267779: "Orange"
+    267779: "Orange",
+    267790: "Orange",
+    267793: "Orange"
   };
 }

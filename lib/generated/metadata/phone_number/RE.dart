@@ -10,7 +10,7 @@ Map<String, Object?> getRE() {
       "possibleLength": [9]
     },
     "fixedLine": {
-      "nationalNumberPattern": "26(?:2\\d\\d|3(?:0\\d|1[0-6]))\\d{4}",
+      "nationalNumberPattern": "2631[0-6]\\d{4}|26(?:2\\d|30|88)\\d{5}",
       "exampleNumber": "262161234",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
