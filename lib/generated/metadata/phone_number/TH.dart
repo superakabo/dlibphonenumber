@@ -18,7 +18,7 @@ Map<String, Object?> getTH() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "67(?:1[0-8]|2[4-7])\\d{5}|(?:14|6[1-6]|[89]\\d)\\d{7}",
+          "(?:(?:14|[89]\\d)\\d\\d|6(?:[1-6]\\d\\d|7(?:1[0-8]|2[4-7]|3[1-6])))\\d{5}",
       "exampleNumber": "812345678",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

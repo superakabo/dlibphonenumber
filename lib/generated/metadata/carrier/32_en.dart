@@ -8,7 +8,7 @@ Map<int, String> get32_en() {
     3247: "Proximus",
     3249: "Orange",
     32455: "VOO",
-    32456: "Mobile Vikings/JIM Mobile",
+    32456: "Proximus",
     32458: "Citymesh",
     32460: "Proximus",
     32465: "Lycamobile",

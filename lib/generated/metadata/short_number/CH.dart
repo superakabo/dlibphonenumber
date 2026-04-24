@@ -18,7 +18,7 @@ Map<String, Object?> getCH() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "1(?:1(?:[278]|6\\d{3})|4[47])|5200",
+      "nationalNumberPattern": "1(?:1(?:[278]|6\\d{3})|4[247])|5200",
       "exampleNumber": "112",
       "possibleLength": [3, 4, 6],
       "possibleLengthLocalOnly": [-1]
@@ -69,7 +69,7 @@ Map<String, Object?> getCH() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "1(?:0[78]\\d\\d|1(?:[278]|45|6(?:000|111))|4(?:[03-57]|1[0145])|6(?:00|[1-46])|8(?:02|1[189]|[25]0|7|8[08]|99))|[2-9]\\d{2,4}",
+          "1(?:0[78]\\d\\d|1(?:[278]|45|6(?:000|111))|4(?:[02-57]|1[0145])|6(?:00|[1-46])|8(?:02|1[189]|[25]0|7|8[08]|99))|[2-9]\\d{2,4}",
       "exampleNumber": "112",
       "possibleLength": [3, 4, 5, 6],
       "possibleLengthLocalOnly": [-1]

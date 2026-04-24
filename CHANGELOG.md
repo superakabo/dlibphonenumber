@@ -1,3 +1,9 @@
+## 1.1.62
+- Updated phone metadata for region code(s): BI, BL, GP, MF, MY, SK, TH, TR, TW
+- Updated short number metadata for region code(s): CH
+- New geocoding data for country calling code(s): 7 (kk)
+- Updated carrier data for country calling code(s): 7 (en, ru), 31 (en), 32 (en), 90 (en), 257 (en), 590 (en), 593 (en)
+
 ## 1.1.61
 - Updated phone metadata for region code(s): BW, IL, MN, RE, SR, YT
 - Updated carrier data for country calling code(s): 34 (en), 267 (en), 359 (en), 972 (en), 976 (en)

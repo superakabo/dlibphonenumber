@@ -622,6 +622,7 @@ import 'geocoding/39_it.dart';
 import 'geocoding/41_it.dart';
 import 'geocoding/972_iw.dart';
 import 'geocoding/81_ja.dart';
+import 'geocoding/7_kk.dart';
 import 'geocoding/82_ko.dart';
 import 'geocoding/31_nl.dart';
 import 'geocoding/32_nl.dart';
@@ -660,7 +661,7 @@ class GeocodingMetadataMap {
 
   static Map<int, List<String>> get config {
     return {
-      7: ["en", "ru"],
+      7: ["en", "ru", "kk"],
       20: ["en"],
       27: ["en"],
       30: ["en", "el"],
@@ -1844,6 +1845,7 @@ class GeocodingMetadataMap {
       '41_it': get41_it(),
       '972_iw': get972_iw(),
       '81_ja': get81_ja(),
+      '7_kk': get7_kk(),
       '82_ko': get82_ko(),
       '31_nl': get31_nl(),
       '32_nl': get32_nl(),

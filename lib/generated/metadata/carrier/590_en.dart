@@ -5,8 +5,6 @@
 /// Carrier JSON data for 590_en
 Map<int, String> get590_en() {
   return {
-    590694: "Digicel",
-    590696: "Digicel",
     5906901: "Digicel",
     5906903: "Orange",
     5906905: "Orange",

@@ -81,7 +81,7 @@ Map<String, Object?> getSK() {
       },
       {
         "pattern": "(\\d)(\\d{3})(\\d{3})(\\d{2})",
-        "format": "\$1/\$2 \$3 \$4",
+        "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": ["2"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
@@ -95,7 +95,7 @@ Map<String, Object?> getSK() {
       },
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{2})(\\d{2})",
-        "format": "\$1/\$2 \$3 \$4",
+        "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": ["[3-5]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
@@ -118,7 +118,7 @@ Map<String, Object?> getSK() {
       },
       {
         "pattern": "(\\d)(\\d{3})(\\d{3})(\\d{2})",
-        "format": "\$1/\$2 \$3 \$4",
+        "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": ["2"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
@@ -132,7 +132,7 @@ Map<String, Object?> getSK() {
       },
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{2})(\\d{2})",
-        "format": "\$1/\$2 \$3 \$4",
+        "format": "\$1 \$2 \$3 \$4",
         "leadingDigitsPattern": ["[3-5]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false

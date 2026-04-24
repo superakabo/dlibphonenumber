@@ -5,7 +5,7 @@
 /// Carrier JSON data for 257_en
 Map<int, String> get257_en() {
   return {
-    2576: "Viettel",
+    2576: "Lumitel",
     25729: "Leo",
     25771: "Leo",
     25772: "Leo",

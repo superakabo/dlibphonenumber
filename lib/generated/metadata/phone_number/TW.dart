@@ -67,9 +67,30 @@ Map<String, Object?> getTW() {
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
+        "pattern": "(\\d{3})(\\d{5})",
+        "format": "\$1 \$2",
+        "leadingDigitsPattern": ["826"],
+        "nationalPrefixFormattingRule": "0\$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
+        "pattern": "(\\d{3})(\\d{2})(\\d{3})",
+        "format": "\$1 \$2 \$3",
+        "leadingDigitsPattern": ["83"],
+        "nationalPrefixFormattingRule": "0\$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
+        "pattern": "(\\d{2})(\\d{2})(\\d{4})",
+        "format": "\$1 \$2 \$3",
+        "leadingDigitsPattern": ["82"],
+        "nationalPrefixFormattingRule": "0\$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
         "pattern": "(\\d{2})(\\d{3})(\\d{3,4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[258]0"],
+        "leadingDigitsPattern": ["[25]0|37|49|8[09]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -77,8 +98,8 @@ Map<String, Object?> getTW() {
         "pattern": "(\\d)(\\d{3,4})(\\d{4})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": [
-          "[23568]|4(?:0[02-48]|[1-47-9])|7[1-9]",
-          "[23568]|4(?:0[2-48]|[1-47-9])|(?:400|7)[1-9]"
+          "[23568]|4(?:0[02-48]|[1-478])|7[1-9]",
+          "[23568]|4(?:0[2-48]|[1-478])|(?:400|7)[1-9]"
         ],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
@@ -107,9 +128,30 @@ Map<String, Object?> getTW() {
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
+        "pattern": "(\\d{3})(\\d{5})",
+        "format": "\$1 \$2",
+        "leadingDigitsPattern": ["826"],
+        "nationalPrefixFormattingRule": "0\$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
+        "pattern": "(\\d{3})(\\d{2})(\\d{3})",
+        "format": "\$1 \$2 \$3",
+        "leadingDigitsPattern": ["83"],
+        "nationalPrefixFormattingRule": "0\$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
+        "pattern": "(\\d{2})(\\d{2})(\\d{4})",
+        "format": "\$1 \$2 \$3",
+        "leadingDigitsPattern": ["82"],
+        "nationalPrefixFormattingRule": "0\$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
         "pattern": "(\\d{2})(\\d{3})(\\d{3,4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[258]0"],
+        "leadingDigitsPattern": ["[25]0|37|49|8[09]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -117,8 +159,8 @@ Map<String, Object?> getTW() {
         "pattern": "(\\d)(\\d{3,4})(\\d{4})",
         "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": [
-          "[23568]|4(?:0[02-48]|[1-47-9])|7[1-9]",
-          "[23568]|4(?:0[2-48]|[1-47-9])|(?:400|7)[1-9]"
+          "[23568]|4(?:0[02-48]|[1-478])|7[1-9]",
+          "[23568]|4(?:0[2-48]|[1-478])|(?:400|7)[1-9]"
         ],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
