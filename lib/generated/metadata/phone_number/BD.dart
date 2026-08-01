@@ -44,7 +44,7 @@ Map<String, Object?> getBD() {
     },
     "voip": {
       "nationalNumberPattern":
-          "96(?:0[469]|1[0-47]|3[389]|43|6[69]|7[78])\\d{6}",
+          "96(?:0[1-69]|1[0-479]|2[278]|3[13-9]|4[013]|54|6[69]|7[78]|88)\\d{6}",
       "exampleNumber": "9604123456",
       "possibleLength": [10],
       "possibleLengthLocalOnly": [-1]

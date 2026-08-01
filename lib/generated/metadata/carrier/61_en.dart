@@ -76,10 +76,10 @@ Map<int, String> get61_en() {
     61488: "Telstra",
     61495: "Optus",
     614201: "Pivotel Satellite",
-    614400: "the trustee for aazad distribution discretionary trust",
+    614400: "Aazad distribution discretionary trust",
     614444: "Telstra",
     614445: "Telstra",
-    614493: "soul pattinson",
+    614493: "Soul Pattinson",
     614700: "Lycamobile",
     614701: "Lycamobile",
     614702: "Lycamobile",
@@ -110,7 +110,7 @@ Map<int, String> get61_en() {
     6142001: "Rail Corporation NSW",
     6142002: "Dialogue Communications",
     6142003: "MessageBird",
-    6142004: "symbio networks",
+    6142004: "Symbio Networks",
     6148984: "Victorian Rail Track",
     6148985: "MessageBird"
   };

@@ -5,7 +5,7 @@
 /// Carrier JSON data for 423_en
 Map<int, String> get423_en() {
   return {
-    42364: "Soracom",
+    42364: "Telecom Liechtenstein",
     42365: "Cubic",
     42366: "Telecom Liechtenstein",
     42373: "Telecom Liechtenstein",

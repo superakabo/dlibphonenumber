@@ -11,7 +11,7 @@ Map<String, Object?> getML() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "2(?:07[0-8]|12[67])\\d{4}|(?:2(?:02|1[4-689])|4(?:0[0-4]|4[1-59]))\\d{5}",
+          "2(?:07[0-8]|12[67])\\d{4}|(?:2(?:02|1[4-689])|4(?:0[0-4]|4[1-69]))\\d{5}",
       "exampleNumber": "20212345",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]

@@ -53,13 +53,13 @@ Map<String, Object?> get995() {
       {
         "pattern": "(\\d{3})(\\d{6})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["[348]|5545"],
+        "leadingDigitsPattern": ["[348]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[348]|5545"],
+        "leadingDigitsPattern": ["[348]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
@@ -91,13 +91,13 @@ Map<String, Object?> get995() {
       {
         "pattern": "(\\d{3})(\\d{6})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["[348]|5545"],
+        "leadingDigitsPattern": ["[348]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[348]|5545"],
+        "leadingDigitsPattern": ["[348]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {

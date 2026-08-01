@@ -18,7 +18,7 @@ Map<String, Object?> getIT() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "1(?:1(?:[2358]|6\\d{3})|87)",
+      "nationalNumberPattern": "1(?:1(?:[2358]|6\\d{3})|46|87)",
       "exampleNumber": "112",
       "possibleLength": [3, 6],
       "possibleLengthLocalOnly": [-1]

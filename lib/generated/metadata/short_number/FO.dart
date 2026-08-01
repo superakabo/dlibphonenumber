@@ -66,7 +66,7 @@ Map<String, Object?> getFO() {
       "possibleLengthLocalOnly": [-1]
     },
     "shortCode": {
-      "nationalNumberPattern": "1(?:1[248]|819)|1(?:4[124]|71|8[7-9])\\d",
+      "nationalNumberPattern": "11[248]|1(?:4[124]|71|8[17-9]|9\\d)\\d",
       "exampleNumber": "112",
       "possibleLength": [3, 4],
       "possibleLengthLocalOnly": [-1]
@@ -81,7 +81,9 @@ Map<String, Object?> getFO() {
     },
     "mobileNumberPortableRegion": false,
     "smsServices": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "19\\d\\d",
+      "exampleNumber": "1900",
+      "possibleLength": [4],
       "possibleLengthLocalOnly": [-1]
     }
   };

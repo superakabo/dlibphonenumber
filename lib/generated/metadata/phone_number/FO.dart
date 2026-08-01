@@ -16,7 +16,7 @@ Map<String, Object?> getFO() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:[27][1-9]|5\\d|9[136])\\d{4}",
+      "nationalNumberPattern": "(?:[27][1-9]|5\\d|9[16])\\d{4}",
       "exampleNumber": "211234",
       "possibleLength": [6],
       "possibleLengthLocalOnly": [-1]
@@ -42,7 +42,7 @@ Map<String, Object?> getFO() {
       "possibleLengthLocalOnly": [-1]
     },
     "voip": {
-      "nationalNumberPattern": "(?:6[0-36]|88)\\d{4}",
+      "nationalNumberPattern": "6[0-36]\\d{4}",
       "exampleNumber": "601234",
       "possibleLength": [6],
       "possibleLengthLocalOnly": [-1]
@@ -54,8 +54,8 @@ Map<String, Object?> getFO() {
     "sameMobileAndFixedLinePattern": false,
     "numberFormat": [
       {
-        "pattern": "(\\d{6})",
-        "format": "\$1",
+        "pattern": "(\\d{2})(\\d{2})(\\d{2})",
+        "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["[2-9]"],
         "domesticCarrierCodeFormattingRule": "\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false
@@ -63,8 +63,8 @@ Map<String, Object?> getFO() {
     ],
     "intlNumberFormat": [
       {
-        "pattern": "(\\d{6})",
-        "format": "\$1",
+        "pattern": "(\\d{2})(\\d{2})(\\d{2})",
+        "format": "\$1 \$2 \$3",
         "leadingDigitsPattern": ["[2-9]"],
         "domesticCarrierCodeFormattingRule": "\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false

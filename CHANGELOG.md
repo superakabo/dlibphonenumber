@@ -1,3 +1,9 @@
+## 1.1.69
+- Updated alternate formatting data for country calling code(s): 995
+- Updated phone metadata for region code(s): BD, EH, FO, GE, IL, LI, MA, ML, NO, SJ
+- Updated short number metadata for region code(s): FO, IT
+- Updated carrier data for country calling code(s): 47 (en), 61 (en), 212 (en), 256 (en), 298 (en), 423 (en), 972 (en), 995 (en)
+
 ## 1.1.68
 - Updated alternate formatting data for country calling code(s): 995
 - Updated phone metadata for region code(s): AC, CN, FO, GE, IR, KE, SE, UG, ZW
