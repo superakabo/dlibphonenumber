@@ -12,14 +12,14 @@ Map<String, Object?> getUG() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "20(?:(?:240|30[67])\\d|6(?:00[0-2]|30[0-4]))\\d{3}|(?:20(?:[017]\\d|2[5-9]|3[1-4]|5[0-4]|6[15-9])|[34]\\d{3})\\d{5}",
+          "20(?:(?:24[09]|30[67])\\d|6(?:00[0-2]|30[0-4]))\\d{3}|(?:20(?:[017]\\d|2[5-9]|3[1-4]|5[0-4]|6[15-9])|[34]\\d{3})\\d{5}",
       "exampleNumber": "312345678",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [5, 6, 7]
     },
     "mobile": {
       "nationalNumberPattern":
-          "7280\\d{5}|7(?:[014-8]\\d|2[01467]|3[0167]|9[0-589])\\d{6}",
+          "7(?:28|34)0\\d{5}|7(?:[014-8]\\d|2[01467]|3[0167]|9[0-589])\\d{6}",
       "exampleNumber": "712345678",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -58,21 +58,24 @@ Map<String, Object?> getUG() {
       {
         "pattern": "(\\d{4})(\\d{5})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["202", "2024"],
+        "leadingDigitsPattern": ["202", "2024", "20240"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{3})(\\d{6})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["[27-9]|4(?:6[45]|[7-9])"],
+        "leadingDigitsPattern": [
+          "20[0-35-7]|4(?:6[45]|[7-9])|[7-9]",
+          "20(?:[0135-7]|2[5-9])|4(?:6[45]|[7-9])|[7-9]"
+        ],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{2})(\\d{7})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["[34]"],
+        "leadingDigitsPattern": ["[2-4]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
@@ -81,21 +84,24 @@ Map<String, Object?> getUG() {
       {
         "pattern": "(\\d{4})(\\d{5})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["202", "2024"],
+        "leadingDigitsPattern": ["202", "2024", "20240"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{3})(\\d{6})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["[27-9]|4(?:6[45]|[7-9])"],
+        "leadingDigitsPattern": [
+          "20[0-35-7]|4(?:6[45]|[7-9])|[7-9]",
+          "20(?:[0135-7]|2[5-9])|4(?:6[45]|[7-9])|[7-9]"
+        ],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{2})(\\d{7})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["[34]"],
+        "leadingDigitsPattern": ["[2-4]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }

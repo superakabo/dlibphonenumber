@@ -18,8 +18,8 @@ Map<int, String> get972_en() {
     972552: "019mobile",
     972556: "Rami Levy",
     972559: "019mobile",
-    9725520: "BITIT",
-    9725521: "BITIT",
+    9725520: "Paycall Technologies",
+    9725521: "Paycall Technologies",
     9725522: "Home Cellular",
     9725523: "Home Cellular",
     9725530: "019mobile",
@@ -58,9 +58,9 @@ Map<int, String> get972_en() {
     97255469: "Pelephone",
     97255800: "Merkaziya",
     97255801: "019mobile",
-    97255802: "BITIT",
+    97255802: "Paycall Technologies",
     97255860: "Merkaziya",
     97255861: "019mobile",
-    97255862: "BITIT"
+    97255862: "Paycall Technologies"
   };
 }

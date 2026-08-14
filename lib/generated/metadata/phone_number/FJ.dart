@@ -10,7 +10,7 @@ Map<String, Object?> getFJ() {
       "possibleLength": [7, 11]
     },
     "fixedLine": {
-      "nationalNumberPattern": "603\\d{4}|(?:3[0-5]|6[25-7]|8[58])\\d{5}",
+      "nationalNumberPattern": "603\\d{4}|(?:3[0-6]|6[25-7]|8[58])\\d{5}",
       "exampleNumber": "3212345",
       "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]

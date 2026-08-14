@@ -16,6 +16,7 @@ Map<int, String> get254_en() {
     25473: "Airtel",
     25474: "Safaricom",
     25475: "Airtel",
+    25476: "Airtel",
     25477: "Telkom",
     25478: "Airtel",
     25479: "Safaricom",
@@ -27,14 +28,6 @@ Map<int, String> get254_en() {
     254757: "Safaricom",
     254758: "Safaricom",
     254759: "Safaricom",
-    254760: "Mobile Pay",
-    254761: "Airtel",
-    254762: "Airtel",
-    254763: "Finserve",
-    254764: "Finserve",
-    254765: "Finserve",
-    254766: "Finserve",
-    254767: "Sema Mobile",
     254768: "Safaricom",
     254769: "Safaricom"
   };

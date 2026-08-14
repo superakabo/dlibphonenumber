@@ -6,13 +6,11 @@
 Map<int, String> get963_en() {
   return {
     96350: "Rcell",
-    96391: "Wafa Telecom",
-    96392: "Wafa Telecom",
+    96390: "Syriatel",
     96393: "Syriatel",
     96394: "MTN",
     96395: "MTN",
     96396: "MTN",
-    96397: "MTN",
     96398: "Syriatel",
     96399: "Syriatel"
   };

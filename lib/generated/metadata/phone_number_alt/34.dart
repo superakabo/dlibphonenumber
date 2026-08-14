@@ -41,13 +41,13 @@ Map<String, Object?> get34() {
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[4-7]|80[367]|90[1289]|[89][1-8]"],
+        "leadingDigitsPattern": ["[4-7]|80[367]|90[12589]|[89][1-8]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["9(?:0[1289]|[1-8])"],
+        "leadingDigitsPattern": ["9(?:0[12589]|[1-8])"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -55,13 +55,13 @@ Map<String, Object?> get34() {
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[4-7]|80[367]|90[1289]|[89][1-8]"],
+        "leadingDigitsPattern": ["[4-7]|80[367]|90[12589]|[89][1-8]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{2})(\\d{3})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["9(?:0[1289]|[1-8])"],
+        "leadingDigitsPattern": ["9(?:0[12589]|[1-8])"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],

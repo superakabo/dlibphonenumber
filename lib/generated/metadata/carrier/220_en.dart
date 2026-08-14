@@ -24,6 +24,14 @@ Map<int, String> get220_en() {
     22085: "Comium",
     22086: "Comium",
     22087: "Comium",
-    220556: "QCell"
+    220556: "QCell",
+    220833: "QCell",
+    220835: "QCell",
+    220872: "Africell",
+    220877: "Africell",
+    220899: "Gamcel",
+    2208740: "Africell",
+    2208741: "Africell",
+    2208745: "Africell"
   };
 }

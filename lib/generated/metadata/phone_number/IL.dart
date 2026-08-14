@@ -55,7 +55,7 @@ Map<String, Object?> getIL() {
     },
     "id": "IL",
     "countryCode": 972,
-    "internationalPrefix": "0(?:0|1[2-9])",
+    "internationalPrefix": "0(?:0|1(?:05|[2-9]))",
     "nationalPrefix": "0",
     "nationalPrefixForParsing": "0",
     "sameMobileAndFixedLinePattern": false,

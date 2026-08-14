@@ -1,3 +1,11 @@
+## 1.1.70
+- Updated alternate formatting data for country calling code(s): 34, 90
+- Updated phone metadata for region code(s): AR, BD, CL, ES, FJ, GM, GY, IL, MZ, NO, PE, SJ, SY, TG, TR, UG
+- Updated short number metadata for region code(s): ES
+- Updated geocoding data for country calling code(s): 220 (en), 963 (en)
+- Updated carrier data for country calling code(s): 47 (en), 56 (en), 90 (en), 220 (en), 228 (en), 234 (en), 254 (en), 256 (en),
+- Updated / refreshed time zone meta data.
+
 ## 1.1.69
 - Updated alternate formatting data for country calling code(s): 995
 - Updated phone metadata for region code(s): BD, EH, FO, GE, IL, LI, MA, ML, NO, SJ

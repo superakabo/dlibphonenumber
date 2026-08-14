@@ -5,6 +5,7 @@
 /// Carrier JSON data for 234_en
 Map<int, String> get234_en() {
   return {
+    23472: "Lebara",
     234701: "Airtel",
     234703: "MTN",
     234704: "MTN",

@@ -59,7 +59,7 @@ Map<String, Object?> getES() {
       {
         "pattern": "(\\d{4})",
         "format": "\$1",
-        "leadingDigitsPattern": ["905"],
+        "leadingDigitsPattern": ["905", "905[124578]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {

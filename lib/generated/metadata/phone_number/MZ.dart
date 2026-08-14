@@ -16,7 +16,7 @@ Map<String, Object?> getMZ() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "8(?:[2-79]\\d|80)\\d{6}",
+      "nationalNumberPattern": "8[2-9]\\d{7}",
       "exampleNumber": "821234567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
