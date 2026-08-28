@@ -17,7 +17,7 @@ Map<String, Object?> getJO() {
       "possibleLengthLocalOnly": [-1]
     },
     "mobile": {
-      "nationalNumberPattern": "(?:427|7(?:[78][0-25-9]|9\\d))\\d{6}",
+      "nationalNumberPattern": "(?:427|7(?:11|[29]\\d|[78][0-25-9]))\\d{6}",
       "exampleNumber": "790123456",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

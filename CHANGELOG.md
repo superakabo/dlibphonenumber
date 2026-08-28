@@ -1,3 +1,8 @@
+## 1.1.71
+- Updated phone metadata for region code(s): GM, HK, IN, JO, PG, SN, TZ, ZW
+- Updated geocoding data for country calling code(s): 55 (en), 61 (en), 91 (en), 220 (en), 221 (en), 263 (en)
+- Updated carrier data for country calling code(s): 221 (en), 254 (en), 255 (en), 373 (en), 675 (en), 852 (en, zh), 962 (en)
+
 ## 1.1.70
 - Updated alternate formatting data for country calling code(s): 34, 90
 - Updated phone metadata for region code(s): AR, BD, CL, ES, FJ, GM, GY, IL, MZ, NO, PE, SJ, SY, TG, TR, UG

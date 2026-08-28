@@ -5,6 +5,7 @@
 /// Carrier JSON data for 255_en
 Map<int, String> get255_en() {
   return {
+    25560: "Airtel",
     25561: "Viettel",
     25562: "Viettel",
     25563: "Viettel",

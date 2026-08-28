@@ -10,8 +10,7 @@ Map<String, Object?> getSN() {
       "possibleLength": [9]
     },
     "fixedLine": {
-      "nationalNumberPattern":
-          "3(?:0(?:1[0-2]|80)|282|3(?:8[1-9]|9[3-9])|611)\\d{5}",
+      "nationalNumberPattern": "3(?:[026]\\d|3[89])\\d{6}",
       "exampleNumber": "301012345",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -45,8 +44,7 @@ Map<String, Object?> getSN() {
       "possibleLengthLocalOnly": [-1]
     },
     "voip": {
-      "nationalNumberPattern":
-          "(?:3(?:392|9[01]\\d)\\d|93(?:3[13]0|929))\\d{4}",
+      "nationalNumberPattern": "(?:39|93)\\d{7}",
       "exampleNumber": "933301234",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

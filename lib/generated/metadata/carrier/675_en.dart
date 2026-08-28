@@ -14,6 +14,7 @@ Map<int, String> get675_en() {
     67582: "Vodafone",
     67583: "Vodafone",
     67584: "Vodafone",
+    67585: "Vodafone",
     67588: "Digicel"
   };
 }
