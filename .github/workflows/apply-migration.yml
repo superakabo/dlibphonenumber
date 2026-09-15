@@ -1,0 +1,59 @@
+name: Run Migration Script
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    # 监听名为 "Update and Merge Phone Data" 的 Workflow
+    # 注意：这里必须和上一个 YML 文件的 name: 字段完全一致
+    workflows: ["Update and Merge Phone Data"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  migrate-data:
+    runs-on: ubuntu-latest
+    # 只有当上一个 Workflow 成功(success)时才执行，失败了不执行，或者手动触发
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # 检出触发上一个 workflow 的对应分支（通常是 main）
+          ref: ${{ github.event.workflow_run.head_branch || github.ref }}
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Restore Refactored Files
+        run: |
+          cp tool/replace/lib/phone_number_offline_geocoder.dart lib/phone_number_offline_geocoder.dart
+          cp tool/replace/lib/generated/metadata/geocoding_metadata_map.dart lib/generated/metadata/geocoding_metadata_map.dart
+          cp tool/replace/lib/carrier_loader.dart lib/carrier_loader.dart
+          cp tool/replace/lib/phone_number_to_carrier_mapper.dart lib/phone_number_to_carrier_mapper.dart
+          cp tool/replace/lib/generated/metadata/carrier_metadata_map.dart lib/generated/metadata/carrier_metadata_map.dart
+          # Do not overwrite pubspec.yaml safely
+          # cp tool/replace/pubspec.yaml pubspec.yaml
+
+      - name: Run migration script
+        run: |
+           dart run tool/migrate.dart
+           dart run tool/migrate_carrier.dart
+           dart run tool/create_manifest.dart
+           dart run tool/fix_pubspec.dart
+
+      - name: Commit and Push Migration Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(data): Apply migration script and restore refactoring"
+          file_pattern: "."
