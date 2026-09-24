@@ -11,7 +11,7 @@ Map<String, Object?> getLI() {
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "(?:2(?:01|1[27]|2[024]|3\\d|6[02-578]|96)|3(?:[24]0|33|7[0135-7]|8[048]|9[0269]))\\d{4}",
+          "(?:2(?:01|1[27]|2[024]|3\\d|6[02-578]|9[06])|3(?:[24]0|33|7[0135-7]|8[048]|9[0269]))\\d{4}",
       "exampleNumber": "2345678",
       "possibleLength": [7],
       "possibleLengthLocalOnly": [-1]

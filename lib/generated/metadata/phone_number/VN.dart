@@ -18,7 +18,7 @@ Map<String, Object?> getVN() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "121[0-3]\\d{5}|(?:160|(?:3\\d|7[06-9])\\d|5(?:[1689]\\d|2[238]|59)|8(?:[1-8]\\d|9[6-9])|9(?:[0-8]\\d|9[013-9]))\\d{6}",
+          "121[0-3]\\d{5}|(?:1[46]0|(?:3\\d|7[06-9])\\d|5(?:[1689]\\d|2[238]|59)|8(?:[1-8]\\d|9[6-9])|9(?:[0-8]\\d|9[013-9]))\\d{6}",
       "exampleNumber": "912345678",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -86,7 +86,7 @@ Map<String, Object?> getVN() {
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[357-9]"],
+        "leadingDigitsPattern": ["[1357-9]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": true
       },
@@ -122,7 +122,7 @@ Map<String, Object?> getVN() {
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[357-9]"],
+        "leadingDigitsPattern": ["[1357-9]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": true
       },

@@ -12,6 +12,7 @@ Map<int, String> get243_en() {
     24384: "Orange",
     24385: "Orange",
     24386: "Vodacom",
+    24387: "Tatem Telecom",
     24388: "Yozma Timeturns sprl -YTT",
     24389: "Orange",
     24390: "Africell",

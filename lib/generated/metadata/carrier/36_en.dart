@@ -12,6 +12,7 @@ Map<int, String> get36_en() {
     36502: "One",
     36508: "MVM Net",
     36509: "MVM Net",
+    363121: "One",
     363178: "One",
     3631310: "One",
     3631311: "One",

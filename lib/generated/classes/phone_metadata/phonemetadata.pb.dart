@@ -25,7 +25,7 @@ class NumberFormat extends $pb.GeneratedMessage {
     $core.String? domesticCarrierCodeFormattingRule,
     $core.bool? nationalPrefixOptionalWhenFormatting,
   }) {
-    final result = create();
+    final result = NumberFormat._();
     if (pattern != null) result.pattern = pattern;
     if (format != null) result.format = format;
     if (leadingDigitsPattern != null)
@@ -45,16 +45,16 @@ class NumberFormat extends $pb.GeneratedMessage {
 
   factory NumberFormat.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      NumberFormat()..mergeFromBuffer(data, registry);
   factory NumberFormat.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      NumberFormat()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'NumberFormat',
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'i18n.phonenumbers'),
-      createEmptyInstance: create)
+      createEmptyInstance: NumberFormat.$_createMessage)
     ..aQS(1, _omitFieldNames ? '' : 'pattern')
     ..aQS(2, _omitFieldNames ? '' : 'format')
     ..pPS(3, _omitFieldNames ? '' : 'leadingDigitsPattern')
@@ -73,12 +73,15 @@ class NumberFormat extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use NumberFormat() / NumberFormat.new instead')
   static NumberFormat create() => NumberFormat._();
+  static $pb.GeneratedMessage $_createMessage() => NumberFormat._();
   @$core.override
-  NumberFormat createEmptyInstance() => create();
+  NumberFormat createEmptyInstance() => NumberFormat._();
   @$core.pragma('dart2js:noInline')
-  static NumberFormat getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<NumberFormat>(create);
+  static NumberFormat getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NumberFormat>(
+          NumberFormat.$_createMessage);
   static NumberFormat? _defaultInstance;
 
   /// pattern is a regex that is used to match the national (significant)
@@ -194,7 +197,7 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
     $core.Iterable<$core.int>? possibleLength,
     $core.Iterable<$core.int>? possibleLengthLocalOnly,
   }) {
-    final result = create();
+    final result = PhoneNumberDesc._();
     if (nationalNumberPattern != null)
       result.nationalNumberPattern = nationalNumberPattern;
     if (exampleNumber != null) result.exampleNumber = exampleNumber;
@@ -208,16 +211,16 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
 
   factory PhoneNumberDesc.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      PhoneNumberDesc()..mergeFromBuffer(data, registry);
   factory PhoneNumberDesc.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      PhoneNumberDesc()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PhoneNumberDesc',
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'i18n.phonenumbers'),
-      createEmptyInstance: create)
+      createEmptyInstance: PhoneNumberDesc.$_createMessage)
     ..aOS(2, _omitFieldNames ? '' : 'nationalNumberPattern')
     ..aOS(6, _omitFieldNames ? '' : 'exampleNumber')
     ..p<$core.int>(
@@ -237,12 +240,15 @@ class PhoneNumberDesc extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use PhoneNumberDesc() / PhoneNumberDesc.new instead')
   static PhoneNumberDesc create() => PhoneNumberDesc._();
+  static $pb.GeneratedMessage $_createMessage() => PhoneNumberDesc._();
   @$core.override
-  PhoneNumberDesc createEmptyInstance() => create();
+  PhoneNumberDesc createEmptyInstance() => PhoneNumberDesc._();
   @$core.pragma('dart2js:noInline')
-  static PhoneNumberDesc getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<PhoneNumberDesc>(create);
+  static PhoneNumberDesc getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PhoneNumberDesc>(
+          PhoneNumberDesc.$_createMessage);
   static PhoneNumberDesc? _defaultInstance;
 
   /// The national_number_pattern is the pattern that a valid national
@@ -332,7 +338,7 @@ class PhoneMetadata extends $pb.GeneratedMessage {
     $core.bool? mobileNumberPortableRegion,
     PhoneNumberDesc? smsServices,
   }) {
-    final result = create();
+    final result = PhoneMetadata._();
     if (generalDesc != null) result.generalDesc = generalDesc;
     if (fixedLine != null) result.fixedLine = fixedLine;
     if (mobile != null) result.mobile = mobile;
@@ -381,32 +387,32 @@ class PhoneMetadata extends $pb.GeneratedMessage {
 
   factory PhoneMetadata.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      PhoneMetadata()..mergeFromBuffer(data, registry);
   factory PhoneMetadata.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      PhoneMetadata()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PhoneMetadata',
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'i18n.phonenumbers'),
-      createEmptyInstance: create)
+      createEmptyInstance: PhoneMetadata.$_createMessage)
     ..aOM<PhoneNumberDesc>(1, _omitFieldNames ? '' : 'generalDesc',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOM<PhoneNumberDesc>(2, _omitFieldNames ? '' : 'fixedLine',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOM<PhoneNumberDesc>(3, _omitFieldNames ? '' : 'mobile',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOM<PhoneNumberDesc>(4, _omitFieldNames ? '' : 'tollFree',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOM<PhoneNumberDesc>(5, _omitFieldNames ? '' : 'premiumRate',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOM<PhoneNumberDesc>(6, _omitFieldNames ? '' : 'sharedCost',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOM<PhoneNumberDesc>(7, _omitFieldNames ? '' : 'personalNumber',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOM<PhoneNumberDesc>(8, _omitFieldNames ? '' : 'voip',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aQS(9, _omitFieldNames ? '' : 'id')
     ..aI(10, _omitFieldNames ? '' : 'countryCode')
     ..aOS(11, _omitFieldNames ? '' : 'internationalPrefix')
@@ -417,30 +423,30 @@ class PhoneMetadata extends $pb.GeneratedMessage {
     ..aOS(17, _omitFieldNames ? '' : 'preferredInternationalPrefix')
     ..aOB(18, _omitFieldNames ? '' : 'sameMobileAndFixedLinePattern')
     ..pPM<NumberFormat>(19, _omitFieldNames ? '' : 'numberFormat',
-        subBuilder: NumberFormat.create)
+        subBuilder: NumberFormat.$_createMessage)
     ..pPM<NumberFormat>(20, _omitFieldNames ? '' : 'intlNumberFormat',
-        subBuilder: NumberFormat.create)
+        subBuilder: NumberFormat.$_createMessage)
     ..aOM<PhoneNumberDesc>(21, _omitFieldNames ? '' : 'pager',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOB(22, _omitFieldNames ? '' : 'mainCountryForCode')
     ..aOS(23, _omitFieldNames ? '' : 'leadingDigits')
     ..aOM<PhoneNumberDesc>(24, _omitFieldNames ? '' : 'noInternationalDialling',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOM<PhoneNumberDesc>(25, _omitFieldNames ? '' : 'uan',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOM<PhoneNumberDesc>(27, _omitFieldNames ? '' : 'emergency',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOM<PhoneNumberDesc>(28, _omitFieldNames ? '' : 'voicemail',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOM<PhoneNumberDesc>(29, _omitFieldNames ? '' : 'shortCode',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOM<PhoneNumberDesc>(30, _omitFieldNames ? '' : 'standardRate',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOM<PhoneNumberDesc>(31, _omitFieldNames ? '' : 'carrierSpecific',
-        subBuilder: PhoneNumberDesc.create)
+        subBuilder: PhoneNumberDesc.$_createMessage)
     ..aOB(32, _omitFieldNames ? '' : 'mobileNumberPortableRegion')
     ..aOM<PhoneNumberDesc>(33, _omitFieldNames ? '' : 'smsServices',
-        subBuilder: PhoneNumberDesc.create);
+        subBuilder: PhoneNumberDesc.$_createMessage);
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PhoneMetadata clone() => deepCopy();
@@ -453,12 +459,15 @@ class PhoneMetadata extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use PhoneMetadata() / PhoneMetadata.new instead')
   static PhoneMetadata create() => PhoneMetadata._();
+  static $pb.GeneratedMessage $_createMessage() => PhoneMetadata._();
   @$core.override
-  PhoneMetadata createEmptyInstance() => create();
+  PhoneMetadata createEmptyInstance() => PhoneMetadata._();
   @$core.pragma('dart2js:noInline')
-  static PhoneMetadata getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<PhoneMetadata>(create);
+  static PhoneMetadata getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PhoneMetadata>(
+          PhoneMetadata.$_createMessage);
   static PhoneMetadata? _defaultInstance;
 
   /// The general_desc contains information which is a superset of descriptions
@@ -878,7 +887,7 @@ class PhoneMetadataCollection extends $pb.GeneratedMessage {
   factory PhoneMetadataCollection({
     $core.Iterable<PhoneMetadata>? metadata,
   }) {
-    final result = create();
+    final result = PhoneMetadataCollection._();
     if (metadata != null) result.metadata.addAll(metadata);
     return result;
   }
@@ -887,18 +896,18 @@ class PhoneMetadataCollection extends $pb.GeneratedMessage {
 
   factory PhoneMetadataCollection.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      PhoneMetadataCollection()..mergeFromBuffer(data, registry);
   factory PhoneMetadataCollection.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      PhoneMetadataCollection()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PhoneMetadataCollection',
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'i18n.phonenumbers'),
-      createEmptyInstance: create)
+      createEmptyInstance: PhoneMetadataCollection.$_createMessage)
     ..pPM<PhoneMetadata>(1, _omitFieldNames ? '' : 'metadata',
-        subBuilder: PhoneMetadata.create);
+        subBuilder: PhoneMetadata.$_createMessage);
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PhoneMetadataCollection clone() => deepCopy();
@@ -912,12 +921,16 @@ class PhoneMetadataCollection extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use PhoneMetadataCollection() / PhoneMetadataCollection.new instead')
   static PhoneMetadataCollection create() => PhoneMetadataCollection._();
+  static $pb.GeneratedMessage $_createMessage() => PhoneMetadataCollection._();
   @$core.override
-  PhoneMetadataCollection createEmptyInstance() => create();
+  PhoneMetadataCollection createEmptyInstance() => PhoneMetadataCollection._();
   @$core.pragma('dart2js:noInline')
   static PhoneMetadataCollection getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<PhoneMetadataCollection>(create);
+      $pb.GeneratedMessage.$_defaultFor<PhoneMetadataCollection>(
+          PhoneMetadataCollection.$_createMessage);
   static PhoneMetadataCollection? _defaultInstance;
 
   @$pb.TagNumber(1)

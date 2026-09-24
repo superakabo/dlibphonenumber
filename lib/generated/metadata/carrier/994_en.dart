@@ -5,7 +5,7 @@
 /// Carrier JSON data for 994_en
 Map<int, String> get994_en() {
   return {
-    9946: "Naxtel",
+    9946: "Azercell",
     9947: "Nar Mobile",
     99410: "Azercell",
     99440: "FONEX",

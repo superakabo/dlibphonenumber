@@ -7,13 +7,13 @@ Map<String, Object?> getZW() {
   return {
     "generalDesc": {
       "nationalNumberPattern":
-          "(?:13|8\\d{4})\\d{5}|[235-8]\\d{8}|[2-689]\\d{6}",
+          "(?:13|8\\d{4})\\d{5}|[235-8]\\d{8}|[23568]\\d{6}",
       "possibleLength": [7, 9, 10],
       "possibleLengthLocalOnly": [3, 4, 5, 6]
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "(?:2(?:(?:(?:02[014]|72[03])\\d|48)\\d|2(?:[278]\\d|92)|583)|(?:37[56]|6[78]21\\d)\\d|5(?:483|525\\d\\d))\\d{3}|(?:2(?:0\\d|7[1-7])|(?:55|6[78])\\d)\\d{4}|(?:13|2(?:(?:42|9\\d)\\d|[56]20)|3(?:123|92\\d)|(?:4|542)\\d|6(?:[16]21|52[013])|8(?:[1349]28|523)|9[2-9])\\d{5}",
+          "(?:(?:(?:13|6(?:[16-8]21|52[013])|8(?:[1349]28|523))\\d|3(?:(?:123|92\\d)\\d|7[56]))\\d|2(?:(?:(?:02[014]|[56]20|72[03]|9\\d\\d)\\d|4(?:2\\d\\d|8))\\d|2(?:[278]\\d|92))|5(?:4(?:2\\d{3}|83)|525\\d\\d))\\d{3}|(?:2(?:(?:0\\d|7[1-7])\\d|583)|(?:55|6[78])\\d\\d)\\d{3}",
       "exampleNumber": "1312345",
       "possibleLength": [7, 9],
       "possibleLengthLocalOnly": [3, 4, 5, 6]
@@ -68,13 +68,6 @@ Map<String, Object?> getZW() {
         "pattern": "(\\d{3})(\\d{3,5})",
         "format": "\$1 \$2",
         "leadingDigitsPattern": ["2(?:0[45]|[27]|48)|37|675|(?:55|68)[78]"],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
-        "pattern": "(\\d)(\\d{3})(\\d{2,4})",
-        "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[49]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -142,13 +135,6 @@ Map<String, Object?> getZW() {
         "pattern": "(\\d{3})(\\d{3,5})",
         "format": "\$1 \$2",
         "leadingDigitsPattern": ["2(?:0[45]|[27]|48)|37|675|(?:55|68)[78]"],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
-        "pattern": "(\\d)(\\d{3})(\\d{2,4})",
-        "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[49]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },

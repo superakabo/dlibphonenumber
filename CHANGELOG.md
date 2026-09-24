@@ -1,3 +1,10 @@
+## 1.1.73
+- Updated phone metadata for region code(s): BD, CA, CD, EE, IL, LI, PA, SB, SR, UG, VN, ZW
+- New geocoding data for country calling code(s): 1273 (en)
+- Updated geocoding data for country calling code(s): 263 (en)
+- Updated carrier data for country calling code(s): 36 (en), 39 (en), 81 (en), 84 (en), 226 (en), 243 (en), 256 (en), 597 (en),
+- Updated / refreshed time zone meta data.
+
 ## 1.1.72
 - Updated alternate formatting data for country calling code(s): 91
 - Updated phone metadata for region code(s): BD, HK, IN, PA, PT, TR

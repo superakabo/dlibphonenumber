@@ -32,7 +32,7 @@ class PhoneNumber extends $pb.GeneratedMessage {
     $core.String? preferredDomesticCarrierCode,
     $core.int? numberOfLeadingZeros,
   }) {
-    final result = create();
+    final result = PhoneNumber._();
     if (countryCode != null) result.countryCode = countryCode;
     if (nationalNumber != null) result.nationalNumber = nationalNumber;
     if (extension_3 != null) result.extension_3 = extension_3;
@@ -51,16 +51,16 @@ class PhoneNumber extends $pb.GeneratedMessage {
 
   factory PhoneNumber.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      PhoneNumber()..mergeFromBuffer(data, registry);
   factory PhoneNumber.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      PhoneNumber()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PhoneNumber',
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'i18n.phonenumbers'),
-      createEmptyInstance: create)
+      createEmptyInstance: PhoneNumber.$_createMessage)
     ..aI(1, _omitFieldNames ? '' : 'countryCode', fieldType: $pb.PbFieldType.Q3)
     ..a<$fixnum.Int64>(
         2, _omitFieldNames ? '' : 'nationalNumber', $pb.PbFieldType.QU6,
@@ -85,12 +85,15 @@ class PhoneNumber extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use PhoneNumber() / PhoneNumber.new instead')
   static PhoneNumber create() => PhoneNumber._();
+  static $pb.GeneratedMessage $_createMessage() => PhoneNumber._();
   @$core.override
-  PhoneNumber createEmptyInstance() => create();
+  PhoneNumber createEmptyInstance() => PhoneNumber._();
   @$core.pragma('dart2js:noInline')
-  static PhoneNumber getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<PhoneNumber>(create);
+  static PhoneNumber getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PhoneNumber>(
+          PhoneNumber.$_createMessage);
   static PhoneNumber? _defaultInstance;
 
   /// The country calling code for this number, as defined by the International

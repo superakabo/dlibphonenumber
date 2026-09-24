@@ -7,11 +7,9 @@ Map<int, String> get677_en() {
   return {
     6777: "Solomon Telekom",
     6778: "BMobile",
-    6779: "Smile",
+    6779: "Solomon Telekom",
     67768: "Satsol",
     67769: "Satsol",
-    67791: "Satsol",
-    67792: "Satsol",
-    67793: "Satsol"
+    67799: "Smile"
   };
 }
