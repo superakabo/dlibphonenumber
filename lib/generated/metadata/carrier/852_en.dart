@@ -409,7 +409,7 @@ Map<int, String> get852_en() {
     8525908: "China Mobile",
     8525909: "China Mobile",
     8526260: "3",
-    8526261: "Webbing",
+    8526261: "HKT",
     8526360: "HKT",
     8526361: "China Unicom",
     8526362: "HKT",

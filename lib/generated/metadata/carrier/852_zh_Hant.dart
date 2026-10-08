@@ -253,6 +253,7 @@ Map<int, String> get852_zh_Hant() {
     8525908: "Lycamobile",
     8525909: "Lycamobile",
     8526260: "Easco",
+    8526261: "Webbing",
     8526360: "新移動通訊",
     8528480: "Handy",
     8528481: "新移動通訊",

@@ -6,8 +6,9 @@
 Map<String, Object?> getCN() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[19]\\d{2,5}",
-      "possibleLength": [3, 4, 5, 6]
+      "nationalNumberPattern":
+          "[19]\\d\\d(?:\\d(?:\\d(?:\\d(?:\\d\\d(?:\\d{3,4})?)?)?)?)?",
+      "possibleLength": [3, 4, 5, 6, 8, 11, 12]
     },
     "fixedLine": {
       "possibleLength": [-1],
@@ -24,7 +25,9 @@ Map<String, Object?> getCN() {
       "possibleLengthLocalOnly": [-1]
     },
     "premiumRate": {
-      "possibleLength": [-1],
+      "nationalNumberPattern": "106[26]\\d{4}",
+      "exampleNumber": "10620000",
+      "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {
@@ -67,16 +70,16 @@ Map<String, Object?> getCN() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "1(?:00|1[0249]|2395|6[08])|9[56]\\d{3,4}|12[023]|1(?:0(?:[0-26]\\d|8)|21\\d)\\d",
+          "1(?:(?:0(?:[0-2]\\d|6(?:(?:[268]\\d|[39](?:[0-49]|[5-8]\\d{4}))\\d\\d|5)|8)|2[13]\\d)\\d|1[0249]|6[08])|9[56]\\d{3,4}|1(?:0(?:0|690\\d{6})|2[023])",
       "exampleNumber": "100",
-      "possibleLength": [3, 4, 5, 6],
+      "possibleLength": [3, 4, 5, 6, 8, 11, 12],
       "possibleLengthLocalOnly": [-1]
     },
     "standardRate": {
       "nationalNumberPattern":
-          "1(?:0(?:[0-26]\\d|8)\\d|1[24]|23|6[08])|9[56]\\d{3,4}|100",
+          "1(?:0(?:(?:[0-2]\\d|8)\\d|6[3589]\\d(?:\\d{3}(?:\\d{3,4})?)?)|1[24]|23(?:[0-8]\\d|9[0-46-9])?|6[08])|9[56]\\d{3,4}|100",
       "exampleNumber": "100",
-      "possibleLength": [3, 4, 5, 6],
+      "possibleLength": [3, 4, 5, 6, 8, 11, 12],
       "possibleLengthLocalOnly": [-1]
     },
     "carrierSpecific": {
@@ -85,9 +88,9 @@ Map<String, Object?> getCN() {
     },
     "mobileNumberPortableRegion": false,
     "smsServices": {
-      "nationalNumberPattern": "12110",
-      "exampleNumber": "12110",
-      "possibleLength": [5],
+      "nationalNumberPattern": "1(?:06\\d\\d(?:\\d{3}(?:\\d{3,4})?)?|2110)",
+      "exampleNumber": "10600",
+      "possibleLength": [5, 8, 11, 12],
       "possibleLengthLocalOnly": [-1]
     }
   };

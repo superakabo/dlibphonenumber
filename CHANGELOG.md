@@ -1,3 +1,9 @@
+## 1.1.74
+- Updated phone metadata for region code(s): CN, IR, NG, US
+- Updated short number metadata for region code(s): CN
+- Updated carrier data for country calling code(s): 27 (en), 30 (en), 60 (en), 98 (en, fa), 234 (en), 852 (en, zh, zh_Hant)
+- Updated / refreshed time zone meta data.
+
 ## 1.1.73
 - Updated phone metadata for region code(s): BD, CA, CD, EE, IL, LI, PA, SB, SR, UG, VN, ZW
 - New geocoding data for country calling code(s): 1273 (en)
