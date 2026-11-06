@@ -20,7 +20,7 @@ Map<String, Object?> getDE() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "1(?:6[023]|7\\d)\\d{7,8}|15(?:[0-25-9]\\d\\d|3(?:10|33))\\d{6}",
+          "1(?:6[023]|7\\d)\\d{7,8}|15(?:[0-25-9]\\d\\d|3(?:10|33)|410)\\d{6}",
       "exampleNumber": "15123456789",
       "possibleLength": [10, 11],
       "possibleLengthLocalOnly": [-1]
@@ -166,7 +166,7 @@ Map<String, Object?> getDE() {
       {
         "pattern": "(\\d{5})(\\d{6})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["15[03568]", "15(?:[0568]|3[13])"],
+        "leadingDigitsPattern": ["15[03-68]", "15(?:[0568]|3[13]|41)"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -300,7 +300,7 @@ Map<String, Object?> getDE() {
       {
         "pattern": "(\\d{5})(\\d{6})",
         "format": "\$1 \$2",
-        "leadingDigitsPattern": ["15[03568]", "15(?:[0568]|3[13])"],
+        "leadingDigitsPattern": ["15[03-68]", "15(?:[0568]|3[13]|41)"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },

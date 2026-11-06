@@ -1,3 +1,8 @@
+## 1.1.76
+- Updated phone metadata for region code(s): BJ, CN, DE, EC, ET, GE, LA, RO, ZW
+- Updated geocoding data for country calling code(s): 61 (en), 86 (zh), 263 (en)
+- Updated carrier data for country calling code(s): 7 (en, kk), 40 (en), 43 (en), 46 (en), 48 (en), 49 (en), 81 (en), 263 (en),
+
 ## 1.1.75
 - Updated alternate formatting data for country calling code(s): 91
 - Updated phone metadata for region code(s): AU, AX, BW, CC, CN, CO, CR, CV, CX, DK, ES, FI, GH, GY, IN, KE, KW, PG, PY,

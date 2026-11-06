@@ -28,6 +28,7 @@ Map<int, String> get49_en() {
     491529: "Vodafone/Truphone",
     491531: "Mtel",
     491533: "Simsalasim",
+    491541: "T-Mobile",
     491555: "1&1 Mobilfunk",
     491556: "1&1 Mobilfunk",
     491570: "Eplus/Telogic",

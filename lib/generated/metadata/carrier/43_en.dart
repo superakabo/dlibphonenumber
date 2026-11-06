@@ -25,6 +25,7 @@ Map<int, String> get43_en() {
     43688: "A1 TA",
     43690: "Three",
     43696: "Three",
+    43697: "AirGSM",
     43699: "Three",
     436485: "Three",
     436770: "T-Mobile AT",

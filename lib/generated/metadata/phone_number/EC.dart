@@ -18,7 +18,7 @@ Map<String, Object?> getEC() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "964[0-2]\\d{5}|9(?:39|[57][89]|6[0-36-9]|[89]\\d)\\d{6}",
+          "964[0-2]\\d{5}|9(?:3[0-29]|[57][89]|6[0-36-9]|[89]\\d)\\d{6}",
       "exampleNumber": "991234567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

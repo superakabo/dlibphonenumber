@@ -6,8 +6,8 @@
 Map<String, Object?> getBJ() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:01\\d|8)\\d{7}",
-      "possibleLength": [8, 10]
+      "nationalNumberPattern": "01\\d{8}",
+      "possibleLength": [10]
     },
     "fixedLine": {
       "nationalNumberPattern": "012\\d{7}",
@@ -38,9 +38,7 @@ Map<String, Object?> getBJ() {
       "possibleLengthLocalOnly": [-1]
     },
     "voip": {
-      "nationalNumberPattern": "857[58]\\d{4}",
-      "exampleNumber": "85751234",
-      "possibleLength": [8],
+      "possibleLength": [-1],
       "possibleLengthLocalOnly": [-1]
     },
     "id": "BJ",
@@ -49,12 +47,6 @@ Map<String, Object?> getBJ() {
     "sameMobileAndFixedLinePattern": false,
     "numberFormat": [
       {
-        "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
-        "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["8"],
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4 \$5",
         "leadingDigitsPattern": ["0"],
@@ -62,12 +54,6 @@ Map<String, Object?> getBJ() {
       }
     ],
     "intlNumberFormat": [
-      {
-        "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
-        "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["8"],
-        "nationalPrefixOptionalWhenFormatting": false
-      },
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4 \$5",
@@ -85,9 +71,7 @@ Map<String, Object?> getBJ() {
       "possibleLengthLocalOnly": [-1]
     },
     "uan": {
-      "nationalNumberPattern": "81\\d{6}",
-      "exampleNumber": "81123456",
-      "possibleLength": [8],
+      "possibleLength": [-1],
       "possibleLengthLocalOnly": [-1]
     },
     "emergency": {

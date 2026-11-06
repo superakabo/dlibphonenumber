@@ -6,7 +6,7 @@
 Map<String, Object?> getRO() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "(?:[236-8]\\d|90)\\d{7}|[23]\\d{5}",
+      "nationalNumberPattern": "(?:[2378]\\d|90)\\d{7}|[23]\\d{5}",
       "possibleLength": [6, 9]
     },
     "fixedLine": {
@@ -18,7 +18,7 @@ Map<String, Object?> getRO() {
     },
     "mobile": {
       "nationalNumberPattern":
-          "(?:630|702)0\\d{5}|(?:6(?:00|2\\d)|7(?:0[013-9]|1[0-3]|[2-7]\\d|8[03-8]|9[0-39]))\\d{6}",
+          "7020\\d{5}|7(?:0[013-9]|1[0-3]|[2-7]\\d|8[03-8]|9[0-39])\\d{6}",
       "exampleNumber": "712034567",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -81,7 +81,7 @@ Map<String, Object?> getRO() {
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[236-9]"],
+        "leadingDigitsPattern": ["[237-9]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
@@ -111,7 +111,7 @@ Map<String, Object?> getRO() {
       {
         "pattern": "(\\d{3})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["[236-9]"],
+        "leadingDigitsPattern": ["[237-9]"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }

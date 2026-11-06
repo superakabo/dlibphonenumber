@@ -6,20 +6,19 @@
 Map<String, Object?> getZW() {
   return {
     "generalDesc": {
-      "nationalNumberPattern":
-          "(?:13|8\\d{4})\\d{5}|[235-8]\\d{8}|[23568]\\d{6}",
+      "nationalNumberPattern": "8\\d{6}(?:\\d{3})?|[235-8]\\d{8}",
       "possibleLength": [7, 9, 10],
-      "possibleLengthLocalOnly": [3, 4, 5, 6]
+      "possibleLengthLocalOnly": [6, 7]
     },
     "fixedLine": {
       "nationalNumberPattern":
-          "(?:(?:(?:13|6(?:[16-8]21|52[013])|8(?:[1349]28|523))\\d|3(?:(?:123|92\\d)\\d|7[56]))\\d|2(?:(?:(?:02[014]|[56]20|72[03]|9\\d\\d)\\d|4(?:2\\d\\d|8))\\d|2(?:[278]\\d|92))|5(?:4(?:2\\d{3}|83)|525\\d\\d))\\d{3}|(?:2(?:(?:0\\d|7[1-7])\\d|583)|(?:55|6[78])\\d\\d)\\d{3}",
-      "exampleNumber": "1312345",
-      "possibleLength": [7, 9],
-      "possibleLengthLocalOnly": [3, 4, 5, 6]
+          "(?:2(?:02[014]|(?:42|9\\d)\\d|[56]20|72[03])|3(?:123|92\\d)|5(?:42\\d|525)|6(?:[16-8]21|52[013])|8(?:[1349]28|523))\\d{5}",
+      "exampleNumber": "202012345",
+      "possibleLength": [9],
+      "possibleLengthLocalOnly": [6, 7]
     },
     "mobile": {
-      "nationalNumberPattern": "7(?:[1278]\\d|3[1-9]|9[01])\\d{6}",
+      "nationalNumberPattern": "7(?:[1278]\\d|3[1-9]|51|9[01])\\d{6}",
       "exampleNumber": "712345678",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]
@@ -56,32 +55,9 @@ Map<String, Object?> getZW() {
     "sameMobileAndFixedLinePattern": false,
     "numberFormat": [
       {
-        "pattern": "(\\d{2})(\\d{3,5})",
-        "format": "\$1 \$2",
-        "leadingDigitsPattern": [
-          "1|2(?:0[0-36-9]|29|58)|67[0-46-9]|(?:55|68)[0-69]"
-        ],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
-        "pattern": "(\\d{3})(\\d{3,5})",
-        "format": "\$1 \$2",
-        "leadingDigitsPattern": ["2(?:0[45]|[27]|48)|37|675|(?:55|68)[78]"],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
         "pattern": "(\\d{3})(\\d{4})",
         "format": "\$1 \$2",
         "leadingDigitsPattern": ["80"],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
-        "pattern": "(\\d{4})(\\d{3,5})",
-        "format": "\$1 \$2",
-        "leadingDigitsPattern": ["548"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -123,32 +99,9 @@ Map<String, Object?> getZW() {
     ],
     "intlNumberFormat": [
       {
-        "pattern": "(\\d{2})(\\d{3,5})",
-        "format": "\$1 \$2",
-        "leadingDigitsPattern": [
-          "1|2(?:0[0-36-9]|29|58)|67[0-46-9]|(?:55|68)[0-69]"
-        ],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
-        "pattern": "(\\d{3})(\\d{3,5})",
-        "format": "\$1 \$2",
-        "leadingDigitsPattern": ["2(?:0[45]|[27]|48)|37|675|(?:55|68)[78]"],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
         "pattern": "(\\d{3})(\\d{4})",
         "format": "\$1 \$2",
         "leadingDigitsPattern": ["80"],
-        "nationalPrefixFormattingRule": "0\$1",
-        "nationalPrefixOptionalWhenFormatting": false
-      },
-      {
-        "pattern": "(\\d{4})(\\d{3,5})",
-        "format": "\$1 \$2",
-        "leadingDigitsPattern": ["548"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },

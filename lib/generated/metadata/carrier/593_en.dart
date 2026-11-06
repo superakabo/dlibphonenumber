@@ -5,8 +5,11 @@
 /// Carrier JSON data for 593_en
 Map<int, String> get593_en() {
   return {
-    59393: "Claro",
     59398: "Claro",
+    593930: "Tigo",
+    593931: "Tigo",
+    593932: "Tigo",
+    593939: "Claro",
     593959: "Claro",
     593960: "CNT",
     593961: "CNT",

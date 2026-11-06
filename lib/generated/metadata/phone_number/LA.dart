@@ -6,7 +6,7 @@
 Map<String, Object?> getLA() {
   return {
     "generalDesc": {
-      "nationalNumberPattern": "[23]\\d{9}|3\\d{8}|(?:[235-8]\\d|41)\\d{6}",
+      "nationalNumberPattern": "(?:2\\d|3)\\d{8}|(?:[235-8]\\d|41)\\d{6}",
       "possibleLength": [8, 9, 10],
       "possibleLengthLocalOnly": [6]
     },
@@ -17,8 +17,7 @@ Map<String, Object?> getLA() {
       "possibleLengthLocalOnly": [6]
     },
     "mobile": {
-      "nationalNumberPattern":
-          "(?:20(?:[23579]\\d|8[78])|30[24]\\d)\\d{6}|30\\d{7}",
+      "nationalNumberPattern": "208[78]\\d{6}|(?:20[23579]|30)\\d{7}",
       "exampleNumber": "2023123456",
       "possibleLength": [9, 10],
       "possibleLengthLocalOnly": [-1]
@@ -67,7 +66,7 @@ Map<String, Object?> getLA() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[23]"],
+        "leadingDigitsPattern": ["2"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
@@ -90,7 +89,7 @@ Map<String, Object?> getLA() {
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{3})(\\d{3})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[23]"],
+        "leadingDigitsPattern": ["2"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       }
