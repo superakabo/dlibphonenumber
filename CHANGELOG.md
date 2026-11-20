@@ -1,3 +1,9 @@
+## 1.1.77
+- Updated phone metadata for region code(s): BF, CN, DZ, EE, GY, HK, KR, NO, NZ, PA, PK, RU, SN, YE
+- Updated short number metadata for region code(s): CR, KR, NZ, TW
+- Updated geocoding data for country calling code(s): 86 (en, zh), 226 (en)
+- Updated carrier data for country calling code(s): 7 (en, kk, ru), 92 (en), 221 (en), 592 (en), 852 (en, zh), 967 (en)
+
 ## 1.1.76
 - Updated phone metadata for region code(s): BJ, CN, DE, EC, ET, GE, LA, RO, ZW
 - Updated geocoding data for country calling code(s): 61 (en), 86 (zh), 263 (en)

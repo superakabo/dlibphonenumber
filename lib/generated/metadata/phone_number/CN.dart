@@ -112,7 +112,7 @@ Map<String, Object?> getCN() {
         "pattern": "(\\d{4})(\\d{4})",
         "format": "\$1 \$2",
         "leadingDigitsPattern": ["101", "1010"],
-        "domesticCarrierCodeFormattingRule": "\$CC\$1",
+        "domesticCarrierCodeFormattingRule": "\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
@@ -244,7 +244,7 @@ Map<String, Object?> getCN() {
         "pattern": "(\\d{4})(\\d{4})",
         "format": "\$1 \$2",
         "leadingDigitsPattern": ["101", "1010"],
-        "domesticCarrierCodeFormattingRule": "\$CC\$1",
+        "domesticCarrierCodeFormattingRule": "\$CC \$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
       {

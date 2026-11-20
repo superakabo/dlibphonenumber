@@ -18,7 +18,7 @@ Map<String, Object?> getYE() {
       "possibleLengthLocalOnly": [6]
     },
     "mobile": {
-      "nationalNumberPattern": "7[01378]\\d{7}",
+      "nationalNumberPattern": "7[0-378]\\d{7}",
       "exampleNumber": "712345678",
       "possibleLength": [9],
       "possibleLengthLocalOnly": [-1]

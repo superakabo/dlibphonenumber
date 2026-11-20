@@ -19,7 +19,7 @@ Map<String, Object?> getPK() {
       "possibleLengthLocalOnly": [5, 6, 7, 8]
     },
     "mobile": {
-      "nationalNumberPattern": "3(?:[0-247]\\d|3[0-79]|55|64)\\d{7}",
+      "nationalNumberPattern": "3(?:[0-2479]\\d|3[0-79]|55|64)\\d{7}",
       "exampleNumber": "3012345678",
       "possibleLength": [10],
       "possibleLengthLocalOnly": [-1]

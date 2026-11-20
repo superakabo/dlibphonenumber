@@ -67,7 +67,7 @@ Map<String, Object?> getKR() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "1(?:[01679]114|3(?:0[01]|2|3[0-35-9]|45?|5[057]|6[569]|7[79]|8[2589]|9[0189])|55[15]\\d{4}|8(?:(?:11|44|66)\\d{4}|[28]))|1(?:0[015]|1\\d|2[01357-9]|41|8114)",
+          "1(?:0[015]|1\\d|2[01357-9]|3(?:0[01]|2|3[0-35-9]|45?|5[057]|6[569]|7[79]|8[2589]|9[0189])|41|[6-9]114)|18[28]|1811\\d{4}|1[01]114",
       "exampleNumber": "100",
       "possibleLength": [3, 4, 5, 8],
       "possibleLengthLocalOnly": [-1]
@@ -85,8 +85,8 @@ Map<String, Object?> getKR() {
     },
     "mobileNumberPortableRegion": false,
     "smsServices": {
-      "nationalNumberPattern": "1(?:55|8[146])\\d{5}",
-      "exampleNumber": "15500000",
+      "nationalNumberPattern": "181\\d{5}",
+      "exampleNumber": "18100000",
       "possibleLength": [8],
       "possibleLengthLocalOnly": [-1]
     }

@@ -18,7 +18,7 @@ Map<String, Object?> getTW() {
       "possibleLengthLocalOnly": [-1]
     },
     "tollFree": {
-      "nationalNumberPattern": "11[0289]|1(?:81|92)\\d",
+      "nationalNumberPattern": "1(?:1[0289]|81\\d|9(?:1[01]|2\\d))",
       "exampleNumber": "110",
       "possibleLength": [3, 4],
       "possibleLengthLocalOnly": [-1]
@@ -69,13 +69,13 @@ Map<String, Object?> getTW() {
     },
     "shortCode": {
       "nationalNumberPattern":
-          "1(?:0[04-6]|1[0237-9]|3[389]|6[05-8]|7[07]|8(?:0|11)|9(?:19|22|5[057]|68|8[05]|9[15689]))",
+          "1(?:0[04-6]|1[0237-9]|3[389]|6[05-8]|7[07]|8(?:0|11)|9(?:1[019]|2[25]|5[057]|68|8[05]|9[15689]))",
       "exampleNumber": "100",
       "possibleLength": [3, 4],
       "possibleLengthLocalOnly": [-1]
     },
     "standardRate": {
-      "nationalNumberPattern": "1(?:65|9(?:1\\d|50|85|98))",
+      "nationalNumberPattern": "1(?:65|9(?:19|50|85|98))",
       "exampleNumber": "165",
       "possibleLength": [3, 4],
       "possibleLengthLocalOnly": [-1]

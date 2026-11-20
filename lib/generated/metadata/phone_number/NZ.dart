@@ -7,8 +7,8 @@ Map<String, Object?> getNZ() {
   return {
     "generalDesc": {
       "nationalNumberPattern":
-          "[1289]\\d{9}|50\\d{5}(?:\\d{2,3})?|[27-9]\\d{7,8}|(?:[34]\\d|6[0-35-9])\\d{6}|8\\d{4,6}",
-      "possibleLength": [5, 6, 7, 8, 9, 10],
+          "11\\d{8,12}|[29]\\d{7,9}|(?:[34]\\d|6[0-35-9])\\d{6}|50\\d{5}(?:\\d{2,3})?|7\\d{7,8}|8\\d{4,9}",
+      "possibleLength": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
       "possibleLengthLocalOnly": [7]
     },
     "fixedLine": {
@@ -32,9 +32,9 @@ Map<String, Object?> getNZ() {
     },
     "premiumRate": {
       "nationalNumberPattern":
-          "(?:1[13-57-9]\\d{5}|50(?:0[08]|30|66|77|88))\\d{3}|90\\d{6,8}",
+          "11\\d{8,12}|50(?:0[08]|30|66|77|88)\\d{3}|90\\d{6,8}",
       "exampleNumber": "900123456",
-      "possibleLength": [7, 8, 9, 10],
+      "possibleLength": [7, 8, 9, 10, 11, 12, 13, 14],
       "possibleLengthLocalOnly": [-1]
     },
     "sharedCost": {
@@ -90,7 +90,14 @@ Map<String, Object?> getNZ() {
       {
         "pattern": "(\\d{2})(\\d{3,4})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["1|2[028]"],
+        "leadingDigitsPattern": ["2[028]"],
+        "nationalPrefixFormattingRule": "0\$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
+        "pattern": "(\\d{2})(\\d{3})(\\d{3})(\\d{2,6})",
+        "format": "\$1 \$2 \$3 \$4",
+        "leadingDigitsPattern": ["1"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },
@@ -134,7 +141,14 @@ Map<String, Object?> getNZ() {
       {
         "pattern": "(\\d{2})(\\d{3,4})(\\d{4})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["1|2[028]"],
+        "leadingDigitsPattern": ["2[028]"],
+        "nationalPrefixFormattingRule": "0\$1",
+        "nationalPrefixOptionalWhenFormatting": false
+      },
+      {
+        "pattern": "(\\d{2})(\\d{3})(\\d{3})(\\d{2,6})",
+        "format": "\$1 \$2 \$3 \$4",
+        "leadingDigitsPattern": ["1"],
         "nationalPrefixFormattingRule": "0\$1",
         "nationalPrefixOptionalWhenFormatting": false
       },

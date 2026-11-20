@@ -18,8 +18,7 @@ Map<String, Object?> getRU() {
       "possibleLengthLocalOnly": [7]
     },
     "mobile": {
-      "nationalNumberPattern":
-          "9(?:[0-24-9]\\d{4}|3(?:0(?:0(?:05|[124579]\\d|3[0-7]|6[0-49]|8[04-9])|[1-9]\\d\\d)|[1-9]\\d{3}))\\d{4}",
+      "nationalNumberPattern": "9\\d{9}",
       "exampleNumber": "9123456789",
       "possibleLength": [10],
       "possibleLengthLocalOnly": [-1]

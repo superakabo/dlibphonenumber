@@ -61,13 +61,13 @@ Map<String, Object?> getNO() {
       {
         "pattern": "(\\d{3})(\\d{2})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["8"],
+        "leadingDigitsPattern": ["[489]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[2-79]"],
+        "leadingDigitsPattern": ["[235-7]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
@@ -75,13 +75,13 @@ Map<String, Object?> getNO() {
       {
         "pattern": "(\\d{3})(\\d{2})(\\d{3})",
         "format": "\$1 \$2 \$3",
-        "leadingDigitsPattern": ["8"],
+        "leadingDigitsPattern": ["[489]"],
         "nationalPrefixOptionalWhenFormatting": false
       },
       {
         "pattern": "(\\d{2})(\\d{2})(\\d{2})(\\d{2})",
         "format": "\$1 \$2 \$3 \$4",
-        "leadingDigitsPattern": ["[2-79]"],
+        "leadingDigitsPattern": ["[235-7]"],
         "nationalPrefixOptionalWhenFormatting": false
       }
     ],
