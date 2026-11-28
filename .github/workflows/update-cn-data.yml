@@ -1,0 +1,304 @@
+name: Update and Merge Phone Data
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/workflows/覆盖.yml'
+  workflow_dispatch:
+  schedule:
+     - cron: '0 12 1 * *' # 每月1号中午12点自动运行
+
+permissions:
+  contents: write
+
+jobs:
+  process-and-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pypinyin pandas
+
+      # ---------------------------------------------------------
+      # 第一部分：生成手机号数据 (本地临时文件)
+      # 特点：无限循环优化，直到无法再压缩
+      # ---------------------------------------------------------
+      
+      - name: Download SQL and Convert to CSV
+        run: |
+          cat > convert_sql_to_csv.py << 'EOF'
+          import requests
+          import pandas as pd
+          import csv
+          import os
+
+          def download_sql():
+              url = "https://github.com/dannyhu926/phone_location/raw/refs/heads/master/mysql/phone_location.sql"
+              response = requests.get(url)
+              response.raise_for_status()
+              return response.text
+
+          def convert_to_csv(sql_content, csv_filepath):
+              insert_statements = [line for line in sql_content.splitlines() if line.startswith("INSERT INTO `phone_location`")]
+              data = []
+              for statement in insert_statements:
+                  values_str = statement[statement.find("VALUES") + len("VALUES"):].strip()
+                  values = []
+                  in_quote = False
+                  current_value = ""
+                  for char in values_str:
+                      if char == "'":
+                          in_quote = not in_quote
+                      elif char == "," and not in_quote:
+                          values.append(current_value.strip("'"))
+                          current_value = ""
+                      elif in_quote:
+                          current_value += char
+                  values.append(current_value.strip("'"))
+                  data.append(values[1:5])
+
+              df = pd.DataFrame(data, columns=['pref', 'phone', 'province', 'city'])
+              df.to_csv(csv_filepath, index=False, quoting=csv.QUOTE_NONNUMERIC)
+
+          if __name__ == "__main__":
+              sql_content = download_sql()
+              os.makedirs('lib/cn', exist_ok=True)
+              convert_to_csv(sql_content, 'lib/cn/phone_location.csv')
+          EOF
+          python convert_sql_to_csv.py
+
+      - name: Preprocess CSV
+        run: |
+          cat > preprocess_csv.py << 'EOF'
+          import pandas as pd
+          import csv
+
+          df = pd.read_csv('lib/cn/phone_location.csv')
+          df = df.drop(columns=['pref'])
+          df['phone'] = '86' + df['phone'].astype(str).str.replace("'", "")
+          df['province'] = df['province'].str.replace("'", "")
+          df['city'] = df['city'].str.replace("'", "")
+          df.to_csv('lib/cn/phone_location_processed.csv', index=False, quoting=csv.QUOTE_NONNUMERIC)
+          EOF
+          python preprocess_csv.py
+
+      - name: Optimize Phone Ranges (Loop until stable)
+        run: |
+          cat > optimize_ranges.py << 'EOF'
+          import pandas as pd
+          from collections import defaultdict
+          from pypinyin import lazy_pinyin, Style
+          import os
+          import sys
+
+          def convert_to_pinyin(province, city):
+              p = ''.join(lazy_pinyin(province, style=Style.NORMAL))
+              c = ''.join(lazy_pinyin(city, style=Style.NORMAL))
+              return f"{c.title()}, {p.title()}"
+
+          def process_data_list(data_list):
+              processed = set()
+              result = []
+              
+              # 1. 按“省份+城市”分组
+              location_groups = defaultdict(list)
+              for item in data_list:
+                  key = f"{item['province']}{item['city']}"
+                  location_groups[key].append(item)
+
+              # 2. 在每个地理分组内，寻找可以合并的号段
+              for location, numbers in location_groups.items():
+                  prefix_groups = defaultdict(list)
+                  
+                  # 按前缀分组
+                  for num in numbers:
+                      phone_str = str(num['phone'])
+                      if phone_str not in processed:
+                          prefix = phone_str[:-1]
+                          prefix_groups[prefix].append(num)
+
+                  # 检查是否有完整的 0-9
+                  for prefix, group in prefix_groups.items():
+                      if len(group) == 10:
+                          sorted_group = sorted(group, key=lambda x: str(x['phone']))
+                          if all(str(n['phone'])[-1] == str(i) for i, n in enumerate(sorted_group)):
+                              first = sorted_group[0]
+                              if all(n['province'] == first['province'] and n['city'] == first['city'] for n in sorted_group):
+                                  result.append({
+                                      'phone': int(prefix),
+                                      'province': first['province'],
+                                      'city': first['city']
+                                  })
+                                  processed.update(str(n['phone']) for n in sorted_group)
+
+              # 3. 未合并的放回
+              for item in data_list:
+                  if str(item['phone']) not in processed:
+                      result.append(item)
+              
+              return result
+
+          def optimize_loop(input_file):
+              df = pd.read_csv(input_file)
+              current_data = df.to_dict('records')
+              
+              round_num = 1
+              while True:
+                  initial_count = len(current_data)
+                  print(f"::notice::Starting Round {round_num} optimization...")
+                  
+                  new_data = process_data_list(current_data)
+                  final_count = len(new_data)
+                  
+                  print(f"Round {round_num}: {initial_count} -> {final_count} records")
+                  
+                  if final_count == initial_count:
+                      print(f"::notice::Optimization finished at Round {round_num}. No more merges possible.")
+                      break
+                  
+                  current_data = new_data
+                  round_num += 1
+              
+              final_df = pd.DataFrame(current_data)
+              final_df.sort_values(by='phone', inplace=True)
+              
+              optimized_zh = {}
+              optimized_en = {}
+
+              for _, row in final_df.iterrows():
+                  phone = int(row['phone'])
+                  optimized_zh[phone] = f"{row['province']}{row['city']}"
+                  optimized_en[phone] = convert_to_pinyin(row['province'], row['city'])
+                  
+              return optimized_zh, optimized_en
+
+          def generate_optimized_dart_files(optimized_zh, optimized_en):
+              os.makedirs('lib/cn', exist_ok=True)
+              with open('lib/cn/phone_location_zh_optimized.dart', 'w', encoding='utf-8') as f:
+                  f.write('// Generated by GitHub Actions\n')
+                  f.write('Map<int, String> get86_zh_optimized() {\n  return {\n')
+                  for phone, location in optimized_zh.items():
+                      # 这里生成的每一行都带逗号，我们在 Merge 阶段统一处理末尾
+                      f.write(f'    {phone}: "{location}",\n')
+                  f.write('  };\n}\n')
+
+              with open('lib/cn/phone_location_en_optimized.dart', 'w', encoding='utf-8') as f:
+                  f.write('// Generated by GitHub Actions\n')
+                  f.write('Map<int, String> get86_en_optimized() {\n  return {\n')
+                  for phone, location in optimized_en.items():
+                      f.write(f'    {phone}: "{location}",\n')
+                  f.write('  };\n}\n')
+
+          if __name__ == "__main__":
+              optimized_zh, optimized_en = optimize_loop('lib/cn/phone_location_processed.csv')
+              generate_optimized_dart_files(optimized_zh, optimized_en)
+          EOF
+          python optimize_ranges.py
+
+      # ---------------------------------------------------------
+      # 第二部分：合并数据 (Fixed + Mobile)
+      # 修复：移除多余逗号，确保 Map 语法完美
+      # ---------------------------------------------------------
+
+      - name: Create final directory
+        run: mkdir -p lib/generated/metadata/geocoding
+
+      - name: Merge Data
+        run: |
+          python << EOF
+          import os
+          import requests
+
+          def extract_clean_map_content(content):
+              # 1. 找到 Map 内容开始位置
+              start_marker = "return {"
+              start_index = content.find(start_marker)
+              if start_index == -1: 
+                  return ""
+              
+              start_index += len(start_marker)
+              
+              # 2. 找到匹配的结束括号
+              brace_count = 1
+              end_index = start_index
+              while brace_count > 0 and end_index < len(content):
+                  if content[end_index] == '{':
+                      brace_count += 1
+                  elif content[end_index] == '}':
+                      brace_count -= 1
+                  end_index += 1
+
+              # 3. 提取内容
+              raw_content = content[start_index:end_index-1].strip()
+              
+              # 4. 关键修复：移除字符串末尾的逗号 (rstrip)
+              # 这样我们就能完全控制拼接时的逗号，避免 ",," 错误
+              return raw_content.rstrip(',')
+
+          def get_content_from_url(url):
+              print(f"Downloading: {url}")
+              r = requests.get(url)
+              r.raise_for_status()
+              return extract_clean_map_content(r.text)
+
+          def get_content_from_file(path):
+              print(f"Reading local file: {path}")
+              if not os.path.exists(path):
+                  print(f"Warning: File not found: {path}")
+                  return ""
+              with open(path, 'r', encoding='utf-8') as f:
+                  return extract_clean_map_content(f.read())
+
+          # 配置路径
+          fixed_url_en = "https://raw.githubusercontent.com/haygcao/vccard/refs/heads/dartnumber/lib/merged/fixed_line_en.dart"
+          fixed_url_zh = "https://raw.githubusercontent.com/haygcao/vccard/refs/heads/dartnumber/lib/merged/fixed_line_zh.dart"
+
+          mobile_path_en = "lib/cn/phone_location_en_optimized.dart"
+          mobile_path_zh = "lib/cn/phone_location_zh_optimized.dart"
+          
+          output_dir = "lib/generated/metadata/geocoding"
+
+          # --- 合并英文版 ---
+          fixed_en_data = get_content_from_url(fixed_url_en)
+          mobile_en_data = get_content_from_file(mobile_path_en)
+          
+          with open(f"{output_dir}/86_en.dart", "w", encoding="utf-8") as f:
+              f.write("// Generated and Merged by GitHub Actions\n")
+              # 注意这里：
+              # {0} 是处理过(去掉了尾部逗号)的固话数据
+              # {1} 是处理过(去掉了尾部逗号)的手机数据
+              # 中间手动加一个逗号 ",\n"
+              # 手机数据后面没有逗号
+              f.write("Map<int, String> get86_en() {{\n  return {{\n    // Fixed Line\n    {0},\n    // Mobile\n    {1}\n  }};\n}}".format(fixed_en_data, mobile_en_data))
+
+          # --- 合并中文版 ---
+          fixed_zh_data = get_content_from_url(fixed_url_zh)
+          mobile_zh_data = get_content_from_file(mobile_path_zh)
+
+          with open(f"{output_dir}/86_zh.dart", "w", encoding="utf-8") as f:
+              f.write("// Generated and Merged by GitHub Actions\n")
+              f.write("Map<int, String> get86_zh() {{\n  return {{\n    // Fixed Line\n    {0},\n    // Mobile\n    {1}\n  }};\n}}".format(fixed_zh_data, mobile_zh_data))
+          
+          print(f"Merge completed. Output saved to {output_dir}")
+          EOF
+
+      # ---------------------------------------------------------
+      # 第三部分：提交结果
+      # ---------------------------------------------------------
+
+      - name: Commit and Push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(data): Update geocoding data"
+          file_pattern: "lib/generated/metadata/geocoding/86_*.dart"

@@ -22,6 +22,8 @@ dependencies:
   protobuf: ^6.0.0
   meta: ^1.11.0
   fixnum: ^1.1.0
+  flutter:
+    sdk: flutter
    
 dev_dependencies:
   lints: ^6.0.0
@@ -29,3 +31,7 @@ dev_dependencies:
   args: ^2.4.2
   xml: ^7.0.1
   yaml_edit: ^2.2.1
+flutter:
+  assets:
+    - assets/geocoding/
+    - assets/carrier/

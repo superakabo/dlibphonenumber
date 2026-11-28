@@ -21,17 +21,25 @@ import 'generated/metadata/geocoding_metadata_map.dart';
 import 'prefix_file_reader.dart';
 
 /// An offline geocoder which provides geographical information related to a phone number.
+import 'geocoding_loader.dart';
+
+/// An offline geocoder which provides geographical information related to a phone number.
 class PhoneNumberOfflineGeocoder {
   static PhoneNumberOfflineGeocoder get instance => _instance;
   static final PhoneNumberOfflineGeocoder _instance =
       PhoneNumberOfflineGeocoder(
           GeocodingMetadataMap.config, GeocodingMetadataMap.locations);
 
+  final GeocodingLoader _loader;
+  final Map<int, List<String>> _configData;
+  final Map<String, Map<int, String>> _locations;
+
   @internal
   PhoneNumberOfflineGeocoder(
-    Map<int, List<String>> configData,
-    Map<String, Map<int, String>> locations,
-  ) : _prefixFileReader = PrefixFileReader(configData, locations);
+    this._configData,
+    this._locations,
+  )   : _prefixFileReader = PrefixFileReader(_configData, _locations),
+        _loader = GeocodingLoader(_configData, _locations);
 
   final PhoneNumberUtil _phoneUtil = PhoneNumberUtil.instance;
 
@@ -39,7 +47,8 @@ class PhoneNumberOfflineGeocoder {
 
   /// Returns the customary display name in the given language for the given territory the phone
   /// number is from. If it could be from many territories, nothing is returned.
-  String _getCountryNameForNumber(PhoneNumber number, Locale language) {
+  Future<String> _getCountryNameForNumber(
+      PhoneNumber number, Locale language) async {
     List<String> regionCodes =
         _phoneUtil.getRegionCodesForCountryCode(number.countryCode);
     if (regionCodes.length == 1) {
@@ -73,21 +82,20 @@ class PhoneNumberOfflineGeocoder {
   /// description might consist of the name of the country where the phone number is from, or the
   /// name of the geographical area the phone number is from if more detailed information is
   /// available.
-  ///
-  /// <p>This method assumes the validity of the number passed in has already been checked, and that
-  /// the number is suitable for geocoding. We consider fixed-line and mobile numbers possible
-  /// candidates for geocoding.
-  ///
-  /// [number] a valid phone number for which we want to get a text description
-  /// [languageCode] the language code for which the description should be written
-  /// [userRegion] the region code for a given user. This region will be omitted from the
-  /// description if the phone number comes from this region. It should be a two-letter
-  /// upper-case CLDR region code.
-  /// returns a text description for the given language code for the given phone number, or an
-  /// empty string if the number could come from multiple countries, or the country code is
-  /// in fact invalid
-  String getDescriptionForValidNumber(PhoneNumber number, Locale languageCode,
-      [String? userRegion]) {
+  Future<String> getDescriptionForValidNumber(
+      PhoneNumber number, Locale languageCode,
+      [String? userRegion]) async {
+    int countryCallingCode = number.countryCode;
+    // As the NANPA data is split into multiple files covering 3-digit areas, use a
+    // phone number prefix of 4 digits for NANPA instead, e.g. 1650.
+    int phonePrefix = (countryCallingCode != 1)
+        ? countryCallingCode
+        : (1000 + (number.nationalNumber.toInt() ~/ 10000000));
+
+    // Ensure data is loaded
+    await _loader.ensureLoaded(
+        phonePrefix, languageCode.language, "", languageCode.country);
+
     if (userRegion == null) {
       String langStr = languageCode.language;
       String scriptStr = ""; // No script is specified
@@ -120,7 +128,7 @@ class PhoneNumberOfflineGeocoder {
 
       return (areaDescription.isNotEmpty)
           ? areaDescription
-          : _getCountryNameForNumber(number, languageCode);
+          : await _getCountryNameForNumber(number, languageCode);
     } //
     else {
       // If the user region matches the number's region, then we just show the lower-level
@@ -128,7 +136,7 @@ class PhoneNumberOfflineGeocoder {
       // for the number.
       String? regionCode = _phoneUtil.getRegionCodeForNumber(number);
       if (userRegion == regionCode) {
-        return getDescriptionForValidNumber(number, languageCode);
+        return await getDescriptionForValidNumber(number, languageCode);
       }
       // Otherwise, we just show the region(country) name for now.
       return _getRegionDisplayName(regionCode, languageCode);
@@ -139,16 +147,9 @@ class PhoneNumberOfflineGeocoder {
 
   /// As per [getDescriptionForValidNumber(PhoneNumber, Locale, String)] but
   /// explicitly checks the validity of the number passed in.
-  ///
-  /// [number]  the phone number for which we want to get a text description
-  /// [languageCode]  the language code for which the description should be written
-  /// [userRegion]  the region code for a given user. This region will be omitted from the
-  /// description if the phone number comes from this region. It should be a two-letter
-  /// upper-case CLDR region code.
-  /// returns a text description for the given language code for the given phone number, or empty
-  /// string if the number passed in is invalid or could belong to multiple countries
-  String getDescriptionForNumber(PhoneNumber number, Locale languageCode,
-      [String? userRegion]) {
+  Future<String> getDescriptionForNumber(
+      PhoneNumber number, Locale languageCode,
+      [String? userRegion]) async {
     if (userRegion == null) {
       PhoneNumberType numberType = _phoneUtil.getNumberType(number);
       if (numberType == PhoneNumberType.unknown) {
@@ -156,9 +157,9 @@ class PhoneNumberOfflineGeocoder {
       } else if (!_phoneUtil.isNumberGeographical(
           phoneNumberType: numberType,
           countryCallingCode: number.countryCode)) {
-        return _getCountryNameForNumber(number, languageCode);
+        return await _getCountryNameForNumber(number, languageCode);
       }
-      return getDescriptionForValidNumber(number, languageCode);
+      return await getDescriptionForValidNumber(number, languageCode);
     } else {
       PhoneNumberType numberType = _phoneUtil.getNumberType(number);
       if (numberType == PhoneNumberType.unknown) {
@@ -166,9 +167,10 @@ class PhoneNumberOfflineGeocoder {
       } else if (!_phoneUtil.isNumberGeographical(
           phoneNumberType: numberType,
           countryCallingCode: number.countryCode)) {
-        return _getCountryNameForNumber(number, languageCode);
+        return await _getCountryNameForNumber(number, languageCode);
       }
-      return getDescriptionForValidNumber(number, languageCode, userRegion);
+      return await getDescriptionForValidNumber(
+          number, languageCode, userRegion);
     }
   }
 }
