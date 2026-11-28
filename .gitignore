@@ -1,19 +1,21 @@
-# https://dart.dev/guides/libraries/private-files
-# Created by `dart pub`
+# Files and directories created by pub
 .dart_tool/
+.packages
+build/
+.pub/
 
-# Avoid committing pubspec.lock for library packages; see
-# https://dart.dev/guides/libraries/private-files#pubspeclock.
-pubspec.lock
-
-# exclude vscode config file
+# IDE
+.idea/
 .vscode/
+*.iml
+*.iws
+*.ipr
 
-# ignore the release notes text file from libphonenumber
-# since it will be regenerated when the metadata is updated.
-resources/release_notes.txt
-
-# ignore code coverage directory
-coverage/
-coverage.lcov
-
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

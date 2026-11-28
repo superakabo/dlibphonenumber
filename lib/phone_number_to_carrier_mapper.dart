@@ -22,6 +22,7 @@ import 'generated/metadata/carrier_metadata_map.dart';
 import 'locale.dart';
 import 'phone_number_util.dart';
 import 'prefix_file_reader.dart';
+import 'carrier_loader.dart';
 
 /// A phone prefix mapper which provides carrier information related to a phone number.
 class PhoneNumberToCarrierMapper {
@@ -33,13 +34,15 @@ class PhoneNumberToCarrierMapper {
   );
 
   final PrefixFileReader _prefixFileReader;
+  final CarrierLoader _loader;
   final PhoneNumberUtil _phoneUtil = PhoneNumberUtil.instance;
 
   @internal
   PhoneNumberToCarrierMapper(
     Map<int, List<String>> configData,
     Map<String, Map<int, String>> carriers,
-  ) : _prefixFileReader = PrefixFileReader(configData, carriers);
+  )   : _prefixFileReader = PrefixFileReader(configData, carriers),
+        _loader = CarrierLoader(configData, carriers);
 
   /// Returns a carrier name for the given phone number, in the language provided. The carrier name
   /// is the one the number was originally allocated to, however if the country supports mobile
@@ -53,7 +56,19 @@ class PhoneNumberToCarrierMapper {
   /// param [number] a valid phone number for which we want to get a carrier name
   /// param [languageCode] the language code in which the name should be written
   /// returns a carrier name for the given phone number
-  String getNameForValidNumber(PhoneNumber number, Locale languageCode) {
+  Future<String> getNameForValidNumber(
+      PhoneNumber number, Locale languageCode) async {
+    // Ensure data is loaded
+    int countryCallingCode = number.countryCode;
+    // NANPA check (same as geocoding) - though carrier data might be less split?
+    // Checking file list: 1242_en.dart, 1340_en.dart exists. So NANPA is split.
+    int phonePrefix = (countryCallingCode != 1)
+        ? countryCallingCode
+        : (1000 + (number.nationalNumber.toInt() ~/ 10000000));
+
+    await _loader.ensureLoaded(
+        phonePrefix, languageCode.language, "", languageCode.country);
+
     String langStr = languageCode.language;
     String scriptStr = ""; // No script is specified
     String regionStr = languageCode.country;
@@ -69,10 +84,11 @@ class PhoneNumberToCarrierMapper {
   /// [languageCode]  the language code in which the name should be written
   /// returns a carrier name for the given phone number, or empty string
   /// if the number passed in is invalid
-  String getNameForNumber(PhoneNumber number, Locale languageCode) {
+  Future<String> getNameForNumber(
+      PhoneNumber number, Locale languageCode) async {
     PhoneNumberType numberType = _phoneUtil.getNumberType(number);
     if (isMobile(numberType)) {
-      return getNameForValidNumber(number, languageCode);
+      return await getNameForValidNumber(number, languageCode);
     }
     return "";
   }
@@ -85,12 +101,13 @@ class PhoneNumberToCarrierMapper {
   /// [number] the phone number for which we want to get a carrier name
   /// [languageCode]  the language code in which the name should be written
   /// returns a carrier name that is safe to display to users, or the empty string
-  String getSafeDisplayName(PhoneNumber number, Locale languageCode) {
+  Future<String> getSafeDisplayName(
+      PhoneNumber number, Locale languageCode) async {
     if (_phoneUtil.isMobileNumberPortableRegion(
         _phoneUtil.getRegionCodeForNumber(number))) {
       return "";
     }
-    return getNameForNumber(number, languageCode);
+    return await getNameForNumber(number, languageCode);
   }
 
   /// Checks if the supplied number type supports carrier lookup.

@@ -1,0 +1,80 @@
+name: Sync Upstream & Auto Build JSON Assets
+on:
+  schedule:
+    # Runs daily at 03:00 UTC (11:00 AM Beijing Time)
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-and-build:
+    name: Sync Upstream & Build Optimized JSON
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch Upstream Latest
+        run: |
+          git remote add upstream https://github.com/superakabo/dlibphonenumber.git || true
+          git fetch upstream
+
+      - name: Setup Dart & Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pypinyin pandas
+
+      - name: Check Upstream Updates
+        id: check_upstream
+        run: |
+          UPSTREAM_HASH=$(git rev-parse upstream/main)
+          echo "Latest upstream commit: $UPSTREAM_HASH"
+          echo "upstream_hash=$UPSTREAM_HASH" >> $GITHUB_OUTPUT
+
+      - name: Rebase and Apply Custom Architecture
+        run: |
+          git checkout -B upstream-base upstream/main
+          git checkout local -- tool/ .github/workflows/update-cn-data.yml .github/workflows/apply-migration.yml .github/workflows/sync-upstream.yml .gitignore
+          rm -f .github/workflows/release.yml
+          cp tool/replace/lib/phone_number_offline_geocoder.dart lib/phone_number_offline_geocoder.dart
+          cp tool/replace/lib/generated/metadata/geocoding_metadata_map.dart lib/generated/metadata/geocoding_metadata_map.dart
+          cp tool/replace/lib/carrier_loader.dart lib/carrier_loader.dart
+          cp tool/replace/lib/geocoding_loader.dart lib/geocoding_loader.dart
+          cp tool/replace/lib/phone_number_to_carrier_mapper.dart lib/phone_number_to_carrier_mapper.dart
+          cp tool/replace/lib/generated/metadata/carrier_metadata_map.dart lib/generated/metadata/carrier_metadata_map.dart
+          dart run tool/migrate.dart
+          dart run tool/migrate_carrier.dart
+          dart run tool/create_manifest.dart
+          dart run tool/fix_pubspec.dart
+
+      - name: Commit and Update Branches
+        run: |
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(sync): automated sync from upstream ${{ steps.check_upstream.outputs.upstream_hash }} and build JSON assets"
+          fi
+          git branch -M main
+          git push origin main --force
+          git checkout -B local
+          git push origin local --force
